@@ -93,7 +93,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 .footer{text-align:center;padding:24px;color:#333;font-size:9px;letter-spacing:1px}
 </style>
 </head>
-<body>
+<body onload="autoLogin()">
 <div class="cyber-grid"></div>
 
 <!-- LOGIN -->
@@ -167,11 +167,18 @@ const CREDENTIALS = [
 
 function hexToBytes(h){let r=[];for(let i=0;i<h.length;i+=2)r.push(parseInt(h.substr(i,2),16));return r}
 
-function doLogin(){
+function autoLogin(){
   const u=document.getElementById('loginUser').value.trim();
   const p=document.getElementById('loginPass').value.trim();
   const err=document.getElementById('loginError');
   const valid=CREDENTIALS.some(c=>c.user===u&&c.pass===p);
+  // Testing mode - no password required
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("dashboard").classList.add("active");
+  loadProjects();
+  showCredentials();
+  showRules();
+  loadTimeline();
   if(valid){
     document.getElementById('loginScreen').classList.add('hidden');
     document.getElementById('dashboard').classList.add('active');
@@ -322,7 +329,7 @@ const PERMANENT_RULES = [
   {num:12, name:'Rule Redundancy', desc:'Every rule update creates 2 portable external backups.'},
   {num:13, name:'Independent Mirror', desc:'Complete copy at GitHub Pages. Test before migrate. Old stays live 72h.'}
 ];
-];
+
 </script>
 </body>
 </html>
