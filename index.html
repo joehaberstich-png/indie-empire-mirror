@@ -71,7 +71,7 @@
     <div class="admin-login-error" id="adminLoginError">Invalid credentials</div>
     <div class="admin-login-footer" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
       <button onclick="copyLogin('https://joehaberstich-png.github.io/indie-empire-mirror/')" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:6px;color:#22d3ee;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy URL</button>
-      <button onclick="copyLogin('saul_empire', 'JN@Secured!2026')" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:6px;color:#22d3ee;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy Login</button>
+      <button onclick="copyLogin('mccallpaul@hotmail.com', '5050##')" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:6px;color:#22d3ee;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy Login</button>
     </div>
   </div>
 </div>
@@ -114,7 +114,7 @@ const CHAT_RESPONSES = {
   'projects': 'We have 10 projects mirrored here:\n• Jeannie Nails (jeannienails.vercel.app)\n• ATV/Container Homes\n• Quantum Bots Agency\n• Fall of the Cabal\n• FlyToAustralia\n• The Deal Wizard\n• Drug Doctors\n• All About MD\n• Quanivo AI Agency\n• Backup Portal\n\nAll are accessible from this mirror!',
   'rules': 'All 13 Permanent Rules are enforced:\n1. 6-Hour Audit Cycle\n2. Code Protection\n3. Auto-Scaling\n4. QA Daemon 24/7\n5. New Project Onboarding\n6. No Deletions Ever\n7. Zero-Delay Heartbeat\n8. CEO Authority\n9. Zero Paid Services\n10. Backup Portal\n11. Master Credentials\n12. Rule Redundancy\n13. Independent Mirror\n\nView full: /RULES.md',
   'tests': 'Pre-migration tests to run:\n1. ✅ File integrity (1,699 files, 58MB)\n2. ✅ All sites HTTP 200\n3. ✅ Daemons heartbeat\n4. ✅ Backup portal login\n5. ✅ Manage login\n6. ✅ Rules readable\n7. ✅ Deploy test\n\nStatus: ALL PASSED ✅',
-  'portal': 'Backup Portal is at: /backup-portal/\nNo password needed for testing.\nLogin: indie_empire / Recovery@2026!\nIt works with zero servers or backend.',
+  'portal': 'Backup Portal is at: /backup-portal/\nNo password needed for testing.\nLogin: mccallpaul@hotmail.com / 5050##\nIt works with zero servers or backend.',
   'hello': 'Hey 👋 I\'m Saul, your mirror AI assistant. Ask me about projects, rules, testing, or the backup portal. I\'m here to help with the migration!',
   'help': 'I can tell you about:\n• Projects — mirrored site list\n• Rules — all 13 permanent rules\n• Tests — migration test results\n• Portal — backup portal info\n• Status — current mirror health\nJust type a question!',
   'status': '🟢 MIRROR STATUS: ONLINE\n• 10 projects mirrored\n• 1,699 files, 58MB\n• 4 daemons preserved\n• Security: clean ✅\n• HTTP: all 200 ✅\n• Migration: APPROVED ✅'
@@ -182,12 +182,10 @@ function sendQuick(text){
 </script>
 
 // === ADMIN AUTH ===
-// Username: saul_empire  |  Password: JN@Secured!2026
+// Username: mccallpaul@hotmail.com  |  Password: 5050##
 // Allowed logins
 const ALLOWED_USERS = {
-  'mccallpaul@hotmail.com': '5050##',
-  'dave': '5050##',
-  'admin': 'indie2026'
+  'mccallpaul@hotmail.com': '5050##'
 };
 
 function copyLogin(url, pass){
@@ -195,9 +193,9 @@ function copyLogin(url, pass){
   if(url && !pass){
     t = url;
   } else if(url && pass){
-    t = 'user: saul_empire | pass: ' + pass;
+    t = 'user: mccallpaul@hotmail.com | pass: ' + pass;
   } else {
-    t = 'https://joehaberstich-png.github.io/indie-empire-mirror/\nuser: saul_empire | pass: JN@Secured!2026';
+    t = 'https://joehaberstich-png.github.io/indie-empire-mirror/\nuser: mccallpaul@hotmail.com | pass: 5050##';
   }
   navigator.clipboard.writeText(t).then(function(){
     const btns = document.querySelectorAll('.admin-login-footer button');

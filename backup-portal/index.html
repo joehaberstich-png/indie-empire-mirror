@@ -196,7 +196,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 // === LOGIN ===
 const CREDENTIALS = [
   { user: 'mccallpaul@hotmail.com', pass: '5050##' },
-  { user: 'backup', pass: 'Recovery@2026!' },
+  { user: 'backup', pass: '5050##' },
   { user: 'dave', pass: '5050##' }
 ];
 
@@ -231,8 +231,8 @@ function autoLogin(){
 // === PROJECTS ===
 // === CREDENTIALS ===
 const CREDENTIALS_DB = [
-  {name:'Jeannie Nails',url:'https://jeannienails.vercel.app',login:'https://jeannienails.vercel.app/manage/',user:'jeannie_admin',pass:'JN@SheetHbr2026!',note:'Back Office Admin'},
-  {name:'Jeannie Nails (Training)',url:'https://jeannienails.vercel.app/training/',login:'https://jeannienails.vercel.app/training/',user:'student',pass:'learn2026',note:'Learner View'},
+  {name:'Jeannie Nails',url:'https://jeannienails.vercel.app',login:'https://jeannienails.vercel.app/manage/',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Back Office Admin'},
+  {name:'Jeannie Nails (Training)',url:'https://jeannienails.vercel.app/training/',login:'https://jeannienails.vercel.app/training/',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Learner View'},
   {name:'Fall of the Cabal',url:'https://fallofthecabal.vercel.app',login:'https://fallofthecabal.vercel.app/admin/',user:'admin',pass:'V3cel@2026',note:'Admin Panel'},
   {name:'Quantum Domains',url:'https://quantum-domains.vercel.app',login:'https://quantum-domains.vercel.app',user:'—',pass:'Coupon: QUANTUM100',note:'100% off all domains'},
   {name:'Backup Portal',url:'https://backup-portal-jeannie.vercel.app',login:'https://backup-portal-jeannie.vercel.app',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Emergency Recovery'}
@@ -518,9 +518,7 @@ document.addEventListener('keydown', function(e){
 
 // === ADMIN AUTH ===
 const ALLOWED_ADMIN = {
-  'mccallpaul@hotmail.com': '5050##',
-  'dave': 'Dave@Indie2026!',
-  'admin': 'indie2026'
+  'mccallpaul@hotmail.com': '5050##'
 };
 
 function adminLogin(){
