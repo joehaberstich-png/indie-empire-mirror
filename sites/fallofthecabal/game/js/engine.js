@@ -83,4 +83,121 @@ upd();renderer.render(scene,camera);}
 window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);});
 setTimeout(()=>{document.getElementById('load-screen').style.opacity='0';setTimeout(()=>document.getElementById('load-screen').style.display='none',1000);},2500);
 anim(0);setTimeout(()=>document.getElementById('mission-log').style.display='block',3000);
+
+// === TEST ACCOUNT OVERRIDES ===
+// Two Founder Token characters — full Mythic gear, no restrictions
+const TEST_ACCOUNTS = {
+  'phoenix': {
+    name: 'Cipher_Zero',
+    faction: 'The Reclamation',
+    founderToken: 'FTC-FOUNDER-0001',
+    founderSerial: '#001 of 1,000',
+    gear: {
+      primary: {name:'Shadow Protocol Dagger',rarity:'Mythic',bonus:'+20 Stealth'},
+      secondary: {name:'Whisper Sidearm',rarity:'Mythic',bonus:'+15 Stealth'},
+      armor: {name:'Ghost Protocol Suit',rarity:'Mythic',bonus:'Immune to surveillance'},
+      cyberware: {name:'Neural Override Implant',rarity:'Mythic',bonus:'+25 Hacking'},
+      legs: {name:'Phase Shift Boots',rarity:'Epic',bonus:'Silent movement'},
+      utility: {name:'Omni-Ear Receiver',rarity:'Mythic',bonus:'Intercept comms'},
+      accessory: {name:'Founder\'s Signet Ring',rarity:'Founder',bonus:'+25 Charisma'},
+      chip: {name:'Deep State Memory Core',rarity:'Mythic',bonus:'Decrypt classified'}
+    },
+    stats: {intel:136,stealth:124,hacking:106,combat:60,charisma:102,perception:116},
+    nfts: {normal:3,uncommon:3,rare:3,epic:3,legendary:3,mythic:3,founder:1},
+    missions: ['Act 1 Complete','Act 2 Complete','Act 3 Complete','Act 4 Unlocked'],
+    operator:'Cipher_Zero — Operation Phoenix'
+  },
+  'obsidian': {
+    name: 'Vex_Reign',
+    faction: 'The Covenant',
+    founderToken: 'FTC-FOUNDER-0002',
+    founderSerial: '#002 of 1,000',
+    gear: {
+      primary: {name:'Eclipse Executioner Blade',rarity:'Mythic',bonus:'+35 Combat'},
+      secondary: {name:'Harbinger Heavy Pistol',rarity:'Mythic',bonus:'+25 Combat'},
+      armor: {name:'Onyx Phalanx Battle Suit',rarity:'Mythic',bonus:'50% damage reduction'},
+      cyberware: {name:'Combat Reflex Implant',rarity:'Mythic',bonus:'Slow-motion aim'},
+      legs: {name:'Thunderstrike Greaves',rarity:'Mythic',bonus:'Charge attack'},
+      utility: {name:'Battlefield HUD Link',rarity:'Epic',bonus:'Enemy tagging'},
+      accessory: {name:'Founder\'s Blood Seal',rarity:'Founder',bonus:'Intimidate enemies'},
+      chip: {name:'Tactical Override Processor',rarity:'Mythic',bonus:'Combat analytics'}
+    },
+    stats: {intel:84,stealth:102,hacking:50,combat:144,charisma:92,perception:110},
+    nfts: {normal:3,uncommon:3,rare:3,epic:3,legendary:3,mythic:3,founder:1},
+    missions: ['Act 1 Complete','Act 2 Complete','Act 3 Complete','Act 4 Complete','Act 5 Unlocked'],
+    operator:'Vex_Reign — Operation Obsidian'
+  }
+};
+
+// Check URL for test account
+const urlParams = new URLSearchParams(window.location.search);
+const accountKey = urlParams.get('account');
+const accessKey = urlParams.get('key');
+const testAccount = TEST_ACCOUNTS[accountKey];
+
+if(testAccount && (accessKey === 'PHOENIX-FOUNDER-001' || accessKey === 'OBSIDIAN-FOUNDER-002')){
+  console.log('🔓 TEST ACCOUNT ACTIVE:', testAccount.name, '(' + testAccount.operator + ')');
+  
+  // Override game state with full founder build
+  g.intel = 9999;
+  g.nfts = 19;
+  g.founderToken = testAccount.founderToken;
+  g.founderSerial = testAccount.founderSerial;
+  
+  // Update HUD for test account
+  document.getElementById('player-intel').textContent = '🔍 INTEL: ∞';
+  document.getElementById('nft-count').textContent = '💎 NFTS: 19/19';
+  
+  // Show founder token badge
+  const hud = document.getElementById('top-bar') || document.querySelector('#hud > div');
+  if(hud){
+    const badge = document.createElement('div');
+    badge.style.cssText = 'font-size:9px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);padding:2px 8px;border-radius:100px;color:#ef4444;letter-spacing:1px';
+    badge.textContent = '🏆 ' + testAccount.founderToken + ' (' + testAccount.founderSerial + ')';
+    hud.appendChild(badge);
+  }
+  
+  // Show all NFTs in collection
+  const nftPanel = document.getElementById('nft-collection');
+  if(nftPanel){
+    nftPanel.style.display = 'block';
+    nftPanel.innerHTML = '<div class="header">▸ NFT COLLECTION — MYTHIC COMPLETE</div>';
+    const tiers = [
+      {name:'Intel Document',rarity:'Normal',color:'#555'},
+      {name:'Encrypted Drive',rarity:'Normal',color:'#555'},
+      {name:'Dead Drop Cache',rarity:'Normal',color:'#555'},
+      {name:'Burner Phone',rarity:'Uncommon',color:'#22c55e'},
+      {name:'Ghost Pass',rarity:'Uncommon',color:'#22c55e'},
+      {name:'Signal Jammer',rarity:'Uncommon',color:'#22c55e'},
+      {name:'Whistleblower File',rarity:'Rare',color:'#3b82f6'},
+      {name:'Tapped Line',rarity:'Rare',color:'#3b82f6'},
+      {name:'Fake Credentials',rarity:'Rare',color:'#3b82f6'},
+      {name:'Neural Implant',rarity:'Epic',color:'#a855f7'},
+      {name:'Identity Forge',rarity:'Epic',color:'#a855f7'},
+      {name:'Thunder Greaves',rarity:'Epic',color:'#a855f7'},
+      {name:'Deep State Memory Core',rarity:'Legendary',color:'#f59e0b'},
+      {name:'Eclipse Blade',rarity:'Legendary',color:'#f59e0b'},
+      {name:'Omni-Ear',rarity:'Legendary',color:'#f59e0b'},
+      {name:'Ghost Protocol Suit',rarity:'Mythic',color:'#ef4444'},
+      {name:'Neural Override',rarity:'Mythic',color:'#ef4444'},
+      {name:'Harbinger Pistol',rarity:'Mythic',color:'#ef4444'},
+      {name:'FOUNDER TOKEN',rarity:'FOUNDER',color:'#ff6b35'}
+    ];
+    tiers.forEach(t => {
+      nftPanel.innerHTML += '<div class="item"><span>' + t.name + '</span><span class="rarity" style="background:' + t.color + '33;color:' + t.color + '">' + t.rarity + '</span></div>';
+    });
+  }
+  
+  // Populate mission log with completion
+  const log = document.getElementById('mission-log');
+  if(log){
+    log.innerHTML = '<div class="header">▸ OPERATION: ' + testAccount.operator.toUpperCase() + '</div>';
+    log.innerHTML += '<div class="entry">🏆 FOUNDER TOKEN ACTIVE — ' + testAccount.founderToken + '</div>';
+    testAccount.missions.forEach(m => {
+      log.innerHTML += '<div class="entry">✅ ' + m + '</div>';
+    });
+    log.innerHTML += '<div class="entry" style="color:#22c55e">⚡ UNLIMITED RESOURCES — NO RESTRICTIONS</div>';
+  }
+}
+
 })();
