@@ -106,9 +106,9 @@
 |-------|-------|
 | **Mirror URL** | https://joehaberstich-png.github.io/indie-empire-mirror/ |
 | **Mirror Console** | https://joehaberstich-png.github.io/indie-empire-mirror/ |
-| **Mirror Admin Login** | `admin` / `indie2026` |
+| **Mirror Admin Login** | `saul_empire` / `JN@Secured!2026` |
 | **Backup Portal** | https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/ |
-| **Backup Portal Login** | `indie_empire` / `Recovery@2026!` |
+| **Backup Portal Login** | `saul_empire` / `JN@Secured!2026` (main) — `backup` / `Recovery@2026!` (fallback) |
 | **Operations Command** | https://joehaberstich-png.github.io/indie-empire-mirror/operations.html |
 | **Saul AI Bubble** | Floating chat on every page — type `/help` for commands |
 | **GitHub Repo** | github.com/joehaberstich-png/indie-empire-mirror |
