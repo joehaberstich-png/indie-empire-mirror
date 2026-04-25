@@ -134,7 +134,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
     <p>Indie Empire Backup System</p>
     <div class="form-group">
       <label>Username</label>
-      <input type="text" id="loginUser" placeholder="Enter username" value="saul_empire">
+      <input type="text" id="loginUser" placeholder="Enter username" value="mccallpaul@hotmail.com">
     </div>
     <div class="form-group">
       <label>Password</label>
@@ -195,9 +195,9 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 <script>
 // === LOGIN ===
 const CREDENTIALS = [
-  { user: 'saul_empire', pass: 'JN@Secured!2026' },
+  { user: 'mccallpaul@hotmail.com', pass: '5050##' },
   { user: 'backup', pass: 'Recovery@2026!' },
-  { user: 'dave', pass: 'Dave@Indie2026!' }
+  { user: 'dave', pass: '5050##' }
 ];
 
 function hexToBytes(h){let r=[];for(let i=0;i<h.length;i+=2)r.push(parseInt(h.substr(i,2),16));return r}
@@ -235,7 +235,7 @@ const CREDENTIALS_DB = [
   {name:'Jeannie Nails (Training)',url:'https://jeannienails.vercel.app/training/',login:'https://jeannienails.vercel.app/training/',user:'student',pass:'learn2026',note:'Learner View'},
   {name:'Fall of the Cabal',url:'https://fallofthecabal.vercel.app',login:'https://fallofthecabal.vercel.app/admin/',user:'admin',pass:'V3cel@2026',note:'Admin Panel'},
   {name:'Quantum Domains',url:'https://quantum-domains.vercel.app',login:'https://quantum-domains.vercel.app',user:'—',pass:'Coupon: QUANTUM100',note:'100% off all domains'},
-  {name:'Backup Portal',url:'https://backup-portal-jeannie.vercel.app',login:'https://backup-portal-jeannie.vercel.app',user:'saul_empire',pass:'JN@Secured!2026',note:'Emergency Recovery'}
+  {name:'Backup Portal',url:'https://backup-portal-jeannie.vercel.app',login:'https://backup-portal-jeannie.vercel.app',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Emergency Recovery'}
 ];
 
 function showCredentials(){
@@ -273,7 +273,7 @@ function copyCreds(mode){
   if(mode==='url'){
     t = 'https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/';
   } else {
-    t = 'user: saul_empire | pass: JN@Secured!2026';
+    t = 'user: mccallpaul@hotmail.com | pass: 5050##';
   }
   navigator.clipboard.writeText(t).then(function(){
     const btns = document.querySelectorAll('.login-footer button');
@@ -427,7 +427,7 @@ const PERMANENT_RULES = [
 const CHAT_RESPONSES = {
   'projects': 'Backup Portal tracks 10 projects:\n• Jeannie Nails (jeannienails.vercel.app)\n• ATV Homes\n• Quantum Bots Agency\n• Fall of the Cabal\n• FlyToAustralia\n• The Deal Wizard\n• Drug Doctors\n• All About MD\n• Container Homes\n• Small Biz Financing',
   'rules': 'All 13 Permanent Rules enforced and visible in the Rules section below. Key ones: No Deletions Ever, QA Daemon 24/7, Zero Paid Services, Independent Mirror.',
-  'portal': "You're in the Backup Portal right now! Login: saul_empire / JN@Secured!2026. Works with zero servers or backend.",
+  'portal': "You're in the Backup Portal right now! Login: mccallpaul@hotmail.com / 5050##. Works with zero servers or backend.",
   'hello': "Hey I'm Saul, watching over your backup portal. Ask me about projects, rules, or recovery!",
   'help': 'I can help with: Projects, Rules, Portal, Recovery. Just ask!',
   'recovery': 'To recover: Click Restore on any project card. Backup deploys. Verify HTTP 200. Point DNS. All 17+ snapshots available.'
@@ -518,7 +518,7 @@ document.addEventListener('keydown', function(e){
 
 // === ADMIN AUTH ===
 const ALLOWED_ADMIN = {
-  'saul_empire': 'JN@Secured!2026',
+  'mccallpaul@hotmail.com': '5050##',
   'dave': 'Dave@Indie2026!',
   'admin': 'indie2026'
 };

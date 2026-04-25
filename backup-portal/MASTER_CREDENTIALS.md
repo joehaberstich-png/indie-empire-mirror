@@ -148,9 +148,9 @@
 |-------|-------|
 | **🌐 Mirror URL** | [joehaberstich-png.github.io/indie-empire-mirror/](https://joehaberstich-png.github.io/indie-empire-mirror/) |
 | **🖥️ Mirror Console** | [joehaberstich-png.github.io/indie-empire-mirror/](https://joehaberstich-png.github.io/indie-empire-mirror/) |
-| **👤 Mirror Login** | `saul_empire` / `JN@Secured!2026` |
+| **👤 Mirror Login** | `mccallpaul@hotmail.com` / `5050##` |
 | **🌐 Backup Portal** | [joehaberstich-png.github.io/indie-empire-mirror/backup-portal/](https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/) |
-| **👤 Portal Login** | `saul_empire` / `JN@Secured!2026` (main) — `backup` / `Recovery@2026!` (fallback) |
+| **👤 Portal Login** | `mccallpaul@hotmail.com` / `5050##` (main) — `backup` / `Recovery@2026!` (fallback) |
 | **⚙️ Operations Command** | [joehaberstich-png.github.io/indie-empire-mirror/operations.html](https://joehaberstich-png.github.io/indie-empire-mirror/operations.html) |
 | **🤖 Saul AI Bubble** | Floating chat on every page — type `/help` for commands |
 | **💻 GitHub Repo** | [github.com/joehaberstich-png/indie-empire-mirror](https://github.com/joehaberstich-png/indie-empire-mirror) |
