@@ -191,3 +191,15 @@ model: { timeoutSeconds: 1200 }    // 20 min global safety net
 - Pre-migration tests are mandatory — no skips, no shortcuts
 - Old platform kept live for 72h after migration as rollback target
 - Mirror Console index.html documents the full migration protocol
+
+---
+
+## RULE 14: VERCEL ACCOUNT PROTECTION (PERMANENT)
+**If the Vercel/OpenClaw account is ever deleted, suspended, or locked:**
+1. Mirror (GitHub Pages) becomes primary immediately
+2. Backup portal initiates recovery for all projects
+3. /tmp/ mirror serves as last-resort fallback
+4. All 10 projects live on alternative platform within 10 minutes
+5. DNS updated to point all domains to new hosting
+6. Old Vercel account is NEVER used again — zero trust
+7. Read aloud at every standup until trust is re-established
