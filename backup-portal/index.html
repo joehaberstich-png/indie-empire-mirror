@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>BACKUP PORTAL · Jeannie Nails</title>
+<title>BACKUP PORTAL . Jeannie Nails</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--dark:#0d0a0a;--primary:#1a0f0e;--rose:#d4a0a0;--gold:#c9a84c;--accent:#c0392b;--text:#e8d5d0;--muted:#555}
@@ -91,7 +91,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 
 /* FOOTER */
 .footer{text-align:center;padding:24px;color:#333;font-size:9px;letter-spacing:1px}
-/* FLOATING BUBBLE — injected from Saul mirror AI */
+/* FLOATING BUBBLE - injected from Saul mirror AI */
 .floating-bubble{position:fixed;bottom:28px;right:28px;z-index:10000;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .bubble-toggle{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#d4a0a0,#c9a84c);border:none;cursor:pointer;box-shadow:0 4px 24px rgba(212,160,160,.3);transition:all .3s;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff;position:relative}
 .bubble-toggle:hover{transform:scale(1.08);box-shadow:0 6px 32px rgba(212,160,160,.4)}
@@ -189,7 +189,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
     <div class="backup-timeline" id="backupTimeline"></div>
   </div>
 
-  <div class="footer">BACKUP PORTAL · APRIL 2026 · INDEPENDENT OF ALL HOSTED PLATFORMS</div>
+  <div class="footer">BACKUP PORTAL . APRIL 2026 . INDEPENDENT OF ALL HOSTED PLATFORMS</div>
 </div>
 
 <script>
@@ -234,7 +234,7 @@ const CREDENTIALS_DB = [
   {name:'Jeannie Nails',url:'https://jeannienails.vercel.app',login:'https://jeannienails.vercel.app/manage/',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Back Office Admin'},
   {name:'Jeannie Nails (Training)',url:'https://jeannienails.vercel.app/training/',login:'https://jeannienails.vercel.app/training/',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Learner View'},
   {name:'Fall of the Cabal',url:'https://fallofthecabal.vercel.app',login:'https://fallofthecabal.vercel.app/admin/',user:'admin',pass:'V3cel@2026',note:'Admin Panel'},
-  {name:'Quantum Domains',url:'https://quantum-domains.vercel.app',login:'https://quantum-domains.vercel.app',user:'—',pass:'Coupon: QUANTUM100',note:'100% off all domains'},
+  {name:'Quantum Domains',url:'https://quantum-domains.vercel.app',login:'https://quantum-domains.vercel.app',user:'-',pass:'Coupon: QUANTUM100',note:'100% off all domains'},
   {name:'Backup Portal',url:'https://backup-portal-jeannie.vercel.app',login:'https://backup-portal-jeannie.vercel.app',user:'mccallpaul@hotmail.com',pass:'5050##',note:'Emergency Recovery'}
 ];
 
@@ -245,7 +245,7 @@ function showCredentials(){
     <div class="cred-entry">
       <div class="cred-header">
         <span class="cred-name">${c.name}</span>
-        <a href="${c.url}" target="_blank" class="cred-link">Visit ↗</a>
+        <a href="${c.url}" target="_blank" class="cred-link">Visit /</a>
       </div>
       <div class="cred-detail">
         <span class="cred-label">Site:</span>
@@ -324,9 +324,9 @@ function loadProjects(){
       <span class="status-badge ${p.status}">${p.status==='online'?'● Live':p.status==='stale'?'◐ Stale':'○ Offline'}</span>
       <h3>${p.name}</h3>
       <div class="url">${p.url}</div>
-      <div class="meta">${p.files} files · Last backed up ${p.last}</div>
+      <div class="meta">${p.files} files . Last backed up ${p.last}</div>
       <div class="actions">
-        <a href="https://${p.url}" target="_blank">Visit ↗</a>
+        <a href="https://${p.url}" target="_blank">Visit /</a>
         <a href="#" onclick="alert('Restore from backup: ${p.name}')">Restore</a>
       </div>
     </div>
@@ -335,23 +335,23 @@ function loadProjects(){
 
 // === BACKUP TIMELINE ===
 const BACKUPS = [
-  {time:'2026-04-25 03:47',desc:'Backup Portal created — standalone recovery console'},
+  {time:'2026-04-25 03:47',desc:'Backup Portal created - standalone recovery console'},
   {time:'2026-04-25 02:08',desc:'12 training videos regenerated with visible content'},
   {time:'2026-04-25 01:55',desc:'Proxy Router Daemon + 3x backup lock'},
   {time:'2026-04-25 01:48',desc:'Jeannie Nails customer projections complete'},
   {time:'2026-04-25 01:46',desc:'Quantum Shield obfuscation deployed to login'},
-  {time:'2026-04-25 01:38',desc:'Full brand audit — Jeannie Nails across 25+ files'},
-  {time:'2026-04-25 01:33',desc:'Price list updated — 80+ services across 8 categories'},
-  {time:'2026-04-25 01:28',desc:'RULE 9: Zero Paid Services — permanent infrastructure'},
-  {time:'2026-04-25 01:28',desc:'Quantum Domains portal — QUANTUM100 coupon'},
+  {time:'2026-04-25 01:38',desc:'Full brand audit - Jeannie Nails across 25+ files'},
+  {time:'2026-04-25 01:33',desc:'Price list updated - 80+ services across 8 categories'},
+  {time:'2026-04-25 01:28',desc:'RULE 9: Zero Paid Services - permanent infrastructure'},
+  {time:'2026-04-25 01:28',desc:'Quantum Domains portal - QUANTUM100 coupon'},
   {time:'2026-04-25 01:00',desc:'CEO Audit Engine + Code Protection + Auto-Scaler daemons'},
-  {time:'2026-04-25 00:38',desc:'QA Daemon 24/7 — Trade #10 permanent'},
-  {time:'2026-04-25 00:37',desc:'Jeannie Nails login fix deployed — wildcard rewrite removed'},
+  {time:'2026-04-25 00:38',desc:'QA Daemon 24/7 - Trade #10 permanent'},
+  {time:'2026-04-25 00:37',desc:'Jeannie Nails login fix deployed - wildcard rewrite removed'},
   {time:'2026-04-25 00:30',desc:'All 10 projects HTTP 200 confirmed'},
-  {time:'2026-04-24 22:08',desc:'Health scan — all projects nominal'},
-  {time:'2026-04-24 21:30',desc:'Grandmaster Build Rule — 10 trades, weekly benchmarks'},
-  {time:'2026-04-24 20:00',desc:'Quantum CS v2 injected — 9 languages, per-project knowledge'},
-  {time:'2026-04-24 18:00',desc:'Jeannie Nails full site — index, pricing, products, training, manage'}
+  {time:'2026-04-24 22:08',desc:'Health scan - all projects nominal'},
+  {time:'2026-04-24 21:30',desc:'Grandmaster Build Rule - 10 trades, weekly benchmarks'},
+  {time:'2026-04-24 20:00',desc:'Quantum CS v2 injected - 9 languages, per-project knowledge'},
+  {time:'2026-04-24 18:00',desc:'Jeannie Nails full site - index, pricing, products, training, manage'}
 ];
 
 function showRules(){
@@ -375,13 +375,13 @@ function loadTimeline(){
 }
 </script>
 <script>
-// === PERMANENT RULES EMBED v1 — 2026-04-25 ===
+// === PERMANENT RULES EMBED v1 - 2026-04-25 ===
 // These rules are embedded in the backup portal itself for zero-dependency access.
 const PERMANENT_RULES = [
   {num:1, name:'6-Hour Audit Cycle', desc:'CEO Audit + QA Daemon scan all projects every 6 hours. Forever.'},
   {num:2, name:'Code Protection', desc:'SHA256 manifest of all files every hour. Deletions trigger alerts.'},
   {num:3, name:'Assistant Auto-Scaling', desc:'Unlimited assistants. Dead daemons auto-restarted every 5 min.'},
-  {num:4, name:'QA Daemon 24/7/365', desc:'Trade #10 — all projects scanned every 6 hours. Permanent.'},
+  {num:4, name:'QA Daemon 24/7/365', desc:'Trade #10 - all projects scanned every 6 hours. Permanent.'},
   {num:5, name:'New Project Onboarding', desc:'All 10 trades + daemons within 60 min of creation.'},
   {num:6, name:'No Deletions Ever', desc:'Protected by nodelete daemon + git pre-commit + code protection.'},
   {num:7, name:'Zero-Delay Heartbeat', desc:'1200s timeout.30m interval. Never times out. Never delays.'},
@@ -400,8 +400,8 @@ const PERMANENT_RULES = [
     <div class="chat-header">
       <div class="chat-avatar">S</div>
       <div class="chat-header-info">
-        <div class="name">Saul · Backup AI</div>
-        <div class="status"><span class="dot"></span> Online · Ready to assist</div>
+        <div class="name">Saul . Backup AI</div>
+        <div class="status"><span class="dot"></span> Online . Ready to assist</div>
       </div>
     </div>
     <div class="chat-messages" id="chatMessages"></div>
@@ -424,59 +424,89 @@ const PERMANENT_RULES = [
 
 <script>
 // === SAUL BACKUP PORTAL AI ===
-const CHAT_RESPONSES = {
-  'projects': 'Backup Portal tracks 10 projects:\n• Jeannie Nails (jeannienails.vercel.app)\n• ATV Homes\n• Quantum Bots Agency\n• Fall of the Cabal\n• FlyToAustralia\n• The Deal Wizard\n• Drug Doctors\n• All About MD\n• Container Homes\n• Small Biz Financing',
-  'rules': 'All 13 Permanent Rules enforced and visible in the Rules section below. Key ones: No Deletions Ever, QA Daemon 24/7, Zero Paid Services, Independent Mirror.',
-  'portal': "You're in the Backup Portal right now! Login: mccallpaul@hotmail.com / 5050##. Works with zero servers or backend.",
-  'hello': "Hey I'm Saul, watching over your backup portal. Ask me about projects, rules, or recovery!",
-  'help': 'I can help with: Projects, Rules, Portal, Recovery. Just ask!',
-  'recovery': 'To recover: Click Restore on any project card. Backup deploys. Verify HTTP 200. Point DNS. All 17+ snapshots available.'
+const K = {
+  id: "I'm Saul, fully duplicated here on the backup portal. Same knowledge, same personality. I manage 10 projects and keep the empire running even if every platform goes down.",
+  jn: "Jeannie Nails at jeannienails.vercel.app. Back office at /manage/. Login: mccallpaul@hotmail.com / 5050##.",
+  ch: "Container Homes at containerhomes.vercel.app. E-commerce, green grants, shipping.",
+  qba: "QBA at quantumbotsagency.vercel.app. 100 products, 50 industry bots at /industries/.",
+  fotc: "FotC -- NFT game. Founder Token, 7 tiers, test accounts Cipher_Zero + Vex_Reign.",
+  fta: "FlyToAustralia -- travel affiliate.",
+  tdw: "The Deal Wizard -- promo landing page.",
+  dd: "Drug Doctors -- medical info.",
+  amd: "All About MD -- medical content.",
+  qv: "Quanivo AI Agency -- 8 prototypes.",
+  bp: "You are HERE. Backup portal -- zero-server, independent recovery.",
+  rules: "14 Permanent Rules. Hard + immutable. Full list at /PERMANENT_INFRASTRUCTURE_RULES.md",
+  cred: "Unified: mccallpaul@hotmail.com / 5050## for everything.",
+  rev: "$119.1M Year 1 target. $1.02B 3-year cumulative.",
+  st: "BACKUP PORTAL: ONLINE. Independent system, all data embedded.",
+  help: "I'm Saul. Ask about any project, rules, credentials, or status."
+};
+const KM = {
+  'project|list|all|show': 'pp', 'jeannie|salon|nails': 'jn', 'container|atv': 'ch',
+  'quantum|qba': 'qba', 'fotc|cabal|fall': 'fotc', 'australia|fly': 'fta',
+  'deal|wizard': 'tdw', 'drug|doctor': 'dd', 'all about|amd': 'amd',
+  'quanivo|qv': 'qv', 'backup|portal': 'bp',
+  'rule|law|permanent': 'rules', 'cred|login|password': 'cred',
+  'revenue|money': 'rev', 'status|health|online': 'st',
+  'hello|hi|hey|help|who': 'help'
 };
 
 function toggleChat(){
-  const win=document.getElementById('chatWindow');
-  const tog=document.getElementById('bubbleToggle');
-  const icon=document.getElementById('bubbleIcon');
-  win.classList.toggle('open');
-  tog.classList.toggle('open');
-  icon.textContent=win.classList.contains('open')?'✕':'💬';
-  if(win.classList.contains('open') && document.getElementById('chatMessages').children.length===0){
-    addBotMsg("Hey I'm Saul, watching over your backup portal. Ask me about projects, rules, or recovery!");
+  var w = document.getElementById('chatWindow');
+  var t = document.getElementById('bubbleToggle');
+  var i = document.getElementById('bubbleIcon');
+  w.classList.toggle('open');
+  t.classList.toggle('open');
+  i.textContent = w.classList.contains('open') ? '\u2715' : '\uD83D\uDCAC';
+  if(w.classList.contains('open') && document.getElementById('chatMessages').children.length === 0){
+    bot("Hey, Saul here. Backup portal AI -- same me, independent platform. Ask me anything.");
   }
 }
-function addBotMsg(t){
-  const m=document.getElementById('chatMessages');
-  const d=document.createElement('div');d.className='chat-msg bot';
-  d.innerHTML=t.replace(/\\n/g,'<br>')+'<span class="time">Saul · just now</span>';
-  m.appendChild(d);m.scrollTop=m.scrollHeight;
+function bot(t){
+  var m = document.getElementById('chatMessages');
+  var d = document.createElement('div');
+  d.className = 'chat-msg bot';
+  d.innerHTML = t.replace(/\\n/g, '<br>') + '<span class=\"time\">Saul \u00b7 just now</span>';
+  m.appendChild(d);
+  m.scrollTop = m.scrollHeight;
 }
-function addUserMsg(t){
-  const m=document.getElementById('chatMessages');
-  const d=document.createElement('div');d.className='chat-msg user';
-  d.innerHTML=t+'<span class="time">You · just now</span>';m.appendChild(d);m.scrollTop=m.scrollHeight;
+function user(t){
+  var m = document.getElementById('chatMessages');
+  var d = document.createElement('div');
+  d.className = 'chat-msg user';
+  d.innerHTML = t + '<span class=\"time\">You \u00b7 just now</span>';
+  m.appendChild(d);
+  m.scrollTop = m.scrollHeight;
+}
+function think(q){
+  q = q.toLowerCase().trim();
+  if(q.indexOf('/deploy') >= 0) return "Backup portal is zero-server HTML -- just push to GitHub and it auto-deploys.";
+  if(q.indexOf('/backup') >= 0) return "This IS the backup. Everything is self-contained here.";
+  if(q.indexOf('/promote') >= 0) return "Cross-promotion active across all 10 projects.";
+  if(q.indexOf('/ops') >= 0) return "Operations at /operations.html on the mirror console. This portal is emergency recovery.";
+  for(var key in KM){
+    var kw = key.split('|');
+    for(var i = 0; i < kw.length; i++){
+      if(q.indexOf(kw[i]) >= 0) return K[KM[key]];
+    }
+  }
+  return "I'm Saul -- ask me about any project, rules, credentials, or status.";
 }
 function sendMessage(){
-  const i=document.getElementById('chatInput');
-  const t=i.value.trim();if(!t) return;
-  addUserMsg(t);i.value='';
-  setTimeout(()=>{
-    const k=t.toLowerCase().replace(/[^a-z0-9\s]/g,'').trim();
-    let r=null;
-    for(const [key,val] of Object.entries(CHAT_RESPONSES)){
-      if(k.includes(key)){r=val;break;}
-    }
-    addBotMsg(r||'Try asking about projects, rules, portal, recovery, or help!');
-  },400);
+  var inp = document.getElementById('chatInput');
+  var t = inp.value.trim();
+  if(!t) return;
+  user(t);
+  inp.value = '';
+  setTimeout(function(){ bot(think(t)); }, 300 + Math.random() * 300);
 }
-function sendQuick(t){
-  addUserMsg(t);
-  setTimeout(()=>{
-    const k=t.toLowerCase();
-    for(const [key,val] of Object.entries(CHAT_RESPONSES)){
-      if(k.includes(key)){addBotMsg(val);break;}
-    }
-  },300);
-}
+document.querySelectorAll('.chat-quick button').forEach(function(b){
+  b.addEventListener('click', function(){
+    user(b.textContent);
+    setTimeout(function(){ bot(think(b.textContent)); }, 300);
+  });
+});
 </script>
 <script>
 
@@ -538,7 +568,7 @@ function adminLogin(){
   } else {
     if(err){
       err.style.display = 'block';
-      err.textContent = 'Invalid credentials — try again';
+      err.textContent = 'Invalid credentials - try again';
     }
     const pi = document.getElementById('adminPass');
     if(pi){ pi.value = ''; pi.focus(); }
