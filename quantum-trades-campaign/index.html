@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>50 Quantum Grandmaster Trades - Tutorials & Videos</title>
+<meta name="description" content="Complete library of 50 AI agent tutorials. Beginner to advanced. Full video walkthroughs for every trade.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050508;color:#e2e8f0;font-family:Inter,system-ui,sans-serif;padding:40px 24px}
+.max{max-width:1100px;margin:0 auto}
+h1{font-size:36px;font-weight:900;letter-spacing:-1px;margin-bottom:4px}
+h1 span{background:linear-gradient(135deg,#00d4ff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#555;font-size:14px;margin-bottom:8px}
+.stats{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.stat{background:#0a0a12;border:1px solid #1a1a2e;border-radius:8px;padding:10px 16px;text-align:center;min-width:80px}
+.stat .n{font-size:18px;font-weight:800;color:#22d3ee}
+.stat .l{font-size:9px;color:#555;text-transform:uppercase;letter-spacing:1px}
+.filters{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.filter-btn{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:100px;padding:5px 14px;font-size:10px;color:#555;cursor:pointer;transition:all .15s;font-family:inherit}
+.filter-btn:hover,.filter-btn.active{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.15);color:#22d3ee}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.trade-card{background:linear-gradient(135deg,#0d0d1a,#111128);border:1px solid rgba(255,255,255,.04);border-radius:12px;padding:16px;transition:all .2s;cursor:pointer;color:inherit;text-decoration:none;display:block}
+.trade-card:hover{border-color:rgba(34,211,238,.12);transform:translateY(-1px)}
+.tid{font-size:10px;color:#444;font-weight:700;margin-bottom:3px}
+.tname{font-size:14px;font-weight:700;color:#e2e8f0;margin-bottom:6px}
+.tmeta{display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap}
+.tmeta .tag{font-size:8px;padding:1px 6px;border-radius:100px;font-weight:600}
+.tag.tier-1{background:rgba(34,197,94,.1);color:#22c55e}
+.tag.tier-2{background:rgba(245,158,11,.1);color:#f59e0b}
+.tag.tier-3{background:rgba(239,68,68,.1);color:#ef4444}
+.tag.tier-4{background:rgba(139,92,246,.1);color:#a78bfa}
+.tag.tier-5{background:rgba(236,72,153,.1);color:#f472b6}
+.tag.tier-6{background:rgba(14,165,233,.1);color:#38bdf8}
+.tag.tier-7{background:rgba(168,85,247,.1);color:#c084fc}
+.tag.tier-8{background:rgba(249,115,22,.1);color:#fb923c}
+.tag.tier-9{background:rgba(132,204,22,.1);color:#a3e635}
+.tag.tier-10{background:rgba(34,211,238,.1);color:#22d3ee}
+.tag.cat{background:rgba(100,116,139,.1);color:#94a3b8}
+.tag.langs{background:rgba(34,197,94,.08);color:#4ade80}
+.tfeat{font-size:10px;color:#555;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="max">
+  <h1>50 <span>Quantum Grandmaster</span> Trades</h1>
+  <p class="sub">Complete tutorial library. Beginner to advanced. Full video walkthroughs.</p>
+  
+  <div class="stats">
+    <div class="stat"><div class="n">50</div><div class="l">Trades</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Avg Langs</div></div>
+    <div class="stat"><div class="n">10</div><div class="l">Categories</div></div>
+    <div class="stat"><div class="n">ALL</div><div class="l">Beginner Safe</div></div>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" onclick="filterAll()">All</button>
+    <button class="filter-btn" onclick="filterCat('Content')">Content</button>
+    <button class="filter-btn" onclick="filterCat('Research')">Research</button>
+    <button class="filter-btn" onclick="filterCat('Sales')">Sales</button>
+    <button class="filter-btn" onclick="filterCat('CS')">CS</button>
+    <button class="filter-btn" onclick="filterCat('Legal')">Legal</button>
+    <button class="filter-btn" onclick="filterCat('Finance')">Finance</button>
+    <button class="filter-btn" onclick="filterCat('Engineering')">Engineering</button>
+    <button class="filter-btn" onclick="filterCat('Video')">Video</button>
+    <button class="filter-btn" onclick="filterCat('Logistics')">Logistics</button>
+    <button class="filter-btn" onclick="filterCat('QA')">QA</button>
+  </div>
+
+  <div class="grid" id="tradeGrid">
+    
+        <a href="trade_01.html" class="trade-card">
+          <div class="tid">T01</div>
+          <div class="tname">SEO Content Writer</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Blog + Pin + YouTube desc + Quora answer per pass</div>
+        </a>
+        <a href="trade_02.html" class="trade-card">
+          <div class="tid">T02</div>
+          <div class="tname">Video Content Creator</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">12fps animation, TTS, 5-language subtitles, thumbnail</div>
+        </a>
+        <a href="trade_03.html" class="trade-card">
+          <div class="tid">T03</div>
+          <div class="tname">Sales Page Copywriter</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">7 frameworks, A/B variants, bridge pages, disclosure</div>
+        </a>
+        <a href="trade_04.html" class="trade-card">
+          <div class="tid">T04</div>
+          <div class="tname">Social Media Content Engine</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Cross-platform, 50/hr, anti-bot, peak timing</div>
+        </a>
+        <a href="trade_05.html" class="trade-card">
+          <div class="tid">T05</div>
+          <div class="tname">Email Marketing Engine</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">7-email seq, A/B subject, spam check, SendGrid tier</div>
+        </a>
+        <a href="trade_06.html" class="trade-card">
+          <div class="tid">T06</div>
+          <div class="tname">Pinterest Marketing Specialist</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Rich pins, SEO, batch 20/article, 5 accounts</div>
+        </a>
+        <a href="trade_07.html" class="trade-card">
+          <div class="tid">T07</div>
+          <div class="tname">YouTube Channel Manager</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Script-to-video, thumbnails, descriptions, comments</div>
+        </a>
+        <a href="trade_08.html" class="trade-card">
+          <div class="tid">T08</div>
+          <div class="tname">Quora & Forum Content Strategist</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Q discovery, value-first, bridge links, rotation</div>
+        </a>
+        <a href="trade_09.html" class="trade-card">
+          <div class="tid">T09</div>
+          <div class="tname">Reddit Marketing Agent</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Subreddit strategy, karma building, link compliance</div>
+        </a>
+        <a href="trade_10.html" class="trade-card">
+          <div class="tid">T10</div>
+          <div class="tname">TikTok/Short Form Creator</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">15-60s clips, trending sounds, cross-post to Reels/Shorts</div>
+        </a>
+        <a href="trade_11.html" class="trade-card">
+          <div class="tid">T11</div>
+          <div class="tname">Lead Magnet Creator</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">12 formats, opt-in page, email delivery, A/B headlines</div>
+        </a>
+        <a href="trade_12.html" class="trade-card">
+          <div class="tid">T12</div>
+          <div class="tname">Brand Voice & Style Guide Creator</div>
+          <div class="tmeta">
+            <span class="tag tier-1">T1</span>
+            <span class="tag cat">Cont</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">7-dimension voice scoring, per-project guide, enforcement</div>
+        </a>
+        <a href="trade_13.html" class="trade-card">
+          <div class="tid">T13</div>
+          <div class="tname">Competitive Research Analyst</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">15 competitors, daily monitors, Gravity analysis, Blue Ocean</div>
+        </a>
+        <a href="trade_14.html" class="trade-card">
+          <div class="tid">T14</div>
+          <div class="tname">Market Research Scout</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Niche validation, keyword clusters, trends, personas</div>
+        </a>
+        <a href="trade_15.html" class="trade-card">
+          <div class="tid">T15</div>
+          <div class="tname">Web Scraper & Data Extractor</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Anti-block, proxy pool, structured output, 500 pgs/hr</div>
+        </a>
+        <a href="trade_16.html" class="trade-card">
+          <div class="tid">T16</div>
+          <div class="tname">Data Analyst & Reporting</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Real-time dashboard, KPIs, anomaly detection, cross-project</div>
+        </a>
+        <a href="trade_17.html" class="trade-card">
+          <div class="tid">T17</div>
+          <div class="tname">Keyword & SEO Research Analyst</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Clusters, intent, gap analysis, CTR modeling</div>
+        </a>
+        <a href="trade_18.html" class="trade-card">
+          <div class="tid">T18</div>
+          <div class="tname">Affiliate Program Analyst</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">ClickBank analysis, commission comparison, Gravity 50-200</div>
+        </a>
+        <a href="trade_19.html" class="trade-card">
+          <div class="tid">T19</div>
+          <div class="tname">Niche Trend Forecaster</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Multi-source trends, seasonality, 6-month projections</div>
+        </a>
+        <a href="trade_20.html" class="trade-card">
+          <div class="tid">T20</div>
+          <div class="tname">Audience Persona Architect</div>
+          <div class="tmeta">
+            <span class="tag tier-2">T2</span>
+            <span class="tag cat">Rese</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">3-5 personas/project, psychographics, journey mapping</div>
+        </a>
+        <a href="trade_21.html" class="trade-card">
+          <div class="tid">T21</div>
+          <div class="tname">High-Ticket Sales Closer</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">10+ objection scripts, value ladder, follow-up, bridge pages</div>
+        </a>
+        <a href="trade_22.html" class="trade-card">
+          <div class="tid">T22</div>
+          <div class="tname">Conversational Sales Agent</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Forum discovery, natural answers, bridge routing, 50/day</div>
+        </a>
+        <a href="trade_23.html" class="trade-card">
+          <div class="tid">T23</div>
+          <div class="tname">Bridge Page Architect</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">5 templates, CTA opt, mobile-first, FTC disclosure, 2 min build</div>
+        </a>
+        <a href="trade_24.html" class="trade-card">
+          <div class="tid">T24</div>
+          <div class="tname">A/B Testing & Conversion Optimizer</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Multi-variant, stat sig, auto-winner, segment opt, 10 tests</div>
+        </a>
+        <a href="trade_25.html" class="trade-card">
+          <div class="tid">T25</div>
+          <div class="tname">Checkout & Cart Recovery Specialist</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Abandoned cart, payment retry, upsell, fraud detection</div>
+        </a>
+        <a href="trade_26.html" class="trade-card">
+          <div class="tid">T26</div>
+          <div class="tname">Objection Handler & FAQ Generator</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Top 20 objections, pre-emptive answers, live cheat sheet</div>
+        </a>
+        <a href="trade_27.html" class="trade-card">
+          <div class="tid">T27</div>
+          <div class="tname">Pricing & Offer Strategist</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Competitor pricing, value-based, bundles, seasonal promo</div>
+        </a>
+        <a href="trade_28.html" class="trade-card">
+          <div class="tid">T28</div>
+          <div class="tname">Referral & Viral Loop Engineer</div>
+          <div class="tmeta">
+            <span class="tag tier-3">T3</span>
+            <span class="tag cat">Sale</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Referral design, viral coefficient, social share, k-factor</div>
+        </a>
+        <a href="trade_29.html" class="trade-card">
+          <div class="tid">T29</div>
+          <div class="tname">Quantum Customer Service v2</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">9 languages, industry knowledge, self-improving, 85%+ resolution</div>
+        </a>
+        <a href="trade_30.html" class="trade-card">
+          <div class="tid">T30</div>
+          <div class="tname">Ticket Categorization & Router</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Intent class, priority score, auto-route, SLA, 95%+ accuracy</div>
+        </a>
+        <a href="trade_31.html" class="trade-card">
+          <div class="tid">T31</div>
+          <div class="tname">Review & Reputation Manager</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Multi-platform monitoring, sentiment, auto-response, <1h</div>
+        </a>
+        <a href="trade_32.html" class="trade-card">
+          <div class="tid">T32</div>
+          <div class="tname">Multilingual Support Agent</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">9 languages, detect, cultural adapt, 95%+ accuracy</div>
+        </a>
+        <a href="trade_33.html" class="trade-card">
+          <div class="tid">T33</div>
+          <div class="tname">Self-Service Knowledge Base Creator</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">Ticket analysis -> articles, FAQ, video links, auto-update</div>
+        </a>
+        <a href="trade_34.html" class="trade-card">
+          <div class="tid">T34</div>
+          <div class="tname">Customer Feedback Loop Manager</div>
+          <div class="tmeta">
+            <span class="tag tier-4">T4</span>
+            <span class="tag cat">CS</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">NPS, feature requests, sentiment trends, closed-loop</div>
+        </a>
+        <a href="trade_35.html" class="trade-card">
+          <div class="tid">T35</div>
+          <div class="tname">FTC/FDA Compliance Auditor</div>
+          <div class="tmeta">
+            <span class="tag tier-5">T5</span>
+            <span class="tag cat">Lega</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Disclosure injection, FDA health claims, GDPR/CCPA, pre-scan</div>
+        </a>
+        <a href="trade_36.html" class="trade-card">
+          <div class="tid">T36</div>
+          <div class="tname">Platform Policy Enforcer</div>
+          <div class="tmeta">
+            <span class="tag tier-5">T5</span>
+            <span class="tag cat">Lega</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Per-platform rules, shadowban detection, violation tracking</div>
+        </a>
+        <a href="trade_37.html" class="trade-card">
+          <div class="tid">T37</div>
+          <div class="tname">IP & Proxy Manager</div>
+          <div class="tmeta">
+            <span class="tag tier-5">T5</span>
+            <span class="tag cat">Lega</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">10K IP pool, geolocation, rate compliance, anti-bot</div>
+        </a>
+        <a href="trade_38.html" class="trade-card">
+          <div class="tid">T38</div>
+          <div class="tname">ToS & Privacy Generator</div>
+          <div class="tmeta">
+            <span class="tag tier-5">T5</span>
+            <span class="tag cat">Lega</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">PIPEDA, US, GDPR, CCPA per project, auto-update</div>
+        </a>
+        <a href="trade_39.html" class="trade-card">
+          <div class="tid">T39</div>
+          <div class="tname">Disclosure & Affiliate Compliance</div>
+          <div class="tmeta">
+            <span class="tag tier-5">T5</span>
+            <span class="tag cat">Lega</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">FTC tags, platform placement, 7-year audit trail</div>
+        </a>
+        <a href="trade_40.html" class="trade-card">
+          <div class="tid">T40</div>
+          <div class="tname">Per-Project P&L Accountant</div>
+          <div class="tmeta">
+            <span class="tag tier-6">T6</span>
+            <span class="tag cat">Fina</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Revenue tracking, expense cat, margin calc, commission</div>
+        </a>
+        <a href="trade_41.html" class="trade-card">
+          <div class="tid">T41</div>
+          <div class="tname">Revenue Forecaster</div>
+          <div class="tmeta">
+            <span class="tag tier-6">T6</span>
+            <span class="tag cat">Fina</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">3 scenarios, seasonality, cumulative projections, ±15%</div>
+        </a>
+        <a href="trade_42.html" class="trade-card">
+          <div class="tid">T42</div>
+          <div class="tname">Affiliate Commission Tracker</div>
+          <div class="tmeta">
+            <span class="tag tier-6">T6</span>
+            <span class="tag cat">Fina</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Multi-network aggregation, cookie attribution, reconciliation</div>
+        </a>
+        <a href="trade_43.html" class="trade-card">
+          <div class="tid">T43</div>
+          <div class="tname">Full-Stack Web Developer</div>
+          <div class="tmeta">
+            <span class="tag tier-7">T7</span>
+            <span class="tag cat">Engi</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat"><60 min, SEO, schema, CSv2, dual-deploy, 5x faster</div>
+        </a>
+        <a href="trade_44.html" class="trade-card">
+          <div class="tid">T44</div>
+          <div class="tname">CI/CD Pipeline Engineer</div>
+          <div class="tmeta">
+            <span class="tag tier-7">T7</span>
+            <span class="tag cat">Engi</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Git -> auto-deploy, pre-deploy QA, midnight batch, rollback</div>
+        </a>
+        <a href="trade_45.html" class="trade-card">
+          <div class="tid">T45</div>
+          <div class="tname">Security & Audit Engineer</div>
+          <div class="tmeta">
+            <span class="tag tier-7">T7</span>
+            <span class="tag cat">Engi</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">6h audit, code hashing, secret scan, quantum-resistant</div>
+        </a>
+        <a href="trade_46.html" class="trade-card">
+          <div class="tid">T46</div>
+          <div class="tname">API Integration Specialist</div>
+          <div class="tmeta">
+            <span class="tag tier-7">T7</span>
+            <span class="tag cat">Engi</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">15+ APIs, unified webhook, rate limits, free tier opt</div>
+        </a>
+        <a href="trade_47.html" class="trade-card">
+          <div class="tid">T47</div>
+          <div class="tname">Video Animation Pipeline</div>
+          <div class="tmeta">
+            <span class="tag tier-8">T8</span>
+            <span class="tag cat">Vide</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">12fps, TTS, 9-language subs, thumbnails, 90s per 3min</div>
+        </a>
+        <a href="trade_48.html" class="trade-card">
+          <div class="tid">T48</div>
+          <div class="tname">Voiceover & Audio Producer</div>
+          <div class="tmeta">
+            <span class="tag tier-8">T8</span>
+            <span class="tag cat">Vide</span>
+            <span class="tag langs">9L</span>
+          </div>
+          <div class="tfeat">11 tones, 9 languages, background music, LUFS -14, podcasts</div>
+        </a>
+        <a href="trade_49.html" class="trade-card">
+          <div class="tid">T49</div>
+          <div class="tname">Supply Chain & Logistics Coordinator</div>
+          <div class="tmeta">
+            <span class="tag tier-9">T9</span>
+            <span class="tag cat">Logi</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">Factory shipping, freight, customs docs, last-mile, inventory</div>
+        </a>
+        <a href="trade_50.html" class="trade-card">
+          <div class="tid">T50</div>
+          <div class="tname">24/7 QA & Bug Detection Daemon</div>
+          <div class="tmeta">
+            <span class="tag tier-10">T10</span>
+            <span class="tag cat">QA</span>
+            <span class="tag langs">5L</span>
+          </div>
+          <div class="tfeat">24/7/365, 6h scans, 19 agents, 4 squads, self-healing, immortal</div>
+        </a>
+  </div>
+</div>
+
+<script>
+var trades = document.querySelectorAll('.trade-card');
+function filterCat(cat){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  event.target.classList.add('active');
+  trades.forEach(function(t){
+    if(t.querySelector('.tag.cat').textContent.trim().substring(0,cat.length) === cat.substring(0,4)) {
+      t.style.display = 'block';
+    } else {
+      t.style.display = 'none';
+    }
+  });
+}
+function filterAll(){
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+  document.querySelector('.filter-btn').classList.add('active');
+  trades.forEach(function(t){t.style.display = 'block'});
+}
+</script>
+</body>
+</html>
