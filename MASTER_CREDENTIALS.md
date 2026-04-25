@@ -12,8 +12,8 @@
 |-------|-------|
 | **🌐 URL** | [jeannienails.vercel.app](https://jeannienails.vercel.app) |
 | **⚙️ Back Office** | [jeannienails.vercel.app/manage/](https://jeannienails.vercel.app/manage/) |
-| **👤 Admin Login** | `jeannie_admin` / `JN@SheetHbr2026!` |
-| **🎓 Training Learner** | `student` / `learn2026` |
+| **👤 Admin Login** | `mccallpaul@hotmail.com` / `5050##` |
+| **🎓 Training Learner** | `mccallpaul@hotmail.com` / `5050##` |
 | **🤖 Customer Service** | Quantum CS v2 (9 languages, auto-injected on every page) |
 | **📋 Department** | Nail salon operations, training, sales |
 
@@ -120,7 +120,7 @@
 | Field | Value |
 |-------|-------|
 | **🌐 URL** | [backup-portal-jeannie.vercel.app](https://backup-portal-jeannie.vercel.app) |
-| **👤 Login** | `indie_empire` / `Recovery@2026!` |
+| **👤 Login** | `mccallpaul@hotmail.com` / `5050##` |
 | **📋 Department** | Emergency recovery — zero-server standalone HTML |
 
 ---
@@ -150,7 +150,7 @@
 | **🖥️ Mirror Console** | [joehaberstich-png.github.io/indie-empire-mirror/](https://joehaberstich-png.github.io/indie-empire-mirror/) |
 | **👤 Mirror Login** | `mccallpaul@hotmail.com` / `5050##` |
 | **🌐 Backup Portal** | [joehaberstich-png.github.io/indie-empire-mirror/backup-portal/](https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/) |
-| **👤 Portal Login** | `mccallpaul@hotmail.com` / `5050##` (main) — `backup` / `Recovery@2026!` (fallback) |
+| **👤 Portal Login** | `mccallpaul@hotmail.com` / `5050##` (main) — `backup` / `5050##` (fallback) |
 | **⚙️ Operations Command** | [joehaberstich-png.github.io/indie-empire-mirror/operations.html](https://joehaberstich-png.github.io/indie-empire-mirror/operations.html) |
 | **🤖 Saul AI Bubble** | Floating chat on every page — type `/help` for commands |
 | **💻 GitHub Repo** | [github.com/joehaberstich-png/indie-empire-mirror](https://github.com/joehaberstich-png/indie-empire-mirror) |

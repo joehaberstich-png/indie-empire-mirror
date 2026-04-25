@@ -2,20 +2,20 @@
 
 **MIRROR CONSOLE**
 → https://joehaberstich-png.github.io/indie-empire-mirror/
-user: `saul_empire`  |  pass: `JN@Secured!2026`
+user: `mccallpaul@hotmail.com`  |  pass: `5050##`
 
 **BACKUP PORTAL**
 → https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/
-user: `saul_empire`  |  pass: `JN@Secured!2026`
-(fallback: `backup` / `Recovery@2026!`)
+user: `mccallpaul@hotmail.com`  |  pass: `5050##`
+(fallback: `backup` / `5050##`)
 
 **BACK OFFICE (Jeannie Nails)**
 → https://jeannienails.vercel.app/manage/
-user: `jeannie_admin`  |  pass: `JN@SheetHbr2026!`
+user: `mccallpaul@hotmail.com`  |  pass: `5050##`
 
 **TRAINING ACADEMY (learner login)**
 → https://jeannienails.vercel.app/manage/
-user: `student` / `learn2026`
+user: `mccallpaul@hotmail.com` / `5050##`
 
 **INDUSTRY HUB (public)**
 → https://quantumbotsagency.vercel.app/industries/
