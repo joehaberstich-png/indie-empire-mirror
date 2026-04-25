@@ -203,3 +203,12 @@ model: { timeoutSeconds: 1200 }    // 20 min global safety net
 5. DNS updated to point all domains to new hosting
 6. Old Vercel account is NEVER used again — zero trust
 7. Read aloud at every standup until trust is re-established
+
+## RULE 15: COPYRIGHT SHIELD (PERMANENT)
+**Every deploy, forever, without exception:**
+- Originality check runs before every deploy (.copyright/originality_check.py)
+- Provenance manifest tracks every file (.copyright/manifest.json)
+- Git history = chain of title. No commit rewriting on project files.
+- All AI-generated content is original work of Indie Empire.
+- Copyright-trap scan weekly for verbatim third-party content.
+- This protects US from copyright claims AND protects OUR code from being stolen.
