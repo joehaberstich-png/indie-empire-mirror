@@ -148,7 +148,9 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 
 <!-- DASHBOARD -->
 <div id="dashboard">
-  <div class="dash-header">
+  <div class="admin-badge" style="position:fixed;top:12px;right:12px;z-index:9998;background:rgba(212,160,160,.08);border:1px solid rgba(212,160,160,.12);padding:4px 12px;border-radius:100px;font-size:8px;color:#d4a0a0;letter-spacing:1px;display:none;backdrop-filter:blur(8px)" id="adminBadgeBp">👑 Authenticated</div>
+<div id="adminBadgeBp" style="position:fixed;top:12px;right:12px;z-index:9998;background:rgba(212,160,160,.08);border:1px solid rgba(212,160,160,.2);padding:4px 12px;border-radius:100px;font-size:8px;color:#d4a0a0;letter-spacing:1px;display:none;backdrop-filter:blur(8px)">👑 Authenticated</div>
+<div class="dash-header">
     <h2>🗄️ Recovery Console</h2>
     <div class="status"><span class="dot"></span>Standalone Backup Active</div>
   </div>
@@ -444,5 +446,80 @@ function sendQuick(t){
   },300);
 }
 </script>
+<script>
+
+// === ADMIN AUTH ===
+const ADMIN_CREDENTIALS = {
+  user: 'admin',
+  pass: 'indie2026'
+};
+
+function adminLogin(){
+  const u = document.getElementById('adminUser').value.trim().toLowerCase();
+  const p = document.getElementById('adminPass').value.trim();
+  const err = document.getElementById('adminLoginError');
+  
+  if(u === ADMIN_CREDENTIALS.user && p === ADMIN_CREDENTIALS.pass){
+    document.getElementById('adminLoginOverlay').classList.add('hidden');
+    const badge = document.getElementById('adminBadgeBp');
+    if(badge) badge.style.display = 'block';
+    if(err) err.style.display = 'none';
+  } else {
+    if(err){
+      err.style.display = 'block';
+      err.textContent = 'Invalid credentials';
+    }
+    const passInput = document.getElementById('adminPass');
+    if(passInput){ passInput.value = ''; passInput.focus(); }
+  }
+}
+
+// Allow Enter key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){
+    const passInput = document.getElementById('adminPass');
+    if(passInput && document.activeElement === passInput) adminLogin();
+  }
+});
+
+</script>
+
+// === ADMIN AUTH ===
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'indie2026';
+
+function adminLogin(){
+  const u = document.getElementById('adminUser').value.trim().toLowerCase();
+  const p = document.getElementById('adminPass').value.trim();
+  const err = document.getElementById('adminLoginError');
+  
+  if(u === ADMIN_USER && p === ADMIN_PASS){
+    document.getElementById('adminLoginOverlay').classList.add('hidden');
+    const badge = document.getElementById('adminBadgeBp');
+    if(badge) badge.style.display = 'block';
+    if(err) err.style.display = 'none';
+    setTimeout(() => {
+      const ci = document.getElementById('chatInput');
+      if(ci) ci.focus();
+    }, 500);
+  } else {
+    if(err){
+      err.style.display = 'block';
+      err.textContent = 'Invalid credentials — try again';
+    }
+    const pi = document.getElementById('adminPass');
+    if(pi){ pi.value = ''; pi.focus(); }
+  }
+}
+
+// Allow Enter key globally
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){
+    const ol = document.getElementById('adminLoginOverlay');
+    if(!ol || ol.classList.contains('hidden')) return;
+    adminLogin();
+  }
+});
+
 </body>
 </html>
