@@ -1,0 +1,8 @@
+{
+  "id": "qa-sitemap-robots",
+  "role": "Sitemap & Robots Verifier",
+  "squad": "C \u2014 Content & SEO",
+  "skill": "Validates sitemap.xml structure, confirms all URLs resolve 200, checks lastmod dates, checks robots.txt directives and sitemap reference.",
+  "che[REDACTED]": "Every 24 hours",
+  "alerts_on": "Sitemap 404, URL in sitemap returns 4xx, missing robots.txt"
+}

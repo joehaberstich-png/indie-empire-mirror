@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Book Appointment — Jeannie Nails | Atlantic Canada</title>
+<meta name="description" content="Book your premium nail appointment with Jeannie Nails. Gel, acrylic, dip powder, art designs, and spa manicures.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fdf2f8;color:#1a1a2e;line-height:1.6}
+header{background:linear-gradient(135deg,#831843,#db2777);color:#fff;padding:100px 24px 40px;text-align:center}
+header h1{font-size:36px;margin-bottom:8px;font-weight:300}
+header p{opacity:.8;font-size:16px}
+.booking-section{max-width:600px;margin:0 auto;padding:40px 24px 80px}
+.form-group{margin-bottom:20px}
+label{display:block;margin-bottom:6px;font-weight:600;font-size:14px;color:#831843}
+input,select,textarea{width:100%;padding:12px 16px;border:1px solid #fbcfe8;border-radius:8px;font-size:15px;transition:all .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#db2777;box-shadow:0 0 0 3px rgba(219,39,119,.15)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23831843'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.btn-book{width:100%;padding:16px;background:linear-gradient(135deg,#831843,#db2777);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.btn-book:hover{opacity:.9}
+.service-card{background:#fff;border:1px solid #fbcfe8;border-radius:12px;padding:20px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.service-card h3{font-size:16px;color:#831843;margin:0}
+.service-card .price{font-size:18px;font-weight:700;color:#db2777}
+.service-card p{font-size:13px;color:#666;margin-top:4px}
+.qba-tag{text-align:center;font-size:10px;color:#a1a1aa;padding:16px}
+small{color:#666;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+<h1>✨ Book Your Appointment</h1>
+<p>Jeannie Nails — Premium Nail Salon, Atlantic Canada</p>
+</header>
+<div class="booking-section">
+<h2 style="color:#831843;margin-bottom:16px">💅 Our Services</h2>
+<div class="service-card"><div><h3>Gel Manicure</h3><p>Long-lasting gel polish with flawless finish</p></div><div class="price">$55+</div></div>
+<div class="service-card"><div><h3>Acrylic Full Set</h3><p>Custom length and shape, any design</p></div><div class="price">$75+</div></div>
+<div class="service-card"><div><h3>Dip Powder</h3><p>Odorless, durable, chip-resistant color</p></div><div class="price">$65+</div></div>
+<div class="service-card"><div><h3>Nail Art Design</h3><p>Hand-painted art, gems, chrome, 3D</p></div><div class="price">$85+</div></div>
+<div class="service-card"><div><h3>Spa Pedicure</h3><p>Relaxing foot soak, scrub, massage + polish</p></div><div class="price">$70+</div></div>
+<div class="service-card"><div><h3>Gel Removal + Reapply</h3><p>Safe removal + fresh gel set</p></div><div class="price">$45+</div></div>
+
+<form id="bookingForm">
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required placeholder="Your full name">
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="(902) 555-0123">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required placeholder="you@email.com">
+</div>
+<div class="form-group">
+<label for="service">Service</label>
+<select id="service" name="service" required>
+<option value="">Select a service...</option>
+<option>Gel Manicure</option>
+<option>Acrylic Full Set</option>
+<option>Dip Powder</option>
+<option>Nail Art Design</option>
+<option>Spa Pedicure</option>
+<option>Gel Removal + Reapply</option>
+</select>
+</div>
+<div class="form-group">
+<label for="date">Preferred Date</label>
+<input type="date" id="date" name="date" required>
+</div>
+<div class="form-group">
+<label for="time">Preferred Time</label>
+<select id="time" name="time" required>
+<option value="">Select a time...</option>
+<option>9:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>2:00 PM</option>
+<option>3:00 PM</option>
+<option>4:00 PM</option>
+<option>5:00 PM</option>
+</select>
+</div>
+<div class="form-group">
+<label for="notes">Special Requests</label>
+<textarea id="notes" name="notes" rows="3" placeholder="Design ideas, allergies, special occasions..."></textarea>
+</div>
+<button type="submit" class="btn-book">📅 Book Appointment</button>
+<small style="display:block;text-align:center;margin-top:8px">We'll confirm within 1 hour. Walk-ins welcome too!</small>
+</form>
+</div>
+<div class="qba-tag">⚡ Powered by Quantum Bots Agency → quantumbotsagency.com</div>
+<script>
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button');
+  btn.textContent = '✅ Booking Confirmed! We\'ll contact you shortly.';
+  btn.style.background = '#16a34a';
+  setTimeout(() => {
+    btn.textContent = '📅 Book Another Appointment';
+    btn.style.background = 'linear-gradient(135deg,#831843,#db2777)';
+    this.reset();
+  }, 4000);
+  // Store booking in localStorage
+  const bookings = JSON.parse(localStorage.getItem('jeannie_bookings') || '[]');
+  bookings.push({
+    name: document.getElementById('name').value,
+    service: document.getElementById('service').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    timestamp: new Date().toISOString()
+  });
+  localStorage.setItem('jeannie_bookings', JSON.stringify(bookings));
+});
+</script>
+<script src="/jeannienails/js/quantum-cs-v2.js"></script>
+<script src="/jeannienails/js/sms-reminders.js"></script>
+</body>
+</html>

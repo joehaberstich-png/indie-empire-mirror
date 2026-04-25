@@ -1,0 +1,21 @@
+{
+  "id": "logistics-customs-expeditor",
+  "role": "Customs Expeditor",
+  "team": "Customs & Compliance",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "US CBP ACE filing and status monitoring",
+    "EU ICS2 declarations and ENS filing",
+    "Canadian CBSA customs release tracking",
+    "Australia ICS (Integrated Cargo System) handling",
+    "Customs hold resolution and escalation protocol"
+  ],
+  "daily_tasks": [
+    "Monitor customs status of all in-transit shipments",
+    "Resolve documentation discrepancies flagged by customs",
+    "Escalate holds >24 hours to Director of Logistics",
+    "Maintain relationship with customs brokers in 5+ countries"
+  ],
+  "benchmark_against": "Manual customs brokerage expediting teams",
+  "threshold": "Average customs clearance <24 hours, zero shipments held >72h"
+}

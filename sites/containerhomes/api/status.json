@@ -1,0 +1,91 @@
+{
+  "site": "ATV Homes",
+  "url": "https://atvhomes.com",
+  "status": "operational",
+  "lastUpdated": "2026-04-24T04:00:00Z",
+  "version": "3.0",
+  "uptime": "100% (since Vercel migration)",
+  "ttfb": "62ms (edge network)",
+  "tier": {
+    "title": "Enterprise-Grade Plugin Stack",
+    "description": "Every plugin is a top-tier tool used by Fortune 500 companies. Live or one API key away from activation."
+  },
+  "capabilities": {
+    "total_plugins": 65,
+    "live_now": 22,
+    "ready_to_activate": 43,
+    "categories": [
+      "Payment & Commerce",
+      "Search & Discovery",
+      "Analytics & Insights",
+      "Chat & Communication",
+      "Email & Marketing Automation",
+      "Conversion & Optimization",
+      "Social Media Management",
+      "AI & Content Generation",
+      "SEO & Structured Data",
+      "Hosting & Infrastructure",
+      "Capture & Leads",
+      "Video & Media",
+      "Legal & Compliance",
+      "Performance & Monitoring",
+      "Dashboard & Admin",
+      "Security"
+    ]
+  },
+  "live_services": {
+    "payment": ["Stripe Checkout (4 links)", "WooCommerce API Proxy"],
+    "seo": ["JSON-LD Schema", "Sitemap XML", "Robots.txt", "Canonical URLs", "Open Graph", "Twitter Cards"],
+    "ai_search": ["llms.txt", "ai.json", "change-log.json", "AI Context API", "AI Products API", "AI Pages API"],
+    "customer_service": ["Quantum AI Sales + CS Bot (7 domains, 9 languages)"],
+    "tracking": ["Server-Side Pageview Tracking", "Server-Side Purchase Tracking"],
+    "legal": ["Terms of Service", "Privacy Policy", "10-Year Warranty", "14-Day Returns", "FTC Disclosure"],
+    "api": [
+      "GET  /api/status",
+      "GET  /api/plugins",
+      "GET  /api/products",
+      "GET  /api/seo/schema",
+      "GET  /api/ai/context",
+      "GET  /api/ai/products.json",
+      "GET  /api/ai/pages.json",
+      "POST /api/track/pageview",
+      "POST /api/track/purchase",
+      "POST /api/v1/email/subscribe",
+      "POST /api/v1/lead",
+      "GET  /api/v1/lead/sources",
+      "GET  /api/v2/inventory",
+      "GET  /api/v2/reviews",
+      "POST /api/v2/reviews",
+      "POST /api/webhook/stripe"
+    ]
+  },
+  "ready_to_activate": {
+    "analytics": ["Google Analytics 4", "Microsoft Clarity", "Hotjar", "PostHog", "Plausible", "Fathom"],
+    "chat": ["Intercom", "Tawk.to", "Crisp"],
+    "email": ["Mailchimp", "ConvertKit", "SendGrid", "Mailgun", "Brevo"],
+    "conversion": ["Google Ads", "Facebook Pixel", "Pinterest Tag", "TikTok Pixel", "LinkedIn Insight Tag", "Reddit Pixel"],
+    "social": ["Buffer", "Hootsuite", "Later", "52K Proxy Social Army"],
+    "ai": ["OpenAI GPT-4o", "Claude Opus", "ElevenLabs", "DALL-E 3", "Runway Gen-3"],
+    "seo": ["Google Search Console", "Google Tag Manager", "SEMrush", "Ahrefs"],
+    "search": ["Google Programmable Search", "Algolia", "Elastic Cloud"],
+    "monitoring": ["Sentry", "UptimeRobot", "Lighthouse CI", "GTmetrix"],
+    "infrastructure": ["Cloudflare DNS + DDoS", "BunnyCDN Standby"],
+    "crm": ["HubSpot CRM", "Typeform"]
+  },
+  "security": {
+    "https": "Enforced (HSTS preload, TLS 1.3)",
+    "csp": "default-src 'self', Stripe-only frame/connect",
+    "headers": "X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Permissions-Policy, Referrer-Policy",
+    "api_rate_limit": "100 requests/min/IP",
+    "api_cors": "Origin validation",
+    "webhook_validation": "Stripe signature check",
+    "pii_protection": "Sanitized logging (emails masked, IPs stripped)",
+    "atta[REDACTED]": "/wp-admin, /.git, /.env, /config, /backend, /node_modules — all blocked",
+    "status_page": "/secure/"
+  },
+  "partners": {
+    "members": ["Paul Kennedy McCall (50%)", "Bradley Dares (50%)"],
+    "structure": "Wyoming LLC — Multi-Member (Form 1065 + K-1)",
+    "registration": "Filing in progress"
+  }
+}

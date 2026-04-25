@@ -1,0 +1,100 @@
+{
+  "rewrites": [
+    {
+      "source": "/jeannie-nails",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jeannie-nails/pricing",
+      "destination": "/pricing/index.html"
+    },
+    {
+      "source": "/jeannie-nails/products",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/jeannie-nails/manage",
+      "destination": "/manage/index.html"
+    },
+    {
+      "source": "/jeannie-nails/training",
+      "destination": "/training/index.html"
+    },
+    {
+      "source": "/jeannie-nails/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/jeannie-nails/blog/:slug",
+      "destination": "/blog/:slug/index.html"
+    },
+    {
+      "source": "/jeannie-nails/:path*",
+      "destination": "/:path*/index.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing/index.html"
+    },
+    {
+      "source": "/products",
+      "destination": "/products/index.html"
+    },
+    {
+      "source": "/manage",
+      "destination": "/manage/index.html"
+    },
+    {
+      "source": "/training",
+      "destination": "/training/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug/index.html"
+    },
+    {
+      "source": "/(.well-known/.*)",
+      "destination": "/.well-known/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/training/videos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}

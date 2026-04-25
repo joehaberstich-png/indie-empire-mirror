@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://drugdoctors.vercel.app/sitemap.xml

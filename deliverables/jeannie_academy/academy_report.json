@@ -1,0 +1,52 @@
+{
+  "academy": "Jeannie Nails \u2014 Quantum Academy & Security Institute",
+  "trained_at": "2026-04-24T18:20:39.930765",
+  "total_agents": 750,
+  "modules": 9,
+  "certifications": [
+    "Jeannie Nails Content Specialist (JN-CONT)",
+    "Jeannie Nails Conversion Specialist (JN-CS)",
+    "Jeannie Nails Foot Health Specialist (JN-FHS)",
+    "Jeannie Nails NS Community Specialist (JN-NCS)",
+    "Jeannie Nails Quantum Manager (JN-QM)",
+    "Jeannie Nails Quantum Sales Associate (JN-QSA)",
+    "Jeannie Nails Quantum Security Agent (JN-QSA-SEC)",
+    "Jeannie Nails Security Certified (JN-SEC)",
+    "Jeannie Nails Service Master (JN-NSM)"
+  ],
+  "speed_multiplier": 84,
+  "real_time_seconds": 1.35,
+  "effective_hours": 1.1099999999999999,
+  "security": {
+    "data_encryption": [
+      "standard",
+      "applies_to",
+      "verification"
+    ],
+    "proxy_infra": [
+      "ranges",
+      "rotation",
+      "detection_delay"
+    ],
+    "compliance": [
+      "canada",
+      "ns_specific",
+      "advertising",
+      "health"
+    ],
+    "identity_protection": [
+      "agent_authentication",
+      "client_pii",
+      "phone_numbers"
+    ],
+    "breach_response": [
+      "detection",
+      "containment",
+      "notification",
+      "recovery"
+    ]
+  },
+  "quantum_resistant": true,
+  "benchmark_weekly": true,
+  "retraining_sla_seconds": 60
+}

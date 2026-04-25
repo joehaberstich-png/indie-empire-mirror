@@ -1,0 +1,8 @@
+{
+  "id": "qa-response-time",
+  "role": "Response Time Analyzer",
+  "squad": "B \u2014 Backend & API",
+  "skill": "Measures P50/P95/P99 response times. Tracks Vercel cold start vs warm. Flags degradation trends. Threshold: P95 > 2s = critical.",
+  "che[REDACTED]": "Continuous per request",
+  "alerts_on": "P95 > 2s, P99 > 5s, cold start > 5s"
+}

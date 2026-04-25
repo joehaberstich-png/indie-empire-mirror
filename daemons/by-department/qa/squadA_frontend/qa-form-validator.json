@@ -1,0 +1,8 @@
+{
+  "id": "qa-form-validator",
+  "role": "Form & Input Validator",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Form functional testing: empty submission, boundary values, XSS payloads, CSRF token presence. Covers login, booking, subscribe, calculator, search. Tools: Playwright, custom fuzzer.",
+  "che[REDACTED]": "Every 8 hours",
+  "alerts_on": "Form submission failure, missing validation, XSS reflection, CSRF bypass"
+}

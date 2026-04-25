@@ -1,0 +1,8 @@
+{
+  "id": "qa-auth-session",
+  "role": "Auth & Session Checker",
+  "squad": "B \u2014 Backend & API",
+  "skill": "Tests login/logout flows, token issuance and expiry, session timeout behavior, rate limiting, brute-force protection, JWT validation.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Auth bypass, token leak, session fixation, weak password policy"
+}

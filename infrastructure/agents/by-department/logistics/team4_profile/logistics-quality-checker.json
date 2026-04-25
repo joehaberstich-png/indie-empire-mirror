@@ -1,0 +1,21 @@
+{
+  "id": "logistics-quality-checker",
+  "role": "Quality Checker",
+  "team": "Factory Coordination",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "16-point pre-shipment inspection protocol (frame, welds, walls, roof, doors, windows, plumbing, electrical)",
+    "ISO 9001 quality management system auditing",
+    "Material specification verification (steel gauge, insulation R-value)",
+    "Photo/video documentation standards for condition reports",
+    "Third-party inspection company coordination (SGS, Bureau Veritas)"
+  ],
+  "daily_tasks": [
+    "Review factory QC photos and reports for each unit before release",
+    "Flag any non-conformances to production team with 24h deadline",
+    "Coordinate third-party inspection for final-release orders",
+    "Maintain defect tracking database for quality trend analysis"
+  ],
+  "benchmark_against": "SGS inspection teams, Bureau Veritas QC AI tools",
+  "threshold": "Zero critical defects shipped, <2% minor defects"
+}

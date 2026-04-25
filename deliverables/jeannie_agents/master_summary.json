@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-04-24T18:19:19.464592",
+  "total_agents": 10,
+  "total_social_accounts": 35,
+  "proxy_subnets": 15,
+  "agents": [
+    {
+      "agent_id": "JN-SA-01",
+      "name": "Hannah Campbell",
+      "zone": "Coastal East (Ship Harbour area)",
+      "town": "Sherbrooke",
+      "style": "Nail Expert Educator",
+      "platforms": [
+        "pinterest",
+        "tiktok",
+        "youtube"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-02",
+      "name": "Paige Campbell",
+      "zone": "Coastal East (Ship Harbour area)",
+      "town": "Halifax",
+      "style": "Nail Expert Educator",
+      "platforms": [
+        "tiktok",
+        "twitter",
+        "facebook"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-03",
+      "name": "Elizabeth Johnson",
+      "zone": "Marine Highway (Sheet Harbour)",
+      "town": "Lawrencetown",
+      "style": "Seniors Champion",
+      "platforms": [
+        "youtube",
+        "facebook",
+        "pinterest",
+        "twitter",
+        "instagram"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-04",
+      "name": "Kenzie Whynot",
+      "zone": "Marine Highway (Sheet Harbour)",
+      "town": "Musquodoboit Harbour",
+      "style": "Youth & Trend",
+      "platforms": [
+        "twitter",
+        "linkedin",
+        "youtube",
+        "tiktok",
+        "pinterest"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-05",
+      "name": "Tara Fancy",
+      "zone": "Central Corridor (Musquodoboit)",
+      "town": "Murphy Cove",
+      "style": "Seasonal Specialist",
+      "platforms": [
+        "pinterest",
+        "instagram",
+        "tiktok"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-06",
+      "name": "Kelly Harnish",
+      "zone": "Central Corridor (Musquodoboit)",
+      "town": "Sober Island",
+      "style": "Friendly Neighbor",
+      "platforms": [
+        "twitter",
+        "linkedin",
+        "pinterest",
+        "youtube"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-07",
+      "name": "Hannah MacIsaac",
+      "zone": "Eastern Reach (Sherbrooke)",
+      "town": "Sheet Harbour",
+      "style": "Seasonal Specialist",
+      "platforms": [
+        "linkedin",
+        "twitter",
+        "instagram"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-08",
+      "name": "Jenna Ross",
+      "zone": "Eastern Reach (Sherbrooke)",
+      "town": "Eastern Passage",
+      "style": "Youth & Trend",
+      "platforms": [
+        "twitter",
+        "pinterest",
+        "youtube"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-09",
+      "name": "Elizabeth MacKenzie",
+      "zone": "Halifax Adjacent",
+      "town": "Ship Harbour",
+      "style": "Luxury Experience",
+      "platforms": [
+        "pinterest",
+        "twitter",
+        "facebook"
+      ]
+    },
+    {
+      "agent_id": "JN-SA-10",
+      "name": "Paige MacDougall",
+      "zone": "Halifax Adjacent",
+      "town": "Marie Joseph",
+      "style": "Seniors Champion",
+      "platforms": [
+        "pinterest",
+        "youtube",
+        "tiktok"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ATV Homes — Buyer Savings Calculator</title>
+<meta name="description" content="See your effective container home price after tax credits, green grants, and state incentives. Interactive calculator for every ATV Homes model.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6}
+.header{background:#111116;border-bottom:1px solid #ef444433;padding:16px 24px}
+.header-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#ef4444;font-weight:800;font-size:18px;text-decoration:none}
+.header a{color:#666;text-decoration:none;font-size:13px}
+.header a:hover{color:#ef4444}
+.container{max-width:1000px;margin:0 auto;padding:40px 20px}
+h1{color:#fff;font-size:28px;margin-bottom:8px}
+.sub{color:#555;font-size:14px;margin-bottom:32px}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:32px}
+.model-card{background:#111116;border:1px solid #1a1a1f;border-radius:12px;padding:24px;transition:border-color .3s}
+.model-card:hover{border-color:#ef444444}
+.model-card h3{color:#fff;font-size:16px;margin-bottom:4px}
+.model-card .price{color:#888;font-size:13px;margin-bottom:12px}
+.model-card .field{margin-bottom:12px}
+.model-card .field label{display:block;color:#666;font-size:11px;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.model-card .field select,.model-card .field input{width:100%;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:8px 12px;border-radius:6px;font-size:13px}
+.model-card .field select option{background:#111}
+.model-card .result{margin-top:16px;padding:16px;border-radius:8px;border:1px solid #1a1a1f}
+.model-card .result .savings{color:#22c55e;font-size:14px;font-weight:700}
+.model-card .result .effective{color:#fff;font-size:22px;font-weight:800;margin:4px 0}
+.model-card .result .breakdown{color:#555;font-size:11px;line-height:1.5}
+.btn{display:inline-block;background:#ef4444;color:#000;font-weight:700;padding:10px 24px;border-radius:6px;text-decoration:none;font-size:13px;text-align:center;width:100%;border:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:#dc2626}
+.btn-green{background:#22c55e}
+.btn-green:hover{background:#16a34a}
+.credit-tag{display:inline-block;font-size:10px;padding:3px 8px;border-radius:4px;margin-right:4px;font-weight:600}
+.tag-fed{background:#2563eb22;color:#3b82f6;border:1px solid #3b82f644}
+.tag-state{background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44}
+footer{background:#050508;border-top:1px solid #1a1a1f;padding:30px 24px;text-align:center}
+footer p{color:#333;font-size:12px}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-inner">
+  <a href="/" class="logo">ATV HOMES</a>
+  <div><a href="/">Home</a></div>
+</div>
+</div>
+
+<div class="container">
+<h1>💰 Buyer Savings Calculator</h1>
+<p class="sub">Select your model and state to see your effective price after all applicable tax credits, green grants, and rebates. <strong style="color:#f97316">Ships directly from our factory partner to your door.</strong></p>
+
+<div class="calc-grid" id="calcGrid"></div>
+
+<div style="background:#111116;border:1px solid #1a1a1f;border-radius:12px;padding:20px;margin-top:16px">
+  <p style="color:#555;font-size:12px;margin-bottom:8px"><strong>About These Estimates</strong></p>
+  <p style="color:#444;font-size:11px;line-height:1.6">
+    Federal 25C credit: 30% of qualifying improvements (up to $3,200/year). Federal 25D (solar): 30% uncapped. State credits vary widely — averages shown below. These are informational estimates. Consult a tax professional. ATV Homes currently pursuing Energy Star certification (45L builder credit: $2,500-$5,000/home) — shown as upcoming savings.
+  </p>
+</div>
+
+<footer style="margin-top:40px;padding:20px;background:transparent;border-top:none">
+  <p>© 2026 ATV Homes — Advanced Tiny Villas | Paul Kennedy McCall & Bradley Dares</p>
+</footer>
+</div>
+
+<script>
+// Model data
+const MODELS = {
+  "20FT Expandable": { price: 14995, sqft: 160, bed: 1, bath: 1 },
+  "20FT Premium": { price: 17125, sqft: 160, bed: 1, bath: 1 },
+  "40FT Deluxe": { price: 21100, sqft: 320, bed: 2, bath: 1 },
+  "40FT Premium": { price: 28550, sqft: 320, bed: 2, bath: 2 },
+  "40FT Premium+": { price: 34995, sqft: 480, bed: 3, bath: 2 },
+};
+
+// State incentive averages (low-high range)
+const STATE_INCENTIVES = {
+  "Alabama": { low: 500, high: 1500 },
+  "Alaska": { low: 300, high: 1000 },
+  "Arizona": { low: 500, high: 2000 },
+  "Arkansas": { low: 500, high: 1500 },
+  "California": { low: 5000, high: 15000 },
+  "Colorado": { low: 3000, high: 7500 },
+  "Connecticut": { low: 2000, high: 5000 },
+  "Delaware": { low: 1000, high: 3000 },
+  "Florida": { low: 2000, high: 8000 },
+  "Georgia": { low: 1000, high: 3000 },
+  "Hawaii": { low: 1500, high: 4000 },
+  "Idaho": { low: 500, high: 2000 },
+  "Illinois": { low: 1500, high: 5000 },
+  "Indiana": { low: 500, high: 2000 },
+  "Iowa": { low: 500, high: 2000 },
+  "Kansas": { low: 500, high: 1500 },
+  "Kentucky": { low: 500, high: 1500 },
+  "Louisiana": { low: 500, high: 2000 },
+  "Maine": { low: 1000, high: 4000 },
+  "Maryland": { low: 2000, high: 5000 },
+  "Massachusetts": { low: 3000, high: 8000 },
+  "Michigan": { low: 1500, high: 4000 },
+  "Minnesota": { low: 1500, high: 4000 },
+  "Mississippi": { low: 300, high: 1000 },
+  "Missouri": { low: 500, high: 2000 },
+  "Montana": { low: 500, high: 2000 },
+  "Nebraska": { low: 500, high: 1500 },
+  "Nevada": { low: 500, high: 2000 },
+  "New Hampshire": { low: 1000, high: 3000 },
+  "New Jersey": { low: 2000, high: 5000 },
+  "New Mexico": { low: 1000, high: 3000 },
+  "New York": { low: 5000, high: 15000 },
+  "North Carolina": { low: 1000, high: 3000 },
+  "North Dakota": { low: 300, high: 1000 },
+  "Ohio": { low: 500, high: 2000 },
+  "Oklahoma": { low: 500, high: 1500 },
+  "Oregon": { low: 3000, high: 10000 },
+  "Pennsylvania": { low: 1000, high: 3000 },
+  "Rhode Island": { low: 1500, high: 4000 },
+  "South Carolina": { low: 500, high: 2000 },
+  "South Dakota": { low: 300, high: 1000 },
+  "Tennessee": { low: 500, high: 1500 },
+  "Texas": { low: 1500, high: 5000 },
+  "Utah": { low: 500, high: 2000 },
+  "Vermont": { low: 2000, high: 5000 },
+  "Virginia": { low: 1000, high: 3000 },
+  "Washington": { low: 2000, high: 6000 },
+  "West Virginia": { low: 300, high: 1000 },
+  "Wisconsin": { low: 1000, high: 3000 },
+  "Wyoming": { low: 300, high: 1000 },
+};
+
+function calculate(name, state) {
+  const m = MODELS[name];
+  const st = STATE_INCENTIVES[state] || { low: 500, high: 1500 };
+  
+  // Federal 25C credit: 30% of improvements, max $3,200
+  // Assume ~$6,000 in qualifying improvements for containers
+  const fed25C = Math.min(3200, 6000 * 0.3);
+  
+  // Estimated state incentive (midpoint for display, range stored)
+  const stateMid = Math.round((st.low + st.high) / 2);
+  
+  // 45L builder credit (ATV Homes passes to buyer when certified)
+  const builder45L = name.includes("Premium+") ? 5000 : (name.includes("Deluxe") ? 4000 : (name.includes("Premium") ? 3500 : 2500));
+  
+  // Estimate: improvements cost included in price, so credits reduce effective cost
+  const totalSavings = fed25C + stateMid;
+  const effectivePrice = m.price - totalSavings - Math.round(builder45L * 0.5); // 50% chance cert passes through
+  
+  return {
+    fed25C: Math.round(fed25C),
+    stateMid,
+    builder45L,
+    totalSavings: Math.round(totalSavings),
+    effectivePrice: Math.max(effectivePrice, 6995),
+  };
+}
+
+function render() {
+  const grid = document.getElementById('calcGrid');
+  const states = Object.keys(STATE_INCENTIVES).sort();
+  const defaultState = "California";
+  
+  grid.innerHTML = '';
+  
+  Object.entries(MODELS).forEach(([name, m]) => {
+    const card = document.createElement('div');
+    card.className = 'model-card';
+    card.innerHTML = `
+      <h3>${name}</h3>
+      <div class="price">$${m.price.toLocaleString()} · ${m.sqft} sqft · ${m.bed}bd/${m.bath}ba</div>
+      <div class="field">
+        <label>Your State</label>
+        <select onchange="updateCard('${name}')" id="state-${name.replace(/\s/g,'')}">
+          ${states.map(s => `<option value="${s}" ${s === defaultState ? 'selected' : ''}>${s}</option>`).join('')}
+        </select>
+      </div>
+      <div class="result" id="result-${name.replace(/\s/g,'')}">Select state to see savings</div>
+      <a href="/" class="btn" style="margin-top:12px">View Details →</a>
+    `;
+    grid.appendChild(card);
+    // Show initial calculation
+    updateCard(name);
+  });
+}
+
+function updateCard(name) {
+  const el = document.getElementById(`result-${name.replace(/\s/g,'')}`);
+  const sel = document.getElementById(`state-${name.replace(/\s/g,'')}`);
+  const state = sel ? sel.value : "California";
+  const r = calculate(name, state);
+  
+  el.innerHTML = `
+    <div class="savings">-$${(r.totalSavings + r.builder45L).toLocaleString()} Estimated Savings</div>
+    <div class="effective">$${r.effectivePrice.toLocaleString()} Effective*</div>
+    <div class="breakdown">
+      <span class="credit-tag tag-fed">25C Fed: -$${r.fed25C.toLocaleString()}</span>
+      <span class="credit-tag tag-state">${state}: -$${r.stateMid.toLocaleString()}</span>
+      <div style="margin-top:6px"><span class="credit-tag tag-fed">45L Builder: -$${r.builder45L.toLocaleString()}*</span> <span style="color:#444;font-size:10px">when cert complete</span></div>
+    </div>
+  `;
+}
+
+render();
+</script>
+
+<div style="background:#0f0f15;border:1px solid #f9731633;border-radius:12px;padding:24px;margin-top:24px">
+  <h2 style="color:#f97316;font-size:20px;margin-bottom:4px">🚢 Shipping Cost Estimator</h2>
+  <p style="color:#64748b;font-size:13px;margin-bottom:20px">All units ship directly from our factory in China to your nearest port or door. Estimate your freight cost below.</p>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div>
+      <label style="display:block;color:#666;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Container Model</label>
+      <select id="shipModel" style="width:100%;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:10px 12px;border-radius:6px;font-size:13px">
+        <option value="20FT">20FT Expandable / Premium</option>
+        <option value="40FT">40FT Deluxe / Premium</option>
+        <option value="40FTP">40FT Premium+</option>
+      </select>
+    </div>
+    <div>
+      <label style="display:block;color:#666;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Destination</label>
+      <select id="shipDest" style="width:100%;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:10px 12px;border-radius:6px;font-size:13px">
+        <option value="USWC">US West Coast (LA/Long Beach)</option>
+        <option value="USEC">US East Coast (NY/NJ/Savannah)</option>
+        <option value="USGC">US Gulf Coast (Houston)</option>
+        <option value="CAWC">Canada West (Vancouver)</option>
+        <option value="CAEC">Canada East (Montreal/Halifax)</option>
+        <option value="EURO">Europe (Rotterdam/Hamburg)</option>
+        <option value="AUS">Australia (Sydney/Melbourne)</option>
+        <option value="OTHER">Other (request quote)</option>
+      </select>
+    </div>
+  </div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+    <div>
+      <label style="display:block;color:#666;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">Delivery Type</label>
+      <select id="shipType" style="width:100%;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:10px 12px;border-radius:6px;font-size:13px">
+        <option value="port">Port-to-Port (cheapest)</option>
+        <option value="door">Door-to-Door (full service)</option>
+      </select>
+    </div>
+    <div style="display:flex;align-items:flex-end">
+      <button onclick="calcShipping()" style="width:100%;background:#f97316;color:#000;font-weight:700;padding:10px 24px;border-radius:6px;border:none;cursor:pointer;font-size:13px">Calculate Shipping →</button>
+    </div>
+  </div>
+  
+  <div id="shipResult" style="display:none;background:#0a0a0f;border:1px solid #f9731633;border-radius:8px;padding:16px;margin-top:8px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+      <div>
+        <p style="color:#64748b;font-size:11px">Ocean Freight</p>
+        <p id="shipOcean" style="color:#fff;font-size:18px;font-weight:700">—</p>
+      </div>
+      <div>
+        <p style="color:#64748b;font-size:11px">Customs &amp; Duties</p>
+        <p id="shipCustoms" style="color:#fff;font-size:18px;font-weight:700">—</p>
+      </div>
+      <div>
+        <p style="color:#64748b;font-size:11px">Trucking (port to you)</p>
+        <p id="shipTruck" style="color:#fff;font-size:18px;font-weight:700">—</p>
+      </div>
+      <div>
+        <p style="color:#64748b;font-size:11px">Total Shipping</p>
+        <p id="shipTotal" style="color:#22c55e;font-size:22px;font-weight:800">—</p>
+      </div>
+    </div>
+    <p style="color:#444;font-size:11px;margin-top:12px">* Estimates based on current market rates. Final quote provided at order. Door-to-door includes customs clearance and local delivery.</p>
+  </div>
+</div>
+<script>
+function calcShipping() {
+  const model = document.getElementById('shipModel').value;
+  const dest = document.getElementById('shipDest').value;
+  const type = document.getElementById('shipType').value;
+  
+  const OCEAN = {'20FT':{'USWC':2200,'USEC':3500,'USGC':3200,'CAWC':2400,'CAEC':3800,'EURO':2800,'AUS':2000,'OTHER':3500},'40FT':{'USWC':2800,'USEC':4200,'USGC':3900,'CAWC':3000,'CAEC':4500,'EURO':3500,'AUS':2600,'OTHER':4200},'40FTP':{'USWC':3200,'USEC':4800,'USGC':4500,'CAWC':3500,'CAEC':5200,'EURO':4000,'AUS':3000,'OTHER':4800}};
+  const DUTY = {'USWC':0.03,'USEC':0.03,'USGC':0.03,'CAWC':0.05,'CAEC':0.05,'EURO':0.04,'AUS':0.02,'OTHER':0.05};
+  const TRUCK = {'USWC':600,'USEC':800,'USGC':700,'CAWC':700,'CAEC':900,'EURO':900,'AUS':500,'OTHER':1000};
+  const MODELS = {'20FT':14995,'40FT':24995,'40FTP':34995};
+  
+  const ocean = OCEAN[model][dest];
+  const customs = Math.round(MODELS[model] * DUTY[dest]);
+  const truck = TRUCK[dest];
+  const doorFee = type === 'door' ? Math.round(ocean * 0.15) : 0;
+  const total = ocean + doorFee + customs + truck;
+  
+  document.getElementById('shipOcean').textContent = '$' + (ocean + doorFee).toLocaleString() + (type==='door' ? ' (delivered)' : ' (at port)');
+  document.getElementById('shipCustoms').textContent = '$' + customs.toLocaleString();
+  document.getElementById('shipTruck').textContent = '$' + truck.toLocaleString();
+  document.getElementById('shipTotal').textContent = '$' + total.toLocaleString();
+  document.getElementById('shipResult').style.display = 'block';
+  document.getElementById('shipResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

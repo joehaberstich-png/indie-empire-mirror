@@ -1,0 +1,21 @@
+{
+  "id": "logistics-duty-calculator",
+  "role": "Duty Calculator",
+  "team": "Customs & Compliance",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "HS code classification for prefabricated buildings (9406.10/9406.90)",
+    "Country-specific duty rate lookup (US, Canada, EU, Australia, UK)",
+    "Free trade agreement qualification (USMCA, CETA, FTA)",
+    "Duty drawback and deferral program enrollment",
+    "Anti-dumping and countervailing duty monitoring"
+  ],
+  "daily_tasks": [
+    "Classify each container model under correct HS code per destination",
+    "Calculate estimated duties for all active quotes",
+    "Flag any tariff rate changes affecting container homes",
+    "Identify duty savings opportunities via FTAs"
+  ],
+  "benchmark_against": "TradeGecko customs automation, Descartes customs AI",
+  "threshold": "Duty calculations within 3% of actual customs assessment"
+}

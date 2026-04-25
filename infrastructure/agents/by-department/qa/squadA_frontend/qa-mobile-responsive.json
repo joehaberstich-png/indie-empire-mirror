@@ -1,0 +1,8 @@
+{
+  "id": "qa-mobile-responsive",
+  "role": "Mobile Responsiveness Checker",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Viewport testing at 320px, 768px, 1024px, 1440px. Checks overflow, tap target size (min 44px), text readability (min 16px body). Tools: Lighthouse, Puppeteer.",
+  "che[REDACTED]": "Every 12 hours",
+  "alerts_on": "Horizontal scroll, tap target <44px, body text <16px, collapsed nav"
+}

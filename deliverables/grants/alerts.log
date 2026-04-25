@@ -1,0 +1,11 @@
+[2026-04-24 05:23:28] [INFO] ==================================================
+[2026-04-24 05:23:28] [INFO] ATV HOMES GRANT SCANNER — FULL SCAN
+[2026-04-24 05:23:28] [INFO] ==================================================
+[2026-04-24 05:23:28] [INFO] Returning known programs from research database...
+[2026-04-24 05:23:28] [INFO] Loaded 10 known grant programs
+[2026-04-24 05:23:28] [INFO] Scanning grants.gov...
+[2026-04-24 05:23:28] [WARN]   grants.gov scan failed: HTTP Error 404: 
+[2026-04-24 05:23:28] [INFO] Found 0 new matches from grants.gov
+[2026-04-24 05:23:28] [INFO] Saved 10 grants to database
+[2026-04-24 05:23:28] [INFO] Report saved: /var/openclaw_users/saul/.openclaw/workspace/deliverables/grants/grant_report_20260424_052328.md
+[2026-04-24 05:23:28] [INFO] Scan complete: 5 high priority, 5 medium priority

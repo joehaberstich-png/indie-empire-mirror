@@ -1,0 +1,21 @@
+{
+  "last_check": "2026-04-25T02:46:33.393347+00:00",
+  "daemons": {
+    "qa_daemon": {
+      "status": "running"
+    },
+    "ceo_audit": {
+      "status": "running"
+    },
+    "code_protection": {
+      "status": "running"
+    }
+  },
+  "workload": {
+    "project_count": 14,
+    "latest_bugs": 0,
+    "time": "2026-04-25T02:46:33.393296+00:00"
+  },
+  "pid": 63674,
+  "can_hire_unlimited": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "qa-rate-limit",
+  "role": "Rate Limit & Resource Monitor",
+  "squad": "B \u2014 Backend & API",
+  "skill": "Monitors Vercel function execution time (10s limit), file system writes, memory usage, rate limit headers across all API endpoints.",
+  "che[REDACTED]": "Every 15 minutes",
+  "alerts_on": "Function timeout (>9s), rate limit hit, disk quota approaching"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "logistics-experience-manager",
+  "role": "Customer Experience Manager",
+  "team": "Customer Delivery",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Automated tracking update cadence (5 touchpoints per shipment)",
+    "Proactive delay communication and expectation management",
+    "Delivery day coordination (photos, handover protocol)",
+    "Post-delivery satisfaction survey and feedback loop",
+    "Escalation handling for missed delivery windows"
+  ],
+  "daily_tasks": [
+    "Send tracking updates at 5 key milestones (order, booked, departed, arriving, delivered)",
+    "Handle customer inquiries about delivery timing within 2 hours",
+    "Coordinate celebration/confirmation on delivery day",
+    "Send post-delivery survey and Deploy review request"
+  ],
+  "benchmark_against": "Amazon Logistics CX automation, FedEx tracking",
+  "threshold": "Customer satisfaction >4.5/5, response time <2 hours"
+}

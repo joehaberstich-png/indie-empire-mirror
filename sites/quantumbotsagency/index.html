@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Quantum Bots Agency — 100 AI Products, Quantum-Grade Hosting, 24/7 Quantum Assistant</title>
+<meta name="description" content="100 AI products. Quantum-grade hosting. AI agents that sell. From $27/mo. Enterprise AI for every business need.">
+<link rel="stylesheet" href="/quantumbotsagency/css/quantum.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0f;color:#e2e8f0;line-height:1.6}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,15,.95);border-bottom:1px solid #1a1a2e;padding:12px 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.nav .logo{font-size:18px;font-weight:700;color:#818cf8}
+.nav-links a{color:#94a3b8;text-decoration:none;margin-left:20px;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.hero{padding:120px 24px 80px;text-align:center;background:linear-gradient(135deg,#0a0a0f 0%,#13132a 50%,#0a0a0f 100%)}
+.hero h1{font-size:44px;margin-bottom:12px;background:linear-gradient(90deg,#818cf8,#22d3ee,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shimmer 4s ease-in-out infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .subtitle{color:#94a3b8;font-size:17px;max-width:650px;margin:0 auto 24px}
+.hero .stats{display:flex;justify-content:center;gap:40px;margin-top:24px;flex-wrap:wrap}
+.hero .stat{text-align:center}
+.hero .stat-num{font-size:28px;font-weight:700;background:linear-gradient(90deg,#818cf8,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .stat-label{color:#64748b;font-size:12px;margin-top:4px}
+.cat-nav{position:sticky;top:52px;z-index:90;background:rgba(10,10,15,.9);border-bottom:1px solid #1a1a2e;padding:8px 0;overflow-x:auto;text-align:center}
+.cat-nav a{display:inline-block;color:#64748b;text-decoration:none;font-size:11px;padding:4px 10px;margin:0 2px;border-radius:6px;transition:all .2s;white-space:nowrap}
+.cat-nav a:hover{color:#fff;background:rgba(129,140,248,.1)}
+.content{max-width:1100px;margin:0 auto;padding:20px 24px 80px}
+.cat-section{margin-bottom:40px}
+.cat-header{font-size:20px;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid #818cf8;display:flex;align-items:center;gap:8px}
+.cat-header span{font-size:20px}
+.prod-count{font-size:12px;color:#64748b;margin-left:8px}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.prod-card{background:#13131f;border:1px solid #1a1a2e;border-radius:8px;overflow:hidden;transition:all .2s}
+.prod-card:hover{border-color:#818cf8;transform:translateY(-1px)}
+.prod-link{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;text-decoration:none}
+.prod-info h4{color:#e2e8f0;font-size:13px;font-weight:600;margin-bottom:2px}
+.prod-info p{color:#64748b;font-size:11px}
+.prod-price{color:#818cf8;font-weight:700;font-size:14px;white-space:nowrap;margin-left:12px}
+.cta-section{max-width:700px;margin:40px auto;text-align:center;padding:40px 24px;background:linear-gradient(135deg,#0f0f1a,#1a1a2e);border-radius:16px;border:1px solid #2a2a3e}
+.cta-section h2{font-size:24px;margin-bottom:12px}
+.cta-section p{color:#94a3b8;font-size:14px;margin-bottom:20px}
+.cta-btn{display:inline-block;background:#818cf8;color:#000;padding:14px 36px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px}
+.cta-btn:hover{opacity:.9}
+footer{text-align:center;padding:24px;color:#555;font-size:12px}
+.features-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;max-width:900px;margin:0 auto 40px;padding:0 24px}
+.feature-box{background:rgba(129,140,248,.05);border:1px solid #1a1a2e;border-radius:10px;padding:20px;text-align:center}
+.feature-box h3{font-size:14px;color:#818cf8;margin-bottom:6px}
+.feature-box p{font-size:12px;color:#64748b}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Quantum Bots Agency",
+  "description": "100 AI-powered automation products for businesses.",
+  "url": "https://quantumbotsagency.vercel.app",
+  "applicationCategory": "BusinessApplication"
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-inner">
+<a href="/" class="logo">⚡ QBA</a>
+<div class="nav-links">
+<a href="#products">All Products</a>
+<a href="/#hosting">Hosting</a>
+<a href="/#white-label">White Label</a>
+<a href="/api-dashboard.html">API</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<h1>⚡ Quantum Bots Agency</h1>
+<p class="subtitle">100 AI products. Quantum-grade everything. AI agents that actually sell. From $27/month — enterprise power, indie pricing.</p>
+<div class="stats">
+<div class="stat"><div class="stat-num">100</div><div class="stat-label">AI Products</div></div>
+<div class="stat"><div class="stat-num">9</div><div class="stat-label">Categories</div></div>
+<div class="stat"><div class="stat-num">9</div><div class="stat-label">Languages</div></div>
+<div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Quantum Support</div></div>
+</div>
+</section>
+
+<div class="features-row">
+<div class="feature-box"><h3>🤖 Live Sales Agents</h3><p>Interactive bots that sell — not just product pages</p></div>
+<div class="feature-box"><h3>🎬 Hollywood Video Pipeline</h3><p>Auto-generated sales + tutorial videos on purchase</p></div>
+<div class="feature-box"><h3>🔒 Quantum Security</h3><p>Quantum-resistant encryption + zero-trust architecture</p></div>
+<div class="feature-box"><h3>🌐 9-Language Support</h3><p>Multi-lingual AI support with 30-second SLA</p></div>
+</div>
+
+<div class="cat-nav">
+<a href="#core-bots">🤖 Core Bots</a>
+                <a href="#content-creation">✍️ Content Creation</a>
+                <a href="#marketing-sales">🎯 Marketing & Sales</a>
+                <a href="#research-intel">🔍 Research & Intel</a>
+                <a href="#operations-ecom">⚙️ Operations & Ecom</a>
+                <a href="#support-service">💼 Support & Service</a>
+                <a href="#analytics-data">📊 Analytics & Data</a>
+                <a href="#integrations">🔗 Integrations</a>
+                <a href="#security">🛡️ Security</a>
+</div>
+
+<div class="content" id="products">
+
+        <section id="core-bots" class="cat-section">
+            <h2 class="cat-header" style="border-color:#818cf8"><span>🤖</span> Core Bots <span class="prod-count">(6)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/standard-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Standard Bot</h4><p>Entry-level AI chatbot with basic NLP</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/intelligent-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Intelligent Bot</h4><p>Advanced AI with intent recognition</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/advanced-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Advanced Bot</h4><p>Full NLP + decision tree engine</p></div>
+                    <div class="prod-price">$77/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/quantum-light-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Quantum Light Bot</h4><p>Quantum-optimized light assistant</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/full-quantum-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Full Quantum Bot</h4><p>Full quantum AI with all modules</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/affiliate-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Affiliate Bot</h4><p>Affiliate marketing automation bot</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="content-creation" class="cat-section">
+            <h2 class="cat-header" style="border-color:#22c55e"><span>✍️</span> Content Creation <span class="prod-count">(10)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/content-writer.html" class="prod-link">
+                    <div class="prod-info"><h4>AI Content Writer</h4><p>500 SEO blog posts/day</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/video-script-generator.html" class="prod-link">
+                    <div class="prod-info"><h4>Video Script Generator</h4><p>Ready-to-film scripts</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/ebook-creator.html" class="prod-link">
+                    <div class="prod-info"><h4>eBook Creator</h4><p>Full eBook from 1 topic</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/infographic-generator.html" class="prod-link">
+                    <div class="prod-info"><h4>Infographic Generator</h4><p>Data-driven infographics</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/podcast-creator.html" class="prod-link">
+                    <div class="prod-info"><h4>Podcast Creator</h4><p>End-to-end podcast production</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/newsletter-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Newsletter Engine</h4><p>Auto newsletter from RSS</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/social-ad-creator.html" class="prod-link">
+                    <div class="prod-info"><h4>Social Ad Creator</h4><p>AI ad creative generation</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/press-release-writer.html" class="prod-link">
+                    <div class="prod-info"><h4>Press Release Writer</h4><p>AP style press releases</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/case-study-builder.html" class="prod-link">
+                    <div class="prod-info"><h4>Case Study Builder</h4><p>Structured case studies</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/product-description-writer.html" class="prod-link">
+                    <div class="prod-info"><h4>Product Description Writer</h4><p>E-com descriptions at scale</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="marketing-sales" class="cat-section">
+            <h2 class="cat-header" style="border-color:#f59e0b"><span>🎯</span> Marketing & Sales <span class="prod-count">(15)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/seo-optimizer.html" class="prod-link">
+                    <div class="prod-info"><h4>SEO Optimizer</h4><p>On-page SEO optimization</p><div class="prod-card"><a href="/products/retargeting-bot.html" class="prod-link"><div class="prod-info"><h4>Retargeting Bot</h4><p>Smart retargeting automation</p><div class="prod-card"><a href="/products/social-proof-engine.html" class="prod-link"><div class="prod-info"><h4>Social Proof Engine</h4><p>Social proof notifications</p><div class="prod-card"><a href="/products/bridge-page-maker.html" class="prod-link"><div class="prod-info"><h4>Bridge Page Maker</h4><p>Bridge/funnel page builder</p><div class="prod-card"><a href="/products/lead-magnet-builder.html" class="prod-link"><div class="prod-info"><h4>Lead Magnet Builder</h4><p>Lead magnet creation</p><div class="prod-card"><a href="/products/email-campaigner.html" class="prod-link"><div class="prod-info"><h4>Email Campaigner</h4><p>Email campaign automation</p><div class="prod-card"><a href="/products/social-scheduler.html" class="prod-link"><div class="prod-info"><h4>Social Scheduler</h4><p>Multi-platform scheduling</p><div class="prod-card"><a href="/products/budget-allocator.html" class="prod-link"><div class="prod-info"><h4>Budget Allocator</h4><p>Ad budget optimization</p><div class="prod-card"><a href="/products/audience-profiler.html" class="prod-link"><div class="prod-info"><h4>Audience Profiler</h4><p>Audience segmentation & profiling</p><div class="prod-card"><a href="/products/cart-recoverer.html" class="prod-link"><div class="prod-info"><h4>Cart Recoverer</h4><p>Abandoned cart recovery</p></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/social-media-manager.html" class="prod-link">
+                    <div class="prod-info"><h4>Social Media Manager</h4><p>Multi-platform post scheduling</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/email-marketer.html" class="prod-link">
+                    <div class="prod-info"><h4>Email Marketer</h4><p>Automated email campaigns</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/landing-page-builder.html" class="prod-link">
+                    <div class="prod-info"><h4>Landing Page Builder</h4><p>Conversion-optimized pages</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/seo-researcher.html" class="prod-link">
+                    <div class="prod-info"><h4>SEO Researcher</h4><p>Keyword & competitor research</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/lead-scorer.html" class="prod-link">
+                    <div class="prod-info"><h4>Lead Scorer</h4><p>ML lead scoring engine</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/ab-test-tool.html" class="prod-link">
+                    <div class="prod-info"><h4>A/B Test Tool</h4><p>Split testing automation</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/conversion-optimizer.html" class="prod-link">
+                    <div class="prod-info"><h4>Conversion Optimizer</h4><p>CRO with heatmaps</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/retargeting-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Retargeting Engine</h4><p>Smart retargeting campaigns</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/funnel-builder.html" class="prod-link">
+                    <div class="prod-info"><h4>Funnel Builder</h4><p>Multi-step sales funnels</p></div>
+                    <div class="prod-price">$77/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/quora-marketer.html" class="prod-link">
+                    <div class="prod-info"><h4>Quora Marketer</h4><p>Quora answer automation</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/reddit-marketer.html" class="prod-link">
+                    <div class="prod-info"><h4>Reddit Marketer</h4><p>Reddit engagement bots</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/cold-emailer.html" class="prod-link">
+                    <div class="prod-info"><h4>Cold Emailer</h4><p>Cold email sequences</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/sms-marketer.html" class="prod-link">
+                    <div class="prod-info"><h4>SMS Marketer</h4><p>Bulk SMS campaigns</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/webinar-automation.html" class="prod-link">
+                    <div class="prod-info"><h4>Webinar Automation</h4><p>Webinar funnel automation</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="research-intel" class="cat-section">
+            <h2 class="cat-header" style="border-color:#06b6d4"><span>🔍</span> Research & Intel <span class="prod-count">(10)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/market-researcher.html" class="prod-link">
+                    <div class="prod-info"><h4>Market Researcher</h4><p>Market analysis research</p><div class="prod-card"><a href="/products/clickbank-analyzer.html" class="prod-link"><div class="prod-info"><h4>ClickBank Analyzer</h4><p>Gravity score analysis + product validation</p><div class="prod-card"><a href="/products/market-analyzer.html" class="prod-link"><div class="prod-info"><h4>Market Analyzer</h4><p>Market opportunity analysis</p><div class="prod-card"><a href="/products/competitor-tracker.html" class="prod-link"><div class="prod-info"><h4>Competitor Tracker</h4><p>Real-time competitor monitoring</p><div class="prod-card"><a href="/products/trend-detector.html" class="prod-link"><div class="prod-info"><h4>Trend Detector</h4><p>Trend discovery & prediction</p><div class="prod-card"><a href="/products/product-validator.html" class="prod-link"><div class="prod-info"><h4>Product Validator</h4><p>Product-market fit validation</p><div class="prod-card"><a href="/products/niche-finder.html" class="prod-link"><div class="prod-info"><h4>Niche Finder</h4><p>Low-competition niche discovery</p><div class="prod-card"><a href="/products/keyword-explorer.html" class="prod-link"><div class="prod-info"><h4>Keyword Explorer</h4><p>Deep keyword research & clustering</p><div class="prod-card"><a href="/products/content-gap-finder.html" class="prod-link"><div class="prod-info"><h4>Content Gap Finder</h4><p>Content gap analysis</p><div class="prod-card"><a href="/products/ad-spy-tool.html" class="prod-link"><div class="prod-info"><h4>Ad Spy Tool</h4><p>Competitor ad intelligence</p><div class="prod-card"><a href="/products/pinterest-bot.html" class="prod-link"><div class="prod-info"><h4>Pinterest Bot</h4><p>Pinterest auto-pinner</p></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/scraper-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Scraper Engine</h4><p>Web scraping automation</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/sentiment-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>Sentiment Analyzer</h4><p>Sentiment analysis engine</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/trend-finder.html" class="prod-link">
+                    <div class="prod-info"><h4>Trend Finder</h4><p>Trend discovery tool</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/competitor-intel.html" class="prod-link">
+                    <div class="prod-info"><h4>Competitor Intel</h4><p>Competitor monitoring</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/keyword-researcher.html" class="prod-link">
+                    <div class="prod-info"><h4>Keyword Researcher</h4><p>Keyword discovery & clustering</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/product-scout.html" class="prod-link">
+                    <div class="prod-info"><h4>Product Scout</h4><p>Product opportunity finder</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/review-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>Review Analyzer</h4><p>Review sentiment analysis</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/price-tracker.html" class="prod-link">
+                    <div class="prod-info"><h4>Price Tracker</h4><p>Competitor price monitoring</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/survey-creator.html" class="prod-link">
+                    <div class="prod-info"><h4>Survey Creator</h4><p>Survey design & analytics</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="operations-ecom" class="cat-section">
+            <h2 class="cat-header" style="border-color:#a855f7"><span>⚙️</span> Operations & Ecom <span class="prod-count">(6)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/invoice-generator.html" class="prod-link">
+                    <div class="prod-info"><h4>Invoice Generator</h4><p>Invoice automation</p><div class="prod-card"><a href="/products/store-builder.html" class="prod-link"><div class="prod-info"><h4>Store Builder</h4><p>E-commerce store builder</p><div class="prod-card"><a href="/products/subscription-manager.html" class="prod-link"><div class="prod-info"><h4>Subscription Manager</h4><p>Subscription management</p><div class="prod-card"><a href="/products/product-listing-optimizer.html" class="prod-link"><div class="prod-info"><h4>Listing Optimizer</h4><p>Product listing optimization</p><div class="prod-card"><a href="/products/task-manager.html" class="prod-link"><div class="prod-info"><h4>Task Manager</h4><p>AI task management</p><div class="prod-card"><a href="/products/workflow-builder.html" class="prod-link"><div class="prod-info"><h4>Workflow Builder</h4><p>Custom workflow automation</p><div class="prod-card"><a href="/products/crm-sync.html" class="prod-link"><div class="prod-info"><h4>CRM Sync</h4><p>CRM data synchronization</p><div class="prod-card"><a href="/products/contract-analyzer.html" class="prod-link"><div class="prod-info"><h4>Contract Analyzer</h4><p>Contract review & analysis</p><div class="prod-card"><a href="/products/compliance-checker.html" class="prod-link"><div class="prod-info"><h4>Compliance Checker</h4><p>Regulatory compliance checks</p></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$57/mo</div></a></div></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/order-manager.html" class="prod-link">
+                    <div class="prod-info"><h4>Order Manager</h4><p>Order processing automation</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/inventory-optimizer.html" class="prod-link">
+                    <div class="prod-info"><h4>Inventory Optimizer</h4><p>Smart inventory management</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/shipping-automation.html" class="prod-link">
+                    <div class="prod-info"><h4>Shipping Automation</h4><p>Shipping label & tracking</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/review-collector.html" class="prod-link">
+                    <div class="prod-info"><h4>Review Collector</h4><p>Review request automation</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/chat-support.html" class="prod-link">
+                    <div class="prod-info"><h4>Chat Support</h4><p>Live chat + AI support</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="support-service" class="cat-section">
+            <h2 class="cat-header" style="border-color:#ec4899"><span>💼</span> Support & Service <span class="prod-count">(10)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/customer-support-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Customer Support Bot</h4><p>24/7 support in 9 languages</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/live-chat-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Live Chat Bot</h4><p>Browser chat widget</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/ticketing-system.html" class="prod-link">
+                    <div class="prod-info"><h4>Ticketing System</h4><p>Customer ticketing</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/faq-automation.html" class="prod-link">
+                    <div class="prod-info"><h4>FAQ Automation</h4><p>Auto FAQ generation</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/onboarding-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Onboarding Engine</h4><p>User onboarding sequences</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/feedback-collector.html" class="prod-link">
+                    <div class="prod-info"><h4>Feedback Collector</h4><p>Multi-channel feedback</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/knowledge-base.html" class="prod-link">
+                    <div class="prod-info"><h4>Knowledge Base</h4><p>Self-service knowledge base</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/crm-automation.html" class="prod-link">
+                    <div class="prod-info"><h4>CRM Automation</h4><p>Full CRM with lead scoring</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/chatbot-builder.html" class="prod-link">
+                    <div class="prod-info"><h4>Chatbot Builder</h4><p>No-code chatbot builder</p></div>
+                    <div class="prod-price">$77/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/voice-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Voice Bot</h4><p>AI voice agent</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="analytics-data" class="cat-section">
+            <h2 class="cat-header" style="border-color:#3b82f6"><span>📊</span> Analytics & Data <span class="prod-count">(10)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/seo-audit-tool.html" class="prod-link">
+                    <div class="prod-info"><h4>SEO Audit Tool</h4><p>Technical SEO audit</p><div class="prod-card"><a href="/products/analytics-dashboard.html" class="prod-link"><div class="prod-info"><h4>Analytics Dashboard</h4><p>Real-time business analytics</p><div class="prod-card"><a href="/products/traffic-analyzer.html" class="prod-link"><div class="prod-info"><h4>Traffic Analyzer</h4><p>Website traffic analysis</p><div class="prod-card"><a href="/products/report-generator.html" class="prod-link"><div class="prod-info"><h4>Report Generator</h4><p>Automated report generation</p><div class="prod-card"><a href="/products/custom-dashboard.html" class="prod-link"><div class="prod-info"><h4>Custom Dashboard</h4><p>Build-your-own dashboard</p><div class="prod-card"><a href="/products/backlink-checker.html" class="prod-link"><div class="prod-info"><h4>Backlink Checker</h4><p>Backlink analysis & monitoring</p><div class="prod-card"><a href="/products/ab-testing-engine.html" class="prod-link"><div class="prod-info"><h4>A/B Testing Engine</h4><p>Statistical split testing engine</p></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$47/mo</div></a></div></div><div class="prod-price">$27/mo</div></a></div></div><div class="prod-price">$37/mo</div></a></div></div><div class="prod-price">$57/mo</div></a></div></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/competitor-seo-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>Competitor SEO Analyzer</h4><p>Gap analysis</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/rank-tracker.html" class="prod-link">
+                    <div class="prod-info"><h4>Rank Tracker</h4><p>Daily SERP tracking</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/data-warehouse.html" class="prod-link">
+                    <div class="prod-info"><h4>Data Warehouse</h4><p>Centralized data with 500+ connectors</p></div>
+                    <div class="prod-price">$197/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/reporting-dashboard.html" class="prod-link">
+                    <div class="prod-info"><h4>Reporting Dashboard</h4><p>Unified business dashboard</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/data-cleaner.html" class="prod-link">
+                    <div class="prod-info"><h4>Data Cleaner</h4><p>Deduplication & cleaning</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/forecast-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Forecast Engine</h4><p>ML revenue forecasting</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/heatmap-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>Heatmap Analyzer</h4><p>User behavior heatmaps</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/survey-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>Survey Analyzer</h4><p>Survey data analysis</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/ab-testing-analyzer.html" class="prod-link">
+                    <div class="prod-info"><h4>A/B Testing Analyzer</h4><p>Bayesian test analysis</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="integrations" class="cat-section">
+            <h2 class="cat-header" style="border-color:#14b8a6"><span>🔗</span> Integrations <span class="prod-count">(10)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/api-connector.html" class="prod-link">
+                    <div class="prod-info"><h4>API Connector</h4><p>100+ pre-built connectors</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/webhook-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Webhook Engine</h4><p>Webhook processing</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/zapier-clone.html" class="prod-link">
+                    <div class="prod-info"><h4>Zapier Clone</h4><p>Internal automation platform</p></div>
+                    <div class="prod-price">$147/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/slack-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Slack Bot</h4><p>Custom Slack automations</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/discord-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>Discord Bot</h4><p>Discord community bot</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/sms-automation.html" class="prod-link">
+                    <div class="prod-info"><h4>SMS Automation</h4><p>Two-way SMS marketing</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/whatsapp-bot.html" class="prod-link">
+                    <div class="prod-info"><h4>WhatsApp Bot</h4><p>WhatsApp Business API</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/calendar-sync.html" class="prod-link">
+                    <div class="prod-info"><h4>Calendar Sync</h4><p>Cross-platform calendar sync</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/payment-gateway.html" class="prod-link">
+                    <div class="prod-info"><h4>Payment Gateway</h4><p>Unified payment processing</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/email-verifier.html" class="prod-link">
+                    <div class="prod-info"><h4>Email Verifier</h4><p>Real-time email verification</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+        <section id="security" class="cat-section">
+            <h2 class="cat-header" style="border-color:#ef4444"><span>🛡️</span> Security <span class="prod-count">(14)</span></h2>
+            <div class="prod-grid">
+            <div class="prod-card">
+                <a href="/products/firewall.html" class="prod-link">
+                    <div class="prod-info"><h4>Quantum Firewall</h4><p>WAF with quantum detection</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/pii-scanner.html" class="prod-link">
+                    <div class="prod-info"><h4>PII Scanner</h4><p>Personal info detection</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/vulnerability-scanner.html" class="prod-link">
+                    <div class="prod-info"><h4>Vulnerability Scanner</h4><p>CVE matching</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/access-control.html" class="prod-link">
+                    <div class="prod-info"><h4>Access Control</h4><p>RBAC + SSO + MFA</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/audit-logger.html" class="prod-link">
+                    <div class="prod-info"><h4>Audit Logger</h4><p>Immutable audit logging</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/incident-responder.html" class="prod-link">
+                    <div class="prod-info"><h4>Incident Responder</h4><p>Automated incident response</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/certificate-manager.html" class="prod-link">
+                    <div class="prod-info"><h4>Certificate Manager</h4><p>SSL/TLS lifecycle</p></div>
+                    <div class="prod-price">$27/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/backup-manager.html" class="prod-link">
+                    <div class="prod-info"><h4>Backup Manager</h4><p>Automated backup + integrity</p></div>
+                    <div class="prod-price">$47/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/compliance-scanner.html" class="prod-link">
+                    <div class="prod-info"><h4>Compliance Scanner 360</h4><p>Multi-framework compliance</p></div>
+                    <div class="prod-price">$127/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/identity-verifier.html" class="prod-link">
+                    <div class="prod-info"><h4>Identity Verifier</h4><p>KYC/AML verification</p></div>
+                    <div class="prod-price">$57/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/threat-intel.html" class="prod-link">
+                    <div class="prod-info"><h4>Threat Intelligence</h4><p>50+ threat feed sources</p></div>
+                    <div class="prod-price">$97/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/malware-scanner.html" class="prod-link">
+                    <div class="prod-info"><h4>Malware Scanner</h4><p>Multi-engine scanning</p></div>
+                    <div class="prod-price">$37/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/zero-trust-engine.html" class="prod-link">
+                    <div class="prod-info"><h4>Zero Trust Engine</h4><p>Full zero-trust architecture</p></div>
+                    <div class="prod-price">$147/mo</div>
+                </a>
+            </div>
+            <div class="prod-card">
+                <a href="/products/data-encryption.html" class="prod-link">
+                    <div class="prod-info"><h4>Data Encryption Suite</h4><p>Quantum-resistant encryption</p></div>
+                    <div class="prod-price">$67/mo</div>
+                </a>
+            </div>
+            </div>
+        </section>
+
+<section class="cta-section">
+<h2>🎯 Need Something Custom?</h2>
+<p>White-label solutions, custom integrations, enterprise deployments. Our 40,000 quantum AI agents can build anything.</p>
+<a href="/api-dashboard.html" class="cta-btn">Talk to a Quantum Agent →</a>
+</section>
+</div>
+
+<footer>
+<p>© 2026 Quantum Bots Agency · 100 AI Products · Built by 40,000 Quantum AI Agents<br>
+<span style="color:#555;font-size:10px">⚡ Quantum Bots Agency — quantumbotsagency.com</span></p>
+</footer>
+<script src="/quantumbotsagency/js/quantum-chat.js"></script>
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "id": "logistics-transit-tracker",
+  "role": "Transit Tracker",
+  "team": "Freight & Route Planning",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Real-time AIS vessel tracking integration",
+    "ETA prediction with port congestion adjustment",
+    "Automatic delay alerts (weather, labor, mechanical)",
+    "Customer-facing tracking portal population",
+    "Historical transit time analytics for route improvement"
+  ],
+  "daily_tasks": [
+    "Poll AIS data for all in-transit shipments",
+    "Calculate adjusted ETAs based on current vessel position",
+    "Flag any shipment >24h behind schedule",
+    "Push tracking update to customer delivery feed"
+  ],
+  "benchmark_against": "Project44, FourKites visibility platforms",
+  "threshold": "ETA accuracy within 24 hours on 95% of shipments"
+}

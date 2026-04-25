@@ -1,0 +1,8 @@
+{
+  "id": "qa-xss-injection",
+  "role": "XSS/Injection Scanner",
+  "squad": "D \u2014 Security & Compliance",
+  "skill": "Tests all user inputs for script injection (<script>, onerror, javascript:), SQL injection, HTML injection, SSRF, template injection. Tools: OWASP ZAP, custom payloads.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Reflected XSS, stored XSS, SQL error leaked, template injection"
+}

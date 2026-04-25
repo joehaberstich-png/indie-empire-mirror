@@ -1,0 +1,425 @@
+{
+  "version": 2,
+  "name": "atv-homes",
+  "builds": [
+    {
+      "src": "/api/lib/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/api/v1/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/api/v2/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/api/webhook/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/tos/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/privacy/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/warranty/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/returns/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/robots.txt",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/.well-known/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/.well-known/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/blog/**/**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/api/status.json",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/secure/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/affiliate/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/shipping/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/green-incentives/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/calculator/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/products/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/tv/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "/robots.txt",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/robots.txt$",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "^/secure/?$",
+      "dest": "/secure/index.html"
+    },
+    {
+      "src": "^/api/status.json$",
+      "dest": "/api/status.json"
+    },
+    {
+      "src": "^/blog/?$",
+      "dest": "/blog/index.html"
+    },
+    {
+      "src": "^/blog/container-home-total-cost/?$",
+      "dest": "/blog/container-home-total-cost/index.html"
+    },
+    {
+      "src": "^/blog/why-container-homes-cost-what-they-do/?$",
+      "dest": "/blog/why-container-homes-cost-what-they-do/index.html"
+    },
+    {
+      "src": "^/blog/are-container-homes-cold-or-hot/?$",
+      "dest": "/blog/are-container-homes-cold-or-hot/index.html"
+    },
+    {
+      "src": "^/blog/container-home-size-and-layout/?$",
+      "dest": "/blog/container-home-size-and-layout/index.html"
+    },
+    {
+      "src": "^/blog/container-home-lifespan-durability/?$",
+      "dest": "/blog/container-home-lifespan-durability/index.html"
+    },
+    {
+      "src": "^/blog/container-home-permits-guide/?$",
+      "dest": "/blog/container-home-permits-guide/index.html"
+    },
+    {
+      "src": "^/blog/container-home-delivery-assembly/?$",
+      "dest": "/blog/container-home-delivery-assembly/index.html"
+    },
+    {
+      "src": "^/blog/where-to-put-container-home-no-land/?$",
+      "dest": "/blog/where-to-put-container-home-no-land/index.html"
+    },
+    {
+      "src": "^/blog/buy-container-home-no-mortgage/?$",
+      "dest": "/blog/buy-container-home-no-mortgage/index.html"
+    },
+    {
+      "src": "^/blog/container-home-investment-roi/?$",
+      "dest": "/blog/container-home-investment-roi/index.html"
+    },
+    {
+      "src": "^/blog/are-container-homes-safe-hurricane/?$",
+      "dest": "/blog/are-container-homes-safe-hurricane/index.html"
+    },
+    {
+      "src": "^/blog/are-shipping-container-homes-toxic/?$",
+      "dest": "/blog/are-shipping-container-homes-toxic/index.html"
+    },
+    {
+      "src": "^/blog/tiny-house-vs-container-home/?$",
+      "dest": "/blog/tiny-house-vs-container-home/index.html"
+    },
+    {
+      "src": "^/blog/shipping-container-homes-guide/?$",
+      "dest": "/blog/shipping-container-homes-guide/index.html"
+    },
+    {
+      "src": "^/.well-known/ai.json$",
+      "dest": "/.well-known/ai.json"
+    },
+    {
+      "src": "^/.well-known/llms.txt$",
+      "dest": "/.well-known/llms.txt"
+    },
+    {
+      "src": "^/.well-known/change-log.json$",
+      "dest": "/.well-known/change-log.json"
+    },
+    {
+      "src": "^/api/ai/(.*)$",
+      "dest": "/api/ai.js"
+    },
+    {
+      "src": "^/api/seo/(.*)$",
+      "dest": "/api/seo.js"
+    },
+    {
+      "src": "^/api/track/(.*)$",
+      "dest": "/api/track.js"
+    },
+    {
+      "src": "^/api/products$",
+      "dest": "/api/products.js"
+    },
+    {
+      "src": "^/api/plugins$",
+      "dest": "/api/plugins.js"
+    },
+    {
+      "src": "^/api/status/?$",
+      "dest": "/api/status.json"
+    },
+    {
+      "src": "^/api/v1/email/(.*)$",
+      "dest": "/api/v1/email.js"
+    },
+    {
+      "src": "^/api/v1/lead/(.*)$",
+      "dest": "/api/v1/lead.js"
+    },
+    {
+      "src": "^/api/v1/lead$",
+      "dest": "/api/v1/lead.js"
+    },
+    {
+      "src": "^/api/v2/inventory(/?.*)$",
+      "dest": "/api/v2/inventory.js"
+    },
+    {
+      "src": "^/api/v2/reviews(.*)$",
+      "dest": "/api/v2/reviews.js"
+    },
+    {
+      "src": "^/api/webhook/stripe$",
+      "dest": "/api/webhook/stripe.js"
+    },
+    {
+      "src": "^/tos/?$",
+      "dest": "/tos/index.html"
+    },
+    {
+      "src": "^/privacy/?$",
+      "dest": "/privacy/index.html"
+    },
+    {
+      "src": "^/warranty/?$",
+      "dest": "/warranty/index.html"
+    },
+    {
+      "src": "^/returns/?$",
+      "dest": "/returns/index.html"
+    },
+    {
+      "src": "^/affiliate/?$",
+      "dest": "/affiliate/index.html"
+    },
+    {
+      "src": "^/products$",
+      "dest": "/index.html",
+      "status": 301
+    },
+    {
+      "src": "^/blog$",
+      "dest": "/index.html",
+      "status": 301
+    },
+    {
+      "src": "^/tv$",
+      "dest": "/index.html",
+      "status": 301
+    },
+    {
+      "src": "^/secure/?$",
+      "dest": "/secure/index.html"
+    },
+    {
+      "src": "^/shipping/?$",
+      "dest": "/shipping/index.html"
+    },
+    {
+      "src": "^/green-incentives/?$",
+      "dest": "/green-incentives/index.html"
+    },
+    {
+      "src": "^/calculator/?$",
+      "dest": "/calculator/index.html"
+    },
+    {
+      "src": "^/products/?$",
+      "dest": "/products/index.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(self)"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://buy.stripe.com https://js.stripe.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src 'self'; connect-src 'self' https://api.stripe.com https://buy.stripe.com; img-src 'self' data: https:; base-uri 'self'; form-action 'self' https://buy.stripe.com;"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/blog/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/wp-admin(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/.env",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/.git(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/config(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/admin(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/backend(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    },
+    {
+      "source": "/node_modules(.*)",
+      "destination": "https://atvhomes.com",
+      "permanent": true
+    }
+  ],
+  "rewrites": []
+}

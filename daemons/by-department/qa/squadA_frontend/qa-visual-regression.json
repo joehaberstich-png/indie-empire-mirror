@@ -1,0 +1,8 @@
+{
+  "id": "qa-visual-regression",
+  "role": "Visual Regression Detector",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Pixel-by-pixel screenshot diffing, layout shift detection, font rendering validation. Tools: Puppeteer, Pixelmatch, Percy API.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Layout shift >3px, font fallback mismatch, missing assets in render"
+}

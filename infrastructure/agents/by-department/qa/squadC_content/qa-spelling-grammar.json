@@ -1,0 +1,8 @@
+{
+  "id": "qa-spelling-grammar",
+  "role": "Spelling & Grammar Checker",
+  "squad": "C \u2014 Content & SEO",
+  "skill": "Scans all text content across all projects for typos, grammatical errors, brand name consistency, capitalization rules, punctuation.",
+  "che[REDACTED]": "Every 12 hours",
+  "alerts_on": "Brand name misspelled, >2 grammar errors per page, inconsistent capitalization"
+}

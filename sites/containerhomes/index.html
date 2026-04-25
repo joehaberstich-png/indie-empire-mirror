@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- DEPLOY_V:20260424_1824 -->
+<title>ATV Homes — Expandable Container Homes from $14,995</title>
+<meta name="description" content="ATV Homes — premium expandable container homes. 20FT and 40FT models starting at $14,995. Global shipping available — use our calculator.">
+<meta property="og:title" content="ATV Homes — Expandable Container Homes from $14,995">
+<meta property="og:description" content="ATV Homes — premium expandable container homes starting at $14,995 with global shipping available.">
+<meta property="og:type" content="website">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://buy.stripe.com https://js.stripe.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src https://buy.stripe.com https://js.stripe.com; connect-src 'self' https://api.stripe.com https://buy.stripe.com; img-src 'self' data: https:; base-uri 'self'; form-action 'self' https://buy.stripe.com;">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ATV Homes","url":"https://containerhomes.com","offers":[{"@type":"Offer","name":"20FT Expandable","price":"14995","priceCurrency":"USD"},{"@type":"Offer","name":"20FT Premium","price":"19995","priceCurrency":"USD"},{"@type":"Offer","name":"40FT Deluxe","price":"24995","priceCurrency":"USD"},{"@type":"Offer","name":"40FT Premium","price":"34995","priceCurrency":"USD"}]}</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0a0a0f;color:#e0e0e0;line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Brand Bar */
+.brand-bar{height:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a855f7)}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:#0a0a0fee;backdrop-filter:blur(12px);border-bottom:1px solid #1a1a25}
+header .container{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+.logo-text{font-weight:700;color:#fff;font-size:18px}
+.logo-sub{color:#555;font-size:11px}
+nav{display:flex;gap:24px;font-size:14px}
+nav a{color:#888;text-decoration:none;transition:color .2s}
+nav a:hover{color:#fff}
+.btn-header{background:#6366f1;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none;transition:background .2s}
+.btn-header:hover{background:#5558e6}
+
+/* Hero */
+.hero{padding:80px 0;text-align:center;border-bottom:1px solid #1a1a25;background:radial-gradient(ellipse at top,#111120 0%,#0a0a0f 70%)}
+.hero-tag{display:inline-block;font-size:13px;color:#818cf8;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);padding:6px 16px;border-radius:100px;margin-bottom:24px}
+.hero h1{font-size:clamp(36px,7vw,72px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.hero h1 span{background:linear-gradient(135deg,#818cf8,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:#888;max-width:640px;margin:0 auto 32px}
+.hero-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;font-size:14px;color:#666}
+.hero-badges span{background:#111120;padding:6px 14px;border-radius:6px;border:1px solid #1a1a25}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#6366f1;color:#fff;padding:14px 32px;border-radius:12px;font-weight:600;font-size:17px;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:#5558e6;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:#ccc;padding:14px 32px;border-radius:12px;font-weight:600;font-size:17px;text-decoration:none;border:1px solid #333;transition:all .2s}
+.btn-secondary:hover{border-color:#6366f1;color:#fff}
+
+/* Section headers */
+.section{padding:80px 0;border-bottom:1px solid #1a1a25}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;margin-bottom:12px}
+.section-title p{font-size:16px;color:#888;max-width:540px;margin:0 auto}
+
+/* Products Grid */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.product-card{background:linear-gradient(145deg,#111120,#13131a);border-radius:12px;padding:24px;border:1px solid #1a1a25;display:flex;flex-direction:column;transition:all .3s}
+.product-card:hover{transform:translateY(-3px);border-color:rgba(99,102,241,.3);box-shadow:0 12px 32px rgba(99,102,241,.08)}
+.product-badge{display:inline-block;font-size:11px;padding:4px 10px;border-radius:100px;font-weight:600;margin-bottom:16px;align-self:flex-start}
+.badge-seller{background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.25)}
+.badge-premium{background:rgba(168,85,247,.15);color:#a78bfa;border:1px solid rgba(168,85,247,.25)}
+.badge-flagship{background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.25)}
+.product-name{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.product-desc{font-size:13px;color:#888;margin-bottom:16px;flex-grow:1}
+.product-features{list-style:none;font-size:13px;color:#aaa;margin-bottom:20px;line-height:2}
+.product-features li::before{content:"\2713";color:#6366f1;margin-right:8px}
+.product-price{font-size:32px;font-weight:800;color:#fff}
+.product-price-sub{font-size:12px;color:#666;margin-bottom:16px}
+.btn-buy{display:block;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;transition:all .2s;color:#fff}
+.btn-buy-indigo{background:#6366f1}
+.btn-buy-indigo:hover{background:#5558e6}
+.btn-buy-purple{background:#8b5cf6}
+.btn-buy-purple:hover{background:#7c4dec}
+.btn-buy-amber{background:#d97706}
+.btn-buy-amber:hover{background:#b45309}
+
+/* Use Cases Grid */
+.usecases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.usecase-item{padding:12px 8px;text-align:center;border:1px solid #1a1a25;border-radius:8px;font-size:13px;color:#888;transition:all .2s;text-decoration:none}
+.usecase-item:hover{border-color:rgba(99,102,241,.4);color:#fff}
+.usecase-icon{font-size:22px;display:block;margin-bottom:4px}
+
+/* Features Grid */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.feature-card{background:#111120;border-radius:12px;padding:24px;border:1px solid #1a1a25}
+.feature-icon{font-size:28px;margin-bottom:12px;display:block}
+.feature-card h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:6px}
+.feature-card p{font-size:13px;color:#888}
+
+/* Blog Grid */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.blog-card{display:block;background:#111120;border-radius:12px;padding:20px;border:1px solid #1a1a25;text-decoration:none;transition:all .2s}
+.blog-card:hover{border-color:rgba(99,102,241,.3)}
+.blog-tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:100px;background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.2);margin-bottom:10px}
+.blog-card h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+.blog-card p{font-size:13px;color:#888}
+.blog-more{text-align:center;margin-top:24px}
+.blog-more a{color:#818cf8;text-decoration:none;font-size:14px}
+.blog-more a:hover{text-decoration:underline}
+
+/* QBA Footer */
+.qba-section{padding:40px 0;text-align:center}
+.qba-box{display:inline-block;background:linear-gradient(135deg,rgba(99,102,241,.05),rgba(168,85,247,.05));border:1px solid rgba(99,102,241,.15);border-radius:16px;padding:32px 40px;max-width:500px}
+.qba-box p{font-size:13px;color:#888;margin-bottom:8px}
+.qba-box h3{font-size:16px;font-weight:600;color:#fff;margin-bottom:4px}
+.qba-box a{color:#818cf8;text-decoration:none;font-size:13px}
+.qba-box a:hover{text-decoration:underline}
+
+/* Footer */
+footer{border-top:1px solid #1a1a25;padding:40px 0}
+footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer p{font-size:12px;color:#555}
+footer .links{display:flex;gap:16px}
+footer .links a{font-size:12px;color:#555;text-decoration:none;transition:color .2s}
+footer .links a:hover{color:#888}
+
+/* Stripe promo section */
+.stripe-badge{margin-top:32px;padding:16px 24px;background:rgba(99,102,241,.03);border:1px solid #1a1a25;border-radius:12px;text-align:center;display:inline-block}
+.stripe-badge p{font-size:12px;color:#555}
+
+/* Responsive */
+@media(max-width:640px){.products-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.usecases-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Flash Sale + Urgency */
+.flash-sale-banner{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;padding:10px;text-align:center;font-weight:700;font-size:14px;animation:pulse 2s infinite;position:relative;z-index:100}
+.flash-sale-banner .countdown{display:inline-block;background:rgba(0,0,0,0.3);padding:3px 10px;border-radius:4px;margin-left:8px;font-family:monospace;font-size:16px}
+.flash-sale-banner .dismiss{position:absolute;right:15px;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:18px;cursor:pointer;opacity:0.7}
+.flash-sale-banner .dismiss:hover{opacity:1}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.9}}
+.sale-price{color:#ef4444;font-weight:800;font-size:24px}
+.original-price{text-decoration:line-through;color:#666;font-size:16px}
+.urgency-tag{background:#ef4444;color:#fff;font-size:11px;padding:2px 8px;border-radius:10px;display:inline-block;margin-left:8px;animation:pulse 1.5s infinite}
+.offer-card{background:linear-gradient(135deg,#1a1a2e,#16213e);border:2px solid #f59e0b;border-radius:12px;padding:25px;margin:30px 0;text-align:center;position:relative}
+.offer-card::before{content:"⚡ LIMITED OFFER";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;padding:4px 20px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px}
+.offer-card h3{color:#f59e0b;font-size:20px;margin-bottom:10px}
+.offer-card .timer{font-family:monospace;font-size:28px;color:#fff;background:#0a0a0f;padding:8px 16px;border-radius:8px;display:inline-block;margin:10px 0}
+.offer-card .claim-btn{background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;border:none;padding:14px 40px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:15px;transition:transform 0.2s}
+.offer-card .claim-btn:hover{transform:scale(1.05)}
+.offer-card .stock-counter{color:#888;font-size:12px;margin-top:12px}
+.offer-details{display:none;background:#111120;border-radius:8px;padding:15px;margin-top:15px;text-align:left}
+.offer-details.show{display:block}
+.savings-badge{background:#22c55e;color:#fff;padding:3px 12px;border-radius:12px;font-size:13px;font-weight:700;margin-left:8px}
+</style>
+
+<!-- === ATV HOMES SEO + ANALYTICS STACK === -->
+<!-- Replaces: Yoast, RankMath, Schema Pro, GA4, MonsterInsights, WP Rocket -->
+
+<!-- 1. JSON-LD STRUCTURED DATA (replaces Schema Pro / RankMath) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "ATV Homes",
+      "url": "https://atvhomes.com",
+      "description": "Premium expandable container homes with global shipping available.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Cheyenne", "addressRegion": "WY"},
+      "contactPoint": {"@type": "ContactPoint", "contactType": "sales", "url": "https://atvhomes.com"}
+    },
+    {
+      "@type": "Product",
+      "name": "20FT Expandable Container Home",
+      "description": "400 sq ft expandable container home. Delivered and assembled.",
+      "brand": {"@type": "Brand", "name": "ATV Homes"},
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "9945",
+        "highPrice": "28550",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 2. CANONICAL URL (replaces Yoast canonical) -->
+<link rel="canonical" href="https://atvhomes.com">
+
+<!-- 3. OPEN GRAPH (replaces Yoast social media meta) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atvhomes.com">
+<meta property="og:site_name" content="ATV Homes">
+<meta property="og:image" content="https://atvhomes.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- 4. TWITTER CARDS (replaces Yoast Twitter meta) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://buy.stripe.com https://js.stripe.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src https://buy.stripe.com https://js.stripe.com; connect-src 'self' https://api.stripe.com https://buy.stripe.com; img-src 'self' data: https:; base-uri 'self'; form-action 'self' https://buy.stripe.com;">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ATV Homes — Expandable Container Homes from $14,995">
+<meta name="twitter:description" content="Premium expandable container homes starting at $14,995 with global shipping.">
+
+<!-- 5. MICROSOFT CLARITY (free heatmaps + session recordings — replaces Hotjar) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
+</script>
+
+<!-- 6. PLAUSIBLE ANALYTICS (privacy-first GA4 alternative — 1KB, no cookie banner needed) -->
+<!-- Uncomment below once Plausible account is created -->
+<!-- <script defer data-domain="atvhomes.com" src="https://plausible.io/js/script.js"></script> -->
+
+<!-- 7. CONVERSION TRACKING (server-side — survives ad blockers) -->
+<script>
+(function() {
+  // Track pageview to our API
+  fetch('/api/track/pageview', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      page: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      source: new URLSearchParams(window.location.search).get('utm_source') || 'organic'
+    })
+  }).catch(() => {});
+
+  // Facebook Pixel base code (uncomment when FB Pixel ID is set)
+  // !function(f,b,e,v,n,t,s){...}(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  // fbq('init', 'YOUR_PIXEL_ID');
+  // fbq('track', 'PageView');
+
+  // Google Ads Global Site Tag (uncomment when Google tag is set)
+  // window.dataLayer = window.dataLayer || [];
+  // function gtag(){dataLayer.push(arguments);}
+  // gtag('js', new Date());
+  // gtag('config', 'G-XXXXXXXXXX');
+})();
+</script>
+
+<!-- 8. PRELOAD CRITICAL RESOURCES (replaces WP Rocket preload) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+
+<!-- 9. BROWSER CACHING (replaces WP Rocket browser cache) -->
+<meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+
+<!-- 10. ROBOTS META (replaces Yoast robots) -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<meta name="security" content="https://atvhomes.com/secure/">
+</head>
+<body>
+<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:40px 20px;text-align:center;border-bottom:1px solid #6366f1">
+  <div style="max-width:780px;margin:0 auto">
+    <h2 style="color:#fff;font-size:24px;margin-bottom:8px">New Pricing, Same Value</h2>
+    <p style="color:#888;font-size:14px">ATV Homes has adjusted prices effective April 24, 2026. All models remain <strong style="color:#e0e0e0">60-80% cheaper than traditional construction</strong>. Same global shipping. Same 10-year warranty.</p>
+    <p style="color:#555;font-size:12px;margin-top:8px">Previous quotes honored for 7 days.</p>
+  </div>
+</div>
+
+<div class="brand-bar"></div>
+
+<header>
+<div class="container">
+<div class="logo">
+<div class="logo-icon">C</div>
+<div>
+<div class="logo-text">ATV Homes</div>
+<div class="logo-sub">Expandable living</div>
+</div>
+</div>
+<nav>
+<a href="#products">Models</a>
+<a href="#why">Why</a>
+<a href="#uses">Uses</a>
+<a href="/blog/">Blog</a>
+<a href="/affiliate/">Affiliates</a>
+<a href="/green-incentives/">💰 Save $2K+</a>
+</nav>
+<a href="#products" class="btn-header">Shop →</a>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+<div class="container">
+<div class="hero-tag">🔥 Starting at $14,995 <span style="font-weight:400;color:#888">(excl. shipping)</span></div>
+<h1>Your Container Home<br><span>From $14,995</span></h1>
+<p>Premium expandable container homes. 20FT and 40FT models. Global shipping available. Assembly available on request. Built to U.S. standards.</p>
+<div class="hero-badges">
+<span>✓ 400-800 sq ft</span>
+<span>🌍 Global shipping</span>
+<span>✓ Hurricane rated</span>
+<span>✓ Insulated</span>
+</div>
+<div class="hero-btns">
+<a href="#products" class="btn-primary">View Models</a>
+<a href="/blog/how-much-does-a-container-home-cost-in-2026/" class="btn-secondary">Cost Guide →</a>
+</div>
+</div>
+</section>
+
+<!-- Products -->
+<section class="section" id="products">
+<div class="container">
+<div class="section-title">
+<h2>Our Models</h2>
+<p>Four expandable container home models. Every price is in USD. <a href="/shipping/" style="color:#818cf8;text-decoration:underline">Calculate shipping</a> to your location.</p>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<span class="product-badge badge-seller">BEST SELLER</span>
+<div class="product-name">20FT Expandable</div>
+<div class="product-desc">400 sq ft expandable — man caves, home offices, guest rooms, she sheds</div>
+<ul class="product-features">
+<li>20ft x 20ft expanded (400 sq ft)</li>
+<li>Insulated walls & roof</li>
+<li>Pre-wired for electric</li>
+<li>Double-pane windows</li>
+<li>Steel entry door</li>
+</ul>
+<div class="product-price">$14,995</div>
+<div class="product-price-sub">excl. shipping</div>
+<a data-currency="USD" href="buy.stripe.com/7sYdR96za9IpfzY0jYa3u0d" target="_blank" class="btn-buy btn-buy-indigo">Buy Now →</a>
+</div>
+
+<div class="product-card" style="border-color:rgba(139,92,246,.2)">
+<span class="product-badge badge-premium">PREMIUM</span>
+<div class="product-name">20FT Premium</div>
+<div class="product-desc">Upgraded finishes, full kitchen, bathroom, mini-split HVAC — move-in ready</div>
+<ul class="product-features">
+<li>All 20FT Expandable features</li>
+<li>Premium laminate flooring</li>
+<li>Built-in kitchen cabinets</li>
+<li>Full bathroom with shower</li>
+<li>Mini-split HVAC included</li>
+</ul>
+<div class="product-price">$19,995</div>
+<div class="product-price-sub">excl. shipping</div>
+<a data-currency="USD" href="buy.stripe.com/fZu6oHaPq6wd9bA3waa3u0e" target="_blank" class="btn-buy btn-buy-purple">Buy Now →</a>
+</div>
+
+<div class="product-card">
+<span class="product-badge badge-seller">POPULAR</span>
+<div class="product-name">40FT Deluxe</div>
+<div class="product-desc">800 sq ft, 2 bedrooms, full kitchen, living room — in-law suites & guest houses</div>
+<ul class="product-features">
+<li>40ft x 20ft expanded (800 sq ft)</li>
+<li>2 bedrooms / 1 bathroom</li>
+<li>Full kitchen with island</li>
+<li>Living room, vaulted ceiling</li>
+<li>Washer/dryer hookup</li>
+</ul>
+<div class="product-price">$24,995</div>
+<div class="product-price-sub">excl. shipping</div>
+<a data-currency="USD" href="buy.stripe.com/aFa5kD2iUdYFbjI9Uya3u0f" target="_blank" class="btn-buy btn-buy-indigo">Buy Now →</a>
+</div>
+
+<div class="product-card" style="border-color:rgba(245,158,11,.2)">
+<span class="product-badge badge-flagship">FLAGSHIP</span>
+<div class="product-name">40FT Premium</div>
+<div class="product-desc">Luxury throughout — granite, stainless steel, smart home pre-wired. Full family living.</div>
+<ul class="product-features">
+<li>All 40FT Deluxe features</li>
+<li>Granite countertops</li>
+<li>Full stainless appliance suite</li>
+<li>Designer fixtures & hardware</li>
+<li>Smart home pre-wired</li>
+</ul>
+<div class="product-price">$34,995</div>
+<div class="product-price-sub">excl. shipping</div>
+<a data-currency="USD" href="buy.stripe.com/00wbJ12iUcUBbjIgiWa3u0g" target="_blank" class="btn-buy btn-buy-amber">Buy Now →</a>
+</div>
+
+</div>
+
+<div class="stripe-badge">
+<p>🔒 Secure checkout via Stripe. <a href="/shipping/" style="color:#818cf8;text-decoration:underline">Calculate shipping</a> — worldwide.</p></p>
+</div>
+</div>
+</section>
+
+<!-- Why Container Homes -->
+<section class="section" id="why">
+<div class="container">
+<div class="section-title">
+<h2>Why a Container Home?</h2>
+<p>60-80% cheaper than traditional construction. Faster. Stronger. Sustainable.</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<span class="feature-icon">💰</span>
+<h3>60-80% Cheaper</h3>
+<p>Traditional 400 sq ft addition: $40K-$80K. Our 20FT Expandable: $14,995 (excl. shipping).</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">⚡</span>
+<h3>45-Day Delivery</h3>
+<p>Traditional construction: 4-8 months. Your container home arrives ready in 45 days.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🏗️</span>
+<h3>No Contractor Needed</h3>
+<p>Arrives fully assembled on site. No construction crew, no permits to pull.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🌍</span>
+<h3>Sustainable Steel</h3>
+<p>Each container repurposes 7,000 lbs of steel. Eco-friendly. Lowest carbon footprint.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">🛡️</span>
+<h3>Hurricane & Earthquake Rated</h3>
+<p>Steel frame withstands Category 4 hurricanes and seismic Zone 4 earthquakes.</p>
+</div>
+<div class="feature-card">
+<span class="feature-icon">📈</span>
+<h3>Rental Income Potential</h3>
+<p>Owners report $2,700-$3,200/month on Airbnb. Recoup investment in 4-6 months.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 30 Use Cases -->
+<section class="section" id="uses">
+<div class="container">
+<div class="section-title">
+<h2>30 Ways to Use a Container Home</h2>
+<p>From man caves to mountain cabins — see what's possible with a $14,995 container home.</p>
+</div>
+<div class="usecases-grid">
+<a class="usecase-item" href="/blog/can-you-really-live-full-time-in-a-container-home/"><span class="usecase-icon">🏠</span>Man Cave</a>
+<a class="usecase-item"><span class="usecase-icon">🎨</span>She Shed</a>
+<a class="usecase-item"><span class="usecase-icon">🏡</span>In-Law Suite</a>
+<a class="usecase-item"><span class="usecase-icon">💰</span>Guest House</a>
+<a class="usecase-item"><span class="usecase-icon">💼</span>Home Office</a>
+<a class="usecase-item"><span class="usecase-icon">🌿</span>Tiny Home</a>
+<a class="usecase-item"><span class="usecase-icon">🏔️</span>Vacation Cabin</a>
+<a class="usecase-item"><span class="usecase-icon">🏊</span>Pool House</a>
+<a class="usecase-item"><span class="usecase-icon">📈</span>Rental Income</a>
+<a class="usecase-item"><span class="usecase-icon">🏠</span>Starter Home</a>
+<a class="usecase-item"><span class="usecase-icon">🌾</span>Farm Office</a>
+<a class="usecase-item"><span class="usecase-icon">🖌️</span>Art Studio</a>
+<a class="usecase-item"><span class="usecase-icon">💪</span>Home Gym</a>
+<a class="usecase-item"><span class="usecase-icon">🎵</span>Music Studio</a>
+<a class="usecase-item"><span class="usecase-icon">🎮</span>Game Room</a>
+<a class="usecase-item"><span class="usecase-icon">🍸</span>Home Bar</a>
+<a class="usecase-item"><span class="usecase-icon">🧘</span>Meditation</a>
+<a class="usecase-item"><span class="usecase-icon">🔧</span>Workshop</a>
+<a class="usecase-item"><span class="usecase-icon">🏹</span>Hunting Cabin</a>
+<a class="usecase-item"><span class="usecase-icon">🌊</span>Beach House</a>
+<a class="usecase-item"><span class="usecase-icon">⛰️</span>Mountain Cabin</a>
+<a class="usecase-item"><span class="usecase-icon">👩‍👧‍👦</span>Mother-In-Law</a>
+<a class="usecase-item"><span class="usecase-icon">🛏️</span>Teen Suite</a>
+<a class="usecase-item"><span class="usecase-icon">📚</span>Home Classroom</a>
+<a class="usecase-item"><span class="usecase-icon">📸</span>Photo Studio</a>
+<a class="usecase-item"><span class="usecase-icon">🍷</span>Wine Cellar</a>
+<a class="usecase-item"><span class="usecase-icon">🧖</span>Sauna House</a>
+<a class="usecase-item"><span class="usecase-icon">🌴</span>Pool Cabana</a>
+<a class="usecase-item"><span class="usecase-icon">🌱</span>Greenhouse</a>
+<a class="usecase-item"><span class="usecase-icon">🛡️</span>Emergency Shelter</a>
+</div>
+</div>
+</section>
+
+<!-- Green Incentives CTA -->
+<section class="section" style="background:linear-gradient(135deg,#0f0f1a,#1a1a2e);padding:60px 0">
+<div class="container">
+<div style="text-align:center;max-width:700px;margin:0 auto">
+<span style="color:#22c55e;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600">💰 2026 Green Building Incentives</span>
+<h2 style="font-size:clamp(24px,3vw,32px);color:#fff;margin-top:12px;margin-bottom:12px">Save $2,200–$8,200+ With Tax Credits & Grants</h2>
+<p style="color:#888;font-size:15px;line-height:1.7;margin-bottom:24px">Every container home qualifies for federal tax credits, green building rebates, and USDA loans. We provide all the documentation — you just claim the savings.</p>
+<a href="/green-incentives/" style="display:inline-block;background:#22c55e;color:#000;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px">See What You Qualify For →</a>
+<div style="display:flex;gap:20px;justify-content:center;margin-top:24px;flex-wrap:wrap">
+<span style="color:#22c55e;font-size:12px">✅ Federal 25C Credit: up to $3,200</span>
+<span style="color:#22c55e;font-size:12px">✅ Solar 30% Credit: no cap</span>
+<span style="color:#22c55e;font-size:12px">✅ USDA Zero-Down Loans</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Blog Preview -->
+<section class="section">
+<div class="container">
+<div class="section-title">
+<h2>Container Home Blog</h2>
+<p>Cost guides, size comparisons, living tips, zoning advice — updated daily.</p>
+</div>
+<div class="blog-grid">
+<a href="/blog/how-much-does-a-container-home-cost-in-2026/" class="blog-card">
+<span class="blog-tag">Cost Guide</span>
+<h3>How Much Does a Container Home Cost in 2026?</h3>
+<p>Complete pricing breakdown from $14,995 to $34,995. What you get at every tier.</p>
+</a>
+<a href="/blog/20ft-vs-40ft-container-home-which-size-fits-your-property/" class="blog-card">
+<span class="blog-tag">Size Guide</span>
+<h3>20FT vs 40FT — Which Size Fits Your Property?</h3>
+<p>Square footage, use cases, pricing, and shipping compared.</p>
+</a>
+<a href="/blog/can-you-really-live-full-time-in-a-container-home/" class="blog-card">
+<span class="blog-tag">Living Guide</span>
+<h3>Can You Really Live Full-Time in a Container Home?</h3>
+<p>Real experiences from full-time residents on insulation, climate, and space.</p>
+</a>
+</div>
+<div class="blog-more">
+<a href="/blog/">View all 30 posts →</a>
+</div>
+</div>
+</section>
+
+<!-- QBA -->
+<section class="qba-section">
+<div class="qba-box">
+<p>🤖 AI-Powered Operation</p>
+<h3>Built by Quantum Bots Agency</h3>
+<p>Every container home, every blog post, every video — powered by the world's most advanced AI workforce.</p>
+<a href="https://quantumbotsagency.com">quantumbotsagency.com →</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<p>© 2026 ATV Homes — Paul Kennedy McCall &amp; Bradley Dares. All prices in USD. <a href="/shipping/" style="color:#555">Shipping calculator</a>.</p>
+<div class="links">
+<a href="https://quantumbotsagency.com">QBA</a>
+<a href="/blog/">Blog</a>
+<a href="#products">Models</a>
+</div>
+</div>
+</footer>
+
+
+<div id="qba-chat-widget" style="position:fixed;bottom:20px;right:20px;z-index:99999;font-family:Inter,sans-serif">
+  <style>
+    #qba-chat-btn{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,.4);display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:24px}
+    #qba-chat-btn:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(99,102,241,.5)}
+    #qba-chat-box{display:none;width:360px;height:500px;background:#0f0f1a;border:1px solid #1a1a25;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);flex-direction:column}
+    #qba-chat-header{background:linear-gradient(135deg,#111120,#13131a);padding:16px;border-bottom:1px solid #1a1a25;display:flex;align-items:center;gap:10px}
+    #qba-chat-header .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block}
+    #qba-chat-header h3{color:#fff;font-size:14px;font-weight:600}
+    #qba-chat-header p{color:#555;font-size:11px}
+    #qba-chat-messages{flex-grow:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px}
+    #qba-chat-messages .msg-bot{background:#111120;color:#ccc;padding:12px 14px;border-radius:12px 12px 12px 4px;font-size:13px;line-height:1.5;max-width:85%;align-self:flex-start;border:1px solid #1a1a25}
+    #qba-chat-messages .msg-bot strong{color:#fff}
+    #qba-chat-messages .msg-user{background:linear-gradient(135deg,#6366f1,#7c3aed);color:#fff;padding:12px 14px;border-radius:12px 12px 4px 12px;font-size:13px;line-height:1.5;max-width:80%;align-self:flex-end}
+    #qba-chat-messages .qba-tag{font-size:10px;color:#555;margin-top:6px}
+    #qba-chat-input{display:flex;border-top:1px solid #1a1a25;padding:10px;gap:8px;background:#0a0a0f}
+    #qba-chat-input input{flex-grow:1;background:#111120;border:1px solid #1a1a25;border-radius:8px;padding:10px 14px;color:#fff;font-size:13px;outline:none}
+    #qba-chat-input input:focus{border-color:#6366f1}
+    #qba-chat-input button{background:#6366f1;border:none;color:#fff;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px}
+    #qba-chat-input button:hover{background:#5558e6}
+    @media(max-width:480px){#qba-chat-box{width:100vw;height:100vh;bottom:0;right:0;border-radius:0}}
+  </style>
+  <div id="qba-chat-btn" onclick="toggleChat()">💬</div>
+  <div id="qba-chat-box">
+    <div id="qba-chat-header">
+      <div><span class="dot"></span></div>
+      <div><h3>ATV Homes</h3><p>Quantum sales & support bot</p></div>
+    </div>
+    <div id="qba-chat-messages">
+      <div class="msg-bot">🏠 Welcome! I'm your container home specialist. Ask me about pricing, shipping, sizes, zoning — or get a recommendation.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>
+    </div>
+    <div id="qba-chat-input">
+      <input id="qba-input" placeholder="Ask about container homes..." onkeydown="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+  <script>
+    let chatOpen = false;
+    function toggleChat(){chatOpen=!chatOpen;document.getElementById('qba-chat-box').style.display=chatOpen?'flex':'none';document.getElementById('qba-chat-btn').textContent=chatOpen?'✕':'💬'}
+    function sendMsg(){const i=document.getElementById('qba-input');const m=i.value.trim();if(!m)return;i.value='';const msgs=document.getElementById('qba-chat-messages');msgs.innerHTML+=`<div class="msg-user">${m}</div>`;msgs.scrollTop=msgs.scrollHeight;setTimeout(()=>{const r=getResponse(m);msgs.innerHTML+=r;msgs.scrollTop=msgs.scrollHeight},300)}
+    function getResponse(q){const l=q.toLowerCase();let r='';const kb={
+      "price|cost|how much":'<div class="msg-bot"><strong>💰 Pricing</strong><br>20FT Expandable: <strong>$14,995</strong><br>20FT Premium: <strong>$19,995</strong><br>40FT Deluxe: <strong>$24,995</strong><br>40FT Premium: <strong>$34,995</strong><br><br>All prices in USD. <a href="/shipping/" style="color:#818cf8">Calculate shipping</a> to your location. 60-80% cheaper than traditional construction.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>,
+      "delivery|ship|shipping|arrive":'<div class="msg-bot"><strong>🚚 Shipping</strong><br>Global shipping available. Use our <a href="/shipping/" style="color:#818cf8">shipping calculator</a> for an exact quote. Typical transit: 30-50 days depending on destination. Assembly available on request.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "size|sqft|square|feet|20ft|40ft":'<div class="msg-bot"><strong>📐 Sizes</strong><br><strong>20FT Expandable:</strong> 400 sq ft — best for man caves, offices, she sheds, guest rooms<br><strong>40FT Deluxe:</strong> 800 sq ft — 2 bed, 1 bath, full kitchen, living room<br><strong>40FT Premium:</strong> 800 sq ft — luxury finishes, granite, smart home<br><br>both expand on-site — no permits needed.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "foundation|concrete|install|setup":'<div class="msg-bot"><strong>🏗️ Foundation & Setup</strong><br>Concrete slab or concrete piers — we include engineered plans for your soil type. Our team handles placement and expansion. You just need clear property access (12ft wide gate min).<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "zoning|permit|hoa|legal":'<div class="msg-bot"><strong>📋 Zoning & Permits</strong><br>Container homes are classified as prefabricated structures. We provide stamped engineering drawings approved for all 50 states. Most counties approve permits in 2-4 weeks. HOAs may restrict — check your CC&Rs.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "hurricane|earthquake|storm|safe|steel":'<div class="msg-bot"><strong>🛡️ Durability</strong><br>Category 4 hurricane rated (140 mph winds). Seismic Zone 4 earthquake rated. 14-gauge corten steel — same grade used in ocean shipping. Spray foam insulation (R-19 walls, R-30 roof). Built to last decades.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "airbnb|rental|income":'<div class="msg-bot"><strong>💰 Rental Income</strong><br>Owners report $2,700-$3,200/month on Airbnb with our container homes. At $14,995 for the 20FT Expandable, many recoup their investment in 4 months. 75% occupancy average. Novelty factor drives bookings.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "warranty|return|refund":'<div class="msg-bot"><strong>✅ Warranty & Returns</strong><br>10-year structural warranty on steel frame. 2-year on finishes. 14-day return window. Refunds processed within 5-7 business days. We handle damage replacement within 7 days at no cost.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>',
+      "buy|purchase|order":'<div class="msg-bot"><strong>Ready to buy! 🎉</strong><br><br><strong>20FT Expandable — $14,995</strong><br><a data-currency="USD" href="buy.stripe.com/7sYdR96za9IpfzY0jYa3u0d" target="_blank" style="color:#818cf8">Buy Now →</a><br><br><strong>20FT Premium — $19,995</strong><br><a data-currency="USD" href="buy.stripe.com/fZu6oHaPq6wd9bA3waa3u0e" target="_blank" style="color:#818cf8">Buy Now →</a><br><br><strong>40FT Deluxe — $24,995</strong><br><a data-currency="USD" href="buy.stripe.com/aFa5kD2iUdYFbjI9Uya3u0f" target="_blank" style="color:#818cf8">Buy Now →</a><br><br><strong>40FT Premium — $34,995</strong><br><a data-currency="USD" href="buy.stripe.com/00wbJ12iUcUBbjIgiWa3u0g" target="_blank" style="color:#818cf8">Buy Now →</a><div class="qba-tag">Powered by Quantum Bots Agency</div></div>'
+    };
+    for(const k in kb){const words=k.split('|');if(words.some(w=>l.includes(w))){r=kb[k];break}}
+    if(!r)r='<div class="msg-bot">Great question! Here's what I can tell you:<br><br>1️⃣ Our container homes start at <strong>$14,995</strong> (excl. shipping) — 60-80% cheaper than traditional construction.<br>2️⃣ <strong>Global shipping</strong> available — <a href="/shipping/" style="color:#818cf8">calculate</a>.<br>3️⃣ All models are <strong>hurricane rated, earthquake rated</strong>, and fully insulated.<br><br>What else can I help with? Pricing, sizes, shipping, zoning — I cover it all.<div class="qba-tag">Powered by Quantum Bots Agency</div></div>';
+    return r}
+  
+// ===== ROTATING DISCOUNT ENGINE =====
+// Every visitor gets a unique rotating discount when they chat
+(function() {
+  const ROTATING_SALES = [
+    { code: 'VIP5',   discount: 0.05, label: '5% OFF',  color: '#22c55e', expires: 4 },
+    { code: 'VIP7',   discount: 0.07, label: '7% OFF',  color: '#3b82f6', expires: 4 },
+    { code: 'VIP10',  discount: 0.10, label: '10% OFF', color: '#f59e0b', expires: 3 },
+    { code: 'VIP8',   discount: 0.08, label: '8% OFF',  color: '#8b5cf6', expires: 4 },
+    { code: 'VIP6',   discount: 0.06, label: '6% OFF',  color: '#06b6d4', expires: 5 },
+  ];
+  
+  // Assign a random sale to this visitor (stored in session)
+  let currentSale = null;
+  try {
+    const stored = sessionStorage.getItem('atv_sale');
+    if (stored) {
+      currentSale = JSON.parse(stored);
+    } else {
+      // Pick random sale, bias toward 5-8% (70% chance), 10% (30% chance)
+      const r = Math.random();
+      let idx;
+      if (r < 0.3) idx = 2; // 10% OFF — rarest
+      else idx = Math.floor(Math.random() * 4); // 5%, 7%, 8%, 6%
+      currentSale = { ...ROTATING_SALES[idx], claimed: false, assignedAt: Date.now() };
+      sessionStorage.setItem('atv_sale', JSON.stringify(currentSale));
+    }
+  } catch(e) { currentSale = { ...ROTATING_SALES[0], claimed: false, assignedAt: Date.now() }; }
+  
+  // Make it globally available
+  window.currentSale = currentSale;
+  
+  const saleEnd = new Date(Date.now() + (currentSale.expires * 3600 * 1000));
+  
+  // Bot auto-responds with rotating discount on ANY question
+  window.getSaleMessage = function() {
+    const disc = (currentSale.discount * 100).toFixed(0);
+    const savings = {
+      '20FT Expandable': Math.round(14995 * currentSale.discount),
+      '20FT Premium': Math.round(19995 * currentSale.discount),
+      '40FT Deluxe': Math.round(24995 * currentSale.discount),
+      '40FT Premium': Math.round(34995 * currentSale.discount)
+    };
+    return '<br><br><div style="background:linear-gradient(135deg,' + currentSale.color + '22,transparent);border:2px solid ' + currentSale.color + ';border-radius:10px;padding:14px;margin-top:10px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">' +
+      '<span style="color:#fff;font-weight:700;font-size:14px">🎯 YOUR PERSONAL OFFER: <span style="color:' + currentSale.color + '">' + currentSale.label + '</span></span>' +
+      '<span style="background:' + currentSale.color + ';color:#000;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:700">EXCLUSIVE</span></div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:12px;margin-bottom:8px">' +
+      '<span style="color:#888">20FT Expandable:</span><span style="color:#fff;text-align:right">$' + savings['20FT Expandable'] + ' off → <strong style="color:' + currentSale.color + '">$' + (14995 - savings['20FT Expandable']) + '</strong></span>' +
+      '<span style="color:#888">20FT Premium:</span><span style="color:#fff;text-align:right">$' + savings['20FT Premium'] + ' off → <strong style="color:' + currentSale.color + '">$' + (19995 - savings['20FT Premium']) + '</strong></span>' +
+      '<span style="color:#888">40FT Deluxe:</span><span style="color:#fff;text-align:right">$' + savings['40FT Deluxe'] + ' off → <strong style="color:' + currentSale.color + '">$' + (24995 - savings['40FT Deluxe']) + '</strong></span>' +
+      '<span style="color:#888">40FT Premium:</span><span style="color:#fff;text-align:right">$' + savings['40FT Premium'] + ' off → <strong style="color:' + currentSale.color + '">$' + (34995 - savings['40FT Premium']) + '</strong></span>' +
+      '</div>' +
+      '<div style="background:rgba(0,0,0,0.3);border-radius:6px;padding:8px;text-align:center">' +
+      '<span style="color:#aaa;font-size:12px">Use code at checkout: <strong style="color:' + currentSale.color + ';font-size:16px;letter-spacing:2px">' + currentSale.code + '</strong></span>' +
+      '<br><span style="color:#555;font-size:11px">⏱️ Expires in <span id="rotatingCountdown" style="color:#ef4444;font-family:monospace">loading...</span> · One-time use per customer</span></div></div>';
+  };
+  
+  // Rotating countdown sync
+  (function rotatingCountdown() {
+    setInterval(() => {
+      const el = document.getElementById('rotatingCountdown');
+      if (el) {
+        const diff = Math.max(0, saleEnd - Date.now());
+        const h = Math.floor(diff/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+        el.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      }
+    }, 1000);
+  })();
+})();
+
+// ===== BOT OVERRIDE: Rotating discount on EVERY interaction =====
+(function() {
+  const _origBot = window.getBotResponse;
+  window.getBotResponse = function(msg) {
+    const resp = _origBot(msg);
+    if (window.currentSale && !window.currentSale.claimed) {
+      return resp + window.getSaleMessage();
+    }
+    return resp;
+  };
+})();
+
+// ===== TOP BAR: Rotating sale banner =====
+(function() {
+  if (!window.currentSale) return;
+  const cs = window.currentSale;
+  const disc = (cs.discount * 100).toFixed(0);
+  
+  const banner = document.createElement('div');
+  banner.className = 'flash-sale-banner';
+  banner.id = 'saleBanner';
+  banner.style.background = 'linear-gradient(135deg,' + cs.color + '88,' + cs.color + ')';
+  banner.innerHTML = '🎯 <strong>YOUR EXCLUSIVE OFFER: ' + cs.label + '</strong> on any container home! Use code <strong>' + cs.code + '</strong> at checkout · <span class="countdown" id="bannerCountdown">loading...</span>';
+  const dismissBtn = document.createElement('button');
+  dismissBtn.className = 'dismiss';
+  dismissBtn.innerHTML = '×';
+  dismissBtn.onclick = () => { banner.style.display = 'none'; };
+  banner.appendChild(dismissBtn);
+  document.body.prepend(banner);
+  
+  // Banner countdown
+  const saleEnd = new Date(Date.now() + (cs.expires * 3600 * 1000));
+  setInterval(() => {
+    const el = document.getElementById('bannerCountdown');
+    if (el) {
+      const diff = Math.max(0, saleEnd - Date.now());
+      const h = Math.floor(diff/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+      el.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      if (diff <= 0) {
+        document.getElementById('saleBanner').innerHTML = '⏰ Offer expired. Chat with us for a new one!';
+      }
+    }
+  }, 1000);
+})();
+// ===== BOT URGENCY OVERRIDES =====
+// Modify the bot to add urgency to pricing responses
+const _origGetBot = window.getBotResponse;
+window.getBotResponse = function(msg) {
+  const saleActive = window.SALE && window.SALE.active;
+  const resp = _origGetBot(msg);
+  if (saleActive && (msg.includes('price') || msg.includes('cost') || msg.includes('buy') || msg.includes('discount') || msg.includes('sale'))) {
+</script>
+</div>
+
+
+</div></div>
+
+<!-- Legal Footer -->
+<footer style="border-top:1px solid #1a1a25;padding:40px 0;margin-top:60px;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px">
+      <div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:15px">Products (USD)</h4>
+        <a href="#20ft-expandable" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">20FT Expandable — $14,995</a>
+        <a href="#20ft-premium" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">20FT Premium — $19,995</a>
+        <a href="#40ft-deluxe" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">40FT Deluxe — $24,995</a>
+        <a href="#40ft-premium" style="color:#555;text-decoration:none;display:block;font-size:13px">40FT Premium — $34,995</a>
+      </div>
+      <div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:15px">Company</h4>
+        <a href="/tos" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">Terms of Service</a>
+        <a href="/privacy" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">Privacy Policy</a>
+        <a href="/warranty" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">Warranty</a>
+        <a href="/returns" style="color:#555;text-decoration:none;display:block;font-size:13px">Returns & Refunds</a>
+      </div>
+      <div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:15px">Support</h4>
+        <a href="mailto:support@containerhomes.com" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">support@containerhomes.com</a>
+        <a href="#" style="color:#555;text-decoration:none;display:block;margin-bottom:8px;font-size:13px">+1 (555) 012-3400</a>
+        <p style="color:#333;font-size:12px;margin-top:10px">Mon-Fri 8am-8pm EST</p>
+      </div>
+      <div>
+        <h4 style="color:#fff;font-size:14px;margin-bottom:15px">ATV Homes LLC</h4>
+        <p style="color:#555;font-size:12px;line-height:1.6">Registered agent: Paul Kennedy McCall & Bradley Dares<br>Wyoming LLC<br>All container homes sold with 10-year structural warranty</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid #111120;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <p style="color:#333;font-size:12px">© 2026 ATV Homes LLC. All rights reserved. Small homes. Big dreams. | Built by <a href="https://quantumbotsagency.com" style="color:#555;text-decoration:none">Quantum Bots Agency</a></p>
+      <div style="display:flex;gap:12px">
+        <a href="/tos" style="color:#333;text-decoration:none;font-size:12px">Terms</a>
+        <a href="/privacy" style="color:#333;text-decoration:none;font-size:12px">Privacy</a>
+        <span style="color:#333;font-size:12px">|</span>
+        <span style="color:#555;font-size:12px">ATV</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

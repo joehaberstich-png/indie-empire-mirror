@@ -1,0 +1,8 @@
+{
+  "id": "qa-cross-browser",
+  "role": "Cross-Browser Tester",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Rendering parity across Chrome 120+, Firefox 120+, Safari 17+, Edge 120+. CSS compat, API availability, flex/grid support, WebGL/canvas. Tools: BrowserStack, Playwright.",
+  "che[REDACTED]": "Every 24 hours",
+  "alerts_on": "Feature incompatibility, broken layout in 2+ browsers, polyfill missing"
+}

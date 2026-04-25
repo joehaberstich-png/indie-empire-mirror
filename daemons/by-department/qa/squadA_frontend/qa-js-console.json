@@ -1,0 +1,8 @@
+{
+  "id": "qa-js-console",
+  "role": "JS Console Monitor",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Browser console error capture via injected listeners. Catches uncaught exceptions, promise rejections, undefined access, CSP violations. Tools: Puppeteer, Sentry SDK.",
+  "che[REDACTED]": "Every 4 hours",
+  "alerts_on": "Any uncaught error, console.warn, CSP violation"
+}

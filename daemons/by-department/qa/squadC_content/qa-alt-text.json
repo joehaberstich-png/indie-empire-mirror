@@ -1,0 +1,8 @@
+{
+  "id": "qa-alt-text",
+  "role": "Alt Text Scanner",
+  "squad": "C \u2014 Content & SEO",
+  "skill": "Checks every <img> tag for alt attribute. Flags decorative images without alt='', informative images without descriptive alt, redundant alt text.",
+  "che[REDACTED]": "Every 12 hours",
+  "alerts_on": "Missing alt attribute, generic alt ('image', 'photo'), redundant alt"
+}

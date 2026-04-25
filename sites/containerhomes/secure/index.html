@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Security — ATV Homes</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#0a0a0f;color:#ccc;line-height:1.8;padding:40px 20px}
+.container{max-width:780px;margin:0 auto}
+h1{color:#fff;font-size:28px;margin-bottom:8px}
+h2{color:#fff;font-size:18px;margin-top:40px;margin-bottom:12px;border-bottom:1px solid #1a1a25;padding-bottom:8px}
+p{color:#999;margin-bottom:16px;font-size:14px}
+.tag{color:#555;font-size:11px;margin-top:50px;padding-top:20px;border-top:1px solid #111120}
+.green{color:#22c55e;font-weight:600}
+.red{color:#ef4444}
+code{background:#111120;padding:2px 6px;border-radius:3px;font-size:13px;color:#e0e0e0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🔒 ATV Homes Security</h1>
+<p>Status: <span class="green">All protections active</span></p>
+
+<h2>Transport Security</h2>
+<p><span class="green">✅</span> <strong>HSTS Preload</strong> — Strict-Transport-Security: max-age=2 years, includeSubDomains, preload ready</p>
+<p><span class="green">✅</span> <strong>TLS 1.3</strong> — Edge network enforces minimum TLS 1.2, prefers 1.3</p>
+<p><span class="green">✅</span> <strong>SSL Certificate</strong> — Auto-renewing via Vercel/Let's Encrypt</p>
+
+<h2>HTTP Security Headers</h2>
+<p><span class="green">✅</span> <strong>X-Frame-Options: DENY</strong> — Clickjacking protection</p>
+<p><span class="green">✅</span> <strong>X-Content-Type-Options: nosniff</strong> — MIME type sniffing prevention</p>
+<p><span class="green">✅</span> <strong>X-XSS-Protection: 1; mode=block</strong> — Cross-site scripting filter</p>
+<p><span class="green">✅</span> <strong>Referrer-Policy: strict-origin-when-cross-origin</strong> — Referrer leak prevention</p>
+
+<h2>Content Security Policy (CSP)</h2>
+<p><span class="green">✅</span> <strong>default-src 'self'</strong> — Blocks all external resources by default</p>
+<p><span class="green">✅</span> <strong>script-src</strong> — Only allows: same origin, Stripe CDN, inline for chat widget</p>
+<p><span class="green">✅</span> <strong>frame-src</strong> — Only allows Stripe checkout frames</p>
+<p><span class="green">✅</span> <strong>connect-src</strong> — Only allows: self, Stripe API</p>
+<p><span class="green">✅</span> <strong>form-action</strong> — Only allows: self, Stripe checkout</p>
+<p><span class="green">✅</span> <strong>base-uri 'self'</strong> — Prevents base tag injection</p>
+
+<h2>Permission Controls</h2>
+<p><span class="green">✅</span> <strong>Camera:</strong> Blocked</p>
+<p><span class="green">✅</span> <strong>Microphone:</strong> Blocked</p>
+<p><span class="green">✅</span> <strong>Geolocation:</strong> Blocked</p>
+<p><span class="green">✅</span> <strong>Payment:</strong> Allowed (self only — Stripe in iframe)</p>
+
+<h2>Attack Surface Reduction</h2>
+<p><span class="green">✅</span> <strong>WordPress paths blocked</strong> — /wp-admin, /wp-login, /wp-content all redirected</p>
+<p><span class="green">✅</span> <strong>Config files blocked</strong> — /.env, /config, /backend, /admin all redirected</p>
+<p><span class="green">✅</span> <strong>Source control blocked</strong> — /.git paths redirected</p>
+<p><span class="green">✅</span> <strong>Node modules blocked</strong> — /node_modules/ redirected</p>
+
+<h2>API Security</h2>
+<p><span class="green">✅</span> <strong>No-cache headers</strong> — All API responses disable caching</p>
+<p><span class="green">✅</span> <strong>CORS restricted</strong> — APIs validate origin where applicable</p>
+<p><span class="green">✅</span> <strong>Webhook validation</strong> — Stripe webhook verifies event signature</p>
+<p><span class="green">✅</span> <strong>Rate limiting</strong> — Vercel edge handles DDoS protection</p>
+
+<h2>Payment Security</h2>
+<p><span class="green">✅</span> <strong>Stripe Checkout</strong> — PCI DSS Level 1 certified, hosted by Stripe</p>
+<p><span class="green">✅</span> <strong>No card data touches our server</strong> — Stripe.js tokenizes directly to Stripe</p>
+<p><span class="green">✅</span> <strong>HTTPS enforced</strong> — All traffic encrypted end-to-end</p>
+
+<h2>Data Protection</h2>
+<p><span class="green">✅</span> <strong>No cookies for non-essential tracking</strong> — Privacy-first analytics</p>
+<p><span class="green">✅</span> <strong>Lead data encrypted in transit</strong></p>
+<p><span class="green">✅</span> <strong>No PII stored in source code or logs</strong></p>
+
+<div class="tag">
+© 2026 ATV Homes LLC | <a href="https://atvhomes.com">atvhomes.com</a> | Last updated: April 24, 2026
+</div>
+</div>
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

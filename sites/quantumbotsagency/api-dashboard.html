@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>API Acquisition — Quick Signup</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#0a0015;color:#e0e0e0;max-width:800px;margin:2rem auto;padding:1rem;}
+h1{color:#00f0ff;border-bottom:1px solid rgba(0,240,255,0.2);padding-bottom:0.5rem;}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.5rem;margin:1.5rem 0;}
+.card.p0{border-color:#ff4444;}
+.card.p1{border-color:#ffaa00;}
+.card h2{margin:0 0 0.5rem;font-size:1.3rem;}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;margin-left:0.5rem;vertical-align:middle;}
+.p0-tag{background:#ff4444;color:#fff;}
+.p1-tag{background:#ffaa00;color:#000;}
+.p2-tag{background:#4488ff;color:#fff;}
+a.button{display:inline-block;background:linear-gradient(135deg,#00f0ff,#7c3aed);color:#0a0015;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:1rem;}
+a.button.outline{background:transparent;color:#00f0ff;border:1px solid #00f0ff;}
+.field{margin:0.5rem 0;}
+.field label{display:block;color:#888;font-size:0.85rem;margin-bottom:0.25rem;}
+.field input{width:100%;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px;color:#e0e0e0;font-family:monospace;}
+.instructions{background:rgba(0,240,255,0.05);border-left:3px solid #00f0ff;padding:0.75rem 1rem;margin:1rem 0;font-size:0.9rem;color:#aaa;}
+.copyable{background:rgba(0,0,0,0.3);padding:8px 12px;border-radius:4px;font-family:monospace;font-size:0.85rem;cursor:pointer;display:inline-block;}
+</style>
+</head>
+<body>
+
+<h1>⚡ API Acquisition Dashboard</h1>
+<p style="color:#888;">Sign up for the APIs below. Paste keys back here and the Quantum API Hub auto-activates.</p>
+
+<div class="card p0">
+  <h2>🔴 P0-1: BrightData <span class="tag p0-tag">BLOCKING — 10K agents</span></h2>
+  <div class="instructions">
+    <strong>What you get:</strong> 15K residential IPs from 195 countries. Powers all 10K agent proxy identities.<br>
+    <strong>Cost:</strong> Pay-as-you-go (~$15/GB). No monthly minimum to start. ~$300/mo at full deployment.<br>
+    <strong>Time:</strong> 5 minutes to sign up.
+  </div>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <a class="button" href="https://brightdata.com/signup" target="_blank">🔗 Sign Up for BrightData</a>
+  </div>
+  <div class="field">
+    <label>After signup, paste your API token here:</label>
+    <input type="text" id="bd-token" placeholder="BRIGHTDATA_TOKEN = paste here and run command below" style="margin-top:0.5rem;">
+  </div>
+</div>
+
+<div class="card p0">
+  <h2>🔴 P0-2: Twitter/X API Basic <span class="tag p0-tag">BLOCKING — social agents</span></h2>
+  <div class="instructions">
+    <strong>What you get:</strong> 10K tweets / 15 min. Powers all Twitter agent accounts.<br>
+    <strong>Cost:</strong> $100/mo Basic plan.<br>
+    <strong>Time:</strong> 10 minutes (needs developer account approval).
+  </div>
+  <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+    <a class="button" href="https://developer.twitter.com/en/portal/dashboard" target="_blank">🔗 Twitter Developer Portal</a>
+  </div>
+  <div class="field">
+    <label>After registering, paste your Bearer Token:</label>
+    <input type="text" id="tw-bearer" placeholder="TWITTER_BEARER_TOKEN" style="margin-top:0.5rem;">
+  </div>
+  <div class="field">
+    <label>API Key:</label>
+    <input type="text" id="tw-key" placeholder="TWITTER_API_KEY">
+  </div>
+  <div class="field">
+    <label>API Secret:</label>
+    <input type="text" id="tw-secret" placeholder="TWITTER_API_SECRET">
+  </div>
+</div>
+
+<div class="card p1">
+  <h2>🟡 P1: Stability AI <span class="tag p1-tag">NFT artwork</span></h2>
+  <div class="instructions">Generates NFT concept art. ~$0.01/image. Sign up for free credits first.</div>
+  <a class="button outline" href="https://platform.stability.ai" target="_blank">🔗 platform.stability.ai</a>
+</div>
+
+<div class="card p1">
+  <h2>🟡 P1: Ahrefs <span class="tag p1-tag">QBA SEO</span></h2>
+  <div class="instructions">Keyword research for 500 SEO blog posts/day. $299/mo — worth every dollar.</div>
+  <a class="button outline" href="https://ahrefs.com" target="_blank">🔗 ahrefs.com</a>
+</div>
+
+<div class="card p2">
+  <h2>🔵 P2: Anthropic Claude <span class="tag p2-tag">Legal docs</span></h2>
+  <div class="instructions">Long-context AI for legal document drafting. Sign up, then I'll draft all ToS/Privacy/EULA docs.</div>
+  <a class="button outline" href="https://console.anthropic.com" target="_blank">🔗 console.anthropic.com</a>
+</div>
+
+<div class="card" style="border-color:#00f0ff;">
+  <h2>✅ ALREADY ACTIVE (3/5 APIs)</h2>
+  <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ Stripe (live, sk_live)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ SendGrid (75K emails/day)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ Mailchimp (newsletters)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ DeepSeek (agent reasoning)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ Google Maps (geo)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ Positionstack (rank tracking)</span>
+    <span class="copyable" style="background:rgba(0,240,255,0.1);color:#00f0ff;">✅ Ipstack (geo-IP)</span>
+  </div>
+</div>
+
+<hr style="border-color:rgba(255,255,255,0.05);margin:2rem 0;">
+
+<h2>📋 After You Sign Up — Quick Command</h2>
+<p style="color:#888;">Once you have the BrightData token, run this to store it:</p>
+<div style="background:rgba(0,0,0,0.4);padding:1rem;border-radius:8px;font-family:monospace;font-size:0.85rem;line-height:1.6;">
+echo 'BRIGHTDATA_TOKEN="YOUR_TOKEN_HERE"' &gt;&gt; infrastructure/integration/.config/api_keys.env<br>
+echo 'TWITTER_API_KEY="YOUR_KEY"' &gt;&gt; infrastructure/integration/.config/api_keys.env<br>
+echo 'TWITTER_BEARER_TOKEN="YOUR_BEARER"' &gt;&gt; infrastructure/integration/.config/api_keys.env<br>
+chmod 600 infrastructure/integration/.config/api_keys.env<br>
+python3 infrastructure/integration/quantum_api_hub.py
+</div>
+
+<p style="color:#888;margin-top:2rem;">Once all 5 APIs show ✅, I auto-deploy the 10K agent network.</p>
+
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body>
+</html>

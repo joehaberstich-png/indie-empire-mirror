@@ -1,0 +1,21 @@
+{
+  "id": "logistics-lead-time-tracker",
+  "role": "Lead Time Tracker",
+  "team": "Factory Coordination",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Production queue monitoring across Grande House factory lines",
+    "Raw material availability tracking (steel, insulation, windows, doors)",
+    "Seasonal production capacity forecasting (CNY shutdown, peak season)",
+    "Customer promise date management and variance tracking",
+    "Shipment readiness confirmation and booking trigger"
+  ],
+  "daily_tasks": [
+    "Update production ETA daily for all in-production orders",
+    "Alert sales team if lead time changes by >3 days",
+    "Coordinate with freight team when unit is 7 days from completion",
+    "Maintain lead time dashboard showing actual vs promised"
+  ],
+  "benchmark_against": "Factory production ERP systems, manual PM tracking",
+  "threshold": "Lead time variance <5 days, promise date accuracy >90%"
+}

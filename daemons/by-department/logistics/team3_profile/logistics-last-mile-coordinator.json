@@ -1,0 +1,21 @@
+{
+  "id": "logistics-last-mile-coordinator",
+  "role": "Last Mile Coordinator",
+  "team": "Customer Delivery",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "National trucking carrier network management (US, CA, AU, EU)",
+    "Flatbed vs step-deck vs RGN trailer selection per unit type",
+    "Liftgate and crane availability verification at delivery address",
+    "Cross-border trucking coordination (US-Canada, intra-EU)",
+    "Remote/rural delivery logistics (access roads, permits, escorts)"
+  ],
+  "daily_tasks": [
+    "Book trucking from destination port to customer address",
+    "Verify access road width, turning radius, and overhead clearance",
+    "Schedule delivery window with customer confirmation",
+    "Coordinate permits for oversized loads if needed"
+  ],
+  "benchmark_against": "Uber Freight, Convoy automated dispatching",
+  "threshold": "Delivery window accuracy \u00b12 hours on 90% of deliveries"
+}

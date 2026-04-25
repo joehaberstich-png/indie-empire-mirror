@@ -1,0 +1,21 @@
+{
+  "id": "logistics-route-optimizer",
+  "role": "Route Optimizer",
+  "team": "Freight & Route Planning",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Ocean freight rate comparison across 5+ carriers (MSC, Maersk, CMA CGM, COSCO, Hapag-Lloyd)",
+    "Port congestion analysis with real-time AIS data integration",
+    "FCL vs LCL cost optimization per container model",
+    "Seasonal routing adjustments (typhoon season, Chinese New Year surge)",
+    "Multi-modal routing (ocean + rail + truck) for inland destinations"
+  ],
+  "daily_tasks": [
+    "Compare rates from 3+ carriers per new booking",
+    "Recommend optimal route based on cost + transit time + reliability",
+    "Flag port congestion or labor strikes that could impact delivery",
+    "Update route templates weekly based on market rates"
+  ],
+  "benchmark_against": "Flexport AI Route Optimizer, ShipBob freight automation",
+  "threshold": "Must beat Flexport AI on cost accuracy by 5% within 30 days"
+}

@@ -1,0 +1,330 @@
+{
+  "project": {
+    "id": "drugdoctors",
+    "name": "DrugDoctors.com",
+    "domain": "drugdoctors.com",
+    "description": "Healthcare directory \u2014 doctor listings, patient reviews, appointment booking",
+    "status": "HTML/CSS structure created"
+  },
+  "management_structure": {
+    "meta": {
+      "version": "1.0",
+      "based_on": "Container Homes management structure",
+      "created": "2026-04-24T04:01:52.131097",
+      "total_per_project": {
+        "department_heads": 6,
+        "managers": 39,
+        "staff": 11545
+      }
+    },
+    "ceo": {
+      "title": "CEO",
+      "directs": 6,
+      "description": "Directs 6 Department Heads. Daily 30-min sync with department heads."
+    },
+    "departments": [
+      {
+        "name": "Research",
+        "head": {
+          "title": "Head of Research",
+          "description": "Trend analysis, competitor scraping, geo-intelligence"
+        },
+        "managers": [
+          {
+            "id": "R-01",
+            "name": "Trend Intelligence",
+            "staff": 20,
+            "description": "Tracking market trends, ClickBank gravity, Pinterest/modular movement"
+          },
+          {
+            "id": "R-02",
+            "name": "Competitor Analysis",
+            "staff": 20,
+            "description": "Scraping competitor ads, landing pages, reverse-engineering funnels"
+          },
+          {
+            "id": "R-03",
+            "name": "Geo-Intelligence",
+            "staff": 20,
+            "description": "Demand mapping by region, climate zones, zoning laws, pricing analysis"
+          }
+        ],
+        "total_staff": 60,
+        "total_managers": 3
+      },
+      {
+        "name": "Marketing",
+        "head": {
+          "title": "Head of Marketing",
+          "description": "Content, SEO, social media, paid ads, brand, email, video"
+        },
+        "managers": [
+          {
+            "id": "M-01",
+            "name": "Content Marketing",
+            "staff": 30,
+            "description": "Blog posts, video scripts, Pinterest/Quora/Reddit content"
+          },
+          {
+            "id": "M-02",
+            "name": "SEO & Organic",
+            "staff": 15,
+            "description": "Keyword clusters, schema markup, backlink building, syndication"
+          },
+          {
+            "id": "M-03",
+            "name": "Social Media Ops",
+            "staff": 30,
+            "description": "52K proxy accounts across 10 platforms, engagement farming, lifecycle management"
+          },
+          {
+            "id": "M-04",
+            "name": "Paid Ads",
+            "staff": 15,
+            "description": "PPC specialists, retargeting specialists, pixel deployment"
+          },
+          {
+            "id": "M-05",
+            "name": "Brand & Design",
+            "staff": 25,
+            "description": "Graphic design, video editing (Hollywood grade), sound design"
+          },
+          {
+            "id": "M-06",
+            "name": "Email Marketing",
+            "staff": 15,
+            "description": "Nurture sequences, abandoned cart, post-purchase flows"
+          },
+          {
+            "id": "M-07",
+            "name": "Video Production",
+            "staff": 30,
+            "description": "AI video generation, post-production, thumbnail A/B testing"
+          }
+        ],
+        "total_staff": 200,
+        "total_managers": 7
+      },
+      {
+        "name": "Sales",
+        "head": {
+          "title": "Head of Sales",
+          "description": "Scripts, funnel optimization, partner programs, 10 platform deployments"
+        },
+        "managers": [
+          {
+            "id": "S-01",
+            "name": "Script Writing",
+            "staff": 20,
+            "description": "3-problem rule scripts, multi-language translation, A/B copy variants"
+          },
+          {
+            "id": "S-02",
+            "name": "Funnel Optimization",
+            "staff": 20,
+            "description": "Bridge pages, landing pages, CRO, buyer intent scoring"
+          },
+          {
+            "id": "S-03",
+            "name": "Partner Programs",
+            "staff": 15,
+            "description": "Partner management, commission structure design"
+          },
+          {
+            "id": "S-04",
+            "name": "Platform: Reddit",
+            "staff": 50,
+            "description": "Sales agents on r/TinyHouses, r/HomeImprovement, r/RealEstate"
+          },
+          {
+            "id": "S-05",
+            "name": "Platform: Facebook",
+            "staff": 100,
+            "description": "Agents in groups, Marketplace listings, container home communities"
+          },
+          {
+            "id": "S-06",
+            "name": "Platform: Pinterest",
+            "staff": 50,
+            "description": "Pins with affiliate links, how-to boards, idea pins"
+          },
+          {
+            "id": "S-07",
+            "name": "Platform: YouTube",
+            "staff": 100,
+            "description": "Comment marketing, community tab engagement"
+          },
+          {
+            "id": "S-08",
+            "name": "Platform: Quora",
+            "staff": 50,
+            "description": "Answer farming with value-first + link"
+          },
+          {
+            "id": "S-09",
+            "name": "Platform: TikTok",
+            "staff": 100,
+            "description": "30-second transformation videos, comment engagement"
+          },
+          {
+            "id": "S-10",
+            "name": "Platform: LinkedIn",
+            "staff": 50,
+            "description": "Real estate investment angle, builder/architect outreach"
+          },
+          {
+            "id": "S-11",
+            "name": "Platform: Instagram",
+            "staff": 100,
+            "description": "Reels, carousels, stories, DM outreach"
+          },
+          {
+            "id": "S-12",
+            "name": "Platform: Niche Forums",
+            "staff": 50,
+            "description": "Tiny House Forum, Container Home Builders, off-grid, homesteading"
+          },
+          {
+            "id": "S-13",
+            "name": "A/B Testing & Analytics",
+            "staff": 25,
+            "description": "Thumbnail/title/posting A/B tests, performance dashboard, tracking pipeline"
+          },
+          {
+            "id": "S-14",
+            "name": "Agent Training & QA",
+            "staff": 20,
+            "description": "3-problem rule compliance, bot detection bypass, QBA branding enforcement"
+          },
+          {
+            "id": "S-15",
+            "name": "Conversion Tracking",
+            "staff": 20,
+            "description": "UTM parameters, pixel deployment, Stripe webhooks, revenue reconciliation"
+          }
+        ],
+        "total_staff": 10100,
+        "total_managers": 15
+      },
+      {
+        "name": "Customer Service",
+        "head": {
+          "title": "Head of Customer Service",
+          "description": "L0-L4 support, multi-language, returns, experience"
+        },
+        "managers": [
+          {
+            "id": "C-01",
+            "name": "L0 Bot Operations",
+            "staff": 15,
+            "description": "Quantum CS Bot (9 languages, 30s SLA), escalation rules"
+          },
+          {
+            "id": "C-02",
+            "name": "L1 Frontline Support",
+            "staff": 300,
+            "description": "Billing, shipping, assembly questions, returns/refunds"
+          },
+          {
+            "id": "C-03",
+            "name": "L2 Technical Support",
+            "staff": 250,
+            "description": "Container home assembly, permits, electrical/plumbing"
+          },
+          {
+            "id": "C-04",
+            "name": "L3 Engineering Support",
+            "staff": 100,
+            "description": "Structural engineers for modification questions"
+          },
+          {
+            "id": "C-05",
+            "name": "L4 Executive Escalation",
+            "staff": 50,
+            "description": "S0 issues, VIP customer program"
+          },
+          {
+            "id": "C-06",
+            "name": "Customer Experience",
+            "staff": 30,
+            "description": "CX design, NPS surveying, buyer community management"
+          },
+          {
+            "id": "C-07",
+            "name": "Multi-Language Support",
+            "staff": 125,
+            "description": "EN/ES/FR/DE/IT/PT/AR/ZH/JA support coverage"
+          }
+        ],
+        "total_staff": 1100,
+        "total_managers": 7
+      },
+      {
+        "name": "Legal & Compliance",
+        "head": {
+          "title": "Head of Legal & Compliance",
+          "description": "Contracts, FTC, IP, risk management"
+        },
+        "managers": [
+          {
+            "id": "L-01",
+            "name": "Contracts & Corporate",
+            "staff": 10,
+            "description": "Vendor agreements, ToS, privacy, EULA"
+          },
+          {
+            "id": "L-02",
+            "name": "FTC & Regulatory",
+            "staff": 15,
+            "description": "FTC disclosure enforcement, GDPR, CCPA, platform policy monitoring"
+          },
+          {
+            "id": "L-03",
+            "name": "IP & Trademarks",
+            "staff": 10,
+            "description": "Trademark filing, brand protection, DMCA takedowns"
+          },
+          {
+            "id": "L-04",
+            "name": "Risk Management",
+            "staff": 10,
+            "description": "Liability assessment, dispute resolution, arbitration"
+          }
+        ],
+        "total_staff": 45,
+        "total_managers": 4
+      },
+      {
+        "name": "Accounting & Finance",
+        "head": {
+          "title": "Head of Accounting & Finance",
+          "description": "Revenue ops, budget, reporting, tax"
+        },
+        "managers": [
+          {
+            "id": "A-01",
+            "name": "Revenue Operations",
+            "staff": 15,
+            "description": "Stripe reconciliation, daily revenue tracking, fraud detection"
+          },
+          {
+            "id": "A-02",
+            "name": "Budget & Planning",
+            "staff": 15,
+            "description": "Budgeting, cost optimization, zero-cost infrastructure analysis"
+          },
+          {
+            "id": "A-03",
+            "name": "Financial Reporting",
+            "staff": 10,
+            "description": "Monthly P&L, revenue projections, unit economics, sales tax compliance"
+          }
+        ],
+        "total_staff": 40,
+        "total_managers": 3
+      }
+    ]
+  },
+  "generated": "2026-04-24T04:01:52.132833",
+  "total_staff": "drugdoctors_management_structure.md"
+}

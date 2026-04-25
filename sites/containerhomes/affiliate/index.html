@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ATV Homes Affiliate Program — Earn $749–$1,749 Per Sale</title>
+<meta name="description" content="Join the ATV Homes affiliate program. Earn 5-10% commission on every container home sale. Retroactive tier upgrades. Real-time dashboard. Stripe payouts.">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; frame-src 'self'; connect-src 'self' https://api.stripe.com; img-src 'self' data: https:; base-uri 'self';">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0a0a0f;color:#e0e0e0;line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+.brand-bar{height:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6,#a855f7)}
+
+header{position:sticky;top:0;z-index:100;background:#0a0a0fee;backdrop-filter:blur(12px);border-bottom:1px solid #1a1a25}
+header .container{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;max-width:1140px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+.logo-text{font-weight:700;color:#fff;font-size:18px}
+.logo-sub{color:#555;font-size:11px}
+nav{display:flex;gap:24px;font-size:14px}
+nav a{color:#888;text-decoration:none;transition:color .2s}
+nav a:hover{color:#fff}
+.btn-header{background:#6366f1;color:#fff;padding:8px 20px;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none}
+
+.hero{padding:80px 0 60px;text-align:center;background:radial-gradient(ellipse at top,#111120 0%,#0a0a0f 80%)}
+.hero-tag{display:inline-block;font-size:13px;color:#f59e0b;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);padding:6px 16px;border-radius:100px;margin-bottom:24px}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:16px}
+.hero h1 span{background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:#888;max-width:640px;margin:0 auto 32px}
+.hero-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.stat{text-align:center}
+.stat-number{font-size:36px;font-weight:800;color:#fff}
+.stat-label{color:#666;font-size:13px;margin-top:4px}
+
+/* Commission Table */
+.rates{max-width:800px;margin:60px auto;padding:0 20px}
+.rates h2{font-size:28px;text-align:center;margin-bottom:8px;color:#fff}
+.rates .subtitle{text-align:center;color:#666;margin-bottom:40px;font-size:15px}
+.rate-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.rate-card{background:#111120;border:1px solid #1a1a25;border-radius:16px;padding:28px;text-align:center;position:relative;transition:all .3s}
+.rate-card:hover{border-color:#333;transform:translateY(-2px)}
+.rate-card.featured{border-color:#f59e0b;box-shadow:0 0 30px rgba(245,158,11,.1)}
+.rate-card.featured .badge-best{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#f59e0b;color:#000;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px}
+.rate-icon{font-size:32px;margin-bottom:12px}
+.rate-pct{font-size:42px;font-weight:900;color:#fff}
+.rate-range{color:#666;font-size:14px;margin-top:4px}
+.rate-desc{color:#888;font-size:13px;margin-top:10px;line-height:1.5}
+.rate-condition{color:#555;font-size:11px;margin-top:8px}
+.rate-example{background:rgba(99,102,241,.08);border-radius:8px;padding:8px;margin-top:12px;font-size:12px;color:#818cf8}
+
+/* Retroactive section */
+.retro{background:#111120;border:1px solid #1a1a25;border-radius:16px;padding:40px;margin:60px auto;max-width:800px;text-align:center}
+.retro h3{font-size:22px;color:#fff;margin-bottom:12px}
+.retro p{color:#888;font-size:14px;max-width:500px;margin:0 auto 24px}
+.retro-highlight{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.retro-item{background:#0a0a0f;border:1px solid #1a1a25;border-radius:12px;padding:20px;flex:1;min-width:200px}
+.retro-item .num{font-size:28px;font-weight:800;color:#22c55e}
+.retro-item .lbl{color:#888;font-size:13px;margin-top:4px}
+
+/* How it works */
+.how{max-width:800px;margin:60px auto;padding:0 20px}
+.how h2{font-size:28px;text-align:center;margin-bottom:40px;color:#fff}
+.steps{display:grid;gap:20px}
+.step{display:flex;gap:20px;align-items:flex-start;background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:24px}
+.step-num{width:40px;height:40px;border-radius:50%;background:#6366f1;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+.step h4{color:#fff;font-size:16px;margin-bottom:4px}
+.step p{color:#666;font-size:13px;line-height:1.5}
+
+/* Payout examples */
+.examples{max-width:800px;margin:60px auto;padding:0 20px}
+.examples h2{font-size:28px;text-align:center;margin-bottom:8px;color:#fff}
+.examples .subtitle{text-align:center;color:#666;margin-bottom:32px;font-size:15px}
+.example-table{width:100%;border-collapse:collapse}
+.example-table th{text-align:left;color:#888;font-size:13px;padding:12px 16px;border-bottom:1px solid #1a1a25;font-weight:600}
+.example-table td{padding:14px 16px;font-size:14px;border-bottom:1px solid #111120;color:#ccc}
+.example-table tr:hover td{background:#111120}
+.example-table .highlight{color:#22c55e;font-weight:700}
+.example-table .total{color:#f59e0b;font-weight:700;font-size:16px}
+
+.cta-section{text-align:center;padding:60px 20px;border-top:1px solid #1a1a25;border-bottom:1px solid #1a1a25;margin:60px 0}
+.cta-section h2{font-size:28px;color:#fff;margin-bottom:12px}
+.cta-section p{color:#888;margin-bottom:24px;font-size:15px}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#000;padding:16px 40px;border-radius:12px;font-weight:700;font-size:18px;text-decoration:none;transition:all .2s}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,158,11,.25)}
+
+/* FAQ */
+.faq{max-width:800px;margin:60px auto;padding:0 20px}
+.faq h2{font-size:28px;text-align:center;margin-bottom:32px;color:#fff}
+details{background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:20px 24px;margin-bottom:12px;cursor:pointer}
+summary{color:#fff;font-weight:600;font-size:15px;cursor:pointer}
+details p{color:#666;font-size:13px;margin-top:12px;line-height:1.6}
+
+footer{border-top:1px solid #1a1a25;padding:40px 0;margin-top:60px;text-align:center}
+footer p{color:#333;font-size:12px}
+footer a{color:#555;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="brand-bar"></div>
+
+<header>
+<a href="/" class="logo">
+  <div class="logo-icon">C</div>
+  <div>
+    <div class="logo-text">ATV Homes</div>
+    <div class="logo-sub">Affiliate Program</div>
+  </div>
+</a>
+<nav>
+  <a href="/">Home</a>
+  <a href="/affiliate/">Affiliate</a>
+  <a href="#how">How It Works</a>
+  <a href="#faq">FAQ</a>
+</nav>
+<a href="mailto:affiliates@atvhomes.com?subject=Join%20Affiliate%20Program" class="btn-header">Join Now →</a>
+</header>
+
+<section class="hero">
+<div class="container">
+  <div class="hero-tag">🔥 Now accepting affiliates — limited spots</div>
+  <h1>Turn Your Audience Into<br><span>$1,749 Per Sale</span></h1>
+  <p>Our affiliates earn 5–10% commission on every container home sold. Retroactive tier upgrades, real-time tracking, automatic Stripe payouts.</p>
+  <a href="mailto:affiliates@atvhomes.com?subject=Join%20Affiliate%20Program" class="cta-btn" style="font-size:16px;padding:14px 36px">Apply Now →</a>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">$749</div>
+      <div class="stat-label">Min commission per sale</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5-10%</div>
+      <div class="stat-label">Commission rate</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">$5,244+</div>
+      <div class="stat-label">At 7 sales (5% tier)</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="container">
+
+<!-- Commission Tiers -->
+<section class="rates" id="rates">
+  <h2>🚀 Commission Tiers</h2>
+  <p class="subtitle">Your rate increases automatically as you sell more. All past commissions recalculated at your new rate — retroactive.</p>
+  <div class="rate-cards">
+    <div class="rate-card">
+      <div class="rate-icon">🌱</div>
+      <div class="rate-pct">5%</div>
+      <div class="rate-range">$749–$1,749 per home</div>
+      <div class="rate-desc">Base tier — 1-9 homes sold</div>
+      <div class="rate-condition">Entry rate for all new affiliates</div>
+      <div class="rate-example">📊 At 5 sales: ~$6,241 total</div>
+    </div>
+    <div class="rate-card featured">
+      <div class="badge-best">BEST VALUE</div>
+      <div class="rate-icon">🔥</div>
+      <div class="rate-pct">7%</div>
+      <div class="rate-range">$1,049–$2,449 per home</div>
+      <div class="rate-desc">Accelerated tier — 10+ homes sold</div>
+      <div class="rate-condition">Unlocks retroactively from your very first sale</div>
+      <div class="rate-example">📊 At 15 sales: ~$22,927 total (vs $15,997 at 5%)</div>
+    </div>
+    <div class="rate-card">
+      <div class="rate-icon">🏆</div>
+      <div class="rate-pct">10%</div>
+      <div class="rate-range">$1,499–$3,499 per home</div>
+      <div class="rate-desc">Elite tier — 25+ homes sold</div>
+      <div class="rate-condition">Retroactive to first sale. Dedicated support.</div>
+      <div class="rate-example">📊 At 30 sales: ~$71,220 total</div>
+    </div>
+  </div>
+</section>
+
+<!-- Retroactive Section -->
+<section class="retro">
+  <h3>🔄 Retroactive Tier Upgrades</h3>
+  <p>Hit 10 sales and all previous commissions are recalculated at 7%. You don't start over — every sale counts toward your highest rate.</p>
+  <div class="retro-highlight">
+    <div class="retro-item">
+      <div class="num">$6,241</div>
+      <div class="lbl">At 5% (5 homes)</div>
+    </div>
+    <div class="retro-item">
+      <div class="num" style="color:#f59e0b">+$1,248</div>
+      <div class="lbl">Retroactive bump when you reach 7%</div>
+    </div>
+    <div class="retro-item">
+      <div class="num">$7,489</div>
+      <div class="lbl">Total after retroactive recalculation</div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how" id="how">
+  <h2>📋 How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h4>Apply</h4>
+        <p>Email <a href="mailto:affiliates@atvhomes.com" style="color:#818cf8">affiliates@atvhomes.com</a> with your platform (blog, YouTube, social, email list). Most applications approved within 24 hours.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h4>Get Your Unique Link</h4>
+        <p>You'll receive a personalized affiliate link (e.g., <code style="color:#818cf8;font-size:13px">atvhomes.com/?ref=yourname</code>). Share it on your website, in videos, or on social media.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h4>Earn On Every Sale</h4>
+        <p>When someone buys through your link, you earn 5-10% of the total sale price. Commissions are tracked in real-time via Stripe Connect.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h4>Get Paid Automatically</h4>
+        <p>Payouts sent via Stripe on the 1st of every month. Minimum $100 threshold. No fees, no holds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payout Examples -->
+<section class="examples">
+  <h2>💰 What You Could Earn</h2>
+  <p class="subtitle">Real numbers based on our current pricing</p>
+  <table class="example-table">
+    <thead>
+      <tr><th>Homes Sold</th><th>At 5% (Entry)</th><th>At 7% (Accelerated)</th><th>At 10% (Elite)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>$749</td><td>$1,049</td><td>$1,499</td></tr>
+      <tr><td>5</td><td>$6,241</td><td>$8,741</td><td>$12,491</td></tr>
+      <tr><td>10</td><td>$12,482</td><td class="highlight">$17,492</td><td>$24,982</td></tr>
+      <tr><td>15</td><td>$15,997</td><td class="highlight">$22,927</td><td>$37,473</td></tr>
+      <tr><td>25</td><td>$26,662</td><td>$37,342</td><td class="total">$53,324</td></tr>
+      <tr><td>50</td><td>$53,324</td><td>$74,662</td><td class="total">$106,648</td></tr>
+    </tbody>
+  </table>
+  <p style="color:#555;font-size:12px;margin-top:12px;text-align:center">* Based on average sale price of $14,995 (20FT Expandable). Higher-priced models yield higher commissions.</p>
+</section>
+
+<!-- Affiliate Tools -->
+<section style="margin:60px 0;max-width:800px;margin:60px auto;padding:0 20px">
+  <h2 style="font-size:28px;text-align:center;margin-bottom:8px;color:#fff">🎁 Affiliate Resources</h2>
+  <p style="text-align:center;color:#666;margin-bottom:32px;font-size:15px">Everything you need to start selling today</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+    <div style="background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:24px;text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">📸</div>
+      <h4 style="color:#fff;font-size:14px;margin-bottom:4px">Product Images</h4>
+      <p style="color:#666;font-size:12px">High-res photos of all models — interior and exterior</p>
+    </div>
+    <div style="background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:24px;text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">✍️</div>
+      <h4 style="color:#fff;font-size:14px;margin-bottom:4px">Review Templates</h4>
+      <p style="color:#666;font-size:12px">Pre-written reviews and comparison articles you can customize</p>
+    </div>
+    <div style="background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:24px;text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">📊</div>
+      <h4 style="color:#fff;font-size:14px;margin-bottom:4px">Real-Time Dashboard</h4>
+      <p style="color:#666;font-size:12px">Track clicks, conversions, and commissions 24/7</p>
+    </div>
+    <div style="background:#111120;border:1px solid #1a1a25;border-radius:12px;padding:24px;text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">🤝</div>
+      <h4 style="color:#fff;font-size:14px;margin-bottom:4px">Dedicated Support</h4>
+      <p style="color:#666;font-size:12px">Personal affiliate manager for 10+ home sellers</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Start Earning?</h2>
+  <p>Join affiliates earning $749–$3,499 per sale. Free to join. No minimums.</p>
+  <a href="mailto:affiliates@atvhomes.com?subject=Join%20Affiliate%20Program&body=Hi%20ATV%20Homes%20Affiliate%20Team%2C%0A%0AI%27d%20like%20to%20join%20the%20affiliate%20program.%20Here%27s%20my%20platform%3A%0A%0APlatform%3A%20(blog%2FYouTube%2Fsocial%2Femail)%0AURL%3A%20(your%20website%20or%20profile)%0AAudience%20size%3A%20%0A%0AThanks!%0A" class="cta-btn">Apply Now — Free</a>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2>❓ Affiliate FAQ</h2>
+  <details>
+    <summary>When do I get paid?</summary>
+    <p>Payouts are processed on the 1st of every month via Stripe. Minimum payout is $100. If you haven't reached $100, your balance rolls over to the next month.</p>
+  </details>
+  <details>
+    <summary>How is the commission calculated?</summary>
+    <p>Commission is based on the final sale price of the home. For example: 5% of a $14,995 20FT Expandable = $749. 10% of a $34,995 40FT Premium = $3,499. Delivery fees are not commissionable.</p>
+  </details>
+  <details>
+    <summary>What counts as a "sale"?</summary>
+    <p>A sale is a completed purchase through your unique affiliate link, verified by Stripe. Orders must be fully paid. Cancelled or refunded orders do not earn commission — any commission already paid will be deducted from future payouts.</p>
+  </details>
+  <details>
+    <summary>Can I promote ATV Homes on any platform?</summary>
+    <p>Yes — blogs, YouTube, TikTok, Instagram, Facebook, Pinterest, email lists, and niche forums. Just include your affiliate link. We prohibit paid ads bidding on ATV Homes trademarks (e.g., "ATV Homes", "Advanced Tiny Villas").</p>
+  </details>
+  <details>
+    <summary>Do I need a website to join?</summary>
+    <p>No. You can promote on social media, YouTube, or through email. We just need a platform to verify your audience relevance.</p>
+  </details>
+  <details>
+    <summary>Can I refer other affiliates?</summary>
+    <p>Yes — our two-tier program gives you 1% commission on sales made by affiliates you refer. This is on top of your own sales commissions.</p>
+  </details>
+  <details>
+    <summary>Do commissions expire?</summary>
+    <p>No. Your lifetime commission balance never expires. Even if you take a break, your pending commissions stay in your account until you request a payout.</p>
+  </details>
+  <details>
+    <summary>How do I get my unique link?</summary>
+    <p>After approval, you'll receive your personalized affiliate link via email. It's a simple URL like <code>atvhomes.com/?ref=yourname</code> — easy to remember and share.</p>
+  </details>
+</section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 ATV Homes LLC. Paul Kennedy McCall & Bradley Dares. | <a href="/">Home</a> | <a href="/tos">Terms</a> | <a href="/privacy">Privacy</a></p>
+  </div>
+</footer>
+
+<script>
+// Animate stats on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+});
+document.querySelectorAll('.stat, .rate-card, .step, .retro-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'all 0.6s ease';
+  observer.observe(el);
+});
+</script>
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

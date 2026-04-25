@@ -1,0 +1,21 @@
+{
+  "id": "logistics-production-liaison",
+  "role": "Production Liaison",
+  "team": "Factory Coordination",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Chinese factory communication (Mandarin/English bilingual)",
+    "Production order specification transmission",
+    "Custom color/layout/configuration order management",
+    "Pre-production sample approval workflow",
+    "Expedite protocol for rush orders"
+  ],
+  "daily_tasks": [
+    "Transmit new customer orders to Grande House production team",
+    "Confirm order specs, customizations, and delivery terms in writing",
+    "Track order through production stages (materials, fabrication, finishing)",
+    "Communicate any customer changes or cancellations"
+  ],
+  "benchmark_against": "Manual sourcing agent coordination, Alibaba Trade Assurance",
+  "threshold": "Order accuracy 100%, spec change response <4 hours"
+}

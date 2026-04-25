@@ -1,0 +1,666 @@
+{
+  "total": 40,
+  "products": [
+    {
+      "slug": "seo-optimizer",
+      "name": "SEO Optimizer",
+      "tagline": "Automated on-page SEO, keyword clustering, and content optimization engine",
+      "price": 47,
+      "category": "Content & SEO",
+      "features": [
+        "Auto-optimize existing content for 50+ ranking factors",
+        "Keyword clustering engine \u2014 group 1,000+ keywords by intent",
+        "TF-IDF analysis against top 10 competitors per keyword",
+        "Automated meta title & description generator (A/B tested)",
+        "Internal link recommendation engine",
+        "Schema markup generator (Article, FAQ, Product, Review)",
+        "Content gap analysis \u2014 find what competitors rank for that you don't",
+        "Weekly SERP position tracking for 500 keywords",
+        "Bulk optimization \u2014 100 pages at once"
+      ],
+      "icon": "\ud83c\udfaf"
+    },
+    {
+      "slug": "social-scheduler",
+      "name": "Social Scheduler",
+      "tagline": "AI-powered multi-platform content scheduler with optimal timing algorithms",
+      "price": 37,
+      "category": "Content & SEO",
+      "features": [
+        "Schedule across 10 platforms: FB, IG, Twitter, LinkedIn, Pinterest, TikTok, YouTube, Tumblr, Reddit, Quora",
+        "Quantum timing algorithm \u2014 posts when your audience is most active per timezone",
+        "Content queue with auto-fill from RSS feeds + trending topics",
+        "Hashtag optimizer \u2014 analyzes top performing hashtags per platform",
+        "Bulk CSV upload \u2014 schedule 100 posts in 2 clicks",
+        "Auto-retry on failed posts \u2014 platform API errors handled",
+        "Analytics dashboard \u2014 engagement, reach, click-through per post",
+        "Team collaboration \u2014 assign posts, approval workflow",
+        "Evergreen recycling \u2014 auto-repost top content on a schedule"
+      ],
+      "icon": "\ud83d\udcc5"
+    },
+    {
+      "slug": "pinterest-bot",
+      "name": "Pinterest Bot",
+      "tagline": "Automated Pinterest growth engine \u2014 pins, boards, and traffic on autopilot",
+      "price": 27,
+      "category": "Content & SEO",
+      "features": [
+        "Auto-create 50+ pins per day from existing content",
+        "Smart board assignment \u2014 categorizes pins by topic match",
+        "Rich pin generator \u2014 auto-adds product info, prices, availability",
+        "SEO pin descriptions \u2014 keyword-optimized with CTA",
+        "Board creation & naming \u2014 auto-organize by niche",
+        "Tailwind-compatible export \u2014 use with approved scheduler",
+        "Seasonal pin rotation \u2014 freshens old pins automatically",
+        "Analytics \u2014 impressions, saves, click-through per board",
+        "100 Pinterest accounts supported per license"
+      ],
+      "icon": "\ud83d\udccc"
+    },
+    {
+      "slug": "email-campaigner",
+      "name": "Email Campaigner",
+      "tagline": "Quantum-optimized email sequences with predictive open rates",
+      "price": 57,
+      "category": "Content & SEO",
+      "features": [
+        "7-email nurture sequences \u2014 welcome, abandoned cart, re-engagement, post-purchase",
+        "Quantum subject line optimizer \u2014 predicts open rate before sending",
+        "Personalization engine \u2014 merge tags, behavioral triggers, segment-based content",
+        "A/B testing \u2014 subject lines, body copy, CTAs, send times",
+        "Automated list cleaning \u2014 removes bounces, unsubscribes, spam traps",
+        "SMTP rotator \u2014 10 built-in SMTP servers to protect deliverability",
+        "Spam score checker \u2014 tests against SpamAssassin before send",
+        "Analytics \u2014 opens, clicks, conversions, revenue per email"
+      ],
+      "icon": "\ud83d\udce7"
+    },
+    {
+      "slug": "lead-magnet-builder",
+      "name": "Lead Magnet Builder",
+      "tagline": "AI generates high-converting lead magnets from any URL or topic",
+      "price": 47,
+      "category": "Content & SEO",
+      "features": [
+        "Generate PDF lead magnets from any URL \u2014 ebook, checklist, template, guide",
+        "Choose from 12 formats: PDF, Notion, Google Doc, Slide deck, Spreadsheet",
+        "Lead magnet landing page generator \u2014 opt-in form + download page",
+        "Email capture integration \u2014 Mailchimp, ConvertKit, AWeber, ActiveCampaign, SendGrid",
+        "Multi-variant testing \u2014 3 headline variants tested automatically",
+        "Analytics \u2014 downloads, conversion rate, email acquisition cost",
+        "White-label \u2014 remove QBA branding on Pro tier"
+      ],
+      "icon": "\ud83e\uddf2"
+    },
+    {
+      "slug": "bridge-page-maker",
+      "name": "Bridge Page Maker",
+      "tagline": "Affiliate bridge pages that rank and convert \u2014 no platform bans",
+      "price": 37,
+      "category": "Content & SEO",
+      "features": [
+        "Generate 'Top 5' review pages, comparison tables, and buyer guides",
+        "Link cloaking \u2014 outgoing affiliate links masked as internal URLs",
+        "Value-first layout \u2014 3 paragraphs of advice before any affiliate link",
+        "SEO-optimized template \u2014 schema-marked reviews, auto-generated FAQs",
+        "One-click deploy to custom domain or subdomain",
+        "A/B testing \u2014 4 page variants tested for conversion rate",
+        "FTC compliance built in \u2014 auto-disclosure placement",
+        "Platform-safe \u2014 built to pass FB, Google, TikTok content review"
+      ],
+      "icon": "\ud83c\udf09"
+    },
+    {
+      "slug": "analytics-dashboard",
+      "name": "Analytics Dashboard",
+      "tagline": "Unified analytics across all your products, campaigns, and platforms",
+      "price": 67,
+      "category": "Content & SEO",
+      "features": [
+        "Connect unlimited data sources \u2014 GA4, Stripe, social platforms, CRMs",
+        "Custom dashboard builder \u2014 drag-and-drop widgets",
+        "Real-time metrics \u2014 active users, revenue, conversion rate, ROAS",
+        "Automated reports \u2014 daily/weekly/monthly PDF export",
+        "Goal tracking \u2014 set targets, get alerts on milestones",
+        "Cohort analysis \u2014 retention, LTV, churn by segment",
+        "Custom alerts \u2014 Slack, email, SMS when KPIs cross thresholds"
+      ],
+      "icon": "\ud83d\udcca"
+    },
+    {
+      "slug": "clickbank-analyzer",
+      "name": "ClickBank Analyzer",
+      "tagline": "Real-time Gravity scoring, competitor ad spy, and Blue Ocean niche finder",
+      "price": 47,
+      "category": "Content & SEO",
+      "features": [
+        "Real-time Gravity scores for ALL ClickBank marketplace products",
+        "Gravity targeting \u2014 filter products between 50-200 (sweet spot)",
+        "Competitor ad spy \u2014 see which ads are running per product",
+        "Blue Ocean finder \u2014 high payout + low competition intersections",
+        "Affiliate link validator \u2014 check if your links are active",
+        "Commission history \u2014 track upsell rates, refund rates per product",
+        "Category trends \u2014 which niches are rising/falling daily",
+        "Export to CSV \u2014 build your product research database"
+      ],
+      "icon": "\ud83d\udd0d"
+    },
+    {
+      "slug": "ad-spy-tool",
+      "name": "Ad Spy Tool",
+      "tagline": "Spy on competitor ads across Facebook, Google, TikTok, and Native",
+      "price": 67,
+      "category": "Content & SEO",
+      "features": [
+        "Ad library search \u2014 FB Ads Library, Google Ads Transparency, TikTok Ad Library",
+        "Ad copy analyzer \u2014 extract winning hooks, angles, CTAs",
+        "Creative analyzer \u2014 image/text ratio, color schemes, video length",
+        "Landing page scraper \u2014 harvest competitor funnel structure",
+        "Spend estimator \u2014 estimated ad spend per competitor per day",
+        "Alerts \u2014 get notified when competitors launch new ads",
+        "Export ad reports \u2014 build your swipe file for inspiration"
+      ],
+      "icon": "\ud83d\udd75\ufe0f"
+    },
+    {
+      "slug": "keyword-explorer",
+      "name": "Keyword Explorer Pro",
+      "tagline": "Quantum-scale keyword research with intent scoring and difficulty analysis",
+      "price": 57,
+      "category": "Content & SEO",
+      "features": [
+        "100,000 keyword suggestions per seed keyword",
+        "Intent scoring \u2014 informational, navigational, commercial, transactional",
+        "Keyword difficulty \u2014 predicts ranking probability with ML model",
+        "SERP feature analysis \u2014 featured snippets, People Also Ask, video carousels",
+        "Long-tail keyword generator \u2014 find zero-competition gold mines",
+        "Cluster builder \u2014 group keywords by topic for pillar pages",
+        "Weekly rank tracking for 1,000 keywords",
+        "Export to CSV, Google Sheets, or Ahrefs format"
+      ],
+      "icon": "\ud83d\udd0e"
+    },
+    {
+      "slug": "social-proof-engine",
+      "name": "Social Proof Engine",
+      "tagline": "FOMO-driven conversion optimization with live social proof injections",
+      "price": 37,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Live purchase notifications (configurable: X people bought this)",
+        "Countdown timers for limited-time offers",
+        "Live visitor counter",
+        "Recent review rotator",
+        "Stock scarcity indicators ('Only 3 left')",
+        "Customizable widget design (position, color, animation)",
+        "A/B testing \u2014 which proof type converts best per page"
+      ]
+    },
+    {
+      "slug": "ab-testing-engine",
+      "name": "A/B Testing Engine",
+      "tagline": "Multi-variant testing on autopilot \u2014 winner auto-selected",
+      "price": 47,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Headline, CTA, image, and layout testing",
+        "Statistical significance calculator",
+        "Winner auto-promotion after confidence threshold",
+        "Traffic split \u2014 50/50, 70/30, or custom ratios",
+        "Heatmap integration \u2014 see where users click per variant",
+        "Revenue tracking per variant",
+        "Test history with full data export"
+      ]
+    },
+    {
+      "slug": "funnel-builder",
+      "name": "Funnel Builder",
+      "tagline": "Drag-and-drop sales funnel builder with quantum optimization",
+      "price": 77,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Visual funnel editor \u2014 drag, drop, connect",
+        "Pre-built funnel templates (click-through, VSL, webinar, quiz)",
+        "One-click upsell/downsell/order bump placement",
+        "Stripe checkout integration with payment routing",
+        "Email sequence auto-triggered at funnel stage",
+        "A/B testing per funnel step",
+        "Analytics \u2014 conversion rate, drop-off point, revenue per step"
+      ]
+    },
+    {
+      "slug": "retargeting-bot",
+      "name": "Retargeting Bot",
+      "tagline": "Automated multi-channel retargeting campaigns with predictive timing",
+      "price": 57,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Facebook Pixel + Google Ads + TikTok Pixel integration",
+        "Segment-based retargeting (cart abandoners, page viewers, past buyers)",
+        "Dynamic ad creative generation per segment",
+        "Frequency capping \u2014 max 3 views per user per day",
+        "Cross-device retargeting",
+        "Budget optimization \u2014 highest ROAS segments get more spend",
+        "ROAS reporting per retargeting campaign"
+      ]
+    },
+    {
+      "slug": "traffic-analyzer",
+      "name": "Traffic Analyzer",
+      "tagline": "Deep traffic source analysis with attribution modeling",
+      "price": 47,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Traffic source detection \u2014 organic, paid, social, direct, referral",
+        "UTM parameter auto-builder",
+        "Attribution modeling \u2014 first-click, last-click, linear, time-decay",
+        "Bot traffic filtering (exclude crawlers, scrapers)",
+        "Geo analysis \u2014 traffic by country, region, city",
+        "Device breakdown \u2014 desktop, mobile, tablet conversion rates",
+        "Custom report export"
+      ]
+    },
+    {
+      "slug": "lead-scorer",
+      "name": "Lead Scorer",
+      "tagline": "ML-powered lead scoring \u2014 prioritize who to call first",
+      "price": 47,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Behavioral scoring \u2014 page visits, email opens, time on site",
+        "Demographic scoring \u2014 industry, company size, job title",
+        "Predictive ML model \u2014 trained on your past conversion data",
+        "CRM integration \u2014 HubSpot, Salesforce, Pipedrive",
+        "Auto-assignment \u2014 highest scores routed to top sales reps",
+        "Decay scoring \u2014 score decreases if lead goes cold",
+        "Alert on high-value lead engagement"
+      ]
+    },
+    {
+      "slug": "conversion-optimizer",
+      "name": "Conversion Optimizer",
+      "tagline": "Real-time conversion rate optimization with quantum algorithms",
+      "price": 57,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Real-time page element testing (headlines, CTAs, images)",
+        "Heatmap + scroll map + click map generation",
+        "Session recording \u2014 watch 100% of user sessions",
+        "Form analysis \u2014 which fields cause abandonment",
+        "Exit intent detection + popup trigger",
+        "Quantum recommendation engine \u2014 suggests page changes ranked by lift",
+        "Revenue impact projection per change"
+      ]
+    },
+    {
+      "slug": "budget-allocator",
+      "name": "Budget Allocator",
+      "tagline": "Quantum-optimized budget distribution across ad platforms",
+      "price": 37,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Connect ad accounts \u2014 FB, Google, TikTok, LinkedIn, Pinterest",
+        "Real-time ROAS comparison across platforms",
+        "Auto-reallocation \u2014 move budget to highest ROAS platform",
+        "Budget caps per platform per day",
+        "Forecast modeling \u2014 what happens if budget increases 20%",
+        "Multi-currency support",
+        "Weekly budget performance report"
+      ]
+    },
+    {
+      "slug": "crm-sync",
+      "name": "CRM Sync Pro",
+      "tagline": "Two-way CRM synchronization across all your tools",
+      "price": 47,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Bi-directional sync \u2014 HubSpot, Salesforce, Pipedrive, Zoho, Close",
+        "Field mapping \u2014 custom field matching between systems",
+        "De-duplication \u2014 merge duplicate contacts automatically",
+        "Activity logging \u2014 calls, emails, meetings logged to CRM",
+        "Webhook triggers \u2014 CRM events fire automations",
+        "Bulk import/export \u2014 CSV, JSON, XML",
+        "Sync conflict resolution rules"
+      ]
+    },
+    {
+      "slug": "custom-dashboard",
+      "name": "Custom Dashboard Builder",
+      "tagline": "Build unlimited custom dashboards from any data source",
+      "price": 37,
+      "category": "Marketing & Conversion",
+      "features": [
+        "Drag-and-drop widget editor",
+        "50+ chart types (bar, line, pie, funnel, heatmap, table)",
+        "SQL query editor for custom data pulls",
+        "Data source connectors \u2014 100+ integrations",
+        "Role-based dashboards \u2014 different views for exec, manager, analyst",
+        "Scheduled PDF/email reports",
+        "Public dashboard sharing option"
+      ]
+    },
+    {
+      "slug": "competitor-tracker",
+      "name": "Competitor Tracker",
+      "tagline": "24/7 competitive intelligence \u2014 know every move your rivals make",
+      "price": 67,
+      "category": "Research & Intel",
+      "features": [
+        "Website change monitoring \u2014 track product, price, content changes",
+        "Social media tracking \u2014 new posts, engagement spikes, follower growth",
+        "Ad monitoring \u2014 new campaigns, creative changes, budget shifts",
+        "Pricing alerts \u2014 email/Slack when competitor changes price",
+        "Email monitoring \u2014 subscribe to competitor newsletters automatically",
+        "Job posting tracker \u2014 see hiring patterns for strategic intel",
+        "Weekly competitive brief generated and delivered"
+      ]
+    },
+    {
+      "slug": "trend-detector",
+      "name": "Trend Detector",
+      "tagline": "Early trend detection from 50+ sources \u2014 be first to market",
+      "price": 47,
+      "category": "Research & Intel",
+      "features": [
+        "50 data sources: Google Trends, Twitter, Reddit, Quora, news, patent filings",
+        "Trend scoring \u2014 velocity, volume, longevity prediction",
+        "Niche-specific filters \u2014 find trends in your industry only",
+        "Alert system \u2014 notified when trend crosses threshold",
+        "Historical analysis \u2014 see how similar trends performed",
+        "Export trend data for content calendar planning",
+        "API access for custom integration"
+      ]
+    },
+    {
+      "slug": "market-analyzer",
+      "name": "Market Analyzer",
+      "tagline": "Deep market analysis with TAM, SAM, SOM calculations",
+      "price": 57,
+      "category": "Research & Intel",
+      "features": [
+        "TAM/SAM/SOM calculator per niche",
+        "Competitive landscape mapping \u2014 market share chart",
+        "Pricing analysis \u2014 competitor price distribution",
+        "Customer persona generator from market data",
+        "Market growth rate projection",
+        "Regulatory risk assessment",
+        "Export market analysis report as PDF"
+      ]
+    },
+    {
+      "slug": "content-gap-finder",
+      "name": "Content Gap Finder",
+      "tagline": "Find content gaps your competitors haven't filled \u2014 rank instantly",
+      "price": 37,
+      "category": "Research & Intel",
+      "features": [
+        "Compare your domain vs 5 competitors for keyword overlap",
+        "Gap scoring \u2014 how many competitors rank, how hard to break in",
+        "Zero-competition keywords filter",
+        "Keyword difficulty threshold adjustable (0-100)",
+        "Content brief generator for each gap",
+        "Priority ranking \u2014 which gaps to fill first by traffic potential",
+        "Weekly gap analysis delivered"
+      ]
+    },
+    {
+      "slug": "audience-profiler",
+      "name": "Audience Profiler",
+      "tagline": "Quantum-powered audience segmentation and profiling",
+      "price": 47,
+      "category": "Research & Intel",
+      "features": [
+        "Import audience from CRM, email list, or social followers",
+        "Demographic segmentation \u2014 age, gender, location, income",
+        "Psychographic profiling \u2014 interests, values, lifestyle clusters",
+        "Behavioral segmentation \u2014 purchase history, engagement patterns",
+        "Lookalike audience generator for ad platforms",
+        "Persona document auto-generation",
+        "Audience overlap analysis"
+      ]
+    },
+    {
+      "slug": "sentiment-analyzer",
+      "name": "Sentiment Analyzer",
+      "tagline": "Real-time brand sentiment monitoring across the open web",
+      "price": 47,
+      "category": "Research & Intel",
+      "features": [
+        "Brand mention monitoring \u2014 social, news, forums, reviews",
+        "Sentiment scoring \u2014 positive, negative, neutral with confidence",
+        "Trend tracking \u2014 sentiment change over time",
+        "Alert on negative sentiment spikes",
+        "Competitor sentiment comparison",
+        "Thematic analysis \u2014 what topics drive positive/negative sentiment",
+        "Weekly sentiment report"
+      ]
+    },
+    {
+      "slug": "price-tracker",
+      "name": "Price Tracker",
+      "tagline": "Automated competitor price monitoring with dynamic repricing",
+      "price": 37,
+      "category": "Research & Intel",
+      "features": [
+        "Track competitor prices daily",
+        "Price change alerts \u2014 email/Slack/webhook",
+        "Price history charts \u2014 see pricing patterns over time",
+        "Repricing rule engine \u2014 auto-adjust based on competitor moves",
+        "MAP compliance monitoring \u2014 enforce minimum advertised price",
+        "Competitor promotion tracking \u2014 sale events, coupons, bundles",
+        "Export price data as CSV"
+      ]
+    },
+    {
+      "slug": "product-validator",
+      "name": "Product Validator",
+      "tagline": "Validate product ideas with market data before building",
+      "price": 47,
+      "category": "Research & Intel",
+      "features": [
+        "Search volume analysis for product-related keywords",
+        "Existing competitor count and quality assessment",
+        "Review sentiment analysis for similar products",
+        "Price point optimization \u2014 what the market will bear",
+        "Profit margin calculator after fees, ads, COGS",
+        "Demand forecast \u2014 projected monthly sales",
+        "Go/No-go recommendation with confidence score"
+      ]
+    },
+    {
+      "slug": "niche-finder",
+      "name": "Niche Finder Pro",
+      "tagline": "Blue Ocean niche discovery engine \u2014 find profitable niches with low competition",
+      "price": 67,
+      "category": "Research & Intel",
+      "features": [
+        "Cross-reference 50+ niche criteria: search volume, competition, payout, trend",
+        "Profitability score \u2014 estimated monthly earnings per niche",
+        "Keyword availability \u2014 how many keywords have low competition",
+        "Affiliate network compatibility \u2014 ClickBank, Amazon, ShareASale, CJ",
+        "Entry barrier assessment \u2014 cost, complexity, regulation",
+        "Seasonality analysis \u2014 which months peak per niche",
+        "Top 10 niche recommendations with data backing"
+      ]
+    },
+    {
+      "slug": "backlink-checker",
+      "name": "Backlink Checker Pro",
+      "tagline": "Full backlink audit and analysis with toxic link detection",
+      "price": 47,
+      "category": "Research & Intel",
+      "features": [
+        "Full backlink profile audit \u2014 1M+ links per domain",
+        "Toxic link detection \u2014 Google penalty risk score per link",
+        "Link quality scoring \u2014 DA, relevance, anchor text, follow/nofollow",
+        "Competitor backlink comparison \u2014 find link opportunities",
+        "Link building suggestions \u2014 broken links, unlinked mentions, guest post targets",
+        "Disavow file generator for toxic links",
+        "Weekly backlink monitoring with change alerts"
+      ]
+    },
+    {
+      "slug": "task-manager",
+      "name": "Task Manager Quantum",
+      "tagline": "Quantum-prioritized task management for teams of any size",
+      "price": 37,
+      "category": "Operations & Workflow",
+      "features": [
+        "Unlimited tasks, projects, and teams",
+        "Quantum prioritization \u2014 auto-order tasks by impact + urgency",
+        "Time tracking with auto-suggested estimates",
+        "Dependencies and blockers tracking",
+        "Kanban, list, and calendar views",
+        "Automation rules \u2014 assign, move, tag tasks automatically",
+        "Slack, email, and webhook integration"
+      ]
+    },
+    {
+      "slug": "workflow-builder",
+      "name": "Workflow Builder",
+      "tagline": "Visual workflow automation without code",
+      "price": 47,
+      "category": "Operations & Workflow",
+      "features": [
+        "Drag-and-drop workflow editor",
+        "200+ triggers and 500+ actions",
+        "Conditional logic \u2014 if/then/else, loops, delays",
+        "Zapier/Make compatible \u2014 export/import workflows",
+        "Error handling \u2014 retry, fallback, alert on failure",
+        "Workflow templates for common processes",
+        "Execution logs and debugging tools"
+      ]
+    },
+    {
+      "slug": "invoice-generator",
+      "name": "Invoice Generator",
+      "tagline": "Automated invoice creation and payment tracking",
+      "price": 27,
+      "category": "Operations & Workflow",
+      "features": [
+        "Auto-generate invoices from Stripe/subscription data",
+        "Custom invoice templates with brand colors/logo",
+        "Recurring invoice automation",
+        "Payment tracking \u2014 paid, overdue, cancelled status",
+        "Late payment reminders (1, 3, 7, 14 days)",
+        "Multi-currency invoice support",
+        "PDF export and email delivery"
+      ]
+    },
+    {
+      "slug": "contract-analyzer",
+      "name": "Contract Analyzer",
+      "tagline": "AI contract review \u2014 flag risks, obligations, and deadlines",
+      "price": 57,
+      "category": "Operations & Workflow",
+      "features": [
+        "Upload any PDF/DOCX contract for AI analysis",
+        "Risk flagging \u2014 liability, indemnification, termination clauses",
+        "Obligation extraction \u2014 deadlines, reporting, payment schedules",
+        "Comparison mode \u2014 compare contract vs standard template",
+        "Compliance check \u2014 GDPR, CCPA, PIPEDA clause detection",
+        "Key terms summary in plain English",
+        "Export analysis report"
+      ]
+    },
+    {
+      "slug": "compliance-checker",
+      "name": "Compliance Checker",
+      "tagline": "Automated compliance scanning across 30+ regulatory frameworks",
+      "price": 67,
+      "category": "Operations & Workflow",
+      "features": [
+        "30+ frameworks: GDPR, CCPA, PIPEDA, FTC, FDA, HIPAA, SOC2",
+        "Website compliance scan \u2014 cookie consent, privacy policy, ToS",
+        "Ad compliance check \u2014 FTC endorsement guidelines, platform policies",
+        "FTC disclosure verification for affiliate content",
+        "Email compliance (CAN-SPAM, CASL) auto-scan",
+        "Violation report with fix recommendations",
+        "Continuous monitoring with change alerts"
+      ]
+    },
+    {
+      "slug": "report-generator",
+      "name": "Report Generator",
+      "tagline": "Automated reports from any data source \u2014 PDF, CSV, interactive",
+      "price": 37,
+      "category": "Operations & Workflow",
+      "features": [
+        "Schedule reports daily, weekly, monthly",
+        "Connect any data source (GA4, Stripe, social, CRM, SQL)",
+        "Template builder with drag-and-drop sections",
+        "Conditional formatting \u2014 highlight metrics above/below target",
+        "PDF, CSV, HTML, and interactive web report output",
+        "Auto-distribute to email list or Slack channel",
+        "White-label reports \u2014 remove QBA logo"
+      ]
+    },
+    {
+      "slug": "store-builder",
+      "name": "Store Builder",
+      "tagline": "One-click e-commerce store with quantum conversion optimization",
+      "price": 97,
+      "category": "E-Commerce & Sales",
+      "features": [
+        "Full e-commerce store in 5 minutes \u2014 products, cart, checkout",
+        "Stripe payment integration with 40+ payment methods",
+        "Product management \u2014 variants, inventory, digital downloads",
+        "SEO-optimized product pages with schema markup",
+        "Order management dashboard",
+        "Shipping calculator and tax auto-calculation",
+        "Analytics \u2014 revenue, orders, conversion rate, AOV"
+      ]
+    },
+    {
+      "slug": "product-listing-optimizer",
+      "name": "Product Listing Optimizer",
+      "tagline": "Optimize product listings for Amazon, Shopify, and Etsy",
+      "price": 37,
+      "category": "E-Commerce & Sales",
+      "features": [
+        "Title optimization \u2014 keyword placement, length, readability scoring",
+        "Bullet point generator \u2014 highlight 5 key benefits with keywords",
+        "Description writer \u2014 SEO-optimized product descriptions",
+        "Image tag suggestions \u2014 alt text, file naming",
+        "Backend keyword stuffing optimizer",
+        "Competitor listing comparison \u2014 see what top sellers do better",
+        "Listing score \u2014 A/B test before publishing"
+      ]
+    },
+    {
+      "slug": "cart-recoverer",
+      "name": "Cart Recoverer",
+      "tagline": "Automated abandoned cart recovery with quantum timing",
+      "price": 47,
+      "category": "E-Commerce & Sales",
+      "features": [
+        "Track 100% of abandoned carts across all pages",
+        "Recovery email sequence (1hr, 6hr, 24hr, 72hr)",
+        "SMS recovery for opted-in customers",
+        "Discount offer optimization \u2014 find the minimum discount that converts",
+        "Real-time dashboard \u2014 recovery rate, recovered revenue, AOV",
+        "A/B test recovery message timing and content",
+        "Stripe/WooCommerce/Shopify integration"
+      ]
+    },
+    {
+      "slug": "subscription-manager",
+      "name": "Subscription Manager",
+      "tagline": "Full subscription lifecycle management with churn prediction",
+      "price": 57,
+      "category": "E-Commerce & Sales",
+      "features": [
+        "Create and manage subscription plans (weekly, monthly, yearly)",
+        "Proration engine \u2014 handle plan changes mid-cycle",
+        "Churn prediction ML model \u2014 flag at-risk subscribers",
+        "Retention offer automation \u2014 discount, pause, downgrade options",
+        "Revenue forecasting \u2014 MRR, ARR, churn rate projections",
+        "Failed payment recovery \u2014 retry logic + email/SMS alerts",
+        "Customer portal \u2014 subscribers manage own plans"
+      ]
+    }
+  ],
+  "generated_at": "2026-04-24T18:26:00Z"
+}

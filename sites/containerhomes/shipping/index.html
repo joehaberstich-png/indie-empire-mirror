@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Shipping Calculator — ATV Homes Container Home Delivery</title>
+<meta name="description" content="Calculate shipping costs for container home delivery worldwide. Get an instant quote for any ATV Homes model to any country.">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6}
+.header{background:#111116;border-bottom:1px solid #ef444433;padding:16px 24px}
+.header-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#ef4444;font-weight:800;font-size:18px;text-decoration:none}
+.header a{color:#666;text-decoration:none;font-size:13px;margin-left:20px}
+.header a:hover{color:#ef4444}
+.container{max-width:1000px;margin:0 auto;padding:40px 20px}
+h1{color:#fff;font-size:28px;margin-bottom:8px}
+.sub{color:#555;font-size:14px;margin-bottom:32px}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+.calc-panel{background:#111116;border:1px solid #1a1a1f;border-radius:12px;padding:28px}
+.calc-panel h2{color:#fff;font-size:18px;margin-bottom:16px}
+.field{margin-bottom:16px}
+.field label{display:block;color:#666;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.field select,.field input{width:100%;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:10px 14px;border-radius:8px;font-size:14px}
+.field select option{background:#111}
+.btn{background:#ef4444;color:#000;padding:12px 28px;border-radius:8px;border:none;font-weight:700;font-size:14px;cursor:pointer;width:100%;transition:background .2s}
+.btn:hover{background:#dc2626}
+.result-panel{background:linear-gradient(135deg,#0f0f1a,#1a1a2e);border:1px solid #22c55e44;border-radius:12px;padding:28px;display:none}
+.result-panel.visible{display:block}
+.result-panel .price-line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1a1a1f}
+.result-panel .price-line:last-child{border-bottom:none}
+.result-panel .label{color:#888;font-size:13px}
+.result-panel .value{color:#fff;font-weight:600;font-size:14px}
+.result-panel .total{color:#22c55e;font-size:24px;font-weight:800;margin:12px 0;text-align:center}
+.result-panel .note{color:#555;font-size:12px;text-align:center;margin-top:12px}
+.info-box{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:8px;padding:16px;margin-top:20px}
+.info-box h3{color:#fff;font-size:14px;margin-bottom:8px}
+.info-box p{color:#666;font-size:13px;line-height:1.6;margin:0}
+.info-box p strong{color:#888}
+.zone-grid{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.zone-card{background:#111116;border:1px solid #1a1a1f;border-radius:8px;padding:16px;text-align:center}
+.zone-card h4{color:#fff;font-size:13px;margin-bottom:4px}
+.zone-card .zprice{color:#22c55e;font-size:18px;font-weight:700}
+.zone-card .zdesc{color:#555;font-size:11px;margin-top:4px}
+footer{background:#050508;border-top:1px solid #1a1a1f;padding:30px 24px;text-align:center}
+footer p{color:#333;font-size:12px}
+footer a{color:#555;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-inner">
+  <a href="/" class="logo">ATV HOMES</a>
+  <div><a href="/">Home</a><a href="/green-incentives/">Incentives</a></div>
+</div>
+</div>
+
+<div class="container">
+<h1>🚢 Shipping Calculator</h1>
+<p class="sub">Get an estimated shipping cost for your container home to any country. All prices in USD. Final quotes confirmed at checkout.</p>
+
+<div class="calc-grid">
+  <div class="calc-panel">
+    <h2>Select Your Options</h2>
+    <div class="field">
+      <label>Container Model</label>
+      <select id="model">
+        <option value="20ft-expandable">20FT Expandable (400 sq ft)</option>
+        <option value="20ft-premium">20FT Premium (400 sq ft)</option>
+        <option value="40ft-deluxe">40FT Deluxe (800 sq ft)</option>
+        <option value="40ft-premium">40FT Premium (800 sq ft)</option>
+        <option value="40ft-premium-plus">40FT Premium+ (960 sq ft)</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Shipping Region</label>
+      <select id="region">
+        <option value="">Select region...</option>
+        <option value="us-continental">🇺🇸 Continental US (48 states)</option>
+        <option value="us-alaska">🇺🇸 Alaska</option>
+        <option value="us-hawaii">🌺 Hawaii</option>
+        <option value="canada">🇨🇦 Canada</option>
+        <option value="mexico">🇲🇽 Mexico</option>
+        <option value="caribbean">🏝️ Caribbean</option>
+        <option value="central-america">🌎 Central America</option>
+        <option value="south-america-west">🌎 South America (West Coast)</option>
+        <option value="south-america-east">🌎 South America (East Coast)</option>
+        <option value="uk-ireland">🇬🇧 UK & Ireland</option>
+        <option value="western-europe">🇪🇺 Western Europe</option>
+        <option value="eastern-europe">🇪🇺 Eastern Europe</option>
+        <option value="scandinavia">🇪🇺 Scandinavia</option>
+        <option value="north-africa">🌍 North Africa</option>
+        <option value="south-africa">🌍 Southern Africa</option>
+        <option value="middle-east">🕌 Middle East</option>
+        <option value="india-south-asia">🇮🇳 India & South Asia</option>
+        <option value="southeast-asia">🌏 Southeast Asia</option>
+        <option value="china-east-asia">🏯 China & East Asia</option>
+        <option value="australia-nz">🦘 Australia & NZ</option>
+        <option value="pacific-islands">🏝️ Pacific Islands</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Assembly Service</label>
+      <select id="assembly">
+        <option value="no">No assembly (freight only)</option>
+        <option value="yes">+ On-site assembly ($1,500-$4,000)</option>
+      </select>
+    </div>
+    <button class="btn" onclick="calculate()">Calculate Shipping →</button>
+  </div>
+
+  <div class="result-panel" id="resultPanel">
+    <h2 style="color:#fff;font-size:18px;margin-bottom:16px">📋 Shipping Estimate</h2>
+    <div id="resultContent"></div>
+    <div style="text-align:center;margin-top:20px">
+      <a href="/" class="btn" style="display:inline-block;width:auto;padding:12px 32px;text-decoration:none">Proceed to Buy →</a>
+    </div>
+  </div>
+</div>
+
+<div class="info-box">
+  <h3>How Shipping Works</h3>
+  <p><strong>📦 Method:</strong> Flat-rack container on cargo vessel. Each container home ships as a flat-rack unit. 20FT models fit in a single 20ft container. 40FT models require a 40ft flat-rack or RO-RO.</p>
+  <p><strong>⏱️ Transit Time:</strong> Varies by region: 10-20 days (North America), 25-40 days (Europe), 30-50 days (Asia/Pacific).</p>
+  <p><strong>📋 Port-to-Door:</strong> Prices include port handling and inland delivery to your property. May require crane offloading at your site — typically $300-$800 extra.</p>
+  <p style="margin-top:8px;color:#444"><strong>Customs duties & import taxes are not included</strong> — these vary by country and must be paid by the buyer. We provide all documentation (HS Code: 9406.10 — prefabricated buildings).</p>
+</div>
+
+<h2 style="color:#fff;font-size:20px;margin-top:40px;margin-bottom:16px">Estimated Shipping by Region</h2>
+<p style="color:#555;font-size:13px;margin-bottom:20px">Base costs for a 20FT Expandable container. Larger models add 30-50%.</p>
+
+<div class="zone-grid" id="zoneGrid"></div>
+
+</div>
+
+<footer>
+<p>© 2026 ATV Homes — Paul Kennedy McCall & Bradley Dares. Shipping estimates are guidelines only — final quote confirmed at checkout. | <a href="/">Home</a> | <a href="/privacy/">Privacy</a></p>
+</footer>
+
+<script>
+// Shipping cost matrix (base cost for 20FT Expandable)
+const SHIPPING = {
+  "us-continental":     { base: 1500,    label: "Continental US",          flag: "🇺🇸", time: "10-15 days" },
+  "us-alaska":          { base: 3500,    label: "Alaska",                  flag: "🇺🇸", time: "15-25 days" },
+  "us-hawaii":          { base: 4000,    label: "Hawaii",                  flag: "🌺", time: "20-30 days" },
+  "canada":             { base: 2800,    label: "Canada",                  flag: "🇨🇦", time: "15-25 days" },
+  "mexico":             { base: 3200,    label: "Mexico & Central America",flag: "🇲🇽", time: "20-30 days" },
+  "caribbean":          { base: 4500,    label: "Caribbean",               flag: "🏝️", time: "20-30 days" },
+  "central-america":    { base: 4000,    label: "Central America",         flag: "🌎", time: "25-35 days" },
+  "south-america-west": { base: 5500,    label: "South America (West)",    flag: "🌎", time: "30-45 days" },
+  "south-america-east": { base: 6000,    label: "South America (East)",    flag: "🌎", time: "30-45 days" },
+  "uk-ireland":         { base: 4800,    label: "UK & Ireland",            flag: "🇬🇧", time: "25-35 days" },
+  "western-europe":     { base: 5200,    label: "Western Europe",          flag: "🇪🇺", time: "25-35 days" },
+  "eastern-europe":     { base: 5800,    label: "Eastern Europe",          flag: "🇪🇺", time: "30-40 days" },
+  "scandinavia":        { base: 5500,    label: "Scandinavia",             flag: "🇪🇺", time: "30-40 days" },
+  "north-africa":       { base: 5200,    label: "North Africa",            flag: "🌍", time: "30-40 days" },
+  "south-africa":       { base: 7000,    label: "Southern Africa",         flag: "🌍", time: "35-50 days" },
+  "middle-east":        { base: 5500,    label: "Middle East",             flag: "🕌", time: "30-40 days" },
+  "india-south-asia":   { base: 6200,    label: "India & South Asia",      flag: "🇮🇳", time: "35-50 days" },
+  "southeast-asia":     { base: 6500,    label: "Southeast Asia",          flag: "🌏", time: "35-50 days" },
+  "china-east-asia":    { base: 6800,    label: "China & East Asia",       flag: "🏯", time: "35-50 days" },
+  "australia-nz":       { base: 7200,    label: "Australia & NZ",          flag: "🦘", time: "35-50 days" },
+  "pacific-islands":    { base: 8000,    label: "Pacific Islands",         flag: "🏝️", time: "40-55 days" },
+};
+
+// Model size multipliers
+const MODEL_MULT = {
+  "20ft-expandable":     { mult: 1.0,   name: "20FT Expandable",     price: 14995 },
+  "20ft-premium":        { mult: 1.05,  name: "20FT Premium",        price: 19995 },
+  "40ft-deluxe":         { mult: 1.35,  name: "40FT Deluxe",         price: 24995 },
+  "40ft-premium":        { mult: 1.4,   name: "40FT Premium",        price: 34995 },
+  "40ft-premium-plus":   { mult: 1.5,   name: "40FT Premium+",       price: 34995 },
+};
+
+function calculate() {
+  const modelEl = document.getElementById('model');
+  const regionEl = document.getElementById('region');
+  const assemblyEl = document.getElementById('assembly');
+  
+  const model = MODEL_MULT[modelEl.value];
+  const region = SHIPPING[regionEl.value];
+  const assembly = assemblyEl.value === 'yes';
+  
+  if (!model || !region) {
+    alert('Please select both a model and shipping region.');
+    return;
+  }
+  
+  const baseShipping = region.base * model.mult;
+  const assemblyCost = assembly ? (model.mult <= 1.1 ? 1500 : 2500) : 0;
+  const totalShipping = Math.round(baseShipping + assemblyCost);
+  const grandTotal = model.price + totalShipping;
+  
+  document.getElementById('resultPanel').classList.add('visible');
+  document.getElementById('resultContent').innerHTML = `
+    <div class="price-line">
+      <span class="label">${region.flag} ${region.label}</span>
+      <span class="value">${region.time}</span>
+    </div>
+    <div class="price-line">
+      <span class="label">Model</span>
+      <span class="value">${model.name}</span>
+    </div>
+    <div class="price-line">
+      <span class="label">Base price</span>
+      <span class="value">$${model.price.toLocaleString()}</span>
+    </div>
+    <div class="price-line">
+      <span class="label">Estimated shipping</span>
+      <span class="value">$${baseShipping.toLocaleString()}</span>
+    </div>
+    ${assembly ? `<div class="price-line"><span class="label">Assembly service</span><span class="value">$${assemblyCost.toLocaleString()}</span></div>` : ''}
+    <div class="price-line" style="border-bottom:none;padding-bottom:0">
+      <span class="label">Customs duties</span>
+      <span class="value" style="color:#f59e0b">Varies by country</span>
+    </div>
+    <div class="total">$${grandTotal.toLocaleString()}</div>
+    <div class="note" style="margin-bottom:4px">Estimated total (home + shipping) — customs & import duties not included</div>
+  `;
+}
+
+// Fill zone cards
+function renderZones() {
+  const grid = document.getElementById('zoneGrid');
+  grid.innerHTML = '';
+  for (const [key, z] of Object.entries(SHIPPING)) {
+    const card = document.createElement('div');
+    card.className = 'zone-card';
+    card.innerHTML = `
+      <h4>${z.flag} ${z.label}</h4>
+      <div class="zprice">$${z.base.toLocaleString()}</div>
+      <div class="zdesc">20FT base · ${z.time}</div>
+    `;
+    card.style.cursor = 'pointer';
+    card.onclick = () => { document.getElementById('region').value = key; calculate(); };
+    grid.appendChild(card);
+  }
+}
+
+renderZones();
+</script>
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

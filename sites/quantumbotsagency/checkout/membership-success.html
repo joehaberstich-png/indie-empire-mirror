@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Membership Active — Fall of the Cabal</title>
+<link rel="stylesheet" href="/quantumbotsagency/css/quantum.css">
+<style>
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse at center,#0a0015 0%,#000 100%);color:var(--text-primary);text-align:center;padding:2rem;}
+.status-icon{font-size:5rem;margin-bottom:1rem;animation:float 3s ease-in-out infinite;}
+.badge{display:inline-block;background:linear-gradient(135deg,rgba(255,215,0,0.1),rgba(124,58,237,0.1));border:1px solid rgba(255,215,0,0.3);padding:0.5rem 1.5rem;border-radius:50px;font-size:0.85rem;color:var(--quantum-accent);margin:1rem 0;}
+.perks{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin:1.5rem auto;max-width:500px;}
+.perk{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:0.6rem 1rem;font-size:0.8rem;color:var(--text-muted);}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+</style>
+</head><body>
+<div>
+<div class="status-icon">⚜</div>
+<h1 class="gradient-text">Membership Activated</h1>
+<div class="badge" id="tier-badge"></div>
+<p style="font-size:1.1rem;margin:0.5rem 0;">You now have access to the Fall of the Cabal.</p>
+<p style="color:var(--text-muted);font-size:0.9rem;">Your first lore drop, game download link, and member dashboard will arrive by email within 10 minutes.</p>
+<div class="perks">
+<div class="perk">🎮 Full Game Access</div>
+<div class="perk">📜 Weekly Intel</div>
+<div class="perk">🛡️ Member-Only Events</div>
+</div>
+<p style="color:var(--text-muted);font-size:0.8rem;margin-top:2rem;">Need help? Open the 24/7 Quantum Chat below.</p>
+<div style="margin-top:1.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a href="/" class="btn btn-gold">← Enter the Game</a>
+<a href="/projects/Fall_of_the_Cabal_Game_Design_Document.html" class="btn btn-secondary">Read the Lore</a>
+</div>
+</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const tier = params.get('tier') || 'Member';
+document.getElementById('tier-badge').textContent = '✦ ' + tier.charAt(0).toUpperCase() + tier.slice(1);
+</script>
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body></html>

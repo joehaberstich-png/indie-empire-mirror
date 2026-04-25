@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanivo Bio Wellness Energy Bed | Quantum Healing Technology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a5c36;
+            --primary-light: #0e7a4a;
+            --secondary: #1a365d;
+            --accent: #2d9cdb;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: #4cd964;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .cta-button {
+            background-color: #4cd964;
+            color: var(--dark);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #3ac853;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 217, 100, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 92, 54, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        /* Product Details */
+        .product-details {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .product-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .product-info h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .benefits-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: #4cd964;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(10, 92, 54, 0.2);
+        }
+        
+        .price {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-info h4 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.25rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>⚡</span> Quanivo Wellness
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#product">Product</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#pricing" class="cta-button">Book a Demo</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Revolutionize Your Wellness with Quantum Energy</h1>
+            <p>The Quanivo Bio Wellness Energy Bed combines cutting-edge quantum physics with holistic healing to optimize cellular function, reduce stress, and promote self-healing at the molecular level.</p>
+            <a href="#pricing" class="cta-button">Experience Quantum Healing →</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quantum Wellness Technology</h2>
+                <p>Harness the power of electromagnetic fields and bio-resonance for transformative health benefits</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quantum Energy Fields</h3>
+                    <p>Advanced electromagnetic field technology stimulates cellular repair and enhances vitality through precise frequency alignment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧬</div>
+                    <h3>Bio-Resonance Healing</h3>
+                    <p>Resonates with your body's natural frequencies to restore balance and optimize cellular communication pathways.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌀</div>
+                    <h3>Holistic Integration</h3>
+                    <p>Combines multiple wellness modalities for synergistic effects targeting mind, body, and energy systems simultaneously.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section id="product" class="product-details">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-image">
+                    <!-- Placeholder for product image -->
+                    <div style="background: linear-gradient(135deg, #0a5c36 0%, #1a365d 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">
+                        Quanivo Bio Wellness Energy Bed
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h2>The Future of Wellness is Here</h2>
+                    <p>The Quanivo Bio Wellness Energy Bed represents the pinnacle of quantum wellness technology. By leveraging principles of quantum physics and bio-stacking, this innovative system creates a personalized healing environment that works at the cellular level.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Enhances cellular function and repair</li>
+                        <li>Reduces stress and promotes relaxation</li>
+                        <li>Optimizes circulatory and lymphatic systems</li>
+                        <li>Supports muscle recovery and detoxification</li>
+                        <li>Balances energy frequencies for holistic well-being</li>
+                        <li>Non-invasive, drug-free healing approach</li>
+                        <li>Suitable for home or professional wellness settings</li>
+                    </ul>
+                    
+                    <p>Experience the transformative power of quantum energy with our state-of-the-art bio wellness bed, designed for those seeking innovative solutions to complement traditional health practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investment in Your Well-being</h2>
+                <p>Choose the package that fits your wellness journey</p>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium Wellness Package</h3>
+                <div class="price">$12,999<span>/one-time</span></div>
+                <p>Complete quantum wellness system for home or professional use</p>
+                <ul class="benefits-list" style="border: none; text-align: left; margin: 2rem 0;">
+                    <li>Quanivo Bio Wellness Energy Bed</li>
+                    <li>Professional installation & setup</li>
+                    <li>One-year comprehensive warranty</li>
+                    <li>Quantum wellness training program</li>
+                    <li>Lifetime software updates</li>
+                    <li>24/7 technical support</li>
+                </ul>
+                <a href="#contact" class="cta-button" style="background-color: #4cd964; color: #212529;">Schedule Your Demo</a>
+                <p style="margin-top: 1rem; opacity: 0.8;">Flexible financing options available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transformative Experiences</h2>
+                <p>See what wellness professionals and clients are saying</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The Quanivo Energy Bed has revolutionized our wellness center. Clients report improved sleep, reduced pain, and increased energy levels after just a few sessions."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Dr. Sarah Chen</h4>
+                            <p>Integrative Medicine Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As an athlete, recovery is crucial. This bed has cut my recovery time in half and improved my overall performance. The quantum energy technology is truly groundbreaking."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Marcus Johnson</h4>
+                            <p>Professional Athlete</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "We've integrated the Quanivo system into our luxury spa, and it's become our most requested treatment. The combination of technology and holistic healing is exactly what modern wellness needs."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Elena Rodriguez</h4>
+                            <p>Spa Director, Serenity Retreat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Quantum Wellness?</h2>
+            <p>Book a personalized demo to experience the transformative power of the Quanivo Bio Wellness Energy Bed. Our wellness experts will guide you through the technology and help you discover how quantum healing can benefit you.</p>
+            <a href="mailto:demo@quanivowellness.com" class="cta-button">Book Your Demo Now</a>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">Or call us at (555) 123-4567</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quanivo Wellness</h3>
+                    <p>Pioneering the future of quantum wellness and bio-stacking technology for holistic health optimization.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#features">Technology</a></li>
+                        <li><a href="#product">Product Details</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: info@quanivowellness.com</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Address: 123 Wellness Blvd, San Francisco, CA</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for the latest in quantum wellness technology.</p>
+                    <form style="margin-top: 1rem;">
+                        <input type="email" placeholder="Your email" style="padding: 0.75rem; border-radius: 4px; border: none; width: 100%; margin-bottom: 0.5rem;">
+                        <button type="submit" class="cta-button" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Quanivo Wellness. All rights reserved. | Quantum Wellness Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing to Quanivo Wellness updates!');
+                this.reset();
+            }
+        });
+    </script>
+<div class="qba-tag" style="text-align:center;font-size:10px;color:#555;padding:8px;border-top:1px solid #222">⚡ Powered by Quantum Bots Agency → quantumbotsagency.com</div><script src="/quanivo/js/quantum-cs-v2.js"></script>
+</body>
+</html>

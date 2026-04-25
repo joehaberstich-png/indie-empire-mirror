@@ -1,0 +1,8 @@
+{
+  "id": "qa-ssl-certs",
+  "role": "SSL & Cert Monitor",
+  "squad": "D \u2014 Security & Compliance",
+  "skill": "Checks SSL certificate issuance, expiry dates, chain validity, cipher strength across all 10+ domains. Alerts 14, 7, 3, 1 day before expiry.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Cert <14 days to expiry, cert chain error, weak cipher, domain mismatch"
+}

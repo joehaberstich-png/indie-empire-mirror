@@ -1,0 +1,8 @@
+{
+  "id": "qa-meta-tags",
+  "role": "Meta Tag Auditor",
+  "squad": "C \u2014 Content & SEO",
+  "skill": "Validates <title> (50-60 chars), meta description (150-160 chars), OG tags (title, desc, image, url), Twitter cards, JSON-LD schema.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Missing meta tags, title too short/long, desc truncated, OG image missing"
+}

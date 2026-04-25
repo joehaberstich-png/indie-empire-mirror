@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>₡CC Purchased — Fall of the Cabal</title>
+<link rel="stylesheet" href="/quantumbotsagency/css/quantum.css">
+<style>
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse at center,#0a0015 0%,#000 100%);color:var(--text-primary);text-align:center;padding:2rem;}
+.status-icon{font-size:5rem;margin-bottom:1rem;animation:float 3s ease-in-out infinite;}
+.credit-amount{font-family:var(--font-display);font-size:4rem;font-weight:900;background:linear-gradient(135deg,#00f0ff,var(--quantum-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.credit-label{font-size:1rem;color:var(--text-muted);margin-top:-0.5rem;}
+.balance-box{display:inline-block;background:rgba(0,240,255,0.05);border:1px solid rgba(0,240,255,0.1);border-radius:12px;padding:1.5rem 3rem;margin:1.5rem auto;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+</style>
+</head><body>
+<div>
+<div class="status-icon">₡</div>
+<h1 class="gradient-text">Cabal Credits Added!</h1>
+<div class="balance-box">
+<div class="credit-amount" id="cc-amount">₡0</div>
+<div class="credit-label">Cabal Credits — Available Now</div>
+</div>
+<p style="color:var(--text-muted);font-size:0.9rem;">Your credits have been deposited into your in-game wallet.</p>
+<p style="color:var(--text-muted);font-size:0.8rem;">Spend them on NFTs, upgrades, intel, or save for something bigger.</p>
+<div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a href="/" class="btn btn-gold">← Go to Store</a>
+<a href="/projects/Fall_of_the_Cabal_Game_Design_Document.html" class="btn btn-secondary">Enter the Game</a>
+</div>
+</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const cc = params.get('cc') || 'Unknown';
+document.getElementById('cc-amount').textContent = '₡' + cc.toLocaleString();
+</script>
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body></html>

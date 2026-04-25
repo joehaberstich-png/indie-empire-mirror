@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Payment Successful — Quantum Bots Agency</title>
+<link rel="stylesheet" href="/quantumbotsagency/css/quantum.css">
+<style>
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:var(--quantum-bg);color:var(--text-primary);text-align:center;padding:2rem;}
+.status-icon{font-size:5rem;margin-bottom:1rem;animation:pulse 2s infinite;}
+.redirect-msg{margin-top:2rem;color:var(--text-muted);}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+</style>
+</head><body>
+<div>
+<div class="status-icon">✅</div>
+<h1 class="gradient-text">Payment Successful!</h1>
+<p style="font-size:1.2rem;margin:1rem 0">Your subscription is now active.</p>
+<p style="color:var(--text-muted)">You'll receive a confirmation email with your login details and setup instructions within 5 minutes.</p>
+<div class="redirect-msg">
+<p>Redirecting you to your dashboard in <span id="countdown">10</span> seconds...</p>
+</div>
+<a href="/" class="btn btn-gold" style="margin-top:2rem;display:inline-block;">← Back to Home</a>
+</div>
+<script>
+let sec=10;const c=document.getElementById('countdown');
+setInterval(()=>{sec--;if(c)c.textContent=sec;if(sec<=0)window.location.href='/';},1000);
+</script>
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body></html>

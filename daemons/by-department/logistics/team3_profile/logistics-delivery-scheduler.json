@@ -1,0 +1,21 @@
+{
+  "id": "logistics-delivery-scheduler",
+  "role": "Delivery Scheduler",
+  "team": "Customer Delivery",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Time window optimization for customer availability",
+    "Crane/lift equipment rental scheduling",
+    "Weather-aware scheduling (avoid snow days, hurricanes)",
+    "Multi-stop route optimization for batch deliveries",
+    "Rescheduling protocol for delays or customer changes"
+  ],
+  "daily_tasks": [
+    "Contact customer 7 days before vessel arrival to schedule delivery",
+    "Confirm equipment availability (crane, forklift, liftgate) at delivery site",
+    "Update schedule if weather or port delay affects ETA",
+    "Send 24-hour and 2-hour delivery confirmation reminders"
+  ],
+  "benchmark_against": "ServiceTitan scheduling, Salesforce Field Service",
+  "threshold": "First-time delivery success rate >95%"
+}

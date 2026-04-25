@@ -1,0 +1,343 @@
+{
+  "transactions": [
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 1049,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.150817",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "premium-20",
+      "price_cents": 19995,
+      "commission_cents": 1399,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.151043",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "deluxe-40",
+      "price_cents": 24995,
+      "commission_cents": 1749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.152216",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "premium-40",
+      "price_cents": 34995,
+      "commission_cents": 2449,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.152867",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 1049,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.153541",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "premium-20",
+      "price_cents": 19995,
+      "commission_cents": 1399,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.154141",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "deluxe-40",
+      "price_cents": 24995,
+      "commission_cents": 1749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.154703",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "premium-40",
+      "price_cents": 34995,
+      "commission_cents": 2449,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.155357",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 1049,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.155899",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "premium-20",
+      "price_cents": 19995,
+      "commission_cents": 1399,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.156678",
+      "recalculated": true
+    },
+    {
+      "type": "retroactive_upgrade",
+      "ref_code": "sarahjohnson",
+      "old_rate": 0.05,
+      "new_rate": 0.07,
+      "adjustment_cents": 4500,
+      "total_sales_at_upgrade": 10,
+      "timestamp": "2026-04-24T05:09:29.156711"
+    },
+    {
+      "ref_code": "sarahjohnson",
+      "model_id": "deluxe-40",
+      "price_cents": 24995,
+      "commission_cents": 1749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.157465",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.158513",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.159077",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.159738",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.160403",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen",
+      "model_id": "expandable",
+      "price_cents": 14995,
+      "commission_cents": 749,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:29.161028",
+      "recalculated": false
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 104965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.585782",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "premium-20",
+      "price_cents": 1999500,
+      "commission_cents": 139965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.586661",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "deluxe-40",
+      "price_cents": 2499500,
+      "commission_cents": 174965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.587431",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "premium-40",
+      "price_cents": 3499500,
+      "commission_cents": 244965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.588823",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 104965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.589500",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "premium-20",
+      "price_cents": 1999500,
+      "commission_cents": 139965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.590200",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "deluxe-40",
+      "price_cents": 2499500,
+      "commission_cents": 174965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.590826",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "premium-40",
+      "price_cents": 3499500,
+      "commission_cents": 244965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.591588",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 104965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.592326",
+      "recalculated": true
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "premium-20",
+      "price_cents": 1999500,
+      "commission_cents": 139965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.593766",
+      "recalculated": true
+    },
+    {
+      "type": "retroactive_upgrade",
+      "ref_code": "sarahjohnson1",
+      "old_rate": 0.05,
+      "new_rate": 0.07,
+      "adjustment_cents": 449900,
+      "total_sales_at_upgrade": 10,
+      "timestamp": "2026-04-24T05:09:40.593785"
+    },
+    {
+      "ref_code": "sarahjohnson1",
+      "model_id": "deluxe-40",
+      "price_cents": 2499500,
+      "commission_cents": 174965,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.594470",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 74975,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.596057",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 74975,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.596942",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 74975,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.598449",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 74975,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.599383",
+      "recalculated": false
+    },
+    {
+      "ref_code": "mikechen1",
+      "model_id": "expandable",
+      "price_cents": 1499500,
+      "commission_cents": 74975,
+      "stripe_charge_id": "",
+      "customer_email": "",
+      "timestamp": "2026-04-24T05:09:40.600384",
+      "recalculated": false
+    }
+  ],
+  "payouts": []
+}

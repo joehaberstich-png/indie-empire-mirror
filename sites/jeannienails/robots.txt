@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /manage/
+Disallow: /training/
+Sitemap: https://jeannienails.vercel.app/sitemap.xml

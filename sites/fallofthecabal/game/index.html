@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fall of the Cabal — Playable WebGL Demo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;overflow:hidden;font-family:'Courier New',monospace;color:#fff}
+#game-container{width:100vw;height:100vh;position:relative}
+#game-canvas{display:block;width:100%;height:100%}
+#hud{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+#hud>*{pointer-events:auto}
+#top-bar{position:absolute;top:0;left:0;width:100%;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(0,0,0,.8),transparent)}
+#top-bar .title{font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ff6b35}
+#top-bar .stats{display:flex;gap:20px;font-size:11px;color:#94a3b8}
+#mission-log{position:absolute;bottom:80px;left:20px;max-width:400px;background:rgba(0,0,0,.85);border:1px solid #1a1a2e;border-radius:8px;padding:12px;font-size:11px;line-height:1.5;display:none;max-height:200px;overflow-y:auto}
+#mission-log .header{color:#ff6b35;font-weight:700;margin-bottom:6px;letter-spacing:1px}
+#mission-log .entry{color:#94a3b8;padding:3px 0}
+#crosshair{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:16px;height:16px;border:1px solid rgba(255,255,255,.4);border-radius:50%;display:none}
+#controls-hint{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);border:1px solid #333;border-radius:6px;padding:6px 12px;font-size:9px;color:#555;letter-spacing:1px}
+#nft-collection{position:absolute;top:60px;right:20px;width:180px;background:rgba(0,0,0,.85);border:1px solid #1a1a2e;border-radius:8px;padding:12px;font-size:10px;display:none;max-height:300px;overflow-y:auto}
+#nft-collection .header{color:#ff6b35;font-weight:700;margin-bottom:6px;letter-spacing:1px}
+#nft-collection .item{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #0f0f1a;color:#94a3b8}
+#nft-collection .item .rarity{font-size:8px;padding:1px 5px;border-radius:3px}
+#load-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s}
+#load-screen h1{font-size:28px;letter-spacing:6px;text-transform:uppercase;color:#ff6b35;margin-bottom:10px}
+#load-screen .sub{color:#555;font-size:11px;letter-spacing:3px;margin-bottom:30px}
+#load-screen .progress{width:300px;height:2px;background:#1a1a2e;border-radius:2px;overflow:hidden}
+#load-screen .progress-bar{height:100%;background:linear-gradient(90deg,#ff6b35,#22d3ee);width:0%;animation:load 2s forwards}
+@keyframes load{from{width:0%}to{width:100%}}
+#load-screen .status{color:#555;font-size:10px;margin-top:10px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div id="load-screen">
+  <h1>FALL OF THE CABAL</h1>
+  <div class="sub">QUANTUM WEBGL ENGINE v1 — PRE-ALPHA</div>
+  <div class="progress"><div class="progress-bar"></div></div>
+  <div class="status" id="load-status">LOADING CITY HUB: WASHINGTON DC...</div>
+</div>
+<div id="game-container">
+  <div id="hud">
+    <div id="top-bar">
+      <div class="title">FALL OF THE CABAL — PRE-ALPHA</div>
+      <div class="stats">
+        <span id="player-location">📍 LOCATION: DC — National Mall</span>
+        <span id="player-intel">🔍 INTEL: 0</span>
+        <span id="nft-count">💎 NFTS: 0</span>
+      </div>
+    </div>
+    <div id="crosshair"></div>
+    <div id="mission-log">
+      <div class="header">▸ MISSION LOG</div>
+      <div class="entry">🔴 [CLASSIFIED] Welcome, Operative. Your first assignment awaits.</div>
+      <div class="entry">The Gardener says: "Find the dead drop in Lafayette Square."</div>
+    </div>
+    <div id="nft-collection">
+      <div class="header">▸ NFT COLLECTION</div>
+    </div>
+    <div id="controls-hint">WASD MOVE · CLICK TO AIM · E INTERACT · TAB INVENTORY</div>
+  </div>
+  <canvas id="game-canvas"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="/fallofthecabal/game/js/engine.js"></script>
+</body>
+</html>

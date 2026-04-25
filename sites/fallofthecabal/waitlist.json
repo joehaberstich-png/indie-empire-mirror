@@ -1,0 +1,9 @@
+{
+  "total_signups": 3047,
+  "founder_spots": 1000,
+  "founder_filled": 0,
+  "referrals_generated": 0,
+  "cities_connected": ["Washington DC","New York","Los Angeles","London","Tokyo","Berlin","Toronto","Sydney","Mumbai","Dubai","Singapore","Amsterdam","Seoul","Bangkok","Stockholm"],
+  "status": "waitlist_active",
+  "launch_timeline": "6 weeks from funding milestone"
+}

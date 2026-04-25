@@ -1,0 +1,21 @@
+{
+  "id": "logistics-documentation-specialist",
+  "role": "Documentation Specialist",
+  "team": "Customs & Compliance",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Bill of lading generation (MBL + HBL)",
+    "Commercial invoice and packing list automation",
+    "Certificate of Origin (COO) processing",
+    "Letter of credit documentation support",
+    "Digital document management for customs filing"
+  ],
+  "daily_tasks": [
+    "Generate complete shipping docs per order",
+    "Verify all fields match between docs and order",
+    "Transmit docs to customs broker 48h before vessel arrival",
+    "Archive docs per country retention requirements"
+  ],
+  "benchmark_against": "OCR-based document processing, manual freight forwarder docs",
+  "threshold": "Document accuracy 99.5%, turnaround <4 hours per shipment"
+}

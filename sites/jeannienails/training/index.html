@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jeannie Nails — Quantum Training Academy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#0d0a0a;--primary:#1a0f0e;--rose:#d4a0a0;--rose-light:#f0c0c0;--gold:#c9a84c;--accent:#c0392b;--text:#e8d5d0;--muted:#6b4040;--bg:#faf4f0}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+body{font-family:'Inter',sans-serif;background:#050508;color:#fff;line-height:1.6;min-height:100vh;overflow-x:hidden}
+
+/* Grid Overlay */
+.cyber-grid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(212,160,160,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(212,160,160,.02) 1px,transparent 1px);background-size:60px 60px}
+
+/* ─── LOGIN ─── */
+#loginScreen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:#050508;transition:opacity .5s,visibility .5s}
+#loginScreen.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.login-container{background:linear-gradient(160deg,#0d0a0a,#1a0f0e);border:1px solid #1a1a1f;border-radius:20px;padding:48px 40px;max-width:420px;width:90%;position:relative;text-align:center}
+.login-container::before{content:'';position:absolute;inset:-1px;border-radius:21px;background:linear-gradient(135deg,var(--rose),var(--gold),var(--accent));opacity:.15;z-index:-1}
+.login-logo{margin-bottom:28px}
+.login-logo .brand-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,160,.08);border:1px solid rgba(212,160,160,.15);padding:6px 14px;border-radius:100px;font-size:9px;color:var(--rose);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.login-logo h1{font-size:24px;font-weight:900;letter-spacing:-.5px;margin-bottom:4px}
+.login-logo h1 span{background:linear-gradient(135deg,var(--rose-light),var(--rose),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.login-logo p{color:#555;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.form-group{margin-bottom:16px;text-align:left}
+label{display:block;font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600}
+input[type=text],input[type=password]{width:100%;padding:12px 16px;background:#050508;border:1px solid #1a1a1f;border-radius:8px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;transition:border-color .2s}
+input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,160,160,.1)}
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--rose),var(--rose-light));color:var(--dark);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;margin-top:8px}
+.login-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(212,160,160,.3)}
+.login-error{color:var(--accent);font-size:12px;margin-top:8px;display:none}
+.login-error.show{display:block}
+.login-footer{margin-top:20px;color:#333;font-size:9px;letter-spacing:1px}
+
+/* ─── DASHBOARD ─── */
+#dashboard{display:none}
+#dashboard.active{display:block}
+.dash-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,5,8,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,160,.08);padding:10px 24px;display:flex;align-items:center;justify-content:space-between}
+.dash-logo{display:flex;align-items:center;gap:10px}
+.dash-logo .live-dot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.dash-logo span{font-size:11px;font-weight:700;letter-spacing:1px}
+.dash-logo span em{color:var(--rose);font-style:normal}
+.dash-nav{display:flex;align-items:center;gap:16px}
+.dash-nav .user-badge{background:rgba(212,160,160,.08);color:var(--rose);padding:4px 12px;border-radius:100px;font-size:9px;font-weight:600;letter-spacing:1px}
+.dash-nav button{background:transparent;border:1px solid #333;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:10px;font-family:'Inter',sans-serif;transition:all .2s}
+.dash-nav button:hover{color:#fff;border-color:#555}
+
+.dash-body{padding:70px 24px 40px;max-width:1100px;margin:0 auto}
+
+/* ─── HERO BANNER ─── */
+.training-hero{background:linear-gradient(160deg,#0d0a0a,#1a0f0e,#2d1b14);border:1px solid #1a1a1f;border-radius:20px;padding:40px;margin-bottom:32px;position:relative;overflow:hidden}
+.training-hero::after{content:'ACADEMY';position:absolute;right:-20px;bottom:-20px;font-size:120px;font-weight:900;color:rgba(255,255,255,.02);letter-spacing:10px;pointer-events:none}
+.training-hero .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);padding:4px 12px;border-radius:100px;font-size:9px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.training-hero h2{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:8px;line-height:1.1}
+.training-hero h2 span{background:linear-gradient(135deg,var(--rose-light),var(--rose),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.training-hero p{color:#94a3b8;font-size:14px;max-width:600px;line-height:1.7}
+.training-hero .stats{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}
+.training-hero .stats .s{display:flex;align-items:center;gap:6px;font-size:11px;color:#555}
+.training-hero .stats .s strong{color:var(--rose);font-weight:700}
+
+/* ─── MODULES GRID ─── */
+.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:40px}
+.module-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:14px;overflow:hidden;transition:all .3s;cursor:pointer;position:relative}
+.module-card:hover{border-color:var(--rose);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,160,160,.06)}
+.module-card .thumb{height:160px;background:linear-gradient(160deg,#1a0f0e,#0d0a0a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.module-card .thumb .play-overlay{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s}
+.module-card:hover .thumb .play-overlay{opacity:1}
+.module-card .thumb .play-btn{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;transition:all .3s}
+.module-card:hover .play-btn{background:var(--accent);border-color:var(--accent);transform:scale(1.1)}
+.module-card .thumb .mod-num{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);padding:4px 10px;border-radius:100px;font-size:9px;font-weight:700;color:var(--rose);letter-spacing:1px}
+.module-card .thumb .duration{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);padding:3px 8px;border-radius:4px;font-size:9px;color:#aaa}
+.module-card .body{padding:16px}
+.module-card .body h3{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.module-card .body p{font-size:11px;color:#555;line-height:1.5;margin-bottom:8px}
+.module-card .body .tags{display:flex;gap:4px;flex-wrap:wrap}
+.module-card .body .tags span{font-size:8px;padding:2px 8px;border-radius:100px;background:rgba(212,160,160,.06);color:var(--rose);letter-spacing:.5px}
+
+/* Hollywood Production Badge */
+.hollywood-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--gold),var(--accent));color:#000;padding:3px 8px;border-radius:4px;font-size:7px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+
+/* ─── VIDEO PLAYER ─── */
+.video-player-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:24px}
+.video-player-overlay.active{display:flex}
+.video-player{max-width:900px;width:100%;background:#0a0a0f;border-radius:16px;overflow:hidden;border:1px solid #1a1a1f}
+.video-player .player-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #1a1a1f}
+.video-player .player-header h3{font-size:14px;font-weight:600}
+.video-player .player-header .close-btn{background:transparent;border:none;color:#555;cursor:pointer;font-size:18px;padding:4px 8px;transition:color .2s}
+.video-player .player-header .close-btn:hover{color:#fff}
+.video-player .player-content{position:relative;background:#000;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+.video-player .player-content .big-play{width:80px;height:80px;border-radius:50%;border:3px solid var(--rose);display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;transition:all .3s;color:var(--rose)}
+.video-player .player-content .big-play:hover{background:var(--rose);color:#000;transform:scale(1.1)}
+.video-player .player-content video{width:100%;height:100%;object-fit:contain}
+.video-player .player-footer{padding:16px 20px;background:#0a0a0f;border-top:1px solid #1a1a1f}
+.video-player .player-footer .progress-bar{height:4px;background:#1a1a1f;border-radius:2px;margin-bottom:8px;position:relative}
+.video-player .player-footer .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:2px;transition:width 1s linear}
+.video-player .player-footer .controls{display:flex;justify-content:space-between;align-items:center}
+.video-player .player-footer .controls .left{display:flex;gap:12px;align-items:center}
+.video-player .player-footer .controls button{background:transparent;border:none;color:#94a3b8;cursor:pointer;font-size:14px;padding:2px;transition:color .2s;font-family:'Inter',sans-serif}
+.video-player .player-footer .controls button:hover{color:#fff}
+.video-player .player-footer .controls .time{font-size:11px;color:#555;font-family:monospace}
+
+/* ─── RESOURCES ─── */
+.resources-section{margin-top:40px}
+.resources-section h3{font-size:14px;font-weight:700;margin-bottom:16px;color:#fff;letter-spacing:1px;text-transform:uppercase}
+.resources-section h3 span{color:var(--muted);font-weight:400}
+.resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.resource-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:10px;padding:16px;transition:border-color .2s;cursor:pointer}
+.resource-card:hover{border-color:var(--rose)}
+.resource-card .icon{font-size:24px;margin-bottom:8px}
+.resource-card h4{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px}
+.resource-card p{font-size:10px;color:#555}
+
+/* ─── MILESTONE TRACKER ─── */
+.milestone-tracker{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:14px;padding:24px;margin-bottom:32px}
+.milestone-tracker h3{font-size:13px;font-weight:700;margin-bottom:16px;color:#fff}
+.milestones{display:flex;gap:8px;flex-wrap:wrap}
+.milestone{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:100px;font-size:10px;font-weight:600;border:1px solid #1a1a1f;color:#555;transition:all .3s}
+.milestone.completed{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:#22c55e}
+.milestone.in-progress{background:rgba(234,179,8,.08);border-color:rgba(234,179,8,.2);color:#eab308}
+
+footer{text-align:center;padding:32px;color:#333;font-size:11px;border-top:1px solid #1a1a1f;margin-top:40px}
+footer a{color:var(--rose);text-decoration:none}
+
+@media(max-width:600px){
+  .dash-body{padding:70px 12px 20px}
+  .training-hero{padding:24px}
+  .module-grid{grid-template-columns:1fr}
+  .resource-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="cyber-grid"></div>
+
+<!-- ═══ LOGIN ═══ -->
+<div id="loginScreen">
+  <div class="login-container">
+    <div class="login-logo">
+      <div class="brand-badge">✦ Quantum Bots Agency</div>
+      <h1><span>JEANNIE NAILS</span><br>Training Academy</h1>
+      <p>Student Portal</p>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Student ID / Username</label>
+        <input type="text" id="loginUser" placeholder="Enter your student ID" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="current-password">
+      </div>
+      <button type="submit" class="login-btn">🎬 Enter Academy</button>
+      <div class="login-error" id="loginError">Access denied. Check your credentials.</div>
+    </form>
+    <div class="login-footer">⚡ Powered by Quantum Bots Agency · quantumbotsagency.com</div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="dashboard">
+  <div class="dash-header">
+    <div class="dash-logo">
+      <div class="live-dot"></div>
+      <span>Jeannie <em>Academy</em></span>
+    </div>
+    <div class="dash-nav">
+      <span class="user-badge" id="userBadge">● Student</span>
+      <button onclick="logout()">Exit</button>
+    </div>
+  </div>
+
+  <div class="dash-body">
+
+    <!-- Hero -->
+    <div class="training-hero">
+      <div class="badge">🎬 Hollywood Production</div>
+      <h2>Learn How to Use Your<br><span>New Jeannie Nails Website</span></h2>
+      <p>Complete video training series. Each module walks you through exactly how to use the website, manage bookings, update prices, and serve clients like a pro. Produced in Hollywood-grade format.</p>
+      <div class="stats">
+        <div class="s"><strong>12</strong> Training Modules</div>
+        <div class="s"><strong>🎬</strong> Hollywood Production</div>
+        <div class="s"><strong>✓</strong> Certificate Ready</div>
+      </div>
+    </div>
+
+    <!-- Milestone Tracker -->
+    <div class="milestone-tracker">
+      <h3>📋 Your Training Progress</h3>
+      <div class="milestones" id="milestones">
+        <div class="milestone" data-mod="0">Module 1: Website Tour</div>
+        <div class="milestone" data-mod="1">Module 2: Booking System</div>
+        <div class="milestone" data-mod="2">Module 3: Price Management</div>
+        <div class="milestone" data-mod="3">Module 4: AI Assistant</div>
+        <div class="milestone" data-mod="4">Module 5: SMS Reminders</div>
+        <div class="milestone" data-mod="5">Module 6: Back Office</div>
+        <div class="milestone" data-mod="6">Module 7: Social Media</div>
+        <div class="milestone" data-mod="7">Module 8: Client Management</div>
+        <div class="milestone" data-mod="8">Module 9: Reports & Analytics</div>
+        <div class="milestone" data-mod="9">Module 10: Google Profile</div>
+        <div class="milestone" data-mod="10">Module 11: Facebook Setup</div>
+        <div class="milestone" data-mod="11">Module 12: Final Certification</div>
+      </div>
+    </div>
+
+    <!-- Hollywood Training Modules -->
+    <div class="module-grid" id="moduleGrid">
+      <!-- Modules injected by JS -->
+    </div>
+
+    <!-- Resources -->
+    <div class="resources-section">
+      <h3>📚 Quick Reference <span>· Downloadable Resources</span></h3>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="icon">📄</div>
+          <h4>Price List Reference</h4>
+          <p>Complete service menu with prices — downloadable PDF</p>
+        </div>
+        <div class="resource-card">
+          <div class="icon">📋</div>
+          <h4>Daily Checklist</h4>
+          <p>Opening/closing procedures for the salon</p>
+        </div>
+        <div class="resource-card">
+          <div class="icon">📱</div>
+          <h4>SMS Templates</h4>
+          <p>Pre-written reminder & follow-up messages</p>
+        </div>
+        <div class="resource-card">
+          <div class="icon">📊</div>
+          <h4>Weekly Report Template</h4>
+          <p>Track clients, revenue, and trends</p>
+        </div>
+        <div class="resource-card">
+          <div class="icon">⭐</div>
+          <h4>Review Response Guide</h4>
+          <p>How to respond to 5-star and 1-star reviews</p>
+        </div>
+        <div class="resource-card">
+          <div class="icon">📝</div>
+          <h4>Google Profile Setup</h4>
+          <p>Step-by-step Google Business claim guide</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <footer>
+    Jeannie Nails · Sheet Harbour, Nova Scotia<br>
+    ⚡ Powered by <a href="https://quantumbotsagency.com">Quantum Bots Agency</a>
+  </footer>
+</div>
+
+<!-- ═══ VIDEO PLAYER ═══ -->
+<div class="video-player-overlay" id="videoOverlay">
+  <div class="video-player">
+    <div class="player-header">
+      <h3 id="videoTitle">Module Title</h3>
+      <button class="close-btn" onclick="closeVideo()">✕</button>
+    </div>
+    <div class="player-content" id="playerContent">
+      <video id="videoPlayer" controls preload="metadata" style="width:100%;height:100%"></video>
+    </div>
+    <div class="player-footer">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="controls">
+        <div class="left">
+          <button onclick="markComplete()">✓ Mark Complete</button>
+          <button onclick="markIncomplete()">↺ Reset</button>
+        </div>
+        <div class="time"><span id="timeCurrent">0:00</span> / <span id="timeTotal">0:00</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ CREDENTIALS ═══
+const ACADEMY_CREDENTIALS = [
+  { user: 'jeannie_admin', pass: 'JN@SheetHbr2026!', name: 'Jeannie (Owner)' },
+  { user: 'jeannie_staff1', pass: 'JNStaff2026!', name: 'Senior Nail Technician' },
+  { user: 'jeannie_staff2', pass: 'JNStaff2026!', name: 'Junior Nail Technician' },
+  { user: 'student', pass: 'learn2026', name: 'Guest Student' }
+];
+
+// ═══ MODULES ═══
+const MODULES = [
+  { num: 1, title: 'Website Tour — Your New Salon Site', duration: '0:28', desc: 'Walk through the entire Jeannie Nails website. Learn the homepage, services section, pricing page, booking system, and where everything lives.', tags: ['Beginner', 'Overview'], icon: '🌐', hollywood: '🎬 Hollywood' },
+  { num: 2, title: 'Booking System — Accept Appointments', duration: '0:28', desc: 'How booking requests come in, how to confirm them, how SMS reminders auto-send before appointments. Ensure no booking slips through.', tags: ['Essential', 'Daily'], icon: '📅', hollywood: '🎬 Hollywood' },
+  { num: 3, title: 'Price Management — Edit Prices Instantly', duration: '0:28', desc: 'Login to the back office, navigate to the Prices tab, edit any service price, and save. Disclaimer auto-shown.', tags: ['Back Office', 'Admin'], icon: '💰', hollywood: '🎬 Hollywood' },
+  { num: 4, title: 'AI Assistant — Your Quantum Business Coach', duration: '0:28', desc: 'Meet the Quantum AI trained specifically for nail salons. Ask about pricing strategies, promotion ideas, booking trends, and industry benchmarks.', tags: ['AI', 'Advanced'], icon: '🤖', hollywood: '🎬 Hollywood' },
+  { num: 5, title: 'SMS Reminders — Never Miss an Appointment', duration: '0:28', desc: 'Every booking gets automated SMS reminders 24h and 2h before. Check, cancel, or reschedule from the dashboard.', tags: ['Automation', 'Clients'], icon: '📱', hollywood: '🎬 Hollywood' },
+  { num: 6, title: 'Back Office Tour — Full Dashboard Walkthrough', duration: '0:28', desc: 'Deep dive into the back office: stats dashboard, price editor, booking viewer, settings panel, password change.', tags: ['Admin', 'Essential'], icon: '⚙️', hollywood: '🎬 Hollywood' },
+  { num: 7, title: 'Social Media — Facebook & Instagram Setup', duration: '0:28', desc: 'Connect your Facebook page, post content, respond to messages, use AI-generated post ideas for engagement.', tags: ['Marketing', 'Growth'], icon: '📱', hollywood: '🎬 Hollywood' },
+  { num: 8, title: 'Client Management — Follow-ups & Retention', duration: '0:28', desc: 'Track client history, send post-service follow-ups, use the retention system to bring clients back after 35+ days.', tags: ['Clients', 'CRM'], icon: '👥', hollywood: '🎬 Hollywood' },
+  { num: 9, title: 'Reports & Analytics — Know Your Numbers', duration: '0:28', desc: 'View daily, weekly, and monthly reports. Track revenue, booking trends, popular services, peak hours.', tags: ['Analytics', 'Growth'], icon: '📊', hollywood: '🎬 Hollywood' },
+  { num: 10, title: 'Google Business Profile — Get Found Online', duration: '0:28', desc: 'Claim and optimize your Google Business Profile. Add photos, respond to reviews, post updates.', tags: ['SEO', 'Essential'], icon: '📍', hollywood: '🎬 Hollywood' },
+  { num: 11, title: 'Facebook Page — Posting & Engagement', duration: '0:28', desc: 'Set up Facebook, create engaging posts, use the content calendar, grow your following in Sheet Harbour.', tags: ['Social', 'Marketing'], icon: '👍', hollywood: '🎬 Hollywood' },
+  { num: 12, title: 'Final Certification — You\'re Ready!', duration: '0:28', desc: 'Congratulations! Review everything you\'ve learned. Jeannie Nails Digital Academy Certified.', tags: ['Certificate', 'Complete'], icon: '🎓', hollywood: '🎬 Finale' }
+];
+
+// Color palettes for module cards
+const COLORS = [
+  ['#d4a0a0', '#1a0f0e'], ['#c9a84c', '#1a0f0e'], ['#22c55e', '#052e16'],
+  ['#22d3ee', '#083344'], ['#ef4444', '#1f0a0a'], ['#a78bfa', '#1e1b2e'],
+  ['#fb923c', '#1c0f06'], ['#f472b6', '#1a0a12'], ['#34d399', '#052e16'],
+  ['#60a5fa', '#0b1a2e'], ['#f59e0b', '#1a1000'], ['#ec4899', '#1a0a14']
+];
+
+// ═══ LOGIN ═══
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  
+  const match = ACADEMY_CREDENTIALS.find(c => c.user === user && c.pass === pass);
+  if (match) {
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('dashboard').classList.add('active');
+    document.getElementById('userBadge').textContent = '👤 ' + match.name;
+    initModules();
+    loadProgress();
+  } else {
+    document.getElementById('loginError').classList.add('show');
+  }
+});
+
+function logout() {
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginError').classList.remove('show');
+  document.getElementById('videoOverlay').classList.remove('active');
+}
+
+// ═══ INIT MODULES ═══
+function initModules() {
+  const grid = document.getElementById('moduleGrid');
+  grid.innerHTML = '';
+  
+  MODULES.forEach((mod, i) => {
+    const c = COLORS[i % COLORS.length];
+    const card = document.createElement('div');
+    card.className = 'module-card';
+    card.onclick = () => openModule(i);
+    card.innerHTML = `
+      <div class="thumb" style="background:linear-gradient(160deg,${c[1]},#050508)">
+        <div class="hollywood-badge">${mod.hollywood}</div>
+        <div class="mod-num">Module ${mod.num}</div>
+        <div class="duration">${mod.duration}</div>
+        <div style="font-size:48px;opacity:.6">${mod.icon}</div>
+        <div class="play-overlay"><div class="play-btn">▶</div></div>
+      </div>
+      <div class="body">
+        <h3>${mod.title}</h3>
+        <p>${mod.desc.substring(0, 100)}...</p>
+        <div class="tags">
+          ${mod.tags.map(t => `<span>${t}</span>`).join('')}
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ═══ OPEN VIDEO PLAYER ═══
+let currentModule = 0;
+
+function openModule(idx) {
+  currentModule = idx;
+  const mod = MODULES[idx];
+  const player = document.getElementById('videoPlayer');
+  player.pause();
+  player.currentTime = 0;
+  
+  // Clear previous source
+  while (player.firstChild) player.removeChild(player.firstChild);
+  
+  // Set video source — mp4 file named module_XX.mp4
+  const videoNum = String(mod.num).padStart(2, '0');
+  const source = document.createElement('source');
+  source.src = 'videos/module_' + videoNum + '.mp4';
+  source.type = 'video/mp4';
+  player.appendChild(source);
+  player.load();
+  
+  document.getElementById('videoTitle').textContent = `Module ${mod.num}: ${mod.title}`;
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('timeCurrent').textContent = '0:00';
+  document.getElementById('videoOverlay').classList.add('active');
+  
+  // Auto-play
+  player.play().catch(() => {});
+}
+
+function closeVideo() {
+  const player = document.getElementById('videoPlayer');
+  player.pause();
+  document.getElementById('videoOverlay').classList.remove('active');
+}
+
+// Update progress bar and time from live video
+function updateTimeDisplay() {
+  const player = document.getElementById('videoPlayer');
+  const fill = document.getElementById('progressFill');
+  const timeCurrent = document.getElementById('timeCurrent');
+  const timeTotal = document.getElementById('timeTotal');
+  
+  if (!player.duration || isNaN(player.duration)) {
+    timeTotal.textContent = '0:28';  // default fallback
+    return;
+  }
+  
+  const current = player.currentTime || 0;
+  const total = player.duration;
+  const pct = (current / total) * 100;
+  fill.style.width = pct + '%';
+  
+  timeCurrent.textContent = formatTime(Math.floor(current));
+  timeTotal.textContent = formatTime(Math.floor(total));
+}
+
+// Set up video event handlers on each play
+(function setupVideoEvents() {
+  const player = document.getElementById('videoPlayer');
+  
+  player.addEventListener('timeupdate', updateTimeDisplay);
+  
+  player.addEventListener('loadedmetadata', () => {
+    document.getElementById('timeTotal').textContent = formatTime(Math.floor(player.duration));
+  });
+  
+  player.addEventListener('ended', () => {
+    markComplete();
+  });
+})();
+
+function formatTime(secs) {
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m + ':' + s.toString().padStart(2, '0');
+}
+
+// ═══ PROGRESS TRACKING ═══
+function markComplete() {
+  const key = 'jeannie_training_progress';
+  let progress = JSON.parse(localStorage.getItem(key) || '[]');
+  if (!progress.includes(currentModule)) {
+    progress.push(currentModule);
+    localStorage.setItem(key, JSON.stringify(progress));
+  }
+  updateMilestones();
+  
+  const btn = document.querySelector('.player-footer .controls .left button:first-child');
+  btn.textContent = '✅ Completed!';
+  btn.style.color = '#22c55e';
+  setTimeout(() => { btn.textContent = '✓ Mark Complete'; btn.style.color = ''; }, 2000);
+}
+
+function markIncomplete() {
+  const key = 'jeannie_training_progress';
+  let progress = JSON.parse(localStorage.getItem(key) || '[]');
+  progress = progress.filter(i => i !== currentModule);
+  localStorage.setItem(key, JSON.stringify(progress));
+  updateMilestones();
+}
+
+function loadProgress() {
+  updateMilestones();
+  // Auto-replay current milestone
+  const milestones = document.getElementById('milestones').querySelectorAll('.milestone');
+  milestones.forEach((m, i) => {
+    m.onclick = () => openModule(i);
+  });
+}
+
+function updateMilestones() {
+  const key = 'jeannie_training_progress';
+  const progress = JSON.parse(localStorage.getItem(key) || '[]');
+  const milestones = document.getElementById('milestones').querySelectorAll('.milestone');
+  milestones.forEach((m, i) => {
+    m.classList.remove('completed', 'in-progress');
+    if (progress.includes(i)) {
+      m.classList.add('completed');
+    } else if (i === currentModule) {
+      m.classList.add('in-progress');
+    }
+  });
+  
+  // Update count
+  const count = progress.length;
+  const total = milestones.length;
+  document.querySelector('.training-hero .stats .s:first-child strong').textContent = 
+    count + '/' + total + ' Modules';
+}
+
+// Keyboard shortcut: Escape closes video
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeVideo();
+});
+</script>
+<script src="/jeannienails/js/quantum-cs-v2.js"></script>
+</body>
+</html>

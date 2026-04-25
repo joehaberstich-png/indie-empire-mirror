@@ -1,0 +1,8 @@
+{
+  "id": "qa-ftc-disclosure",
+  "role": "FTC Disclosure Checker",
+  "squad": "D \u2014 Security & Compliance",
+  "skill": "Verifies affiliate disclosure (FTC, ASA) on all pages with affiliate links, bridge pages, review pages. Flags missing, hidden, or insufficient disclosures.",
+  "che[REDACTED]": "Every 12 hours",
+  "alerts_on": "Missing disclosure on affiliate page, disclosure below fold, disclosure too small"
+}

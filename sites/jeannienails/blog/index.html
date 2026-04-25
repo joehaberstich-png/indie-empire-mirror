@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jeannie Nails Blog | Nail Care Tips & Salon News | Sheet Harbour NS</title>
+<meta name="description" content="Expert nail care tips, salon news, and beauty advice from Jeannie Nails in Sheet Harbour, Nova Scotia. Nail art trends, ingrown toenail solutions, and more.">
+<meta property="og:title" content="Jeannie Nails Blog">
+<meta property="og:description" content="Nail care tips and salon news from Sheet Harbour, NS.">
+<meta property="og:image" content="https://jeannienails.vercel.app/images/blog-hero.jpg">
+<link rel="canonical" href="https://jeannienails.vercel.app/blog/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--rose:#d4a0a0;--dark:#0d0a0a;--gold:#c9a84c}
+body{font-family:Inter,sans-serif;background:#050508;color:#e8d5d0;line-height:1.6}
+.blog-header{background:linear-gradient(160deg,#0d0a0a,#1a0f0e);border-bottom:1px solid #1a1a1f;padding:32px 24px;text-align:center}
+.blog-header h1{font-size:36px;font-weight:900;background:linear-gradient(135deg,var(--rose),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.blog-header p{color:#555;font-size:14px;margin-top:8px}
+.blog-nav{display:flex;justify-content:center;gap:20px;padding:12px 24px;background:#0a0a0f;border-bottom:1px solid #1a1a1f}
+.blog-nav a{color:#555;text-decoration:none;font-size:13px;transition:color .2s}
+.blog-nav a:hover{color:var(--rose)}
+.container{max-width:900px;margin:0 auto;padding:32px 24px}
+.post-grid{display:grid;gap:20px}
+.post-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:14px;overflow:hidden;transition:all .3s;padding:24px}
+.post-card:hover{border-color:var(--rose);transform:translateY(-2px)}
+.post-card .date{color:#555;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.post-card h2{font-size:20px;font-weight:700;margin-bottom:8px;line-height:1.3}
+.post-card h2 a{color:#fff;text-decoration:none}
+.post-card h2 a:hover{color:var(--rose)}
+.post-card .excerpt{color:#94a3b8;font-size:14px;line-height:1.6;margin-bottom:12px}
+.post-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.post-card .tags span{font-size:10px;padding:4px 10px;border-radius:100px;background:rgba(212,160,160,.06);color:var(--rose);letter-spacing:.5px}
+.post-card .read-more{color:var(--rose);text-decoration:none;font-size:13px;font-weight:600}
+.post-card .read-more:hover{text-decoration:underline}
+footer{text-align:center;padding:32px;color:#333;font-size:11px;border-top:1px solid #1a1a1f;margin-top:40px}
+footer a{color:var(--rose);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="blog-header">
+  <h1>💅 Jeannie's Nail Blog</h1>
+  <p>Expert tips, salon news & nail care advice from Sheet Harbour, Nova Scotia</p>
+</div>
+<div class="blog-nav">
+  <a href="/jeannie-nails">Home</a>
+  <a href="/pricing/">Pricing</a>
+  <a href="/booking/">Book Online</a>
+  <a href="/blog/">Blog</a>
+</div>
+<div class="container">
+  <div class="post-grid" id="postGrid">
+    <!-- Posts injected by JS from JSON -->
+  </div>
+</div>
+<footer>
+  Jeannie Nails · Sheet Harbour, Nova Scotia · <a href="/jeannie-nails">Home</a>
+</footer>
+<script>
+const POSTS = [
+  {
+    date: 'April 24, 2026',
+    title: '5 Signs You Need an Ingrown Toenail Correction',
+    url: '/blog/ingrown-toenail-correction-signs/',
+    excerpt: 'Ingrown toenails are painful and common. Learn the early warning signs and how Onyfix treatment can provide lasting relief without surgery.',
+    tags: ['Onyfix', 'Foot Care', 'Nail Health']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'Spring Nail Trends 2026: What\'s Hot in Sheet Harbour',
+    url: '/blog/spring-nail-trends-2026/',
+    excerpt: 'Pastels, chrome finishes, and minimalist nail art are dominating this spring. See what colours and styles our clients are loving right now.',
+    tags: ['Nail Trends', 'Spring', 'Gel Polish']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'Gel vs Acrylic: Which is Better for Your Nails?',
+    url: '/blog/gel-vs-acrylic-nails/',
+    excerpt: 'Confused about whether to get gel or acrylic? We break down the pros and cons of each so you can make the best choice for your nail health.',
+    tags: ['Nail Care', 'Education', 'Gel vs Acrylic']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'The Complete Guide to Brazilian Waxing',
+    url: '/blog/brazilian-waxing-guide/',
+    excerpt: 'Everything you need to know before your first Brazilian wax: preparation, what to expect during, and aftercare for best results.',
+    tags: ['Waxing', 'Brazilian', 'Hair Removal']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'How to Make Your Gel Manicure Last 3+ Weeks',
+    url: '/blog/make-gel-manicure-last/',
+    excerpt: 'Tired of gel chipping early? Our nail technicians share professional tips for extending your gel manicure to 3 weeks and beyond.',
+    tags: ['Gel Polish', 'Nail Tips', 'DIY']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'Nail Art Ideas for Every Season',
+    url: '/blog/nail-art-seasonal-ideas/',
+    excerpt: 'From spring florals to winter sparkles, discover seasonal nail art designs that match any occasion. Inspiration for your next appointment.',
+    tags: ['Nail Art', 'Design', 'Inspiration']
+  },
+  {
+    date: 'April 24, 2026',
+    title: 'Why Moisturizing Matters for Healthy Nails',
+    url: '/blog/moisturizing-healthy-nails/',
+    excerpt: 'Dry cuticles and brittle nails are signs your nails need moisture. Learn the best products and routines for strong, beautiful nails.',
+    tags: ['Nail Health', 'Moisture', 'Self Care']
+  }
+];
+
+const grid = document.getElementById('postGrid');
+POSTS.forEach(post => {
+  const card = document.createElement('div');
+  card.className = 'post-card';
+  card.innerHTML = `
+    <div class="date">${post.date}</div>
+    <h2><a href="${post.url}">${post.title}</a></h2>
+    <div class="tags">${post.tags.map(t => '<span>' + t + '</span>').join('')}</div>
+    <div class="excerpt">${post.excerpt}</div>
+    <a href="${post.url}" class="read-more">Read More →</a>
+  `;
+  grid.appendChild(card);
+});
+</script>
+<script src="/jeannienails/js/quantum-cs-v2.js"></script>
+</body>
+</html>

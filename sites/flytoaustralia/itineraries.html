@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia Itineraries 2026: Complete Trip Planner - FlyToAustralia.com</title>
+    <meta name="description" content="Complete Australia itinerary planner for 2026. Custom trip plans for 1-4 weeks, East Coast, Outback, family trips, and working holiday routes with booking links.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">FlyToAustralia.com</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="visa-guide.html">Visa Guide</a>
+                <a href="itineraries.html" class="active">Itineraries</a>
+                <a href="blog.html">Blog</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="itinerary-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Australia Itinerary Planner 2026</h1>
+                <p class="subtitle">Custom trip plans for every traveler. Choose your duration, budget, and interests for the perfect Australian adventure.</p>
+                
+                <div class="itinerary-quick-select">
+                    <h3>Quick Select Your Trip Type:</h3>
+                    <div class="trip-types">
+                        <a href="#east-coast" class="trip-type">
+                            <i class="fas fa-route"></i>
+                            <span>East Coast</span>
+                        </a>
+                        <a href="#outback" class="trip-type">
+                            <i class="fas fa-mountain"></i>
+                            <span>Outback</span>
+                        </a>
+                        <a href="#family" class="trip-type">
+                            <i class="fas fa-users"></i>
+                            <span>Family Trip</span>
+                        </a>
+                        <a href="#whv" class="trip-type">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Working Holiday</span>
+                        </a>
+                        <a href="#luxury" class="trip-type">
+                            <i class="fas fa-gem"></i>
+                            <span>Luxury</span>
+                        </a>
+                        <a href="#budget" class="trip-type">
+                            <i class="fas fa-wallet"></i>
+                            <span>Budget</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary-builder">
+        <div class="container">
+            <h2>Build Your Australia Itinerary</h2>
+            <p class="section-subtitle">Answer a few questions to get a personalized trip plan</p>
+            
+            <div class="builder-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>How long is your trip?</h3>
+                        <div class="duration-options">
+                            <button class="duration-btn" data-days="7">1 Week</button>
+                            <button class="duration-btn" data-days="14">2 Weeks</button>
+                            <button class="duration-btn" data-days="21">3 Weeks</button>
+                            <button class="duration-btn" data-days="28">4 Weeks</button>
+                            <button class="duration-btn" data-days="60">2 Months</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>What's your budget?</h3>
+                        <div class="budget-options">
+                            <button class="budget-btn" data-budget="budget">Budget ($80-120/day)</button>
+                            <button class="budget-btn" data-budget="midrange">Mid-Range ($150-250/day)</button>
+                            <button class="budget-btn" data-budget="luxury">Luxury ($300+/day)</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>What are your interests?</h3>
+                        <div class="interest-options">
+                            <button class="interest-btn" data-interest="beaches">Beaches & Coast</button>
+                            <button class="interest-btn" data-interest="nature">Nature & Wildlife</button>
+                            <button class="interest-btn" data-interest="cities">Cities & Culture</button>
+                            <button class="interest-btn" data-interest="adventure">Adventure & Outdoors</button>
+                            <button class="interest-btn" data-interest="food">Food & Wine</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Travel style?</h3>
+                        <div class="style-options">
+                            <button class="style-btn" data-style="fast">Fast-paced</button>
+                            <button class="style-btn" data-style="moderate">Moderate</button>
+                            <button class="style-btn" data-style="relaxed">Relaxed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="itinerary-result" id="itineraryResult" style="display: none;">
+                <h3>Your Personalized Australia Itinerary</h3>
+                <div class="result-details">
+                    <div class="result-summary">
+                        <p><strong>Duration:</strong> <span id="resultDuration">14 days</span></p>
+                        <p><strong>Budget:</strong> <span id="resultBudget">Mid-Range</span></p>
+                        <p><strong>Focus:</strong> <span id="resultInterests">Beaches & Cities</span></p>
+                        <p><strong>Style:</strong> <span id="resultStyle">Moderate pace</span></p>
+                    </div>
+                    <div class="result-itinerary">
+                        <h4>Recommended Route:</h4>
+                        <div class="day-by-day" id="dayByDay">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn-primary" id="printItinerary">
+                            <i class="fas fa-print"></i> Print Itinerary
+                        </button>
+                        <button class="btn-secondary" id="saveItinerary">
+                            <i class="fas fa-save"></i> Save for Later
+                        </button>
+                        <button class="btn-secondary" id="startOver">
+                            <i class="fas fa-redo"></i> Start Over
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-made Itineraries -->
+    <section class="premade-itineraries">
+        <div class="container">
+            <h2>Popular Australia Itineraries</h2>
+            <p class="section-subtitle">Ready-to-use trip plans based on most popular routes</p>
+            
+            <div class="itinerary-grid">
+                <!-- East Coast Classic -->
+                <div class="itinerary-card" id="east-coast">
+                    <div class="card-header">
+                        <h3>East Coast Classic</h3>
+                        <span class="duration">14-21 days</span>
+                    </div>
+                    <div class="card-route">
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sydney</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Byron Bay</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Brisbane</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Fraser Island</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Whitsundays</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Cairns</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <p><strong>Best for:</strong> First-time visitors, beach lovers, backpackers</p>
+                        <p><strong>Budget:</strong> $2,500-$4,000 per person</p>
+                        <p><strong>Highlights:</strong> Sydney Opera House, Byron Bay beaches, Great Barrier Reef</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="east-coast-itinerary.html" class="btn-primary">View Full Itinerary</a>
+                        <button class="btn-secondary bookmark-btn">
+                            <i class="far fa-bookmark"></i> Save
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Outback Adventure -->
+                <div class="itinerary-card" id="outback">
+                    <div class="card-header">
+                        <h3>Outback Adventure</h3>
+                        <span class="duration">10-14 days</span>
+                    </div>
+                    <div class="card-route">
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Alice Springs</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Uluru</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kings Canyon</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Coober Pedy</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Adelaide</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <p><strong>Best for:</strong> Nature lovers, photographers, adventure seekers</p>
+                        <p><strong>Budget:</strong> $2,000-$3,500 per person</p>
+                        <p><strong>Highlights:</strong> Uluru sunrise, Kings Canyon hike, underground opal mining</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="outback-itinerary.html" class="btn-primary">View Full Itinerary</a>
+                        <button class="btn-secondary bookmark-btn">
+                            <i class="far fa-bookmark"></i> Save
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Family Fun -->
+                <div class="itinerary-card" id="family">
+                    <div class="card-header">
+                        <h3>Family Fun Australia</h3>
+                        <span class="duration">14-18 days</span>
+                    </div>
+                    <div class="card-route">
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Melbourne</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Phillip Island</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sydney</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Gold Coast</span>
+                        </div>
+                        <div class="route-line"></div>
+                        <div class="route-point">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sunshine Coast</span>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <p><strong>Best for:</strong> Families with kids, multi-generational trips</p>
+                        <p><strong>Budget:</strong> $4,000-$6,000 per family</p>
+                        <p><strong>Highlights:</strong> Penguin parade, Taronga Zoo, theme parks, kid-friendly beaches</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="family-itinerary.html" class="btn-primary">View Full Itinerary</a>
+                        <button class="btn-secondary bookmark-btn">
+                            <i class="far fa-bookmark"></i> Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Working Holiday Itinerary -->
+    <section class="whv-itinerary" id="whv">
+        <div class="container">
+            <h2>Working Holiday Visa Itinerary</h2>
+            <p class="section-subtitle">6-month route combining work, travel, and second-year visa work</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Months 1-2</div>
+                    <div class="timeline-content">
+                        <h4>Sydney Arrival & Setup</h4>
+                        <ul>
+                            <li>Find hostel accommodation</li>
+                            <li>Open bank account (Commonwealth/ANZ)</li>
+                            <li>Apply for TFN (Tax File Number)</li>
+                            <li>Find hospitality work in Sydney</li>
+                            <li>Explore Sydney on days off</li>
+                        </ul>
+                        <div class="timeline-resources">
+                            <a href="working-holiday-visa-guide.html#jobs" class="resource-link">Job Finding Guide</a>
+                            <a href="working-holiday-visa-guide.html#banking" class="resource-link">Banking Setup</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Months 3-4</div>
+                    <div class="timeline-content">
+                        <h4>East Coast Travel & Work</h4>
+                        <ul>
+                            <li>Travel to Byron Bay (hospitality work)</li>
+                            <li>Move to Brisbane (office temp work)</li>
+                            <li>Save for farm work requirement</li>
+                            <li>Weekend trips to Gold Coast/Noosa</li>
+                        </ul>
+                        <div class="timeline-resources">
+                            <a href="australia-budget-guide.html" class="resource-link">Budget Planning</a>
+                            <a href="https://www.seek.com.au" target="_blank" class="resource-link" rel="nofollow">Find Jobs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Months 5-6</div>
+                    <div class="timeline-content">
+                        <h4>Farm Work & Second Year Prep</h4>
+                        <ul>
+                            <li>Travel to regional Queensland</li>
+                            <li>Complete 88 days farm work</li>
+                            <li>Document all work for visa extension</li>
+                            <li>Apply for second-year WHV</li>
+                        </ul>
+                        <div class="timeline-resources">
+                            <a href="working-holiday-visa-guide.html#second-year" class="resource-link">Second Year Guide</a>
+                            <a href="https://www.harvesttrail.gov.au" target="_blank" class="resource-link" rel="nofollow">Farm Work Listings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="working-holiday-itinerary.html" class="btn-primary">View Complete WHV Itinerary</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="itinerary-booking">
+        <div class="container">
+            <h2>Book Your Australia Trip</h2>
+            <p class="section-subtitle">Use our trusted partners to book flights, accommodation, and tours for your itinerary</p>
+            
+            <div class="booking-grid">
+                <div class="booking-card

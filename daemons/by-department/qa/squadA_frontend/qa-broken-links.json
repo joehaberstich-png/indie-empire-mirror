@@ -1,0 +1,8 @@
+{
+  "id": "qa-broken-links",
+  "role": "Broken Link Crawler",
+  "squad": "A \u2014 Frontend & UI",
+  "skill": "Full-site crawling (all pages, all assets). Detects 404s, 301 chains, broken images, missing JS/CSS, orphaned pages. Tools: Wget, HTTrack, custom crawler.",
+  "che[REDACTED]": "Every 6 hours",
+  "alerts_on": "Any 404, redirect chain >3 hops, missing favicon/robots/sitemap"
+}

@@ -1,0 +1,30 @@
+{
+  "department": "Research",
+  "agent_count": 250,
+  "modules_completed": [
+    "JN-QS-101",
+    "JN-QS-102",
+    "JN-QS-103",
+    "JN-QS-201",
+    "JN-QS-202",
+    "JN-QS-301",
+    "JN-QS-401",
+    "JN-QS-501",
+    "JN-QS-601"
+  ],
+  "total_modules": 9,
+  "training_time_real_seconds": 0.45,
+  "training_time_effective_hours": 0.37,
+  "speed_multiplier": 84,
+  "certifications_earned": [
+    "Jeannie Nails Quantum Security Agent (JN-QSA-SEC)",
+    "Jeannie Nails Content Specialist (JN-CONT)",
+    "Jeannie Nails Quantum Sales Associate (JN-QSA)",
+    "Jeannie Nails NS Community Specialist (JN-NCS)",
+    "Jeannie Nails Foot Health Specialist (JN-FHS)",
+    "Jeannie Nails Service Master (JN-NSM)",
+    "Jeannie Nails Security Certified (JN-SEC)",
+    "Jeannie Nails Conversion Specialist (JN-CS)",
+    "Jeannie Nails Quantum Manager (JN-QM)"
+  ]
+}

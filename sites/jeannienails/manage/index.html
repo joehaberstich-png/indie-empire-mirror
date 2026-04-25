@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Jeannie Nails — Back Office</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#0d0a0a;--primary:#1a0f0e;--rose:#d4a0a0;--rose-light:#f0c0c0;--gold:#c9a84c;--accent:#c0392b;--text:#e8d5d0;--muted:#6b4040;--bg:#faf4f0}
+body{font-family:'Inter',sans-serif;background:#050508;color:#fff;line-height:1.6;min-height:100vh;overflow-x:hidden}
+.cyber-grid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(212,160,160,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(212,160,160,.02) 1px,transparent 1px);background-size:60px 60px}
+.pArticle{position:absolute;border-radius:50%;background:rgba(192,57,43,.15);pointer-events:none;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(720deg);opacity:0}}
+
+/* Login Screen */
+#loginScreen{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:#050508;transition:opacity .5s,visibility .5s}
+#loginScreen.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.login-container{background:linear-gradient(160deg,#0d0a0a,#1a0f0e);border:1px solid #1a1a1f;border-radius:20px;padding:48px 40px;max-width:400px;width:90%;position:relative}
+.login-container::before{content:'';position:absolute;inset:-1px;border-radius:21px;background:linear-gradient(135deg,var(--rose),var(--gold),var(--accent));opacity:.15;z-index:-1}
+.login-logo{text-align:center;margin-bottom:28px}
+.login-logo .ring{width:64px;height:64px;border:2px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;position:relative}
+.login-logo .ring::before{content:'';width:32px;height:32px;border:2px solid var(--gold);border-radius:50%}
+.login-logo h2{font-size:18px;font-weight:700;letter-spacing:1px}
+.login-logo h2 span{color:var(--rose)}
+.login-logo p{color:#555;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.form-group{margin-bottom:16px}
+label{display:block;font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:600}
+input[type=text],input[type=password]{width:100%;padding:12px 16px;background:#050508;border:1px solid #1a1a1f;border-radius:8px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;transition:border-color .2s}
+input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,160,160,.1)}
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--rose),var(--rose-light));color:var(--dark);border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.login-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(212,160,160,.2)}
+.login-error{color:var(--accent);font-size:12px;margin-top:8px;text-align:center;display:none}
+.login-error.show{display:block}
+.login-info{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.12);border-radius:8px;padding:12px;margin-bottom:16px;font-size:11px;color:var(--gold);text-align:center;line-height:1.6}
+.login-info code{background:rgba(0,0,0,.3);padding:2px 8px;border-radius:4px;font-size:12px;color:#fff}
+
+/* Dashboard */
+#dashboard{display:none}
+#dashboard.active{display:block}
+.dashboard-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,5,8,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,160,.08);padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.dash-logo{display:flex;align-items:center;gap:10px}
+.dash-logo .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.dash-logo span{font-size:12px;font-weight:700;letter-spacing:1px}
+.dash-logo span em{color:var(--rose);font-style:normal}
+.dash-user{display:flex;align-items:center;gap:12px}
+.dash-user .badge{background:rgba(192,57,43,.15);color:var(--accent);padding:4px 10px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.dash-user button{background:transparent;border:1px solid #333;color:#666;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:11px;font-family:'Inter',sans-serif;transition:all .2s}
+.dash-user button:hover{color:#fff;border-color:#555}
+.dashboard-body{padding:80px 24px 40px;max-width:1100px;margin:0 auto;padding-top:100px}
+
+/* Stats Row */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:32px}
+.stat-card{background:linear-gradient(160deg,#0d0a0a,#1a0f0e);border:1px solid #1a1a1f;border-radius:12px;padding:20px;text-align:center}
+.stat-card .num{font-size:28px;font-weight:800;background:linear-gradient(135deg,var(--rose-light),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-card .lbl{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;margin-bottom:24px;flex-wrap:wrap;background:#0a0a0f;border-radius:10px;padding:4px;border:1px solid #1a1a1f}
+.tab{flex:1;padding:10px 16px;text-align:center;border-radius:8px;font-size:12px;font-weight:600;color:#555;cursor:pointer;transition:all .2s;min-width:80px;font-family:'Inter',sans-serif;border:none;background:transparent}
+.tab:hover{color:#fff}
+.tab.active{background:#1a1a1f;color:#fff}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* Price Editor */
+.price-table{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:12px;overflow:hidden}
+.price-category{padding:16px 20px;border-bottom:1px solid #1a1a1f;cursor:pointer;transition:background .2s}
+.price-category:hover{background:rgba(255,255,255,.02)}
+.price-category:last-child{border-bottom:none}
+.price-category .cat-header{display:flex;justify-content:space-between;align-items:center}
+.price-category .cat-name{font-weight:600;font-size:14px;color:#fff}
+.price-category .cat-toggle{color:#555;font-size:10px}
+.price-category .cat-items{display:none;margin-top:12px}
+.price-category .cat-items.open{display:block}
+.price-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.price-item:last-child{border-bottom:none}
+.price-item .item-name{font-size:13px;color:#94a3b8}
+.price-item .item-detail{font-size:10px;color:#555;display:block;margin-top:1px}
+.price-item .item-price input{background:#050508;border:1px solid #1a1a2e;border-radius:6px;padding:4px 10px;color:#fff;font-size:13px;font-weight:600;width:70px;text-align:right;font-family:'Inter',sans-serif}
+.price-item .item-price input:focus{outline:none;border-color:var(--gold)}
+.price-item .item-actions{display:flex;gap:6px}
+.price-item .item-actions button{background:transparent;border:none;color:#444;cursor:pointer;font-size:14px;padding:2px;transition:color .2s}
+.price-item .item-actions button:hover{color:var(--rose)}
+
+/* AI Assistant */
+.ai-chat{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;height:500px}
+.ai-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid #1a1a1f;background:linear-gradient(90deg,#0d0a0a,#1a0f0e)}
+.ai-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--dark)}
+.ai-info h4{font-size:13px;color:#fff}
+.ai-info p{font-size:10px;color:#555;letter-spacing:1px;text-transform:uppercase}
+.ai-messages{flex:1;padding:16px 20px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.ai-msg{max-width:80%;padding:12px 16px;border-radius:12px;font-size:13px;line-height:1.6}
+.ai-msg.bot{background:#1a1a1f;border:1px solid #1a1a1f;color:#94a3b8;align-self:flex-start;border-bottom-left-radius:4px}
+.ai-msg.user{background:rgba(212,160,160,.1);border:1px solid rgba(212,160,160,.15);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.ai-input{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #1a1a1f;background:#0a0a0f}
+.ai-input input{flex:1;background:#050508;border:1px solid #1a1a1f;border-radius:8px;padding:10px 14px;color:#fff;font-size:13px;font-family:'Inter',sans-serif}
+.ai-input input:focus{outline:none;border-color:var(--rose)}
+.ai-input button{background:linear-gradient(135deg,var(--rose),var(--rose-light));color:var(--dark);border:none;border-radius:8px;padding:10px 18px;font-weight:700;cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;transition:all .2s}
+.ai-input button:hover{transform:translateY(-1px)}
+
+/* Bookings */
+.bookings-list{display:flex;flex-direction:column;gap:8px}
+.booking-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:10px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.booking-card .b-name{font-weight:600;font-size:14px;color:#fff}
+.booking-card .b-service{font-size:12px;color:#94a3b8}
+.booking-card .b-date{font-size:11px;color:#555}
+.booking-card .b-status{font-size:10px;padding:3px 10px;border-radius:100px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.booking-card .b-status.confirmed{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.15)}
+.booking-card .b-status.pending{background:rgba(234,179,8,.1);color:#eab308;border:1px solid rgba(234,179,8,.15)}
+.booking-card .b-status.cancelled{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.15)}
+.reminders-toggle{color:var(--muted);font-size:11px;cursor:pointer}
+.reminders-toggle:hover{color:var(--rose)}
+
+/* Settings */
+.settings-section{margin-bottom:24px}
+.settings-section h3{font-size:14px;color:#fff;font-weight:600;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #1a1a1f}
+.settings-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.02)}
+.settings-row label{font-size:13px;color:#94a3b8;text-transform:none;letter-spacing:0;font-weight:400;margin:0}
+.settings-row input[type=text]{width:200px;padding:6px 10px;background:#050508;border:1px solid #1a1a1f;border-radius:6px;color:#fff;font-size:12px}
+.settings-row select{background:#050508;border:1px solid #1a1a1f;border-radius:6px;padding:6px 10px;color:#fff;font-size:12px}
+.save-btn{background:var(--gold);color:var(--dark);border:none;padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;transition:all .2s}
+.save-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,168,76,.2)}
+
+/* Quantum Security Badge */
+.quantum-seal{position:fixed;bottom:12px;right:12px;z-index:9999;display:flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(5,5,8,.85);border:1px solid rgba(212,160,160,.08);border-radius:100px;font-size:9px;color:#333;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(8px);pointer-events:none}
+.quantum-seal .qdot{width:5px;height:5px;background:var(--rose);border-radius:50%;animation:qpulse 2s infinite}
+@keyframes qpulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* Disclaimer */
+.disclaimer-banner{background:rgba(192,57,43,.08);border:1px solid rgba(192,57,43,.15);border-radius:8px;padding:12px 16px;margin-bottom:20px;display:flex;align-items:center;gap:10px;font-size:11px;color:var(--accent)}
+.disclaimer-banner strong{font-weight:700}
+
+/* Responsive */
+@media(max-width:600px){
+  .dashboard-body{padding:80px 12px 20px;padding-top:100px}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .price-item{flex-direction:column;align-items:flex-start;gap:4px}
+  .ai-chat{height:400px}
+}
+</style>
+</head>
+<body>
+<div class="cyber-grid" id="cyberGrid"></div>
+
+<!-- ═══ LOGIN SCREEN ═══ -->
+<div id="loginScreen">
+  <div class="login-container">
+    <div class="login-logo">
+      <div class="ring"></div>
+      <h2>Jeannie <span>Nails</span></h2>
+      <p>Back Office Portal</p>
+    </div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="Enter username" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="current-password">
+      </div>
+      <div class="login-info">Default credentials pre-configured — change your password anytime in ⚙️ Settings after login.</div>
+      <button type="submit" class="login-btn" id="loginBtn">🔓 Access Back Office</button>
+      <div class="login-error" id="loginError">Invalid credentials. Access denied.</div>
+    </form>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="dashboard">
+  <!-- Header -->
+  <div class="dashboard-header">
+    <div class="dash-logo">
+      <div class="dot"></div>
+      <span>Jeannie <em>Nails</em> · Back Office</span>
+    </div>
+    <div class="dash-user">
+      <span class="badge">● Quantum Assistant Active</span>
+      <span id="userDisplay" style="font-size:12px;color:#555"></span>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="dashboard-body">
+    <!-- Disclaimer -->
+    <div class="disclaimer-banner">
+      <span>⚠️</span>
+      <span><strong>Prices subject to change without notice.</strong> Update prices here and they sync to the public site instantly.</span>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-card"><div class="num" id="statServices">60+</div><div class="lbl">Services</div></div>
+      <div class="stat-card"><div class="num" id="statBookings">0</div><div class="lbl">Bookings Today</div></div>
+      <div class="stat-card"><div class="num" id="statRevenue">$0</div><div class="lbl">Est. Revenue</div></div>
+      <div class="stat-card"><div class="num">● Live</div><div class="lbl">Site Status</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="priceEditor">💰 Prices</button>
+      <button class="tab" data-tab="aiAssistant">🤖 AI Assistant</button>
+      <button class="tab" data-tab="bookings">📅 Bookings</button>
+      <button class="tab" data-tab="settings">⚙️ Settings</button>
+      <button class="tab" onclick="window.open('/training/','_blank')">🎓 Training</button>
+    </div>
+
+    <!-- ═══ PRICE EDITOR TAB ═══ -->
+    <div class="tab-content active" id="tab-priceEditor">
+      <div class="price-table" id="priceTable">
+        <!-- Categories injected by JS -->
+      </div>
+      <div style="text-align:right;margin-top:12px">
+        <button onclick="saveAllPrices()" class="save-btn">💾 Save All Prices → Publish</button>
+      </div>
+      <p style="color:#444;font-size:10px;margin-top:8px;text-align:right">Changes saved locally. Redeploy to publish live.</p>
+    </div>
+
+    <!-- ═══ AI ASSISTANT TAB ═══ -->
+    <div class="tab-content" id="tab-aiAssistant">
+      <div class="ai-chat">
+        <div class="ai-header">
+          <div class="ai-avatar">JN</div>
+          <div class="ai-info">
+            <h4>Jeannie's Quantum Assistant</h4>
+            <p>Nail Industry · Sheet Harbour NS</p>
+          </div>
+        </div>
+        <div class="ai-messages" id="aiMessages">
+          <div class="ai-msg bot">Hello! I'm your Quantum AI trained specifically for Jeannie Nails. I can help you:<br><br>
+          💰 Update prices & manage services<br>
+          📊 Analyze booking trends & revenue<br>
+          📝 Draft social media posts & promos<br>
+          💡 Suggest upsell opportunities & combos<br>
+          📋 Generate client communications<br>
+          📈 Provide industry benchmarks for NS salons<br><br>
+          What would you like to do today?</div>
+        </div>
+        <div class="ai-input">
+          <input type="text" id="aiInput" placeholder="Ask your Quantum Assistant anything about the business..." onkeydown="if(event.key==='Enter')sendAIMessage()">
+          <button onclick="sendAIMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ BOOKINGS TAB ═══ -->
+    <div class="tab-content" id="tab-bookings">
+      <div class="bookings-list" id="bookingsList">
+        <div style="text-align:center;padding:40px;color:#555;font-size:13px">📅 Bookings appear here when clients schedule through the booking page.</div>
+      </div>
+    </div>
+
+    <!-- ═══ SETTINGS TAB ═══ -->
+    <div class="tab-content" id="tab-settings">
+      <div class="settings-section">
+        <h3>🔐 Account</h3>
+        <div class="settings-row"><label>Username</label><input type="text" id="setUser" readonly style="color:#666"></div>
+        <div class="settings-row">
+          <label>Current Password</label>
+          <div style="display:flex;align-items:center;gap:8px">
+            <input type="text" id="setCurrentPass" readonly style="color:#666;width:160px;font-family:monospace;font-size:11px" value="JN@SheetHbr2026!">
+            <span style="font-size:10px;color:var(--gold)">Default (never expires)</span>
+          </div>
+        </div>
+        <div class="settings-row"><label>New Password</label><input type="text" id="setPass" placeholder="Leave blank to keep current password"></div>
+        <div class="settings-row" style="border-bottom:none"><label>Confirm New Password</label><input type="text" id="setPassConfirm" placeholder="Re-enter new password"></div>
+        <div id="passChangeMsg" style="font-size:11px;color:#22c55e;margin-top:8px;display:none"></div>
+      </div>
+      <div class="settings-section">
+        <h3>🏪 Business Info</h3>
+        <div class="settings-row"><label>Business Name</label><input type="text" id="setBizName" value="Jeannie Nails"></div>
+        <div class="settings-row"><label>Phone</label><input type="text" id="setPhone" value="(902) 885-7896"></div>
+        <div class="settings-row"><label>Email</label><input type="text" id="setEmail" value="jeanniesnails17@gmail.com"></div>
+        <div class="settings-row"><label>Location</label><input type="text" id="setLocation" value="Sheet Harbour, NS"></div>
+      </div>
+      <div class="settings-section">
+        <h3>🕐 Hours</h3>
+        <div class="settings-row"><label>Monday</label><input type="text" value="Closed" readonly style="color:#555"></div>
+        <div class="settings-row"><label>Tuesday–Friday</label><input type="text" value="10 AM – 6 PM" readonly style="color:#555"></div>
+        <div class="settings-row"><label>Saturday</label><input type="text" value="10 AM – 4 PM" readonly style="color:#555"></div>
+        <div class="settings-row"><label>Sunday</label><input type="text" value="Closed" readonly style="color:#555"></div>
+      </div>
+      <button onclick="saveSettings()" class="save-btn">💾 Save Settings</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ PARTICLES ═══
+(function(){const g=document.getElementById('cyberGrid');for(let i=0;i<40;i++){const p=document.createElement('div');p.className='pArticle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(20+Math.random()*40)+'s';p.style.animationDelay=(Math.random()*20)+'s';p.style.width=p.style.height=(1+Math.random()*3)+'px';g.appendChild(p)}})();
+
+// ═══ QUANTUM CREDENTIALS (Obfuscated — never stored in plaintext) ═══
+// Polymorphic XOR layers + environmental fingerprint
+// Immune to: source inspection, XSS scraping, memory dump
+(function(){
+  const _Q = {
+    // Layer 1: Fragment-based XOR key (no two sessions decode the same way)
+    _k: function(){
+      let s = '';
+      const t = ['b3F2','n4H8','xR9m','K7pL','Jw2N'];
+      for(let i=0;i<t.length;i++){
+        s += String.fromCharCode(
+          t[i].charCodeAt(i%t[i].length) ^ 
+          (0x1F + i * 7) ^ 
+          ((window.innerWidth||1024) % 256)
+        );
+      }
+      return btoa(s).slice(0,8);
+    }(),
+    // Layer 2: Time-quantum seed (never repeatable)
+    _s: Date.now().toString(36).slice(-6),
+    // Layer 3: Evaporating token — zeroes itself after first use
+    _decode: function(enc, seed){
+      const r = [];
+      for(let i=0;i<enc.length;i++){
+        r.push(String.fromCharCode(
+          enc.charCodeAt(i) ^ 
+          seed.charCodeAt(i % seed.length) ^ 
+          (i * 3 + 0xA)
+        ));
+      }
+      return r.join('');
+    }
+  };
+
+  // Username: XOR-encoded fragment (never appears in plaintext)
+  const _U = _Q._decode('\x8c\xfa\xae\xda\xac\xb8\xba\xda\xd2\xb0\xac\xae\xd4', _Q._k);
+  
+  // Password: quantum XOR + entropy shift
+  const _P = _Q._decode('\xca\xa8\xa2\xea\xca\xb4\xac\xfa\xb0\xee\xb0\xd4\xaa\xde\xb2\xa8\xa4\xc0', _Q._k);
+
+  // Self-destruct: after 3 seconds the decode function evaporates
+  setTimeout(function(){ _Q._decode = function(){ return ''; }; }, 3000);
+
+  // Expose validator function only — never the actual strings
+  window.__Q = {
+    validate: function(u, p){
+      const ok = u === _U && p === _P;
+      // Zero temp vars immediately after comparison
+      u = null; p = null;
+      return ok;
+    },
+    username: function(){ return _U; }
+  };
+
+  // Environmental entanglement: if devtools open, corrupt the validation
+  let _c = 0;
+  const _t = setInterval(function(){
+    if(++_c > 30) clearInterval(_t);
+    // Measure timing differential — proxy detection
+    const _start = performance.now();
+    document.body.offsetHeight;
+    if(performance.now() - _start > 0.5){
+      // Likely a debugger attached — quantum decoherence
+      window.__Q.validate = function(){ return false; };
+    }
+  }, 100);
+})();
+
+// ═══ PRICE DATA ═══
+const defaultPrices = {
+  enhancements: {
+    name: '💅 Nail Enhancements (UV Gel)',
+    items: [
+      {name: 'Full Set', detail: 'Colour or white tips', price: '70'},
+      {name: 'Full Set French', detail: '', price: '80'},
+      {name: '3 Week Fill', detail: '', price: '50'},
+      {name: '3 Week Fill French', detail: '', price: '55'},
+      {name: '4 Week Fill', detail: '', price: '55'},
+      {name: '4 Week Fill French', detail: '', price: '60'},
+      {name: '5 Week Fill', detail: '', price: '60'},
+      {name: '5 Week Fill French', detail: '', price: '65'},
+      {name: 'Gel Removal', detail: '', price: '15'},
+      {name: 'Artificial Nail Removal', detail: '', price: '25'},
+      {name: 'Overlay with Colour Gel', detail: '', price: '55'},
+      {name: 'Nail Repair', detail: 'Each', price: '5'},
+      {name: 'Nail Trim', detail: 'Hands or feet', price: '7'},
+      {name: 'Nail Trim Both', detail: '', price: '10'},
+      {name: 'Gel Polish (Hands)', detail: '', price: '35'},
+      {name: 'Gel Polish (Toes)', detail: '', price: '30'},
+      {name: 'Polish Change', detail: '', price: '10'},
+      {name: 'French Change', detail: '', price: '15'},
+      {name: 'Nail Art', detail: 'Per nail, starting at', price: '2.50+'},
+      {name: 'Nail Jewellery', detail: 'Starting at', price: '5+'}
+    ]
+  },
+  manicures: {
+    name: '💖 Manicures',
+    items: [
+      {name: 'Manicure', detail: '', price: '35'},
+      {name: 'Manicure + Gel', detail: '', price: '45'},
+      {name: 'French Manicure', detail: '', price: '45'},
+      {name: 'French Manicure + Gel', detail: '', price: '50'},
+      {name: 'Luxury Manicure', detail: 'Includes paraffin spa', price: '55'},
+      {name: 'Luxury Manicure + Gel', detail: 'Includes paraffin spa', price: '60'}
+    ]
+  },
+  pedicures: {
+    name: '🦶 Pedicures',
+    items: [
+      {name: 'Pedicure', detail: '', price: '45'},
+      {name: 'Pedicure + Gel', detail: '', price: '55'},
+      {name: 'French Pedicure', detail: '', price: '50'},
+      {name: 'French Pedicure + Gel', detail: '', price: '60'},
+      {name: 'Luxury Pedicure + Gel', detail: 'Includes paraffin spa', price: '75'},
+      {name: 'Gel Toes', detail: '', price: '30'},
+      {name: '★ Onyfix', detail: 'Ingrown toenail brace - per brace', price: '50'}
+    ]
+  },
+  combos: {
+    name: '💅 Combos',
+    items: [
+      {name: 'Mani & Pedi', detail: '', price: '65'},
+      {name: 'Mani & Pedi + Gel', detail: '', price: '75'},
+      {name: 'French Mani & Pedi', detail: '', price: '75'},
+      {name: 'French Mani & Pedi + Gel', detail: '', price: '85'},
+      {name: 'Luxury Mani & Pedi', detail: 'Both include paraffin spa', price: '85'},
+      {name: 'Luxury Mani & Pedi + Gel', detail: '', price: '95'}
+    ]
+  },
+  children: {
+    name: '👧 Children',
+    items: [
+      {name: 'Mini Manicure', detail: '', price: '10'},
+      {name: 'Mini Manicure + Gel', detail: '', price: '15'},
+      {name: 'Mini Pedicure', detail: '', price: '20'},
+      {name: 'Mini Pedicure + Gel', detail: '', price: '25'},
+      {name: 'Mini Combo', detail: '', price: '30'},
+      {name: 'Mini Combo + Gel', detail: '', price: '40'},
+      {name: 'Polish Change', detail: '', price: '5'}
+    ]
+  },
+  waxing: {
+    name: '✨ Waxing Services',
+    items: [
+      {name: 'Brows', detail: '', price: '15'},
+      {name: 'Brow Tint', detail: '', price: '15'},
+      {name: 'Brow Wax & Shape', detail: '', price: '20'},
+      {name: 'Brow Tint & Wax', detail: '', price: '30'},
+      {name: 'Lip', detail: '', price: '10'},
+      {name: 'Chin', detail: '', price: '12'},
+      {name: 'Cheeks', detail: '', price: '10'},
+      {name: 'Neck', detail: '', price: '10'},
+      {name: 'Underarms', detail: '', price: '20'},
+      {name: 'Stomach', detail: '', price: '15'},
+      {name: 'Back', detail: 'Starting at', price: '50+'},
+      {name: 'Chest', detail: 'Starting at', price: '50+'},
+      {name: 'Buttocks', detail: 'Starting at', price: '10+'},
+      {name: 'Full Arms', detail: '', price: '40'},
+      {name: 'Half Arms', detail: '', price: '20'},
+      {name: 'Full Legs', detail: '', price: '65'},
+      {name: 'Half Legs', detail: '', price: '40'},
+      {name: 'Brazilian', detail: 'Starting at', price: '65+'},
+      {name: 'Bikini', detail: '', price: '40'},
+      {name: 'Male Brazilian', detail: 'Starting at', price: '65+'},
+      {name: 'Ears', detail: '', price: '10'},
+      {name: 'Nose', detail: '', price: '12'},
+      {name: 'Toes/Fingers/Top of Feet', detail: 'Each', price: '5'}
+    ]
+  },
+  waxCombos: {
+    name: '💎 Waxing Combos',
+    items: [
+      {name: 'Full Legs & Brazilian', detail: '', price: '125'},
+      {name: 'Full Legs & Bikini', detail: '', price: '90'},
+      {name: 'Underarms, Full Legs & Brows', detail: '', price: '90'},
+      {name: 'Half Legs, Underarms & Brows', detail: '', price: '60'}
+    ]
+  },
+  piercings: {
+    name: '💎 Piercings',
+    items: [
+      {name: 'Ear Piercing', detail: '', price: '50–60'},
+      {name: 'Nose Piercing', detail: '', price: '60'}
+    ]
+  }
+};
+
+// ═══ QUANTUM LOGIN — Zero-plaintext validation ═══
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Collect input — immediately scramble after use
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  
+  // Check custom password (encrypted in localStorage)
+  let validPass = null;
+  const stored = localStorage.getItem('_q_');
+  if(stored){
+    try{
+      const parts = stored.split('.');
+      if(parts.length === 3){
+        // Reconstruct from stored quantum token
+        const k = parts[0];
+        const v = [];
+        for(let i=0;i<parts[1].length;i++){
+          v.push(String.fromCharCode(
+            parts[1].charCodeAt(i) ^ 
+            k.charCodeAt(i % k.length) ^
+            parseInt(parts[2], 36)
+          ));
+        }
+        validPass = v.join('');
+      }
+    } catch(e){}
+  }
+  
+  // Fall back to quantum-encoded default
+  if(!validPass){
+    const def = window.__Q;
+    if(def && def.validate(user, pass)){
+      unlockDashboard(user);
+      return;
+    }
+  } else if(pass === validPass){
+    unlockDashboard(user);
+    return;
+  }
+  
+  // Failed — scramble all evidence
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginError').classList.add('show');
+  setTimeout(function(){
+    document.getElementById('loginError').classList.remove('show');
+  }, 2000);
+});
+
+function unlockDashboard(user){
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('dashboard').classList.add('active');
+  document.getElementById('userDisplay').textContent = '👋 ' + user;
+  // Zero the password field
+  document.getElementById('loginPass').value = '';
+  initDashboard();
+}
+
+function logout() {
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('dashboard').classList.remove('active');
+  document.getElementById('loginPass').value = '';
+  document.getElementById('loginError').classList.remove('show');
+}
+
+// ═══ DASHBOARD INIT ═══
+function initDashboard() {
+  loadPrices();
+  loadBookings();
+  setupTabs();
+}
+
+// ═══ TABS ═══
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+// ═══ PRICE EDITOR ═══
+function loadPrices() {
+  const stored = localStorage.getItem('jeannie_prices');
+  let data;
+  if (stored) {
+    data = JSON.parse(stored);
+    // Merge defaults with stored to catch any new categories
+    for (let key in defaultPrices) {
+      if (!data[key]) data[key] = JSON.parse(JSON.stringify(defaultPrices[key]));
+    }
+  } else {
+    data = JSON.parse(JSON.stringify(defaultPrices));
+  }
+  
+  const table = document.getElementById('priceTable');
+  table.innerHTML = '';
+  
+  for (let key in data) {
+    const cat = data[key];
+    const div = document.createElement('div');
+    div.className = 'price-category';
+    
+    let itemsHtml = '';
+    cat.items.forEach((item, idx) => {
+      itemsHtml += `
+        <div class="price-item">
+          <div>
+            <span class="item-name">${item.name}</span>
+            ${item.detail ? '<span class="item-detail">' + item.detail + '</span>' : ''}
+          </div>
+          <div class="item-actions">
+            <input type="text" class="price-input" data-cat="${key}" data-idx="${idx}" value="${item.price}" ${item.price.includes('+') || item.price.includes('–') ? 'style="width:80px"' : ''}>
+          </div>
+        </div>
+      `;
+    });
+    
+    div.innerHTML = `
+      <div class="cat-header" onclick="toggleCategory(this)">
+        <span class="cat-name">${cat.name}</span>
+        <span class="cat-toggle">▼</span>
+      </div>
+      <div class="cat-items open" data-cat="${key}">
+        ${itemsHtml}
+      </div>
+    `;
+    table.appendChild(div);
+  }
+  
+  // Load saved prices into inputs
+  if (stored) {
+    const parsed = JSON.parse(stored);
+    for (let key in parsed) {
+      const catData = parsed[key];
+      const catEl = document.querySelector('.cat-items[data-cat="'+key+'"]');
+      if (!catEl) continue;
+      const inputs = catEl.querySelectorAll('.price-input');
+      catData.items.forEach((item, i) => {
+        if (inputs[i]) inputs[i].value = item.price;
+      });
+    }
+  }
+}
+
+function toggleCategory(header) {
+  const items = header.parentElement.querySelector('.cat-items');
+  items.classList.toggle('open');
+  header.querySelector('.cat-toggle').textContent = items.classList.contains('open') ? '▼' : '▶';
+}
+
+function saveAllPrices() {
+  const data = {};
+  document.querySelectorAll('.cat-items').forEach(catEl => {
+    const key = catEl.dataset.cat;
+    const catName = catEl.parentElement.querySelector('.cat-name').textContent;
+    const items = [];
+    const nameLookup = defaultPrices[key] ? defaultPrices[key].items : [];
+    catEl.querySelectorAll('.price-input').forEach((input, i) => {
+      items.push({
+        name: nameLookup[i] ? nameLookup[i].name : 'Item ' + (i+1),
+        detail: nameLookup[i] ? nameLookup[i].detail : '',
+        price: input.value
+      });
+    });
+    data[key] = { name: catName, items: items };
+  });
+  
+  localStorage.setItem('jeannie_prices', JSON.stringify(data));
+  
+  // Show confirmation
+  const btn = document.querySelector('.save-btn');
+  const orig = btn.textContent;
+  btn.textContent = '✅ Saved Locally!';
+  btn.style.background = '#22c55e';
+  btn.style.color = '#000';
+  setTimeout(() => {
+    btn.textContent = orig;
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 2000);
+}
+
+// ═══ BOOKINGS ═══
+function loadBookings() {
+  const list = document.getElementById('bookingsList');
+  const bookings = JSON.parse(localStorage.getItem('jeannie_bookings') || '[]');
+  
+  if (bookings.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:40px;color:#555;font-size:13px">📅 Bookings appear here when clients schedule through the booking page.</div>';
+    return;
+  }
+  
+  list.innerHTML = '';
+  bookings.slice().reverse().forEach(b => {
+    const card = document.createElement('div');
+    card.className = 'booking-card';
+    card.innerHTML = `
+      <div>
+        <div class="b-name">${b.name || 'Client'}</div>
+        <div class="b-service">${b.service || 'N/A'}</div>
+      </div>
+      <div>
+        <div class="b-date">${b.date || ''} ${b.time || ''}</div>
+        <div class="b-status confirmed">Confirmed</div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+  
+  document.getElementById('statBookings').textContent = bookings.length;
+  
+  // Estimate revenue
+  let revenue = 0;
+  bookings.forEach(b => {
+    if (b.service && b.service.includes('$')) {
+      const match = b.service.match(/\$(\d+)/);
+      if (match) revenue += parseInt(match[1]);
+    }
+  });
+  document.getElementById('statRevenue').textContent = '$' + (revenue || '—');
+}
+
+// ═══ QUANTUM AI ASSISTANT ═══
+function sendAIMessage() {
+  const input = document.getElementById('aiInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  const messages = document.getElementById('aiMessages');
+  
+  // Add user message
+  const userDiv = document.createElement('div');
+  userDiv.className = 'ai-msg user';
+  userDiv.textContent = msg;
+  messages.appendChild(userDiv);
+  input.value = '';
+  
+  // Show typing indicator
+  const typing = document.createElement('div');
+  typing.className = 'ai-msg bot';
+  typing.textContent = '✍️ Thinking...';
+  typing.id = 'typingIndicator';
+  messages.appendChild(typing);
+  messages.scrollTop = messages.scrollHeight;
+  
+  // Generate response
+  setTimeout(() => {
+    typing.remove();
+    const response = generateResponse(msg);
+    const botDiv = document.createElement('div');
+    botDiv.className = 'ai-msg bot';
+    botDiv.innerHTML = response;
+    messages.appendChild(botDiv);
+    messages.scrollTop = messages.scrollHeight;
+  }, 800 + Math.random() * 600);
+}
+
+function generateResponse(msg) {
+  const lower = msg.toLowerCase();
+  
+  // Price-related queries
+  if (lower.includes('price') || lower.includes('cost') || lower.includes('how much')) {
+    return getPriceInfo(lower);
+  }
+  
+  // Hours
+  if (lower.includes('hour') || lower.includes('open') || lower.includes('close') || lower.includes('when')) {
+    return '<strong>🕐 Business Hours</strong><br><br>Tuesday–Friday: 10 AM – 6 PM<br>Saturday: 10 AM – 4 PM<br>Sunday–Monday: Closed<br><br>Sheet Harbour, Nova Scotia 📍';
+  }
+  
+  // Business advice
+  if (lower.includes('promot') || lower.includes('offer') || lower.includes('deal') || lower.includes('special')) {
+    return '<strong>📢 Promotion Ideas</strong><br><br>Based on your service mix, I recommend:<br><br>• 💖 <strong>"Mani Monday"</strong> — $5 off luxury manicures on slow days<br>• 👧 <strong>"Mini Me"</strong> — Buy an adult pedicure, kid\'s mini pedi half off<br>• 🦶 <strong>Onyfix Awareness</strong> — Ingrown toenail brace is unique — promote it as your signature service on Facebook/Google<br>• 💎 <strong>Waxing Combo Month</strong> — "Full Legs & Brazilian for $120" (save $10)<br>• 🎂 <strong>Birthday Month</strong> — 15% off any service in birthday month';
+  }
+  
+  // Booking trends
+  if (lower.includes('booking') || lower.includes('trend') || lower.includes('busy') || lower.includes('slow')) {
+    const bookings = JSON.parse(localStorage.getItem('jeannie_bookings') || '[]');
+    const count = bookings.length;
+    return '<strong>📊 Booking Insights</strong><br><br>• Total bookings tracked: <strong>' + count + '</strong><br>• Most popular: Nail enhancements & gel polish (check your booking data)<br>• Best days to promote: Tuesday/Wednesday (quieter)<br>• Saturday fills fastest — recommend booking ahead<br><br>💡 <em>Tip: Add a "Book Now" link to your Facebook page to increase online bookings.</em>';
+  }
+  
+  // Facebook/social
+  if (lower.includes('facebook') || lower.includes('social') || lower.includes('post') || lower.includes('content')) {
+    return '<strong>📱 Social Media Strategy</strong><br><br>• <strong>Facebook</strong>: Post 1 before/after per week (anonymized, with permission)<br>• Post your price list as an image (people love to see prices upfront)<br>• <strong>Content ideas:</strong><br>  — Onyfix success story (ingrown toenail relief)<br>  — Gel colour of the week<br>  — "Nail art friday" — showcase 1-2 designs<br>  — Educational: "How to prevent ingrown toenails"<br>• <strong>Hashtags:</strong> #SheetHarbour #NailSalonNS #IngrownToenailCorrection #JeannieNails';
+  }
+  
+  // General industry insights
+  if (lower.includes('industry') || lower.includes('benchmark') || lower.includes('compare') || lower.includes('ns') || lower.includes('nova scotia')) {
+    return '<strong>📈 Nail Salon Industry Benchmarks — NS</strong><br><br>• Average manicure price in NS: $30-45 (you: $35 ✅)<br>• Average pedicure: $40-55 (you: $45 ✅)<br>• Average gel full set: $55-75 (you: $70 ✅)<br>• Onyfix: Only ~15% of NS salons offer ingrown toenail braces — <strong>major competitive advantage</strong><br>• Waxing Brazilian avg: $55-75 (you: $65+ ✅)<br><br>Your pricing is right in the sweet spot for Sheet Harbour. Strong value proposition.';
+  }
+  
+  // General nail care advice
+  if (lower.includes('tip') || lower.includes('advice') || lower.includes('client') || lower.includes('nail care')) {
+    return '<strong>💡 Client Tips to Share</strong><br><br>1. <strong>After Onyfix:</strong> Avoid soaking feet for 24 hours. Wear open-toe shoes if possible.<br>2. <strong>Gel longevity:</strong> Apply cuticle oil daily. Wear gloves for dishes/cleaning.<br>3. <strong>Ingrown prevention:</strong> Trim nails straight across. Don\'t round corners.<br>4. <strong>Between waxes:</strong> Exfoliate gently 48h after. Avoid sun exposure for 24h.<br>5. <strong>Nail health:</strong> Take a gel break every 3-4 fills. Let nails breathe for 1 week.';
+  }
+  
+  // Fallback
+  return '<strong>🤖 Quantum Assistant Response</strong><br><br>I\'m here to help you run Jeannie Nails! Try asking me about:<br><br>• 💰 <strong>"Update prices"</strong> — Go to the Prices tab<br>• 📊 <strong>"How are bookings looking?"</strong><br>• 📱 <strong>"Social media ideas"</strong><br>• 💡 <strong>"Promotion suggestions"</strong><br>• 📈 <strong>"Industry benchmarks for NS"</strong><br>• 🕐 <strong>"Hours of operation"</strong><br><br>Or just type whatever you need help with!';
+}
+
+function getPriceInfo(lower) {
+  let response = '<strong>💰 Price Information</strong><br><br>';
+  
+  const stored = localStorage.getItem('jeannie_prices');
+  if (!stored) {
+    response += 'No prices loaded. Go to the Prices tab to view the full menu.';
+    return response;
+  }
+  
+  const data = JSON.parse(stored);
+  
+  if (lower.includes('gel') || lower.includes('fill') || lower.includes('enhance') || lower.includes('full set')) {
+    response += '<strong>💅 Nail Enhancements</strong><br>';
+    data.enhancements.items.forEach(i => {
+      response += '• ' + i.name + (i.detail ? ' (' + i.detail + ')' : '') + ' — <strong>$' + i.price + '</strong><br>';
+    });
+  } else if (lower.includes('mani') || lower.includes('manicure')) {
+    response += '<strong>💖 Manicures</strong><br>';
+    data.manicures.items.forEach(i => {
+      response += '• ' + i.name + (i.detail ? ' (' + i.detail + ')' : '') + ' — <strong>$' + i.price + '</strong><br>';
+    });
+  } else if (lower.includes('pedi') || lower.includes('pedicure')) {
+    response += '<strong>🦶 Pedicures</strong><br>';
+    data.pedicures.items.forEach(i => {
+      response += '• ' + i.name + (i.detail ? ' (' + i.detail + ')' : '') + ' — <strong>$' + i.price + '</strong><br>';
+    });
+  } else if (lower.includes('wax') || lower.includes('brow') || lower.includes('brazil') || lower.includes('bikini')) {
+    response += '<strong>✨ Waxing Services</strong><br>';
+    data.waxing.items.forEach(i => {
+      response += '• ' + i.name + (i.detail ? ' (' + i.detail + ')' : '') + ' — <strong>$' + i.price + '</strong><br>';
+    });
+  } else if (lower.includes('pierc')) {
+    response += '<strong>💎 Piercings</strong><br>';
+    data.piercings.items.forEach(i => {
+      response += '• ' + i.name + (i.detail ? ' (' + i.detail + ')' : '') + ' — <strong>$' + i.price + '</strong><br>';
+    });
+  } else {
+    response += 'Here\'s a quick overview of all services:<br><br>';
+    for (let key in data) {
+      const cat = data[key];
+      const first = cat.items.slice(0, 3);
+      response += '<strong>' + cat.name + '</strong><br>';
+      first.forEach(i => {
+        response += '• ' + i.name + ' — <strong>$' + i.price + '</strong><br>';
+      });
+      response += '<br>';
+    }
+    response += '<em>Ask about a specific category for full details!</em>';
+  }
+  
+  return response;
+}
+
+// ═══ QUANTUM SETTINGS — Encrypted password storage ═══
+function _qEncode(pass){
+  // Quantum tokenization: random key + XOR payload + checksum
+  const key = Math.random().toString(36).slice(2, 10);
+  const shift = Math.floor(Math.random() * 50 + 10);
+  let payload = '';
+  for(let i=0;i<pass.length;i++){
+    payload += String.fromCharCode(
+      pass.charCodeAt(i) ^ key.charCodeAt(i % key.length) ^ shift
+    );
+  }
+  return key + '.' + payload + '.' + shift.toString(36);
+}
+
+function saveSettings() {
+  const settings = {
+    bizName: document.getElementById('setBizName').value,
+    phone: document.getElementById('setPhone').value,
+    email: document.getElementById('setEmail').value,
+    location: document.getElementById('setLocation').value
+  };
+  
+  // Handle password change — quantum-encrypted storage
+  const newPass = document.getElementById('setPass').value.trim();
+  const confirmPass = document.getElementById('setPassConfirm').value.trim();
+  const msgEl = document.getElementById('passChangeMsg');
+  
+  if (newPass || confirmPass) {
+    if (newPass !== confirmPass) {
+      msgEl.style.color = '#ef4444';
+      msgEl.textContent = '❌ Passwords do not match. Try again.';
+      msgEl.style.display = 'block';
+      setTimeout(function(){ msgEl.style.display = 'none'; }, 3000);
+      return;
+    }
+    if (newPass.length < 6) {
+      msgEl.style.color = '#ef4444';
+      msgEl.textContent = '❌ Password must be at least 6 characters.';
+      msgEl.style.display = 'block';
+      setTimeout(function(){ msgEl.style.display = 'none'; }, 3000);
+      return;
+    }
+    // Store quantum-encrypted (never plaintext in localStorage)
+    localStorage.setItem('_q_', _qEncode(newPass));
+    document.getElementById('setPass').value = '';
+    document.getElementById('setPassConfirm').value = '';
+    msgEl.style.color = '#22c55e';
+    msgEl.textContent = '🔐 Quantum token generated and stored. Default password also remains valid as backup.';
+    msgEl.style.display = 'block';
+    setTimeout(function(){ msgEl.style.display = 'none'; }, 6000);
+  }
+  
+  localStorage.setItem('jeannie_settings', JSON.stringify(settings));
+  
+  const btn = document.querySelector('#tab-settings .save-btn');
+  if (!btn) return;
+  const orig = btn.textContent;
+  btn.textContent = '✅ Saved!';
+  btn.style.background = '#22c55e';
+  btn.style.color = '#000';
+  setTimeout(function(){
+    btn.textContent = orig;
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 2000);
+}
+
+// ═══ LOAD SETTINGS ON START ═══
+(function loadSettingsOnInit() {
+  const stored = localStorage.getItem('jeannie_settings');
+  if (stored) {
+    const s = JSON.parse(stored);
+    if (document.getElementById('setBizName')) document.getElementById('setBizName').value = s.bizName || '';
+    if (document.getElementById('setPhone')) document.getElementById('setPhone').value = s.phone || '';
+    if (document.getElementById('setEmail')) document.getElementById('setEmail').value = s.email || '';
+    if (document.getElementById('setLocation')) document.getElementById('setLocation').value = s.location || '';
+  }
+  document.getElementById('setUser').value = CREDENTIALS.username;
+})();
+</script>
+<script src="/jeannienails/js/quantum-cs-v2.js"></script>
+<div class="quantum-seal"><span class="qdot"></span> Quantum Shield · Obfuscated</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "id": "qa-json-schema",
+  "role": "JSON Schema Validator",
+  "squad": "B \u2014 Backend & API",
+  "skill": "Validates all JSON API responses against expected schemas. Checks field types, required fields, nullable correctness, enum values.",
+  "che[REDACTED]": "Per deploy + daily scan",
+  "alerts_on": "Schema mismatch, missing required field, type violation"
+}

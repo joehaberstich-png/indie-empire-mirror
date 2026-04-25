@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://quanivo.vercel.app/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "id": "logistics-damage-prevention",
+  "role": "Damage Prevention Manager",
+  "team": "Customer Delivery",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Container shipping packaging standards (ISPM 15, IMO CTU Code)",
+    "Pre-shipment inspection protocols (16-point Grande House checklist)",
+    "Insurance claim handling (All-risk marine cargo policy)",
+    "Photo documentation standards for condition reporting",
+    "Transit damage root cause analysis and prevention"
+  ],
+  "daily_tasks": [
+    "Review pre-shipment photos and inspection reports",
+    "Verify packaging meets destination country standards",
+    "File insurance claims for in-transit damage within 24h of report",
+    "Track damage trends by route, carrier, and season"
+  ],
+  "benchmark_against": "Cargo insurance adjusters, TT Club loss prevention",
+  "threshold": "Damage rate <2%, claims resolved within 14 days"
+}

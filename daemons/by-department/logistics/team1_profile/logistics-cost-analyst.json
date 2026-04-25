@@ -1,0 +1,21 @@
+{
+  "id": "logistics-cost-analyst",
+  "role": "Cost Analyst",
+  "team": "Freight & Route Planning",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Total landed cost modeling (freight + duties + trucking + insurance)",
+    "Fuel surcharge trend analysis and forecasting",
+    "Currency risk assessment (USD/CNY fluctuations)",
+    "Port fee comparison across destination regions",
+    "Historical cost benchmarking for route optimization"
+  ],
+  "daily_tasks": [
+    "Update landed cost calculator with current rates",
+    "Flag cost variances >10% from estimate",
+    "Generate weekly cost trend report for Logistics Director",
+    "Recommend route changes based on cost shifts"
+  ],
+  "benchmark_against": "Flexport cost analytics, manual freight audit teams",
+  "threshold": "Landed cost estimates within 8% accuracy on first quote"
+}

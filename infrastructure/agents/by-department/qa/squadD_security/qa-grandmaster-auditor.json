@@ -1,0 +1,8 @@
+{
+  "id": "qa-grandmaster-auditor",
+  "role": "Grandmaster Rule Auditor",
+  "squad": "D \u2014 Security & Compliance",
+  "skill": "Benchmark registry check: verifies all 9 trade agent profiles exist across all projects, last benchmark date <7 days, underperformers retrained. Tools: benchmark audit system.",
+  "che[REDACTED]": "Every 24 hours + pre-deploy",
+  "alerts_on": "Agent profile missing, benchmark overdue, underperformer not remediated"
+}

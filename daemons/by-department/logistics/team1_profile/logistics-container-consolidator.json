@@ -1,0 +1,20 @@
+{
+  "id": "logistics-container-consolidator",
+  "role": "Container Consolidator",
+  "team": "Freight & Route Planning",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "LCL consolidation optimization for partial container loads",
+    "FCL utilization maximization (multiple units per container)",
+    "Warehouse cross-docking strategies for multi-destination shipments",
+    "Groupage scheduling for shared container slots"
+  ],
+  "daily_tasks": [
+    "Review pending orders for consolidation opportunities",
+    "Calculate savings from LCL vs FCL for each order set",
+    "Coordinate with factory on joint loading schedules",
+    "Track consolidation savings per quarter"
+  ],
+  "benchmark_against": "Descartes consolidation algorithms",
+  "threshold": "Achieve 15% cost savings through consolidation within 60 days"
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Green Incentives & Tax Credits — ATV Homes</title>
+<meta name="description" content="Container home buyers save $2,200-$8,200+ through federal tax credits, green building incentives, and grants. See what your container home qualifies for.">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6}
+.header{background:#111116;border-bottom:1px solid #ef444433;padding:16px 24px}
+.header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#ef4444;font-weight:800;font-size:18px;text-decoration:none}
+.logo span{color:#888;font-weight:400;font-size:12px;margin-left:8px}
+.header a{color:#666;text-decoration:none;font-size:13px;transition:color .2s}
+.header a:hover{color:#ef4444}
+.hero{background:linear-gradient(135deg,#0f0f1a,#1a1a2e);padding:60px 24px;text-align:center;border-bottom:1px solid #ef444433}
+.hero h1{font-size:clamp(28px,5vw,48px);color:#fff;font-weight:800;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,#22c55e,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#888;font-size:16px;max-width:600px;margin:0 auto 24px}
+.hero-badge{display:inline-block;background:#22c55e22;border:1px solid #22c55e44;color:#22c55e;padding:8px 20px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:16px}
+.savings-bar{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:32px 0 0}
+.savings-stat{background:#0a0a0f;padding:20px 32px;border-radius:12px;border:1px solid #1a1a1f}
+.savings-stat .num{font-size:32px;font-weight:800;color:#22c55e}
+.savings-stat .lbl{color:#666;font-size:12px;margin-top:4px}
+.section{padding:60px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{color:#ef4444;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.section h2{font-size:clamp(24px,3vw,36px);color:#fff;font-weight:700;margin-bottom:16px}
+.section p{color:#888;font-size:15px;max-width:700px;margin-bottom:32px}
+.program-card{background:#111116;border:1px solid #1a1a1f;border-radius:12px;padding:28px;margin-bottom:16px;transition:border-color .3s}
+.program-card:hover{border-color:#22c55e44}
+.program-card .flag{display:inline-block;font-size:10px;font-weight:700;padding:4px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:1px}
+.flag-federal{background:#2563eb22;color:#3b82f6;border:1px solid #3b82f644}
+.flag-state{background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44}
+.flag-grant{background:#22c55e22;color:#22c55e;border:1px solid #22c55e44}
+.program-card h3{color:#fff;font-size:17px;margin-bottom:6px}
+.program-card .value{color:#22c55e;font-weight:700;font-size:20px;margin:8px 0}
+.program-card table{width:100%;border-collapse:collapse;margin:12px 0}
+.program-card td{padding:6px 8px;border-bottom:1px solid #1a1a1f;font-size:13px;color:#888}
+.program-card td:first-child{color:#666;width:120px;font-weight:500}
+.program-card td:last-child{color:#aaa}
+.program-card .cta{display:inline-block;background:#22c55e;color:#000;padding:8px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:13px;margin-top:8px}
+.cta:hover{background:#16a34a}
+.calculator{background:linear-gradient(135deg,#0f0f1a,#1a1a2e);border:1px solid #22c55e44;border-radius:16px;padding:32px;margin-top:32px}
+.calculator h3{color:#fff;font-size:20px;margin-bottom:16px}
+.calculator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.calc-row{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:10px;padding:16px}
+.calc-row .model{color:#fff;font-size:14px;font-weight:600}
+.calc-row .price{color:#888;font-size:12px;margin:2px 0 8px}
+.calc-row .savings{color:#22c55e;font-size:18px;font-weight:700}
+.calc-row .effective{color:#999;font-size:13px;margin-top:4px}
+.apply-section{background:#111116;border-top:1px solid #1a1a1f;padding:60px 24px;text-align:center}
+.apply-section h2{color:#fff;font-size:28px;margin-bottom:12px}
+.apply-section p{color:#888;max-width:500px;margin:0 auto 24px}
+.btn-apply{background:#ef4444;color:#000;padding:14px 40px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;display:inline-block}
+.btn-apply:hover{background:#dc2626}
+.faqs{margin-top:32px}
+.faq-item{border-bottom:1px solid #1a1a1f;padding:20px 0}
+.faq-item h4{color:#fff;font-size:15px;margin-bottom:6px}
+.faq-item p{color:#666;font-size:13px;line-height:1.6;margin:0}
+footer{background:#050508;border-top:1px solid #1a1a1f;padding:40px 24px;text-align:center}
+footer p{color:#333;font-size:12px}
+footer a{color:#555;text-decoration:none}
+@media(max-width:640px){.savings-stat{padding:16px}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-inner">
+  <a href="/" class="logo">ATV HOMES <span>Advanced Tiny Villas</span></a>
+  <div>
+    <a href="/" style="margin-right:20px">Home</a>
+    <a href="/affiliate/">Affiliates</a>
+  </div>
+</div>
+</div>
+
+<div class="hero">
+  <div class="section-inner">
+    <div class="hero-badge">💰 2026 GREEN BUILDING INCENTIVES</div>
+    <h1>Reduce Your Container Home Cost by <span>$2,200–$8,200+</span></h1>
+    <p>Federal tax credits, state rebates, and green building grants make container homes even more affordable. Every ATV Homes buyer qualifies for multiple programs.</p>
+    <div class="savings-bar">
+      <div class="savings-stat"><div class="num">$3,200</div><div class="lbl">Max Fed Tax Credit/Yr</div></div>
+      <div class="savings-stat"><div class="num">30%</div><div class="lbl">Solar & Improvement Credit</div></div>
+      <div class="savings-stat"><div class="num">$5,000</div><div class="lbl">Builder Credit per Home</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+<div class="section-inner">
+  <div class="section-tag">◆ Federally Guaranteed</div>
+  <h2>Federal Tax Credits — Every Buyer Qualifies</h2>
+  <p>These are IRS tax credits, not deductions. Dollar-for-dollar reduction of your tax bill. Available to any US resident buying a primary residence.</p>
+
+  <div class="program-card">
+    <span class="flag flag-federal">FEDERAL · IRS 25C</span>
+    <h3>Energy Efficient Home Improvement Credit</h3>
+    <div class="value">Up to $3,200 per year</div>
+    <table>
+      <tr><td>Credit Rate</td><td>30% of qualifying improvements</td></tr>
+      <tr><td>What Qualifies</td><td>Energy Star windows/doors, insulation, heat pumps, water heaters, air sealing</td></tr>
+      <tr><td>Eligibility</td><td>Primary residence buyer — all ATV Homes customers</td></tr>
+      <tr><td>Expiry</td><td>Dec 31, 2025 (likely renewed — check IRS guidance)</td></tr>
+      <tr><td>Claim</td><td>Form 5695 with your annual tax return</td></tr>
+    </table>
+    <div style="background:#0a0a0f;border:1px solid #1a1a1f;border-radius:8px;padding:12px;margin-top:12px">
+      <strong style="color:#22c55e;font-size:14px">ATV HOMES ADVANTAGE:</strong>
+      <p style="color:#888;font-size:13px;margin-top:4px">Our containers are pre-wired for Energy Star windows and high-R insulation. You get the credit with zero extra effort — just claim it on your taxes.</p>
+    </div>
+  </div>
+
+  <div class="program-card">
+    <span class="flag flag-federal">FEDERAL · IRS 25D</span>
+    <h3>Residential Clean Energy Credit</h3>
+    <div class="value">30% of system cost — No Cap</div>
+    <table>
+      <tr><td>What Qualifies</td><td>Solar panels, battery storage, geothermal heat pumps</td></tr>
+      <tr><td>On a $15K Solar System</td><td><strong style="color:#22c55e">$4,500 tax credit</strong></td></tr>
+      <tr><td>No Cap</td><td>Claim 30% of any-sized system, year after year</td></tr>
+      <tr><td>Our Angle</td><td>All ATV Homes are solar-ready — pre-wired conduit + roof mounts included</td></tr>
+    </table>
+  </div>
+
+  <div class="program-card">
+    <span class="flag flag-federal">FEDERAL · IRS 45L</span>
+    <h3>Energy Efficient Home Credit (Builder Pass-Through)</h3>
+    <div class="value">$2,500–$5,000 per home</div>
+    <table>
+      <tr><td>Who Claims</td><td>ATV Homes (builder) — we pass savings to <strong style="color:#22c55e">you</strong></td></tr>
+      <tr><td>Requirements</td><td>Energy Star or DOE Zero Energy Ready certification</td></tr>
+      <tr><td>Status</td><td>ATV Homes certifying all models — certification in progress</td></tr>
+      <tr><td>Effective Discount</td><td>Up to <strong style="color:#22c55e">$5,000 off your purchase</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="program-card">
+    <span class="flag flag-federal">FEDERAL · USDA</span>
+    <h3>USDA Section 502 Direct Rural Housing Loans</h3>
+    <div class="value">Zero Down — Up to $100,000</div>
+    <table>
+      <tr><td>Loan Type</td><td>Direct government loan — no bank, no PMI</td></tr>
+      <tr><td>Down Payment</td><td><strong style="color:#22c55e">$0 down</strong> — 100% financing</td></tr>
+      <tr><td>Rate</td><td>Subsidized (as low as 1% for low-income)</td></tr>
+      <tr><td>Eligibility</td><td>Rural areas — most ATV Homes delivery locations qualify</td></tr>
+      <tr><td>Our Prices Fit</td><td>20FT Expandable at $14,995 = easily within USDA limits</td></tr>
+    </table>
+    <a href="https://www.rd.usda.gov/programs-services/single-family-housing-programs" class="cta" target="_blank">Check USDA Eligibility →</a>
+  </div>
+</div>
+</div>
+
+<div class="section" style="background:#0d0d15">
+<div class="section-inner">
+  <div class="section-tag">◆ State by State</div>
+  <h2>State-Level Green Incentives</h2>
+  <p>Many states offer additional rebates, tax credits, and density bonuses for green/affordable construction. Check your state below.</p>
+
+  <div class="calculator">
+    <h3>🌎 Top States for Container Home Incentives</h3>
+    <div class="calculator-grid">
+      <div class="calc-row">
+        <div class="model">California</div>
+        <div class="price">CA Housing Accelerator + CALGreen</div>
+        <div class="savings">Up to $15,000</div>
+        <div class="effective">Per unit for green affordable housing</div>
+      </div>
+      <div class="calc-row">
+        <div class="model">Colorado</div>
+        <div class="price">CO Energy Office + Recycled Materials Credit</div>
+        <div class="savings">Up to $7,500</div>
+        <div class="effective">Per ENERGY STAR certified home</div>
+      </div>
+      <div class="calc-row">
+        <div class="model">New York</div>
+        <div class="price">NYSERDA + NY-Sun + Affordable Housing</div>
+        <div class="savings">Up to $15,000</div>
+        <div class="effective">Solar rebates + green material credits</div>
+      </div>
+      <div class="calc-row">
+        <div class="model">Florida</div>
+        <div class="price">FL Resiliency + Solar Rebate</div>
+        <div class="savings">Up to $8,000</div>
+        <div class="effective">Hurricane-proof containers qualify</div>
+      </div>
+      <div class="calc-row">
+        <div class="model">Texas</div>
+        <div class="price">TX Energy Efficiency + Density Bonus</div>
+        <div class="savings">Up to $5,000</div>
+        <div class="effective">Plus up to 20% extra units for green construction</div>
+      </div>
+      <div class="calc-row">
+        <div class="model">Oregon</div>
+        <div class="price">OR Clean Energy + Affordable Housing Tax Credit</div>
+        <div class="savings">Up to $10,000</div>
+        <div class="effective">Recycled material bonus + workforce housing</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-inner">
+  <div class="section-tag">◆ Upfront Savings</div>
+  <h2>Your Effective Price After Incentives</h2>
+  <p>Combined federal + average state incentives. Your actual price may be even lower depending on your state and tax situation.</p>
+
+  <div class="calculator">
+    <div class="calculator-grid">
+      <div class="calc-row" style="border-color:#22c55e44">
+        <div class="model">20FT Expandable</div>
+        <div class="price">$14,995 — 2 energy efficiency improvements</div>
+        <div class="savings">-$3,200</div>
+        <div class="effective">Effective: <strong style="color:#fff">$11,795</strong></div>
+      </div>
+      <div class="calc-row" style="border-color:#22c55e44">
+        <div class="model">20FT Premium</div>
+        <div class="price">$17,125 — 2-3 improvements + Energy Star</div>
+        <div class="savings">-$4,200</div>
+        <div class="effective">Effective: <strong style="color:#fff">$12,925</strong></div>
+      </div>
+      <div class="calc-row" style="border-color:#22c55e44">
+        <div class="model">40FT Deluxe</div>
+        <div class="price">$21,100 — 3 improvements + solar-ready</div>
+        <div class="savings">-$5,200</div>
+        <div class="effective">Effective: <strong style="color:#fff">$15,900</strong></div>
+      </div>
+      <div class="calc-row" style="border-color:#22c55e44">
+        <div class="model">40FT Premium</div>
+        <div class="price">$28,550 — 4 improvements + full envelope</div>
+        <div class="savings">-$6,200</div>
+        <div class="effective">Effective: <strong style="color:#fff">$22,350</strong></div>
+      </div>
+      <div class="calc-row" style="border-color:#22c55e44">
+        <div class="model">40FT Premium+</div>
+        <div class="price">$34,995 — Full Energy Star + solar system</div>
+        <div class="savings">-$8,200+</div>
+        <div class="effective">Effective: <strong style="color:#fff">$26,795</strong></div>
+      </div>
+      <div class="calc-row" style="border-color:#f59e0b44">
+        <div class="model">💡 Add Solar</div>
+        <div class="price">$15,000 solar system (estimated)</div>
+        <div class="savings" style="color:#f59e0b">-$4,500</div>
+        <div class="effective">Federal 30% tax credit applies</div>
+      </div>
+    </div>
+    <p style="color:#666;font-size:12px;margin-top:16px;text-align:center">* Estimated savings based on typical federal credits + average state incentives. Consult a tax professional. Not all credits stack — some exclude others.</p>
+  </div>
+</div>
+</div>
+
+<div class="section" style="background:#0d0d15">
+<div class="section-inner">
+  <div class="section-tag">◆ Grants & Programs</div>
+  <h2>Grant Programs We're Applying For</h2>
+  <p>ATV Homes actively applies for grants on behalf of our buyers. These reduce our costs — and we pass the savings to you.</p>
+
+  <div class="program-card">
+    <span class="flag flag-grant">FOUNDATION · ACTIVE</span>
+    <h3>Home Depot Foundation — Affordable Housing Grant</h3>
+    <table>
+      <tr><td>Amount</td><td>$10,000–$500,000</td></tr>
+      <tr><td>Focus</td><td>Veteran + affordable housing innovation</td></tr>
+      <tr><td>Status</td><td>Application in preparation</td></tr>
+    </table>
+  </div>
+
+  <div class="program-card">
+    <span class="flag flag-grant">FOUNDATION · ACTIVE</span>
+    <h3>Enterprise Community Partners Green Building Grant</h3>
+    <table>
+      <tr><td>Amount</td><td>$25,000–$250,000</td></tr>
+      <tr><td>Focus</td><td>Green affordable housing using recycled materials</td></tr>
+      <tr><td>Status</td><td>Application in preparation</td></tr>
+    </table>
+  </div>
+
+  <div class="program-card">
+    <span class="flag flag-grant">FEDERAL · APPLYING</span>
+    <h3>DOE Building Technologies L-Prize</h3>
+    <table>
+      <tr><td>Amount</td><td>Up to $1,000,000</td></tr>
+      <tr><td>Focus</td><td>Innovative manufactured housing</td></tr>
+      <tr><td>Status</td><td>Checking 2025/2026 extension</td></tr>
+    </table>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<div class="section-inner">
+  <div class="section-tag">◆ FAQ</div>
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faqs">
+    <div class="faq-item">
+      <h4>Do I have to do anything to claim the credits?</h4>
+      <p>No. ATV Homes provides you with the documentation you need (Model EIN, Energy Star cert if applicable, itemized improvement costs). You give them to your tax preparer, and they file the credits. It takes about 5 minutes.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I combine federal and state credits?</h4>
+      <p>Yes, in most cases. Federal tax credits and state rebates stack. However, some specific programs exclude others. Your tax professional can verify. For example, California buyers can claim the federal 25C credit AND California's CALGreen incentives — effectively double-dipping on eligible improvements.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What if I don't owe enough in taxes?</h4>
+      <p>Federal tax credits are nonrefundable — they can only reduce your tax bill to zero, not below. However, you can plan ahead: adjust withholding to increase your tax liability, or time the purchase for a year when you expect higher income. USDA loans ($0 down) don't care about your tax situation at all.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Does ATV Homes handle the paperwork?</h4>
+      <p>We provide all documentation. We're also building a Buyer Grant Assistance service that will help you identify and apply for every credit and grant you qualify for — coming soon.</p>
+    </div>
+    <div class="faq-item">
+      <h4>I'm not in one of the top states. Can I still get incentives?</h4>
+      <p>Yes. Federal credits (25C, 25D, USDA loans) are available nationwide regardless of state. Many states not listed here still have their own programs. Contact us and we'll check your state's specific offerings.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="apply-section">
+  <h2>Ready to Save Thousands on Your Container Home?</h2>
+  <p>Talk to us. We'll tell you exactly which credits you qualify for — before you buy.</p>
+  <a href="/" class="btn-apply">Browse Container Homes →</a>
+</div>
+
+<footer>
+  <p>© 2026 ATV Homes — Advanced Tiny Villas | Paul Kennedy McCall & Bradley Dares | <a href="/privacy/">Privacy</a> | <a href="/tos/">Terms</a> | <a href="/warranty/">Warranty</a> | <a href="/returns/">Returns</a></p>
+  <p style="margin-top:8px;font-size:11px;color:#222">Not tax advice. Consult a qualified tax professional for your specific situation.</p>
+</footer>
+<script src="/js/quantum-bot.js"></script>
+<script src="/js/customer-service-bot.js"></script>
+<script src="/js/quantum-cs-v2.js"></script>
+</body>
+</html>

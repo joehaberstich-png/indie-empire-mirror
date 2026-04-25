@@ -1,0 +1,9 @@
+{
+  "last_ping": "2026-04-25T00:39:44",
+  "status": "started",
+  "pid": 3087444,
+  "auto_restart": true,
+  "interval_hours": 6,
+  "permanent": true,
+  "immutable_trade": 10
+}

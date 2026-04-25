@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trial Activated — Fall of the Cabal</title>
+<link rel="stylesheet" href="/quantumbotsagency/css/quantum.css">
+<style>
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse at center,#0a0015 0%,#000 100%);color:var(--text-primary);text-align:center;padding:2rem;}
+.status-icon{font-size:5rem;margin-bottom:1rem;animation:float 3s ease-in-out infinite;}
+.map-preview{width:280px;height:180px;margin:1.5rem auto;border-radius:12px;border:1px solid rgba(0,240,255,0.15);background:linear-gradient(135deg,#0a0a2a,#1a0533);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.map-preview::after{content:'';position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 60px rgba(0,240,255,0.05);}
+.zone-marker{width:12px;height:12px;border-radius:50%;background:#00ff88;position:absolute;box-shadow:0 0 20px rgba(0,255,136,0.5);}
+.zone-marker.locked{background:#ff4444;box-shadow:0 0 20px rgba(255,68,68,0.3);}
+.zone-label{position:absolute;font-size:0.5rem;color:rgba(255,255,255,0.5);}
+.countdown{font-family:var(--font-mono);font-size:2rem;color:var(--quantum-primary);margin:0.5rem 0;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+</style>
+</head><body>
+<div>
+<div class="status-icon">🗺️</div>
+<h1 class="gradient-text">Free Recruit — Activated</h1>
+<p style="font-size:1.1rem;margin:0.5rem 0;">Your 7-day trial has begun. Three zones unlocked.</p>
+<div class="map-preview">
+<span class="zone-marker" style="top:30%;left:50%;"></span>
+<span class="zone-label" style="top:25%;left:50%;transform:translate(-50%,-100%);">Tutorial Hub ✓</span>
+<span class="zone-marker" style="top:50%;left:30%;"></span>
+<span class="zone-label" style="top:45%;left:30%;transform:translate(-50%,-100%);">Safe Zone Alpha ✓</span>
+<span class="zone-marker" style="top:70%;left:55%;"></span>
+<span class="zone-label" style="top:65%;left:55%;transform:translate(-50%,-100%);">Training Grounds ✓</span>
+<span class="zone-marker locked" style="top:30%;left:70%;"></span>
+<span class="zone-label" style="top:25%;left:70%;transform:translate(-50%,-100%);">LOCKED</span>
+<span class="zone-marker locked" style="top:60%;left:75%;"></span>
+<span class="zone-label" style="top:55%;left:75%;transform:translate(-50%,-100%);">LOCKED</span>
+</div>
+<div class="countdown" id="timer">7d 0h 0m</div>
+<p style="color:var(--text-muted);font-size:0.85rem;">Time remaining in your free access</p>
+<p style="color:var(--text-muted);font-size:0.8rem;margin-top:1rem;">Save your progress. When you upgrade, everything carries over.</p>
+<div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+<a href="#" class="btn btn-gold" data-product="fotc-recruit">★ Upgrade Now — $99/mo</a>
+<a href="/projects/Fall_of_the_Cabal_Game_Design_Document.html" class="btn btn-secondary">Read the Lore</a>
+</div>
+</div>
+<script>
+// Countdown timer (7 days from now)
+const end = new Date(Date.now() + 7*24*60*60*1000);
+function tick() {
+  const diff = end - Date.now();
+  if (diff <= 0) { document.getElementById('timer').textContent = 'EXPIRED'; return; }
+  const d = Math.floor(diff/(24*60*60*1000));
+  const h = Math.floor((diff%(24*60*60*1000))/(60*60*1000));
+  const m = Math.floor((diff%(60*60*1000))/(60*1000));
+  document.getElementById('timer').textContent = `${d}d ${h}h ${m}m`;
+}
+setInterval(tick, 60000); tick();
+</script>
+<script src="/quantumbotsagency/js/sales-agent.js"></script>
+<script src="/quantumbotsagency/js/cs-agent.js"></script>
+<script src="/quantumbotsagency/js/quantum-cs-v2.js"></script>
+</body></html>

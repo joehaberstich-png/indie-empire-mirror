@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quanivo Bio-Wellness Energy Bed | Generate $100/Hour in Passive Revenue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-teal: #0d9488;
+            --primary-green: #10b981;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: var(--primary-blue);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+        
+        .phone {
+            color: var(--primary-teal);
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Hero Section - 3-Part Headline Doctrine */
+        .hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(13, 148, 136, 0.03) 100%);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        /* PART 1 — PATTERN INTERRUPT */
+        .hero-part1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+        
+        /* PART 2 — MECHANISM REVEAL */
+        .hero-part2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            color: var(--text-medium);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* PART 3 — OUTCOME + IDENTITY SHIFT */
+        .hero-part3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-teal);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Supporting Proof Line */
+        .hero-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-medium);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(13, 148, 136, 0.08);
+            border-radius: 20px;
+            border: 1px solid rgba(13, 148, 136, 0.15);
+            color: var(--primary-teal);
+            font-weight: 500;
+        }
+        
+        /* CTA Block */
+        .hero-cta {
+            margin-bottom: 2rem;
+        }
+        
+        .cta-large {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-large:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Micro Reassurance */
+        .hero-reassurance {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .reassurance-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Hero Stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 4rem 0 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+        
+        /* Product Showcase */
+        .product-showcase {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .product-image-container {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Features */
+        .features {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .section-title p {
+            color: var(--text-medium);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-teal);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-stats {
+            display: inline-block;
+            background: rgba(13, 148, 136, 0.08);
+            color: var(--primary-teal);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .testimonial-rating {
+            color: #f59e0b;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .testimonial-author h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-author p {
+            color: var(--text-medium);
+        }
+        
+        /* Revenue Calculator */
+        .revenue-calculator {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(13, 148, 136, 0.03) 100%);
+        }
+        
+        .calculator-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--primary-blue);
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .calculator-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+        }
+        
+        .calculator-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+        
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-teal));
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin: 1rem 0;
+        }
+        
+        .price span {
+            font-size: 1.5rem;
+            color: var(--text-medium);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-teal) 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-teal);
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hero-part1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-part2 {
+                font-size: 1.25rem;
+            }
+            
+            .hero-part3 {
+                font-size: 1.1rem;
+            }
+            
+            .product-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-proof {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span>⚡</span> Quanivo Wellness
+            </div>
+            <div class="contact-info">
+                <div class="location">Carlsbad, CA</div>
+                <div class="phone">760-203-6399</div>
+            </div>
+            <a href="#schedule" class="cta-button">Schedule a Consultation →</a>
+        </div>
+    </header>
+
+    <!-- Hero Section - 3-Part Headline Doctrine -->
+    <section class="hero">
+        <div class="container">
+            <!-- PART 1 — PATTERN INTERRUPT -->
+            <h1 class="hero-part1">Your Competition Is Sleeping.</h1>
+            
+            <!-- PART 2 — MECHANISM REVEAL -->
+            <p class="hero-part2">The Quanivo Bio-Wellness Energy Bed generates $100/hour in passive revenue while delivering clinical-grade healing.</p>
+            
+            <!-- PART 3 — OUTCOME + IDENTITY SHIFT -->
+            <p class="hero-part3">Now you can transform your wellness center into a profit machine that runs itself.</p>
+            
+            <!-- Supporting Proof Line -->
+            <div class="hero-proof">
+                <div class="proof-item">
+                    <span style="color: var(--primary-green);">✓</span> 10 Bio-Stacked Modalities
+                </div>
+                <div class="proof-item">
+                    <span style="color: var(--primary-green);">✓</span> $100/Hour Session Revenue
+                </div>
+                <div class="proof-item">
+                    <span style="color: var(--primary-green);">✓</span> Fits in 5×9 Feet
+                </div>
+            </div>
+            
+            <!-- CTA Block -->
+            <div class="hero-cta">
+                <a href="#schedule" class="cta-large">Book Your Free Revenue Analysis →</a>
+            </div>
+            
+            <!-- Micro Reassurance -->
+            <div class="hero-reassurance">
+                <div class="reassurance-item">
+                    <span style="color: var(--primary-green);">✓</span> No-Risk Consultation
+                </div>
+                <div class="reassurance-item">
+                    <span style="color: var(--primary-green);">✓</span> 90-Day ROI Guarantee
+                </div>
+                <div class="reassurance-item">
+                    <span style="color: var(--primary-green);">✓</span> Professional Installation
+                </div>
+            </div>
+            
+            <!-- Hero Stats -->
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-value">$12,600</div>
+                    <div class="stat-label">Average 90-Day Revenue</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">15–60</div>
+                    <div class="stat-label">Minute Sessions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5×9 ft</div>
+                    <div class="stat-label">Floor Space Required</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$14,900</div>
+                    <div class="stat-label">Complete Investment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="product-content">
+                <div class="product-image-container">
+                    <img src="https://assets.cdn.filesafe.space/AnerNB7VpOo1GJZwnErk/media/681e8c533f78511163facc55.jpeg" 
+                         alt="Quanivo Bio Wellness Energy Bed" 
+                         class="product-image">
+                    <div class="product-badge">Clinical Grade</div>
+                </div>
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-dark);">Why This Isn't Just Another Wellness Device</h2>
+                    <p style="color: var(--text-medium); margin-bottom: 2rem; line-height: 1.8;">
+                        The Quanivo Bio-Wellness Energy Bed represents the convergence of quantum physics and clinical wellness. While other devices offer single therapies, our system bio-stacks 10 modalities to create a synergistic healing environment that works at the cellular level.
+                    </p>
+                    
+                    <div style="background: rgba(13, 148, 136, 0.08); padding: 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary-teal);">
+                        <h3 style="color: var(--primary-teal); margin-bottom: 1rem;">Revenue Model</h3>
+                        <ul style="list-style: none; color: var(--text-medium);">
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: var(--primary-green);">✓</span> $100 average revenue per 60-minute session
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: var(--primary-green);">✓</span> 4-6 sessions per day = $400-600 daily revenue
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: var(--primary-green);">✓</span> Fully automated - runs while you focus on other clients
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="color: var(--primary-green);">✓</span> 90-day ROI for most wellness centers
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Technology</h2>
+                <p>10 Proven Modalities. One Breakthrough Device.</p>
+                <p style="margin-top: 1rem; color: var(--text-medium);">Not a massage table. Not a sauna. The Bio-Wellness Energy Bed bio-stacks 10 clinical-grade therapies into a single hands-free session — targeting physical, mental, and emotional well-being simultaneously.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>PEMF Therapy</h3>
+                    <p>Pulsed Electromagnetic Field therapy stimulates cellular repair and reduces inflammation. Backed by 2,000+ peer-reviewed studies.</p>
+                    <div class="feature-stats">2,000+ Studies</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔴</div>
+                    <h3>Far Infrared & Graphene Heat</h3>
+                    <p>Deep-penetrating infrared heat via graphene technology increases circulation, promotes detoxification, and supports immune function at the cellular level.</p>
+                    <div class="feature-stats">Deep Penetrating</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">〰️</div>
+                    <h3>Vibrational Therapy</h3>
+                    <p>Targeted full-body vibration supports emotional balance, lymphatic flow, muscle recovery, and nervous system regulation.</p>
+                    <div class="feature-stats">Full Body</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌬️</div>
+                    <h3>Negative Ion Therapy</h3>
+                    <p>Floods the body with negative ions to counteract electronic pollution, support mood regulation, and boost respiratory health.</p>
+                    <div class="feature-stats">1,500+ Ions/cm³</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💨</div>
+                    <h3>Oxygen Therapy</h3>
+                    <p>Enhanced oxygen delivery amplifies the benefits of every other modality — boosting cellular energy, mental clarity, and recovery.</p>
+                    <div class="feature-stats">Enhanced O₂</div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <h3>Chromotherapy</h3>
+                    <p>Color light therapy uses specific wavelengths to balance energy, support mood, reduce stress, and promote healing at the cellular level.</p>
+                    <div class="feature-stats">Color Light</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Calculator -->
+    <section class="revenue-calculator">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Revenue Potential</h2>
+                <p>See exactly how much you can generate with the Quanivo Energy Bed</p>
+            </div>
+            
+            <div class="calculator-card">
+                <div class="calculator-grid">
+                    <div class="calculator-item">
+                        <div class="calculator-value">$400</div>
+                        <div class="stat-label">Daily Revenue (4 sessions)</div>
+                    </div>
+                    <div class="calculator-item">
+                        <div class="calculator-value">$2,800</div>
+                        <div class="stat-label">Weekly Revenue (7 days)</div>
+                    </div>
+                    <div class="calculator-item">
+                        <div class="calculator-value">$12,000</div>
+                        <div class="stat-label">Monthly Revenue (30 days)</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p style="color: var(--text-medium); margin-bottom: 1rem;">Based on 4 sessions per day at $100/session</p>
+                    <a href="#schedule" class="cta-large">Calculate Your Exact ROI →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <div class="testimonial-text">
+                    "In the first 90 days, I generated $12,600 in new revenue — without adding a single hour to my workday. My first client, a 67-year-old with arthritis, slept through the night for the first time in 8 years after her third session. I now have a 3-week waitlist."
+                </div>
+                <div class="testimonial-author">
+                    <h4>Sarah Chen, MD</h4>
+                    <p>Integrative Medicine Specialist, Carlsbad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Complete system includes everything you need to start generating revenue immediately</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Professional Wellness Package</h3>
+                <div class="price">$14,900<span>/one-time</span></div>
+                <p style="color: var(--text-medium); margin-bottom: 2rem;">Everything you need to start generating passive revenue</p>
+                
+                <ul style="list-style: none; text-align: left; margin: 2rem 0; padding: 0;">
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> Quanivo Bio-Wellness Energy Bed
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> Professional Installation & Setup
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> 2-Year Comprehensive Warranty
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> Business Development Training
+                    </li>
+                    <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-light); color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> Marketing Materials & Client Protocols
+                    </li>
+                    <li style="padding: 0.75rem 0; color: var(--text-dark); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="color: var(--primary-green); font-size: 1.2rem;">✓</span> 24/7 Technical Support
+                    </li>
+                </ul>
+                
+                <a href="#schedule" class="cta-large" style="display: block; width: 100%; text-align: center; margin-top: 2rem;">Schedule Your Business Consultation</a>
+                <p style="margin-top: 1rem; color: var(--text-medium); font-size: 0.9rem;">Flexible financing available • 90-day money-back guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="schedule" class="cta-section">
+        <div class="container">
+            <h2>Book Your Free Business Consultation</h2>
+            <p>Speak directly with our wellness business specialists. We'll analyze your space, discuss revenue projections, and create a customized implementation plan for your practice.</p>
+            <a href="mailto:info@quanivowellness.com?subject=Business%20Consultation%20-%20Bio-Wellness%20Energy%20Bed" class="cta-large" style="background: white; color: var(--primary-blue);">Email Us to Schedule →</a>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">Or call us directly: (760) 203-6399</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quanivo Wellness</h3>
+                    <p style="color: var(--text-medium);">7040 Avenida Encinas<br>Carlsbad, CA 92011</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:7602036399">760-203-6399</a></li>
+                        <li><a href="mailto:info@quanivowellness.com">info@quanivowellness.com</a></li>
+                        <li><a href="https://quanivowellness.com">quanivowellness.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://www.facebook.com/quanivowellness/">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/quanivowellness/">Instagram</a></li>
+                        <li><a href="https://x.com/quanivowellness">Twitter/X</a></li>
+                        <li><a href="https://www.youtube.com/@Quanivo">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Quanivo Wellness. All rights reserved. | Quantum Wellness Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<div class="qba-tag" style="text-align:center;font-size:10px;color:#555;padding:8px;border-top:1px solid #222">⚡ Powered by Quantum Bots Agency → quantumbotsagency.com</div><script src="/quanivo/js/quantum-cs-v2.js"></script>
+</body>
+</html>

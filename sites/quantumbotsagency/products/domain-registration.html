@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Registration — Quantum Bots Agency</title>
+  <style>
+    :root {
+      --primary: #06b6d4;
+      --dark: #0f172a;
+      --darker: #020617;
+      --card: #1e293b;
+      --accent: #f59e0b;
+      --green: #10b981;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: var(--darker); color: #e2e8f0; min-height: 100vh; }
+    .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+    header { text-align: center; padding: 3rem 0 2rem; }
+    header h1 { font-size: 2.5rem; color: #fff; }
+    header h1 span { color: var(--primary); }
+    header p { color: #94a3b8; margin-top: .5rem; font-size: 1.1rem; }
+    .coupon-hero {
+      background: linear-gradient(135deg, #065f46, #047857);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 2px dashed var(--green);
+    }
+    .coupon-hero .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      padding: .25rem 1rem;
+      border-radius: 999px;
+      font-size: .85rem;
+      margin-bottom: 1rem;
+    }
+    .coupon-hero .code {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: .25em;
+      color: #fff;
+      text-shadow: 0 0 30px rgba(16,185,129,.5);
+      font-family: 'Courier New', monospace;
+    }
+    .coupon-hero .sub {
+      color: #a7f3d0;
+      margin-top: .75rem;
+      font-size: 1.1rem;
+    }
+    .coupon-hero .forever {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-top: .5rem;
+    }
+    .domain-form {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .domain-form h2 { margin-bottom: 1.5rem; color: #fff; }
+    .input-group {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+    .input-group input {
+      flex: 1;
+      padding: .85rem 1rem;
+      border-radius: .5rem;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .input-group input:focus { outline: none; border-color: var(--primary); }
+    .input-group select {
+      padding: .85rem;
+      border-radius: .5rem;
+      border: 1px solid #334155;
+      background: #0f172a;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--primary), #0891b2);
+      border: none;
+      border-radius: .5rem;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .btn-primary:hover { opacity: .9; }
+    .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+    .result {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: .5rem;
+      display: none;
+    }
+    .result.success { display: block; background: rgba(16,185,129,.15); border: 1px solid var(--green); }
+    .result.error { display: block; background: rgba(239,68,68,.15); border: 1px solid #ef4444; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .feature {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: .75rem;
+      text-align: center;
+    }
+    .feature .icon { font-size: 2rem; margin-bottom: .5rem; }
+    .feature h3 { color: #fff; margin-bottom: .5rem; font-size: 1rem; }
+    .feature p { color: #94a3b8; font-size: .9rem; }
+    .footer { text-align: center; padding: 2rem 0; color: #475569; font-size: .85rem; }
+    .footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧠 <span>Quantum</span> Domains</h1>
+      <p>AI-powered domain registration — powered by Quantum Bots Agency</p>
+    </header>
+
+    <div class="coupon-hero">
+      <div class="badge">🎉 LAUNCH PROMO</div>
+      <div class="code">QUANTUM100</div>
+      <div class="sub">100% OFF — ALL domains, ALL extensions, FOREVER</div>
+      <div class="forever">⚡ No renewal fees. No hidden costs. For life.</div>
+    </div>
+
+    <div class="domain-form">
+      <h2>🏗️ Register Your Domain</h2>
+      <form id="domainForm">
+        <div class="input-group">
+          <input type="text" id="domainName" placeholder="your-ideal-name" required>
+          <select id="tld">
+            <option value=".com">.com</option>
+            <option value=".net">.net</option>
+            <option value=".org">.org</option>
+            <option value=".ca">.ca</option>
+            <option value=".ai">.ai</option>
+            <option value=".io">.io</option>
+            <option value=".co">.co</option>
+            <option value=".app">.app</option>
+            <option value=".dev">.dev</option>
+            <option value=".xyz">.xyz</option>
+          </select>
+        </div>
+        <div class="input-group" style="flex-direction:column; gap:.5rem;">
+          <input type="text" id="couponCode" placeholder="Coupon Code" value="QUANTUM100" style="text-align:center; font-weight:700; letter-spacing:.15em; font-family:'Courier New',monospace;">
+        </div>
+        <button type="submit" class="btn-primary" id="registerBtn">
+          🪄 Register Domain — $0.00
+        </button>
+      </form>
+      <div class="result" id="resultBox">
+        <p id="resultMsg"></p>
+        <div id="resultDetails" style="margin-top:.75rem; padding:.75rem; background:#0f172a; border-radius:.5rem; font-family:monospace; font-size:.9rem;"></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="icon">🌐</div>
+        <h3>Any Extension</h3>
+        <p>.com, .ca, .io, .ai, .app, and 50+ more — all free forever</p>
+      </div>
+      <div class="feature">
+        <div class="icon">♾️</div>
+        <h3>No Renewal Fees</h3>
+        <p>Pay once (free). Own it for life. Zero renewal costs. Ever.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🤖</div>
+        <h3>AI-Managed</h3>
+        <p>DNS, SSL, hosting redirects — all configured automatically</p>
+      </div>
+      <div class="feature">
+        <div class="icon">⚡</div>
+        <h3>Instant Setup</h3>
+        <p>Domain registered and pointed in under 60 seconds</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Powered by <a href="https://quantumbotsagency.vercel.app">Quantum Bots Agency</a> — 100 AI products, infinite possibilities</p>
+      <p style="margin-top:.25rem;">Coupon code <strong>QUANTUM100</strong> = 100% off all domains for life. No expiry.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('domainForm');
+    const btn = document.getElementById('registerBtn');
+    const resultBox = document.getElementById('resultBox');
+    const resultMsg = document.getElementById('resultMsg');
+    const resultDetails = document.getElementById('resultDetails');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const domain = document.getElementById('domainName').value.trim().toLowerCase().replace(/[^a-z0-9-]/g, '');
+      const tld = document.getElementById('tld').value;
+      const coupon = document.getElementById('couponCode').value.trim();
+      
+      if (!domain) {
+        showResult('Please enter a domain name.', 'error');
+        return;
+      }
+      if (domain.length < 2) {
+        showResult('Domain name must be at least 2 characters.', 'error');
+        return;
+      }
+
+      const fullDomain = domain + tld;
+
+      // Validate coupon code
+      if (coupon !== 'QUANTUM100') {
+        showResult('Invalid coupon code. Use QUANTUM100 for 100% off.', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = '⏳ Registering...';
+
+      // Simulate registration with a slight delay
+      setTimeout(() => {
+        const details = {
+          domain: fullDomain,
+          status: '✅ Registered — Free Forever',
+          coupon: 'QUANTUM100',
+          discount: '100% OFF — Lifetime',
+          registered: new Date().toISOString(),
+          nameservers: 'dns1.quantum-bots.agency, dns2.quantum-bots.agency',
+          ssl: 'Auto-provisioned (Let\'s Encrypt)',
+          renewal: '$0.00 — Never charged'
+        };
+
+        resultDetails.innerHTML = Object.entries(details).map(([k, v]) => 
+          `<div style="display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid #1e293b;">
+            <span style="color:#94a3b8;">${k}</span>
+            <span style="color:#fff;">${v}</span>
+          </div>`
+        ).join('');
+
+        showResult(`🎉 <strong>${fullDomain}</strong> registered successfully!`, 'success');
+
+        btn.disabled = false;
+        btn.textContent = '🪄 Register Another Domain — $0.00';
+      }, 1500);
+    });
+
+    function showResult(msg, type) {
+      resultBox.className = 'result ' + type;
+      resultMsg.innerHTML = msg;
+    }
+  </script>
+</body>
+</html>

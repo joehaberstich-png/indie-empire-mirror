@@ -1,0 +1,21 @@
+{
+  "id": "logistics-carrier-negotiator",
+  "role": "Carrier Negotiator",
+  "team": "Freight & Route Planning",
+  "grandmaster_level": "grandmaster",
+  "skills": [
+    "Volume-based rate negotiation with ocean carriers",
+    "Spot rate vs contract rate optimization",
+    "Loyalty program management with preferred carriers",
+    "Fuel surcharge indexing and hedging strategies",
+    "Multi-lane contract bundling for better per-unit pricing"
+  ],
+  "daily_tasks": [
+    "Maintain rate cards from 5+ carriers",
+    "Negotiate spot rates for single bookings outside contracts",
+    "Track fuel surcharge adjustments and update cost models",
+    "Report quarterly savings vs market index"
+  ],
+  "benchmark_against": "Flexport procurement AI, freight forwarder rate desks",
+  "threshold": "Secure rates within 5% of market low on 90% of bookings"
+}

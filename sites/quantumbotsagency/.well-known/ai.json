@@ -1,0 +1,34 @@
+{
+  "name": "Quantum Bots Agency",
+  "description": "AI sales bots, support bots, and content automation agents.",
+  "url": "https://quantumbotsagency.com",
+  "lastUpdated": "2026-04-24",
+  "status": "active",
+  "aiTags": [
+    "quantum",
+    "bots",
+    "agency",
+    "ai",
+    "workforce",
+    "for",
+    "every",
+    "business"
+  ],
+  "products": [
+    {
+      "name": "Quantum Sales Bot",
+      "price": 497,
+      "category": "AI Agents"
+    },
+    {
+      "name": "Quantum Support Bot",
+      "price": 297,
+      "category": "AI Agents"
+    },
+    {
+      "name": "Quantum Website Bot",
+      "price": 199,
+      "category": "AI Agents"
+    }
+  ]
+}

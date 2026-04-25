@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Book Appointment — Jeannie Nails</title>
+<meta name="description" content="Book your appointment at Jeannie Nails. Ingrown toenail correction, manicures, pedicures, gel nails, waxing and more.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#fdf6f0;color:#2d1b14;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+header{background:linear-gradient(135deg,#1a0a0a,#2d1b14);color:#fff;padding:20px;text-align:center}
+header h1{font-size:20px}
+header a{color:#d4a0a0;text-decoration:none;font-size:13px}
+.main{flex:1;max-width:500px;margin:0 auto;padding:24px 20px;width:100%}
+.main h2{font-size:22px;margin-bottom:4px;text-align:center}
+.main .sub{color:#6b4040;text-align:center;margin-bottom:24px;font-size:14px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:4px;color:#2d1b14}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1px solid #e8d5d0;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#d4a0a0}
+.form-group textarea{resize:vertical;min-height:60px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.submit-btn{width:100%;padding:14px;background:linear-gradient(135deg,#2d1b14,#4a2c2c);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s}
+.submit-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed}
+.phone-option{text-align:center;margin-top:16px;padding:16px;background:#fff;border-radius:8px;border:1px solid #e8d5d0}
+.phone-option p{font-size:13px;color:#6b4040;margin-bottom:4px}
+.phone-option a{color:#2d1b14;font-weight:700;text-decoration:none;font-size:18px}
+.success{display:none;text-align:center;padding:40px 20px}
+.success .emoji{font-size:48px;margin-bottom:16px}
+.success h2{color:#2d1b14;margin-bottom:8px}
+.success p{color:#6b4040;margin-bottom:20px}
+footer{text-align:center;padding:16px;color:#6b4040;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>💅 Jeannie Nails</h1>
+  <a href="https://jeannie-nails.vercel.app">← Back to Home</a>
+</header>
+
+<div class="main" id="form-view">
+  <h2>Book an Appointment</h2>
+  <p class="sub">Fill in the form and we'll confirm your booking</p>
+  
+  <form id="booking-form" onsubmit="return handleSubmit(event)">
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name *</label>
+        <input type="text" id="first-name" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="last-name">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>Phone Number *</label>
+      <input type="tel" id="phone" placeholder="(902) 555-5555" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Email (for confirmation)</label>
+      <input type="email" id="email" placeholder="you@email.com">
+    </div>
+    
+    <div class="form-group">
+      <label>Service *</label>
+      <select id="service" required>
+        <option value="">Select a service...</option>
+        <option value="ingrown">🦶 Ingrown Toenail Correction</option>
+        <option value="manicure">💅 Manicure</option>
+        <option value="pedicure">🦶 Pedicure</option>
+        <option value="gel">✨ Gel Nails</option>
+        <option value="extensions">💎 Nail Extensions</option>
+        <option value="waxing">🪒 Waxing</option>
+        <option value="piercing">💎 Ear Piercing</option>
+        <option value="nail-art">🎨 Nail Art</option>
+        <option value="multiple">📋 Multiple Services</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>Preferred Date</label>
+      <input type="date" id="date">
+    </div>
+    
+    <div class="form-group">
+      <label>Preferred Time</label>
+      <select id="time">
+        <option value="">Flexible — anytime</option>
+        <option value="10:00">10:00 AM</option>
+        <option value="10:30">10:30 AM</option>
+        <option value="11:00">11:00 AM</option>
+        <option value="11:30">11:30 AM</option>
+        <option value="12:00">12:00 PM</option>
+        <option value="12:30">12:30 PM</option>
+        <option value="13:00">1:00 PM</option>
+        <option value="13:30">1:30 PM</option>
+        <option value="14:00">2:00 PM</option>
+        <option value="14:30">2:30 PM</option>
+        <option value="15:00">3:00 PM</option>
+        <option value="15:30">3:30 PM</option>
+        <option value="16:00">4:00 PM</option>
+        <option value="16:30">4:30 PM</option>
+        <option value="17:00">5:00 PM</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label>Notes (optional)</label>
+      <textarea id="notes" placeholder="Any special requests or concerns..."></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn" id="submit-btn">📅 Request Appointment</button>
+  </form>
+  
+  <div class="phone-option">
+    <p>Prefer to call?</p>
+    <a href="tel:+19028857896">(902) 885-7896</a>
+  </div>
+</div>
+
+<div class="main success" id="success-view">
+  <div class="emoji">✅</div>
+  <h2>Request Sent!</h2>
+  <p>Thanks! We'll confirm your appointment by phone or text.<br><br>
+  <strong>📞 (902) 885-7896</strong><br><br>
+  <em>Jeannie Nails</em></p>
+  <a href="https://jeannie-nails.vercel.app" style="color:#2d1b14;font-weight:600">← Back to Home</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 Jeannie Nails</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('submit-btn').disabled = true;
+  document.getElementById('submit-btn').textContent = 'Sending...';
+  
+  const data = {
+    firstName: document.getElementById('first-name').value,
+    lastName: document.getElementById('last-name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    service: document.getElementById('service').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value,
+    notes: document.getElementById('notes').value
+  };
+  
+  // Email the booking via mailto fallback
+  const subject = encodeURIComponent('New Booking: ' + data.firstName + ' ' + data.lastName);
+  const body = encodeURIComponent(
+    'New Appointment Request\n\n' +
+    'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
+    'Phone: ' + data.phone + '\n' +
+    'Email: ' + (data.email || 'N/A') + '\n' +
+    'Service: ' + document.getElementById('service').selectedOptions[0]?.text + '\n' +
+    'Date: ' + (data.date || 'Flexible') + '\n' +
+    'Time: ' + (data.time || 'Flexible') + '\n' +
+    'Notes: ' + (data.notes || 'None')
+  );
+  
+  // Show success and open mailto
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('success-view').style.display = 'block';
+  
+  // Open email client as fallback storage
+  window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+  
+  return false;
+}
+</script>
+<script src="/jeannienails/js/quantum-cs-v2.js"></script>
+</body>
+</html>
