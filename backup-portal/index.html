@@ -196,7 +196,8 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
 // === LOGIN ===
 const CREDENTIALS = [
   { user: 'saul_empire', pass: 'JN@Secured!2026' },
-  { user: 'backup', pass: 'Recovery@2026!' }
+  { user: 'backup', pass: 'Recovery@2026!' },
+  { user: 'dave', pass: 'Dave@Indie2026!' }
 ];
 
 function hexToBytes(h){let r=[];for(let i=0;i<h.length;i+=2)r.push(parseInt(h.substr(i,2),16));return r}
@@ -493,7 +494,7 @@ function adminLogin(){
   if(u === ADMIN_CREDENTIALS.user && p === ADMIN_CREDENTIALS.pass){
     document.getElementById('adminLoginOverlay').classList.add('hidden');
     const badge = document.getElementById('adminBadgeBp');
-    if(badge) badge.style.display = 'block';
+    if(badge){ badge.textContent = '\U0001f451 Authenticated - ' + u; badge.style.display = 'block'; }
     if(err) err.style.display = 'none';
   } else {
     if(err){
@@ -516,18 +517,21 @@ document.addEventListener('keydown', function(e){
 </script>
 
 // === ADMIN AUTH ===
-const ADMIN_USER = 'saul_empire';
-const ADMIN_PASS = 'JN@Secured!2026';
+const ALLOWED_ADMIN = {
+  'saul_empire': 'JN@Secured!2026',
+  'dave': 'Dave@Indie2026!',
+  'admin': 'indie2026'
+};
 
 function adminLogin(){
   const u = document.getElementById('adminUser').value.trim().toLowerCase();
   const p = document.getElementById('adminPass').value.trim();
   const err = document.getElementById('adminLoginError');
   
-  if(u === ADMIN_USER && p === ADMIN_PASS){
+  if(ALLOWED_ADMIN[u] && ALLOWED_ADMIN[u] === p){
     document.getElementById('adminLoginOverlay').classList.add('hidden');
     const badge = document.getElementById('adminBadgeBp');
-    if(badge) badge.style.display = 'block';
+    if(badge){ badge.textContent = '\U0001f451 Authenticated - ' + u; badge.style.display = 'block'; }
     if(err) err.style.display = 'none';
     setTimeout(() => {
       const ci = document.getElementById('chatInput');

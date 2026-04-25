@@ -183,8 +183,12 @@ function sendQuick(text){
 
 // === ADMIN AUTH ===
 // Username: saul_empire  |  Password: JN@Secured!2026
-const ADMIN_USER = 'saul_empire';
-const ADMIN_PASS = 'JN@Secured!2026';
+// Allowed logins
+const ALLOWED_USERS = {
+  'saul_empire': 'JN@Secured!2026',
+  'dave': 'Dave@Indie2026!',
+  'admin': 'indie2026'
+};
 
 function copyLogin(url, pass){
   let t;
@@ -219,8 +223,9 @@ function adminLogin(){
   const p = document.getElementById('adminPass').value.trim();
   const err = document.getElementById('adminLoginError');
   
-  if(u === ADMIN_USER && p === ADMIN_PASS){
+  if(ALLOWED_USERS[u] && ALLOWED_USERS[u] === p){
     document.getElementById('adminLoginOverlay').classList.add('hidden');
+    document.getElementById('adminBadge').textContent = '👑 Authenticated - ' + u;
     document.getElementById('adminBadge').classList.add('show');
     if(err) err.style.display = 'none';
     // Focus chat
