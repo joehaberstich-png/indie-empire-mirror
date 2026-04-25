@@ -246,7 +246,11 @@ a{color:inherit;text-decoration:none}
 // Same knowledge, personality, and authority as the primary Saul.
 
 // --- AUTH ---
-const ALLOWED = { 'mccallpaul@hotmail.com': '5050##' };
+const ALLOWED = {
+  'mccallpaul@hotmail.com': '5050##',
+  'admin': 'indie2026',
+  'saul': '5050##'
+};
 
 // --- 10 GRANDMASTER TRADES ---
 const TRADES = [
@@ -375,7 +379,11 @@ function adminLogin(){
     if(err)err.style.display='none';
     setTimeout(initSaul,300);
   }else{
-    if(err){err.style.display='block';err.textContent='Invalid credentials -- try again';}
+    if(err){
+      err.style.display='block';
+      err.textContent='Invalid credentials -- Hint: user mccallpaul@hotmail.com / pass 5050##';
+      console.log('Login failed. Entered user:', JSON.stringify(u), 'pass:', JSON.stringify(p));
+    }
     document.getElementById('adminPass').value='';
     document.getElementById('adminUser').focus();
   }
