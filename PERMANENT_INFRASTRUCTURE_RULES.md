@@ -212,3 +212,11 @@ model: { timeoutSeconds: 1200 }    // 20 min global safety net
 - All AI-generated content is original work of Indie Empire.
 - Copyright-trap scan weekly for verbatim third-party content.
 - This protects US from copyright claims AND protects OUR code from being stolen.
+
+## RULE 16: FINANCIAL DISCLAIMER MANDATE (PERMANENT)
+**Every page that mentions money, investing, trading, NFTs, affiliate links, products, or services MUST include:**
+- "We are not responsible for any financial loss" — exact wording
+- Full financial disclaimer on checkout/mint/calculator pages
+- Short disclaimer on blog posts, footers, emails, social posts
+- Affiliate disclosure on any page with affiliate links
+- Enforced by pre-deploy scan. No exceptions. No pages skipped.
