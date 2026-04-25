@@ -180,12 +180,12 @@ async function mintFounderToken(walletAddress, subscriberNumber) {
   
   const uri = Buffer.from(metadata).toString('hex').toUpperCase();
   
-  // Mint as lsfOnlyXRP (soulbound — not transferable)
+  // Mint as lsfOnlyXRP (blockchain-tradeable — not sold in our store)
   const tx = {
     TransactionType: 'NFTokenMint',
     Account: feeWallet.classicAddress,
     URI: uri,
-    Flags: 0, // Not transferable - soulbound
+    Flags: 0, // Blockchain-tradeable - storable in wallet
     NFTokenTaxon: 0,
     Issuer: feeWallet.classicAddress,
   };
@@ -198,7 +198,7 @@ async function mintFounderToken(walletAddress, subscriberNumber) {
     throw new Error(`Founder mint failed: ${result.result.meta.TransactionResult}`);
   }
   
-  // Transfer soulbound token to buyer
+  // Transfer Founder Token to buyer wallet
   const nftID = result.result.meta.AffectedNodes
     .find(n => n.CreatedNode?.LedgerEntryType === 'NFTokenPage')
     ?.CreatedNode?.NewFields?.NFTokens?.[0]?.NFToken?.NFTokenID;

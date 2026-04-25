@@ -4,7 +4,7 @@
 ## Phase 1: Waitlist Building (NOW)
 **Goal:** 10,000 waitlist subscribers before trailer drop
 **Channel:** Waitlist page live at `/fallofthecabal/`
-**Incentive:** First 1,000 get Founder Token (soulbound NFT, voting rights, early access)
+**Incentive:** First 1,000 get Founder Token (blockchain-tradeable NFT — not sold in store, earned via waitlist)
 
 **Traffic sources:**
 - Reddit (r/conspiracy, r/CryptoCurrency, r/NFT, r/gaming)

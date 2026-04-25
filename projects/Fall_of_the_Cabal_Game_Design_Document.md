@@ -316,7 +316,7 @@ Special NFT type — players can deploy honeypots to trap cabal members.
 
 ## The Founder Token System (Two Types)
 
-There are **two types** of Founder Tokens — one paid, one hunted. Both are soulbound.
+There are **two types** of Founder Tokens — one paid, one hunted. Both are blockchain-tradeable (not sold in our store).
 
 ---
 
