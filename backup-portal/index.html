@@ -138,7 +138,7 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" id="loginPass" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()">
+      <div style="display:flex;gap:6px;align-items:center"><input type="password" id="loginPass" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()" style="flex:1" autocomplete="current-password"><button onclick="togglePass()" id="passToggle" style="background:transparent;border:1px solid #333;border-radius:6px;color:#666;cursor:pointer;padding:6px 8px;font-size:14px;line-height:1" title="Show/hide password">👁️</button></div>
     </div>
     <button class="login-btn" onclick="doLogin()">Access Backup Portal</button>
     <div class="login-error" id="loginError">Invalid credentials</div>
@@ -265,6 +265,15 @@ function showCredentials(){
 }
 
 function togglePass(el){
+  // For login form
+  if(!el || el.nodeName==='BUTTON'){
+    const f = document.getElementById('loginPass');
+    const b = el || document.getElementById('passToggle');
+    if(f.type==='password'){f.type='text';b.textContent='🙈';b.style.color='#22d3ee'}
+    else{f.type='password';b.textContent='👁️';b.style.color='#666'}
+    return;
+  }
+  // For card value display
   const hidden=el.nextElementSibling;
   if(el.textContent==='••••••••'){
     el.textContent=hidden.textContent;

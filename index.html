@@ -62,7 +62,10 @@
     </div>
     <div class="admin-form-group">
       <label>Password</label>
-      <input type="password" id="adminPass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()">
+      <div style="display:flex;gap:6px;align-items:center">
+        <input type="password" id="adminPass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()" style="flex:1" autocomplete="current-password">
+        <button onclick="togglePass()" id="passToggle" style="background:transparent;border:1px solid #333;border-radius:6px;color:#666;cursor:pointer;padding:6px 8px;font-size:14px;line-height:1" title="Show/hide password">👁️</button>
+      </div>
     </div>
     <button class="admin-login-btn" onclick="adminLogin()">Enter Console &rarr;</button>
     <div class="admin-login-error" id="adminLoginError">Invalid credentials</div>
@@ -179,6 +182,13 @@ function sendQuick(text){
 // Username: saul_empire  |  Password: JN@Secured!2026
 const ADMIN_USER = 'saul_empire';
 const ADMIN_PASS = 'JN@Secured!2026';
+
+function togglePass(){
+  const f = document.getElementById('adminPass');
+  const b = document.getElementById('passToggle');
+  if(f.type==='password'){f.type='text';b.textContent='🙈';b.style.color='#22d3ee'}
+  else{f.type='password';b.textContent='👁️';b.style.color='#666'}
+}
 
 function adminLogin(){
   const u = document.getElementById('adminUser').value.trim().toLowerCase();
