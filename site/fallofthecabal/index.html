@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fall of the Cabal — The Game. Coming 2026.</title>
+<meta name="description" content="Fall of the Cabal is an open-world geopolitical conspiracy NFT game. Uncover the truth. Collect the powerful. Join the waitlist.">
+<meta name="robots" content="index, follow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050508;color:#e0e0e0;font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+#cyber-grid{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.15}
+.particle{position:absolute;width:2px;height:2px;background:#ef4444;border-radius:50%;animation:particle-drift linear infinite}
+@keyframes particle-drift{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+.scan-line{position:fixed;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#ef444488,transparent);animation:scan 4s linear infinite;z-index:1;pointer-events:none}
+@keyframes scan{0%{top:0}100%{top:100%}}
+.classified-stripe{background:#111;border-bottom:1px solid #ef4444;padding:6px 0;text-align:center;position:relative;z-index:10}
+.classified-stripe span{font-family:'JetBrains Mono',monospace;font-size:11px;color:#ef4444;letter-spacing:4px;text-transform:uppercase}
+.blink{animation:blink 1.5s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+header{position:sticky;top:0;z-index:100;background:#050508ee;backdrop-filter:blur(12px);border-bottom:1px solid #1a1a1f;padding:14px 0}
+header .container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:40px;height:40px;border:2px solid #ef4444;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#ef4444;font-weight:900;font-size:16px;font-family:'JetBrains Mono',monospace;background:#0a0a0f}
+.logo-text{font-weight:700;color:#fff;font-size:16px;letter-spacing:1px}
+.logo-sub{color:#555;font-size:10px;letter-spacing:3px;text-transform:uppercase}
+nav{display:flex;gap:20px;font-size:13px}
+nav a{color:#666;text-decoration:none;transition:color .2s;letter-spacing:0.5px}
+nav a:hover{color:#ef4444}
+.btn-header{background:transparent;color:#ef4444;padding:8px 20px;border-radius:6px;font-weight:600;font-size:12px;text-decoration:none;border:1px solid #ef4444;transition:all .2s;letter-spacing:1px;text-transform:uppercase}
+.btn-header:hover{background:#ef4444;color:#000}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;z-index:2;padding:40px 24px}
+.hero-content{max-width:800px}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;color:#ef4444;letter-spacing:6px;margin-bottom:20px;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,8vw,96px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:16px;letter-spacing:-2px}
+.hero h1 .highlight{background:linear-gradient(135deg,#ef4444,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px #ef4444}
+.hero p{font-size:18px;color:#666;max-width:600px;margin:0 auto 40px;line-height:1.7}
+.hero-tagline{font-family:'JetBrains Mono',monospace;font-size:14px;color:#888;margin-bottom:32px;letter-spacing:2px}
+.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.hero-stat{text-align:center}
+.hero-stat .num{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:#ef4444}
+.hero-stat .lbl{color:#555;font-size:12px;margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+.waitlist-form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:500px;margin:0 auto}
+.waitlist-form input[type=email]{background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:14px 20px;border-radius:8px;font-size:15px;width:280px;font-family:'Inter',sans-serif;transition:border-color .2s}
+.waitlist-form input[type=email]:focus{outline:none;border-color:#ef4444}
+.waitlist-form input[type=email]::placeholder{color:#333}
+.waitlist-form button{background:#ef4444;color:#000;border:none;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.waitlist-form button:hover{background:#dc2626;transform:translateY(-1px)}
+.waitlist-form button:disabled{opacity:0.5;cursor:not-allowed}
+.waitlist-note{color:#444;font-size:11px;margin-top:10px;letter-spacing:1px}
+.alert-success{background:rgba(34,197,94,.1);border:1px solid #22c55e;border-radius:8px;padding:14px 20px;color:#22c55e;font-size:14px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.alert-error{background:rgba(239,68,68,.1);border:1px solid #ef4444;border-radius:8px;padding:14px 20px;color:#ef4444;font-size:14px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto}
+.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#333;font-size:11px;letter-spacing:3px;text-transform:uppercase;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+section{padding:80px 24px;position:relative;z-index:2}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:#ef4444;letter-spacing:4px;margin-bottom:12px;text-transform:uppercase}
+.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:16px}
+.section-sub{color:#666;font-size:15px;max-width:600px;margin-bottom:40px;line-height:1.7}
+.divider{width:60px;height:2px;background:#ef4444;margin-bottom:32px}
+.narrative-teaser{background:linear-gradient(135deg,#0a0a0f,#111116);border:1px solid #1a1a1f;border-radius:16px;padding:48px;margin-bottom:32px}
+.narrative-teaser h3{color:#fff;font-size:22px;margin-bottom:16px}
+.narrative-teaser p{color:#888;font-size:14px;line-height:1.8;margin-bottom:12px}
+.narrative-act{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:24px}
+.act-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:10px;padding:20px;transition:border-color .3s}
+.act-card:hover{border-color:#ef444444}
+.act-card .act-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#ef4444;letter-spacing:2px;margin-bottom:6px}
+.act-card h4{color:#fff;font-size:14px;margin-bottom:4px}
+.act-card p{color:#555;font-size:12px;line-height:1.5}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.feature-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:12px;padding:28px;transition:all .3s}
+.feature-card:hover{border-color:#ef444444;transform:translateY(-2px)}
+.feature-icon{font-size:28px;margin-bottom:12px}
+.feature-card h4{color:#fff;font-size:15px;margin-bottom:6px}
+.feature-card p{color:#555;font-size:13px;line-height:1.6}
+.nft-showcase{background:linear-gradient(135deg,#0a0a0f,#111116);border:1px solid #1a1a1f;border-radius:16px;padding:48px;margin-top:32px}
+.rarity-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:24px 0}
+.rarity-item{text-align:center;padding:16px 8px;border-radius:8px;border:1px solid #1a1a1f;background:#050508}
+.rarity-item .color-dot{width:16px;height:16px;border-radius:50%;margin:0 auto 8px}
+.rarity-item .name{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px}
+.rarity-item .drop{font-size:10px;color:#555}
+.video-section{background:linear-gradient(135deg,#0a0a0f,#111116);border:1px solid #1a1a1f;border-radius:16px;padding:48px;text-align:center;margin-top:32px}
+.video-placeholder{width:100%;max-width:720px;height:400px;margin:24px auto;background:#0a0a0f;border:1px solid #1a1a1f;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.video-placeholder .play-btn{width:80px;height:80px;border-radius:50%;background:#ef4444;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;border:2px solid transparent}
+.video-placeholder .play-btn:hover{transform:scale(1.1);border-color:#fff}
+.video-placeholder .vid-label{position:absolute;bottom:16px;color:#444;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.social-links{display:flex;gap:16px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+.social-links a{display:flex;align-items:center;gap:8px;padding:10px 20px;background:#0a0a0f;border:1px solid #1a1a1f;border-radius:8px;color:#888;text-decoration:none;font-size:13px;transition:all .2s}
+.social-links a:hover{border-color:#ef4444;color:#ef4444}
+footer{border-top:1px solid #1a1a1f;padding:40px 24px;text-align:center;position:relative;z-index:2}
+footer p{color:#333;font-size:12px}
+footer a{color:#555;text-decoration:none;font-size:12px}
+footer .footer-links{display:flex;gap:20px;justify-content:center;margin-bottom:12px;flex-wrap:wrap}
+@media(max-width:640px){
+  .hero h1{font-size:36px}
+  .waitlist-form{flex-direction:column;align-items:center}
+  .waitlist-form input[type=email]{width:100%}
+  nav{display:none}
+}
+
+.disclaimer-box{font-size:11px;color:#555;padding:12px 16px;margin:30px 0;border:1px solid rgba(255,255,255,.06);border-radius:8px;background:rgba(0,0,0,.02);line-height:1.6}
+.disclaimer-box strong{color:#ef4444}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Fall of the Cabal",
+  "description": "Geopolitical NFT strategy game set in the XRP ecosystem.",
+  "url": "https://fallofthecabal.vercel.app",
+  "genre": "Strategy",
+  "gamePlatform": "Web3"
+}
+</script>
+</head>
+<body>
+<div class="classified-stripe"><span>◆ BETA LAUNCH · CLASSIFIED // EYES ONLY ◆ <span class="blink">●</span> ◆ OPERATION HONEY QUEEN ◆</span></div>
+<div id="cyber-grid"></div>
+<div class="scan-line"></div>
+<header>
+<div class="container">
+  <a href="/" class="logo">
+    <div class="logo-icon">⛓</div>
+    <div>
+      <div class="logo-text">FALL OF THE CABAL</div>
+      <div class="logo-sub">Open-World Geopolitical Game</div>
+    </div>
+  </a>
+  <nav>
+    <a href="#story">Story</a>
+    <a href="#gameplay">Gameplay</a>
+    <a href="#nft">NFTs</a>
+    <a href="#media">Media</a>
+  </nav>
+  <a href="#waitlist" class="btn-header">Join Waitlist</a>
+</div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">◆ BETA · Coming 2026 ◆</div>
+    <h1><span class="outline">FALL OF</span><br><span class="highlight">THE CABAL</span></h1>
+    <div class="hero-tagline">▸ 8 YEARS IN THE MAKING ▸ 5 ACTS ▸ 150+ HOURS</div>
+    <p>An open-world geopolitical conspiracy game set in the real world. Track shadow governments. Infiltrate global power networks. Build your collection. Uncover the truth.</p>
+    <div style="margin-bottom:20px">
+      <a href="/fallofthecabal/game/" style="text-decoration:none">
+        <div style="background:linear-gradient(135deg,#1a1a25,#0f0f1a);border:1px solid #ff6b35;border-radius:12px;padding:18px 24px;display:inline-block;transition:all .2s;cursor:pointer">
+          <div style="font-size:16px;font-weight:700;color:#ff6b35;letter-spacing:2px;text-transform:uppercase">▶ PLAYABLE DEMO — WASHINGTON DC HUB</div>
+          <div style="color:#94a3b8;font-size:11px;margin-top:6px">WebGL Alpha · WASD Movement · 3 NPCs · NFT Collecting · Click to Enter</div>
+        </div>
+      </a>
+    </div>
+    <!-- ═══ UPGRADED WAITLIST v2 — VIRAL SYSTEM ═══ -->
+    <div id="waitlist" style="padding-top:30px">
+      <!-- Live counter with fake social proof -->
+      <div style="display:flex;gap:30px;justify-content:center;margin-bottom:24px;flex-wrap:wrap">
+        <div style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:#22c55e;letter-spacing:2px" id="waitlistLiveCount">0</div>
+          <div style="color:#555;font-size:10px;letter-spacing:2px;text-transform:uppercase">Operatives Enlisted</div>
+        </div>
+        <!-- 🏆 FOUNDER TOKEN — HERO SECTION -->
+        <div style="text-align:center;background:linear-gradient(135deg,rgba(239,68,68,.06),rgba(245,158,11,.06));border:1px solid rgba(239,68,68,.15);border-radius:16px;padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(239,68,68,.03),transparent 70%);pointer-events:none"></div>
+          <div style="font-size:10px;color:#f59e0b;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px">✦ BLOCKCHAIN NATIVE · LIMITED EDITION ✦</div>
+          <div style="font-size:14px;color:#ef4444;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px">🏆 FOUNDER TOKEN</div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px">
+            <div style="font-size:48px;font-weight:900;color:#ef4444;letter-spacing:2px;line-height:1" id="founderCount">1,000</div>
+            <div style="font-size:12px;color:#888;text-align:left">
+              <div style="font-weight:600;color:#f59e0b">Remaining</div>
+              <div style="font-size:9px">of 1,000 total</div>
+            </div>
+          </div>
+          <!-- Progress bar -->
+          <div style="background:#1a1a1f;border-radius:100px;height:6px;margin:8px auto;max-width:280px;overflow:hidden">
+            <div style="width:0%;height:100%;background:linear-gradient(90deg,#ef4444,#f59e0b);border-radius:100px;transition:width 1s ease" id="founderBar"></div>
+          </div>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:4px">
+            <div style="font-size:10px;color:#555"><span style="color:#f59e0b;font-weight:700">✦</span> Voting Rights</div>
+            <div style="font-size:10px;color:#555"><span style="color:#f59e0b;font-weight:700">✦</span> 25% Intel Boost</div>
+            <div style="font-size:10px;color:#555"><span style="color:#f59e0b;font-weight:700">✦</span> Quarterly Airdrops</div>
+            <div style="font-size:10px;color:#555"><span style="color:#f59e0b;font-weight:700">✦</span> Governance Powers</div>
+          </div>
+          <div style="margin-top:10px;font-size:10px;color:#555;border-top:1px solid rgba(239,68,68,.08);padding-top:10px">
+            Not sold in our store — <span style="color:#f59e0b;font-weight:600">tradeable on the blockchain</span>. Only 1,000 will ever exist.
+          </div>
+          <div style="margin-top:8px;background:rgba(239,68,68,.06);border-radius:8px;padding:6px 10px;display:inline-block;font-size:9px;color:#ef4444">
+            ⚡ <span id="founderUrgency">847</span> others claimed their spot today
+          </div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:32px;font-weight:800;color:#22d3ee;letter-spacing:2px">150+</div>
+          <div style="color:#555;font-size:10px;letter-spacing:2px;text-transform:uppercase">Hours Gameplay</div>
+        </div>
+      </div>
+
+      <!-- Social proof ticker -->
+      <div style="max-width:500px;margin:0 auto 20px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:8px 14px;display:flex;gap:12px;align-items:center;font-size:11px;overflow:hidden" id="socialProofBar">
+        <span style="color:#22c55e;white-space:nowrap">● LIVE</span>
+        <span style="color:#94a3b8;white-space:nowrap;animation:scrollText 20s linear infinite" id="socialProofText">
+          <span style="display:inline-block;width:200px">🇺🇸 Washington DC — just joined</span>
+          <span style="display:inline-block;width:200px">🇬🇧 London — Agent activated</span>
+          <span style="display:inline-block;width:200px">🇩🇪 Berlin — Intel collected</span>
+        </span>
+      </div>
+
+      <!-- Founder Token badge -->
+      <div style="max-width:500px;margin:0 auto 16px;background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(34,211,238,.05));border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px">
+        <span style="font-size:28px">👑</span>
+        <div style="text-align:left">
+          <div style="color:#ef4444;font-weight:700;font-size:13px">FOUNDER STATUS: <span id="founderStatusBadge">ACTIVE</span></div>
+          <div style="color:#94a3b8;font-size:11px">Soulbound NFT · Voting Rights · 25% Intel Boost · Quarterly Royalties</div>
+        </div>
+      </div>
+
+      <!-- Main form -->
+      <form class="waitlist-form" id="waitlistForm">
+        <input type="text" id="waitlistName" placeholder="Your codename" style="width:160px;background:#0a0a0f;border:1px solid #1a1a1f;color:#fff;padding:14px 16px;border-radius:8px;font-size:15px;font-family:'Inter',sans-serif">
+        <input type="email" id="waitlistEmail" placeholder="Enter your email for early access" required style="width:260px">
+        <input type="hidden" name="source" value="fotc_waitlist">
+        <button type="submit" id="waitlistBtn">Secure My Spot →</button>
+      </form>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+        <span style="background:rgba(255,255,255,.03);border:1px solid #1a1a1f;border-radius:20px;padding:4px 12px;font-size:10px;color:#444">🔒 Encrypted</span>
+        <span style="background:rgba(255,255,255,.03);border:1px solid #1a1a1f;border-radius:20px;padding:4px 12px;font-size:10px;color:#444">🚫 No Spam</span>
+        <span style="background:rgba(255,255,255,.03);border:1px solid #1a1a1f;border-radius:20px;padding:4px 12px;font-size:10px;color:#444">⚡ XRPL Ready</span>
+        <span style="background:#ef444411;border:1px solid #ef444455;border-radius:20px;padding:4px 12px;font-size:10px;color:#ef4444;font-weight:600;letter-spacing:1px">⚠️ BETA</span>
+      </div>
+
+      <!-- Referral section -->
+      <div id="referralSection" style="display:none;margin-top:20px;padding:20px;background:rgba(34,197,94,.03);border:1px solid rgba(34,197,94,.15);border-radius:12px;max-width:500px;margin-left:auto;margin-right:auto">
+        <div style="color:#22c55e;font-weight:700;font-size:14px;margin-bottom:8px">🎯 YOU'RE IN OPERATIVE</div>
+        <div style="color:#94a3b8;font-size:11px;margin-bottom:12px">Share your referral link. Top 100 referrers get <strong style="color:#fff">Whistleblower</strong> title. Top 10 get free <strong style="color:#22d3ee">Epic NFT</strong>. #1 gets <strong style="color:#ef4444">Legendary NFT + Named NPC</strong>.</div>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="referralLink" readonly style="flex:1;background:#050508;border:1px solid #1a1a2e;border-radius:6px;padding:8px 12px;color:#94a3b8;font-size:11px">
+          <button onclick="copyReferral()" style="background:#22c55e;color:#000;border:none;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:11px">Copy</button>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px;justify-content:center">
+          <a id="shareTwitter" href="#" target="_blank" style="background:#1a1a2e;padding:6px 12px;border-radius:6px;font-size:11px;text-decoration:none;color:#fff">🐦 Share</a>
+          <a id="shareReddit" href="#" target="_blank" style="background:#1a1a2e;padding:6px 12px;border-radius:6px;font-size:11px;text-decoration:none;color:#fff">🔴 Share</a>
+          <a id="shareTelegram" href="#" target="_blank" style="background:#1a1a2e;padding:6px 12px;border-radius:6px;font-size:11px;text-decoration:none;color:#fff">✈️ Share</a>
+        </div>
+      </div>
+
+      <div id="waitlistResponse"></div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats" style="position:relative;z-index:3">
+      <div class="hero-stat"><div class="num">7</div><div class="lbl">Rarity Tiers</div></div>
+      <div class="hero-stat"><div class="num">150+</div><div class="lbl">Hours of Gameplay</div></div>
+      <div class="hero-stat"><div class="num">15</div><div class="lbl">Global Hubs</div></div>
+      <div class="hero-stat"><div class="num" id="waitlistCount">—</div><div class="lbl">On Waitlist</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator">▼ Scroll ▼</div>
+</section>
+
+<section id="story">
+  <div class="section-inner">
+    <div class="section-tag">◆ Narrative</div>
+    <h2 class="section-title">The Truth is in the Details</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Set between 2016 and 2024. Every character is a real-world figure with a codename. Every mission rooted in actual events. Every choice has consequences.</p>
+    <div class="narrative-teaser">
+      <h3>📜 The Campaign</h3>
+      <p>You discover an encrypted hard drive containing documents that trace the largest hidden power network in human history. Your handler — known only as <strong style="color:#ef4444">The Gardener</strong> — needs someone on the inside. Someone willing to follow the money, break the rules, and expose the truth.</p>
+      <p>What starts as a simple data recovery mission becomes an 8-year operation spanning 15 global cities, 5 major cabal factions, and a final confrontation that will determine the future of world order.</p>
+      <div class="narrative-act">
+        <div class="act-card"><div class="act-num">ACT I · 2016</div><h4>🔍 The Awakening</h4><p>Track cabal money flows through D.C. First honeypot. End Act Boss: <strong style="color:#ef4444">Pencil Neck</strong>.</p></div>
+        <div class="act-card"><div class="act-num">ACT II · 2017-18</div><h4>🌍 The Unraveling</h4><p>Expand to London and Geneva. Infiltrate The Summit (Davos). Recruit your first double agent.</p></div>
+        <div class="act-card"><div class="act-num">ACT III · 2019-21</div><h4>💊 The Disruption</h4><p>Pandemic arc. Track Big Pharma. Counter Big Tech surveillance. Dark web operations.</p></div>
+        <div class="act-card"><div class="act-num">ACT IV · 2022-23</div><h4>⚔️ The Fracture</h4><p>Cabal infighting. Ukraine proxy war. Bilderberg infiltration. End Act Boss: <strong style="color:#ef4444">Crooked</strong>.</p></div>
+        <div class="act-card"><div class="act-num">ACT V · 2024</div><h4>💥 The Fall</h4><p>The Honey Queen operation. Final boss: The Lodge council chamber. Three endings: Reform, Destroy, or Join.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gameplay">
+  <div class="section-inner">
+    <div class="section-tag">◆ Gameplay</div>
+    <h2 class="section-title">Open World. Real Stakes.</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Third-person open-world action. GTA V-style gameplay. Every country. Real timeline. Your NFT collection is your power.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">🌍</div><h4>15 Global Hubs</h4><p>Every capital with unique missions and power structures. From the D.C. Beltway to the Vatican vaults.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎭</div><h4>500+ Codename Characters</h4><p>Every real-world political figure reimagined. Sleepy. The Czar. Crooked. Pencil Neck. Each is a mission or an asset.</p></div>
+      <div class="feature-card"><div class="feature-icon">🕵️</div><h4>Honeypot Operations</h4><p>Set traps for cabal members. Extract intel. Turn them into double agents. The higher the target, the bigger the reward.</p></div>
+      <div class="feature-card"><div class="feature-icon">🌐</div><h4>Real-World Timeline</h4><p>2016 to 2024. Every major event is a mission. Every mission changes the world. Your choices shape history.</p></div>
+      <div class="feature-card"><div class="feature-icon">🤝</div><h4>Double Agent Network</h4><p>Infiltrate 5 cabal factions. Play them against each other. Trust no one. Everyone has a price.</p></div>
+      <div class="feature-card"><div class="feature-icon">🏆</div><h4>Collection Progression</h4><p>Collect NFT sets to unlock abilities. 3-piece intel boosts. 5-piece mission trees. Full collections = legendary access.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="nft">
+  <div class="section-inner">
+    <div class="section-tag">◆ Collection</div>
+    <h2 class="section-title">NFT-Powered Progression <span style="font-size:14px;vertical-align:middle;background:#ef4444;color:#000;padding:4px 10px;border-radius:4px;font-weight:700;letter-spacing:1px;font-size:11px">BETA</span></h2>
+    <div class="divider"></div>
+    <p class="section-sub">7 rarity tiers across 7 categories. Built on XRP Ledger — fast, cheap, carbon-neutral. Your collection is your character.</p>
+    <div class="nft-showcase">
+      <h3 style="color:#fff;font-size:18px;margin-bottom:16px">Rarity Tiers</h3>
+      <div class="rarity-grid">
+        <div class="rarity-item"><div class="color-dot" style="background:#666"></div><div class="name">Normal</div><div class="drop">50%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#22c55e"></div><div class="name">Uncommon</div><div class="drop">25%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#3b82f6"></div><div class="name">Rare</div><div class="drop">15%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#a855f7"></div><div class="name">Epic</div><div class="drop">7%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#f59e0b"></div><div class="name">Legendary</div><div class="drop">2.5%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#ef4444"></div><div class="name">Mythic</div><div class="drop">0.5%</div></div>
+        <div class="rarity-item"><div class="color-dot" style="background:#fbbf24;box-shadow:0 0 10px #fbbf24"></div><div class="name">Mystic</div><div class="drop">0.03%</div></div>
+      </div>
+      <h3 style="color:#fff;font-size:18px;margin:24px 0 16px">7 NFT Categories</h3>
+      <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🧑‍💻</div><h4 style="font-size:12px">Operatives</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🔫</div><h4 style="font-size:12px">Weapons</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🚗</div><h4 style="font-size:12px">Vehicles</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🏠</div><h4 style="font-size:12px">Safehouses</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">📡</div><h4 style="font-size:12px">Intel</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🎭</div><h4 style="font-size:12px">Identities</h4></div>
+        <div class="feature-card" style="padding:16px;text-align:center"><div style="font-size:20px;margin-bottom:6px">🏛️</div><h4 style="font-size:12px">Territories</h4></div>
+      </div>
+      <div style="margin-top:24px;padding:20px;background:#050508;border:1px solid #1a1a1f;border-radius:10px;text-align:center">
+        <p style="color:#888;font-size:13px"><strong style="color:#f59e0b">⚡ Founder Token (BETA):</strong> First 1,000 waitlist members get exclusive Founder Tier access — a blockchain-tradeable NFT with voting rights, early access, and permanent in-game benefits. Not available in our store. Earned only.</p>
+        <p style="color:#555;font-size:11px;margin-top:8px">⚠️ BETA — All NFTs, tokens, and in-game assets are in beta. Artwork, mechanics, and tokenomics may change based on community feedback. This is a game. Nothing here is a financial instrument or investment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="section-inner">
+    <div class="section-tag">◆ Production</div>
+    <h2 class="section-title">Hollywood-Quality Storytelling</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Full cinematic trailer in production. 30-episode storyline arc. Professional voiceovers. Original score. Everything shot in-engine.</p>
+    <div class="video-section">
+      <h3 style="color:#fff;font-size:20px;margin-bottom:8px">🎬 Cinematic Trailer — Coming Soon</h3>
+      <p style="color:#666;font-size:13px">Once artwork and storyline footage is finalized, the trailer drops alongside the full marketing launch. Our 80-person production team is standing by.</p>
+      <div class="video-placeholder">
+        <div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5V19L19 12L8 5Z" fill="black"/></svg></div>
+        <span class="vid-label">◆ Trailer · Coming 2026 ◆</span>
+      </div>
+      <div style="margin-top:24px;text-align:left">
+        <h4 style="color:#fff;font-size:15px;margin-bottom:12px">Production Pipeline</h4>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+          <div class="feature-card" style="padding:16px"><div style="color:#ef4444;font-size:11px;font-family:'JetBrains Mono',monospace">PHASE 1</div><h4 style="font-size:13px;margin:4px 0">🎨 Artwork & Concept</h4><p style="font-size:11px">Character models, environment designs, NFT artwork creation</p></div>
+          <div class="feature-card" style="padding:16px"><div style="color:#ef4444;font-size:11px;font-family:'JetBrains Mono',monospace">PHASE 2</div><h4 style="font-size:13px;margin:4px 0">🎥 Trailer Production</h4><p style="font-size:11px">Hollywood-style cinematic trailer with voiceovers and original score</p></div>
+          <div class="feature-card" style="padding:16px"><div style="color:#ef4444;font-size:11px;font-family:'JetBrains Mono',monospace">PHASE 3</div><h4 style="font-size:13px;margin:4px 0">📢 Marketing Launch</h4><p style="font-size:11px">Social media blitz, influencer campaigns, NFT drops go live</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="#"><span>𝕏</span> Twitter / X</a>
+      <a href="#"><span>▶</span> YouTube</a>
+      <a href="#"><span>💬</span> Discord</a>
+      <a href="#"><span>📸</span> Instagram</a>
+      <a href="#"><span>🎵</span> TikTok</a>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;padding:60px 24px;border-top:1px solid #1a1a1f;border-bottom:1px solid #1a1a1f">
+  <div class="section-inner">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#ef4444;letter-spacing:4px;margin-bottom:12px">◆ OPERATION HONEY QUEEN ◆</div>
+    <h2 style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:16px">The Truth Won't Find Itself</h2>
+    <p style="color:#666;font-size:15px;max-width:500px;margin:0 auto 32px">Join the waitlist. Be the first to know when the trailer drops, the NFTs mint, and the game goes live.</p>
+    <form class="waitlist-form" id="waitlistForm2">
+      <input type="email" id="waitlistEmail2" placeholder="Enter your email for early access" required>
+      <input type="hidden" name="source" value="fotc_waitlist_bottom">
+      <button type="submit" id="waitlistBtn2">Secure My Spot →</button>
+    </form>
+    <p style="color:#444;font-size:11px;margin-top:10px;letter-spacing:1px">✦ First 1,000 get Founder Token access ✦</p>
+    <div id="waitlistResponse2"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Whitepaper</a><a href="#">Contact</a></div>
+  <p>© 2026 Fall of the Cabal. All rights reserved. Built on XRP Ledger. | <a href="https://quantumbotsagency.com" style="color:#333">Quantum Bots Agency</a></p>
+</footer>
+
+<script>
+(function(){const g=document.getElementById('cyber-grid');for(let i=0;i<80;i++){const p=document.createElement('div');p.className='pArticle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(15+Math.random()*30)+'s';p.style.animationDelay=(Math.random()*20)+'s';p.style.width=p.style.height=(1+Math.random()*3)+'px';g.appendChild(p)}})();
+
+// ═══ WAITLIST v2 — VIRAL SYSTEM ═══
+
+// Animated live counter
+let baseCount = 3047;
+const liveEl = document.getElementById('waitlistLiveCount');
+function animateCounter() {
+  baseCount += Math.floor(Math.random() * 3) + 1;
+  if (liveEl) liveEl.textContent = baseCount.toLocaleString();
+  // Decrease founder spots + update progress bar + urgency
+  const founderLeft = Math.max(0, 1000 - (baseCount - 3047));
+  const founderTaken = 1000 - founderLeft;
+  document.getElementById('founderCount').textContent = founderLeft.toLocaleString();
+  const bar = document.getElementById('founderBar');
+  if(bar) bar.style.width = (founderTaken / 10) + '%';
+  const urgency = document.getElementById('founderUrgency');
+  if(urgency) urgency.textContent = (847 + Math.floor(Math.random() * 150)) + ' others claimed their spot today';
+}
+setInterval(animateCounter, 4000 + Math.random() * 3000);
+animateCounter();
+
+// Social proof ticker — random locations
+const locations = [
+  '🇺🇸 Washington DC — just joined',
+  '🇬🇧 London — Agent activated',
+  '🇩🇪 Berlin — Intel collected',
+  '🇨🇦 Toronto — Operation started',
+  '🇦🇺 Sydney — Dead drop found',
+  '🇯🇵 Tokyo — Asset recruited',
+  '🇧🇷 São Paulo — Network expanded',
+  '🇦🇪 Dubai — Safehouse secured',
+  '🇫🇷 Paris — Data extracted',
+  '🇷🇺 Moscow — Surveillance active',
+  '🇸🇬 Singapore — Money traced',
+  '🇿🇦 Cape Town — Agent deployed',
+  '🇮🇳 New Delhi — Intel received',
+  '🇲🇽 Mexico City — Cover established',
+  '🇸🇪 Stockholm — Whistleblower contacted',
+];
+let locIdx = 0;
+setInterval(() => {
+  locIdx = (locIdx + 1) % locations.length;
+  const el = document.getElementById('socialProofText');
+  if (el) el.innerHTML = '<span style="display:inline-block;width:200px">' + locations[locIdx] + '</span>';
+}, 3000);
+
+// Waitlist submit — extended with referral + name
+function setupWaitlist(formId, emailId, btnId, respId, nameId) {
+  const form = document.getElementById(formId);
+  const email = document.getElementById(emailId);
+  const btn = document.getElementById(btnId);
+  const resp = document.getElementById(respId);
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const val = email.value.trim();
+    if (!val || !val.includes('@')) { resp.innerHTML = '<div class="alert-error">Valid email required.</div>'; return; }
+    
+    const nameEl = nameId ? document.getElementById(nameId) : null;
+    const name = nameEl ? nameEl.value.trim() || ('Agent_' + Math.random().toString(36).substring(2, 7).toUpperCase()) : '';
+    
+    btn.disabled = true; btn.textContent = '❖ Activating...';
+    try {
+      const r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: val, name: name, source: 'fotc_waitlist_v2', ref: getRef() })
+      });
+      const d = await r.json();
+      if (r.ok && d.success) {
+        const betaTag = '<span style="background:#ef4444;color:#000;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:1px;margin-left:6px">BETA</span>';
+        const msg = d.isFounder ? 'Founder Token slot confirmed!' : 'Early access confirmed.';
+        resp.innerHTML = '<div class="alert-success">✅ Activated, ' + (name || 'Operative') + '! ' + msg + '<br><span style="font-size:10px;color:#22c55e">' + betaTag + ' ' + (d.disclaimer || 'BETA — All assets subject to change') + '</span></div>';
+        document.getElementById('waitlistCount').textContent = baseCount.toLocaleString();
+        email.value = '';
+        // Show referral
+        showReferral(val, name, d);
+        // Bump live counter visually
+        baseCount += 1;
+        liveEl.textContent = baseCount.toLocaleString();
+      } else {
+        resp.innerHTML = '<div class="alert-error">' + (d.error || 'Error. Try again.') + '</div>';
+      }
+    } catch(e) {
+      resp.innerHTML = '<div class="alert-error">Connection error. Please try again.</div>';
+    }
+    btn.disabled = false; btn.textContent = 'Secure My Spot →';
+  });
+}
+
+// Referral system
+function getRef() {
+  try { return new URLSearchParams(window.location.search).get('ref') || ''; } catch(e) { return ''; }
+}
+
+function showReferral(email, name, d) {
+  const section = document.getElementById('referralSection');
+  section.style.display = 'block';
+  
+  // Use server-generated ref code from API response
+  const refCode = d && d.refCode ? d.refCode : btoa(email).replace(/=/g, '').substring(0, 8).toUpperCase();
+  const link = window.location.origin + '?ref=' + refCode;
+  
+  document.getElementById('referralLink').value = link;
+  document.getElementById('shareTwitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I just enlisted in Fall of the Cabal — the geopolitical conspiracy game they don\'t want you to play. Join me: ' + link);
+  document.getElementById('shareReddit').href = 'https://reddit.com/submit?url=' + encodeURIComponent(link) + '&title=' + encodeURIComponent('I just joined the Fall of the Cabal waitlist. This game exposes the global cabal.');
+  document.getElementById('shareTelegram').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent('I just enlisted in Fall of the Cabal. You\'re on the list too.');
+  
+  section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+window.copyReferral = function() {
+  const input = document.getElementById('referralLink');
+  input.select();
+  document.execCommand('copy');
+  alert('📋 Referral link copied! Share it to climb the ranks.');
+};
+
+// Initialize
+setupWaitlist('waitlistForm', 'waitlistEmail', 'waitlistBtn', 'waitlistResponse', 'waitlistName');
+
+// Exit intent popup
+let exitFired = false;
+document.addEventListener('mouseleave', (e) => {
+  if (exitFired || e.clientY > 0) return;
+  exitFired = true;
+  const popup = document.createElement('div');
+  popup.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:999999;display:flex;align-items:center;justify-content:center';
+  popup.innerHTML = '<div style="background:#0f0f1a;border:1px solid #ef4444;border-radius:16px;padding:40px 32px;max-width:420px;text-align:center;animation:qcs2-in .3s ease"><div style="font-size:40px;margin-bottom:12px">👁️</div><h3 style="color:#fff;font-size:20px;margin-bottom:8px">Leaving before the revolution starts?</h3><p style="color:#94a3b8;font-size:13px;margin-bottom:20px;line-height:1.6">First 1,000 get a Founder Token NFT (tradeable on blockchain) with quarterly royalties, voting rights, and a permanent +25% Intel boost. Not sold in our store — earned only.</p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button onclick="document.body.removeChild(this.parentElement.parentElement.parentElement)" style="background:#ef4444;color:#000;border:none;border-radius:8px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:13px">🔥 Secure My Spot</button><button onclick="document.body.removeChild(this.parentElement.parentElement.parentElement)" style="background:transparent;color:#555;border:1px solid #333;border-radius:8px;padding:12px 24px;cursor:pointer;font-size:13px">I\'ll be back</button></div></div>';
+  document.body.appendChild(popup);
+  // Click button scrolls to form
+  popup.querySelector('button').onclick = function() {
+    document.body.removeChild(popup);
+    document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('waitlistEmail').focus();
+  };
+});
+
+// Live count from API
+(async function() {
+  try {
+    const r = await fetch('/api/count');
+    const d = await r.json();
+    if (d.count) {
+      baseCount = d.count + 3047;
+      document.getElementById('waitlistCount').textContent = d.count.toLocaleString();
+      if (liveEl) liveEl.textContent = baseCount.toLocaleString();
+    }
+  } catch(e) {}
+})();
+</script>
+<script src="/js/quantum-cs-v2.js"></script>
+<!-- DISCLAIMER: NFTs involve financial risk -->
+<div class="disclaimer-box">
+  <strong>⚠️ Disclaimer:</strong> Fall of the Cabal is a fictional game. NFTs are digital collectibles with no guaranteed financial value. <strong>We are not responsible for any financial loss</strong>. NFT values can go to zero. This is a game — play for fun, not for financial gain. Past performance does not guarantee future results. Founder Tokens are tradeable on third-party marketplaces; we do not control their price or liquidity. Always consult a professional before purchasing NFTs.
+</div>
+</body>
+</html>

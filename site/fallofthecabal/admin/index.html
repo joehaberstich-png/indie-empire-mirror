@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FotC Command Center — Waitlist Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;line-height:1.6;padding:24px}
+h1{font-size:24px;font-weight:800;color:#ef4444;margin-bottom:4px}
+.sub{color:#666;font-size:13px;margin-bottom:24px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:28px}
+.stat-card{background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:16px}
+.stat-num{font-size:28px;font-weight:900;color:#fff}
+.stat-lbl{font-size:11px;color:#888;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+.stat-card.founder .stat-num{color:#f59e0b}
+.tabs{display:flex;gap:4px;margin-bottom:20px;border-bottom:1px solid #1a1a2e;padding-bottom:0}
+.tab{padding:10px 20px;font-size:13px;cursor:pointer;border-radius:8px 8px 0 0;border:1px solid transparent;color:#666;transition:all .2s}
+.tab:hover{color:#fff}
+.tab.active{background:#0a0a0f;border-color:#1a1a2e #1a1a2e #050508;color:#fff;font-weight:600}
+.panel{display:none;background:#0a0a0f;border:1px solid #1a1a2e;border-radius:0 10px 10px 10px;padding:20px;min-height:200px}
+.panel.active{display:block}
+
+/* Leads table */
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:10px 8px;color:#888;font-weight:600;border-bottom:2px solid #1a1a2e;cursor:pointer}
+th:hover{color:#fff}
+td{padding:8px;border-bottom:1px solid #111;color:#94a3b8}
+tr:hover td{background:#0f0f18}
+.founder-badge{font-size:10px;padding:2px 8px;border-radius:100px;background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.2)}
+
+/* Campaign builder */
+.campaign-form{max-width:600px}
+.campaign-form label{display:block;font-size:12px;color:#888;margin-bottom:4px;margin-top:16px}
+.campaign-form input,.campaign-form textarea{width:100%;background:#050508;border:1px solid #1a1a2e;color:#fff;padding:10px;border-radius:6px;font-size:13px;font-family:Inter,sans-serif}
+.campaign-form textarea{min-height:180px;resize:vertical}
+.campaign-form button{background:#ef4444;color:#000;border:none;padding:12px 24px;border-radius:8px;font-weight:700;cursor:pointer;margin-top:16px;font-size:13px}
+.campaign-form button:hover{opacity:.9}
+.campaign-log{background:#050508;border:1px solid #1a1a2e;border-radius:8px;padding:14px;margin-top:20px;font-size:12px;color:#888;max-height:300px;overflow-y:auto}
+.campaign-log .entry{padding:8px 0;border-bottom:1px solid #111}
+.campaign-log .entry:last-child{border-bottom:none}
+
+/* Email templates */
+.email-templates{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.template-card{background:#050508;border:1px solid #1a1a2e;border-radius:8px;padding:14px;cursor:pointer;transition:all .2s}
+.template-card:hover{border-color:#ef4444}
+.template-card h4{font-size:13px;color:#fff;margin-bottom:4px}
+.template-card p{font-size:11px;color:#666}
+
+.search-box{display:flex;gap:8px;margin-bottom:12px}
+.search-box input{flex:1;background:#050508;border:1px solid #1a1a2e;color:#fff;padding:8px 12px;border-radius:6px;font-size:12px}
+.search-box button{background:#1a1a2e;border:1px solid #1a1a2e;color:#fff;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:11px}
+
+.alert{display:none;padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:13px}
+.alert.show{display:block}
+.alert-success{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);color:#22c55e}
+.alert-error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);color:#ef4444}
+
+.disclaimer-box{font-size:11px;color:#555;padding:12px 16px;margin:30px 0;border:1px solid rgba(255,255,255,.06);border-radius:8px;background:rgba(0,0,0,.02);line-height:1.6}
+.disclaimer-box strong{color:#ef4444}
+
+</style>
+</head>
+<body>
+<h1>☭ FotC Command Center <span style="font-size:11px;vertical-align:middle;background:#ef4444;color:#000;padding:3px 8px;border-radius:4px;font-weight:700;letter-spacing:1px;margin-left:6px">BETA</span></h1>
+<p class="sub">Waitlist management &amp; email campaign hub — Fall of the Cabal <span style="color:#ef4444">· All assets in beta</span></p>
+
+<div class="stats" id="stats">
+  <div class="stat-card"><div class="stat-num" id="statTotal">—</div><div class="stat-lbl">Total Signups</div></div>
+  <div class="stat-card founder"><div class="stat-num" id="statFounders">—</div><div class="stat-lbl">Founder Token Slots</div></div>
+  <div class="stat-card"><div class="stat-num" id="statReferrals">—</div><div class="stat-lbl">Referrals Generated</div></div>
+  <div class="stat-card"><div class="stat-num" id="statCampaigns">—</div><div class="stat-lbl">Campaigns Sent</div></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('leads')">📋 Leads</div>
+  <div class="tab" onclick="switchTab('campaign')">📧 Campaign Builder</div>
+  <div class="tab" onclick="switchTab('templates')">📝 Email Templates</div>
+  <div class="tab" onclick="switchTab('export')">📤 Export</div>
+</div>
+
+<!-- ─── LEADS PANEL ─── -->
+<div id="panel-leads" class="panel active">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search by name or email..." onkeyup="filterLeads()">
+    <button onclick="loadLeads()">↻ Refresh</button>
+  </div>
+  <div style="overflow-x:auto">
+    <table><thead><tr>
+      <th onclick="sortLeads('id')">#</th>
+      <th onclick="sortLeads('name')">Name</th>
+      <th onclick="sortLeads('email')">Email</th>
+      <th onclick="sortLeads('refCode')">Ref Code</th>
+      <th onclick="sortLeads('referredBy')">Referred By</th>
+      <th onclick="sortLeads('referrals')">Refs</th>
+      <th onclick="sortLeads('isFounder')">Status</th>
+      <th onclick="sortLeads('createdAt')">Joined</th>
+    </tr></thead><tbody id="leadsBody"></tbody></table>
+  </div>
+</div>
+
+<!-- ─── CAMPAIGN PANEL ─── -->
+<div id="panel-campaign" class="panel">
+  <div class="campaign-form">
+    <label>Campaign Subject</label>
+    <input type="text" id="campSubject" placeholder="e.g. The Truth Reveals Itself — Part 1">
+
+    <label>Email Content (HTML)</label>
+    <textarea id="campHtml" placeholder="&lt;h1&gt;Hello, Operative.&lt;/h1&gt;&lt;p&gt;The first Intel drop is coming...&lt;/p&gt;"></textarea>
+
+    <label>Send To</label>
+    <select id="campAudience" style="width:100%;background:#050508;border:1px solid #1a1a2e;color:#fff;padding:10px;border-radius:6px;font-size:13px">
+      <option value="all">All Subscribers</option>
+      <option value="founders">Founder Token Holders Only</option>
+      <option value="inactive">Hasn't Opened Last 3</option>
+    </select>
+
+    <button onclick="sendCampaign()">📨 Dispatch Campaign</button>
+    <div id="campStatus" style="margin-top:12px"></div>
+  </div>
+
+  <div style="display:flex;gap:12px;align-items:center;margin:16px 0 12px;padding:12px 16px;background:#050508;border:1px solid #1a1a2e;border-radius:8px">
+    <span style="font-size:11px;color:#888">📧 Email Engine:</span>
+    <span id="emailStatus" style="font-size:11px">Checking...</span>
+  </div>
+
+  <div class="campaign-log" id="campaignLog">
+    <div style="font-weight:700;color:#fff;margin-bottom:8px">📬 Campaign History</div>
+    <div id="campHistory">Loading...</div>
+  </div>
+
+  <div class="campaign-log" id="outboxLog" style="margin-top:12px">
+    <div style="font-weight:700;color:#fff;margin-bottom:8px">📤 Outbox <span id="outboxCount" style="font-weight:400;color:#888;font-size:11px"></span></div>
+    <div id="outboxContent"><button onclick="loadOutbox()" style="background:#1a1a2e;border:1px solid #1a1a2e;color:#fff;padding:5px 10px;border-radius:4px;cursor:pointer;font-size:10px">↻ Refresh</button></div>
+    <div id="outboxList" style="margin-top:8px;font-size:11px;color:#666">Loading...</div>
+  </div>
+</div>
+
+<!-- ─── TEMPLATES PANEL ─── -->
+<div id="panel-templates" class="panel">
+  <h3 style="font-size:15px;color:#fff;margin-bottom:12px">Pre-Built Email Templates for Launch Buildup</h3>
+  <div class="email-templates">
+    <div class="template-card" onclick="loadTemplate('welcome')">
+      <h4>🐣 Welcome Aboard</h4>
+      <p>First email — confirm their spot, explain the Founder Token, tease the trailer drop</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('intel1')">
+      <h4>📜 Intel Drop #1</h4>
+      <p>"The Cabal Network" — lore drop about the 5 factions, tease the Gardener character</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('intel2')">
+      <h4>📜 Intel Drop #2</h4>
+      <p>"Operation Honey Queen" — mission briefing style, build hype for the first act</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('referral')">
+      <h4>🤝 Referral Challenge</h4>
+      <p>Gamified — "Top 10 referrers get Epic NFT" + leaderboard link</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('trailer')">
+      <h4>🎬 Trailer Premiere</h4>
+      <p>"The wait is over" — trailer link, NFT mint date announcement, CTA to share</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('mint')">
+      <h4>🔥 Mint Day</h4>
+      <p>Founder Token mint is live — urgency, limited window, how to claim</p>
+    </div>
+    <div class="template-card" onclick="loadTemplate('launch')">
+      <h4>🚀 Game Launch</h4>
+      <p>"The revolution begins" — game access link, first mission intro</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── EXPORT PANEL ─── -->
+<div id="panel-export" class="panel">
+  <h3 style="font-size:15px;color:#fff;margin-bottom:8px">Export Waitlist Data</h3>
+  <p style="font-size:13px;color:#888;margin-bottom:16px">Download your full waitlist as CSV for Mailchimp, SendGrid, or any email platform.</p>
+  <button onclick="exportCSV()" style="background:#22c55e;color:#000;border:none;padding:12px 24px;border-radius:8px;font-weight:700;cursor:pointer">📥 Export CSV</button>
+  <div id="exportStatus" style="margin-top:12px"></div>
+</div>
+
+<script>
+// ─── AUTH ───
+const AUTH = 'Bearer fotc_admin_2026';
+const API = window.location.origin;
+
+let allLeads = [];
+let sortKey = 'id';
+let sortDir = -1;
+
+// ─── TAB SWITCHING ───
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab[onclick*="${name}"]`).classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+  if (name === 'campaign' || name === 'templates') switchTab('campaign');
+}
+
+// ─── LOAD LEADS ───
+async function loadLeads() {
+  try {
+    const r = await fetch(API + '/api/admin/leads', { headers: { 'Authorization': AUTH } });
+    if (r.status === 401) { document.getElementById('leadsBody').innerHTML = '<tr><td colspan="8" style="color:#ef4444;text-align:center">Unauthorized. Wrong admin key.</td></tr>'; return; }
+    const data = await r.json();
+    allLeads = data.entries || [];
+    
+    document.getElementById('statTotal').textContent = data.total || 0;
+    document.getElementById('statFounders').textContent = data.founders || 0;
+    document.getElementById('statReferrals').textContent = data.referrals || 0;
+    
+    renderLeads();
+  } catch(e) {
+    document.getElementById('leadsBody').innerHTML = '<tr><td colspan="8" style="color:#888;text-align:center">Offline or API not deployed yet.</td></tr>';
+  }
+}
+
+function renderLeads() {
+  const q = (document.getElementById('searchInput').value || '').toLowerCase();
+  const filtered = allLeads.filter(l => 
+    (l.name || '').toLowerCase().includes(q) || 
+    (l.email || '').toLowerCase().includes(q) ||
+    (l.refCode || '').toLowerCase().includes(q)
+  );
+  
+  const sorted = [...filtered].sort((a, b) => {
+    const va = a[sortKey] || '', vb = b[sortKey] || '';
+    return typeof va === 'string' ? va.localeCompare(vb) * sortDir : (va - vb) * sortDir;
+  });
+  
+  document.getElementById('leadsBody').innerHTML = sorted.map(l => `
+    <tr>
+      <td>${l.id}</td>
+      <td>${l.name || '—'}</td>
+      <td style="color:#ef4444">${l.email}</td>
+      <td style="font-family:monospace;font-size:10px">${l.refCode || '—'}</td>
+      <td style="color:#666">${l.referredBy || '—'}</td>
+      <td>${l.referrals}</td>
+      <td>${l.isFounder ? '<span class="founder-badge">✦ FOUNDER</span>' : 'Early Access'}</td>
+      <td style="font-size:10px;color:#666">${new Date(l.createdAt).toLocaleDateString()}</td>
+    </tr>
+  `).join('');
+}
+
+function sortLeads(key) {
+  if (key === sortKey) sortDir *= -1;
+  else { sortKey = key; sortDir = -1; }
+  renderLeads();
+}
+
+function filterLeads() { renderLeads(); }
+
+// ─── EXPORT CSV ───
+async function exportCSV() {
+  document.getElementById('exportStatus').textContent = '⏳ Exporting...';
+  try {
+    const r = await fetch(API + '/api/admin/export', { headers: { 'Authorization': AUTH } });
+    const csv = await r.text();
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'fotc_waitlist_' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+    document.getElementById('exportStatus').innerHTML = '<span style="color:#22c55e">✅ Exported ' + allLeads.length + ' leads</span>';
+  } catch(e) {
+    document.getElementById('exportStatus').innerHTML = '<span style="color:#ef4444">Export failed</span>';
+  }
+}
+
+// ─── CAMPAIGNS ───
+async function loadCampaignHistory() {
+  try {
+    const r = await fetch(API + '/api/admin/campaigns', { headers: { 'Authorization': AUTH } });
+    const data = await r.json();
+    const campaigns = data.campaigns || [];
+    document.getElementById('statCampaigns').textContent = campaigns.length;
+    
+    document.getElementById('campHistory').innerHTML = campaigns.length === 0 
+      ? '<div style="color:#666">No campaigns sent yet.</div>'
+      : campaigns.map(c => `<div class="entry">📨 <strong style="color:#fff">${c.subject}</strong> — ${c.recipientCount} recipients — ${new Date(c.sentAt).toLocaleString()}</div>`).join('');
+  } catch(e) {
+    document.getElementById('campHistory').textContent = 'Campaign log unavailable.';
+  }
+}
+
+async function sendCampaign() {
+  const subject = document.getElementById('campSubject').value.trim();
+  const html = document.getElementById('campHtml').value.trim();
+  if (!subject || !html) { document.getElementById('campStatus').innerHTML = '<span style="color:#ef4444">Subject and content required.</span>'; return; }
+  
+  document.getElementById('campStatus').innerHTML = '<span style="color:#f59e0b">⏳ Dispatching...</span>';
+  try {
+    const r = await fetch(API + '/api/admin/campaign', {
+      method: 'POST',
+      headers: { 'Authorization': AUTH, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ subject, htmlContent: html, sendTo: document.getElementById('campAudience').value })
+    });
+    const d = await r.json();
+    if (d.success) {
+      document.getElementById('campStatus').innerHTML = `<span style="color:#22c55e">✅ Campaign #${d.campaignId} logged — ${d.recipients} queued. ${d.note}</span>`;
+      document.getElementById('campSubject').value = '';
+      document.getElementById('campHtml').value = '';
+      loadCampaignHistory();
+    } else {
+      document.getElementById('campStatus').innerHTML = `<span style="color:#ef4444">Error: ${d.error}</span>`;
+    }
+  } catch(e) {
+    document.getElementById('campStatus').innerHTML = '<span style="color:#ef4444">Connection error.</span>';
+  }
+}
+
+// ─── EMAIL TEMPLATES ───
+const TEMPLATES = {
+  welcome: {
+    subject: '☭ You Are Now An Operative — Fall of the Cabal [BETA]',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<h1 style="color:#ef4444;font-size:28px;font-weight:900">☭ ACTIVATION CONFIRMED</h1>
+<div style="background:#ef444411;border:1px solid #ef444455;border-radius:8px;padding:10px 14px;margin:16px 0;text-align:center"><span style="color:#ef4444;font-weight:700;font-size:12px;letter-spacing:1px">⚠️ BETA LAUNCH</span> <span style="color:#888;font-size:11px">— All game mechanics, art, and tokens are in beta and subject to change</span></div>
+<p style="color:#94a3b8;font-size:14px;margin:20px 0">Welcome, {{NAME}}. You are now an active operative in Operation Honey Queen.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:20px;margin:20px 0">
+<p style="color:#fff;font-weight:700;font-size:14px">✦ FOUNDER TOKEN — RESERVED (BETA)</p>
+<p style="color:#94a3b8;font-size:13px">You are among the first 1,000. Your Founder Token is secured for the beta phase (tradeable on blockchain — not sold in our store). Full rights activated at mainnet launch. In-game voting rights. Quarterly royalties. Permanent Intel boost.</p>
+</div>
+<div style="background:#ef4444;color:#000;border-radius:8px;padding:20px;text-align:center;margin:20px 0">
+<p style="font-weight:700;font-size:16px">🔥 What Comes Next</p>
+<p style="font-size:13px;margin-top:6px">Intel Drop #1 — Coming this week. Watch your inbox. Trust no one.</p>
+</div>
+<p style="color:#666;font-size:11px;margin-top:20px;text-align:center">Fall of the Cabal — BETA | The Truth Won't Find Itself</p>
+</div>`
+  },
+  intel1: {
+    subject: '📜 INTEL DROP #1 — The Cabal Network',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<div style="font-family:monospace;font-size:11px;color:#ef4444;letter-spacing:3px;margin-bottom:20px">◆ TOP SECRET ◆ EYES ONLY</div>
+<h1 style="color:#fff;font-size:24px;font-weight:900">The Cabal Network</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">There are 5 factions. Each controls a piece of the global power structure.</p>
+<div style="margin:20px 0">
+<p style="color:#f59e0b;font-size:13px"><strong>☰ The Lodge</strong> — The inner circle. Banking, intelligence, and policy. Your first target.</p>
+<p style="color:#3b82f6;font-size:13px;margin-top:8px"><strong>⛓ The Chain</strong> — Dark money networks. Drug trafficking, arms, and private military.</p>
+<p style="color:#22c55e;font-size:13px;margin-top:8px"><strong>🧬 The Garden</strong> — Pharma, biotech, and population control. Pandemic arc.</p>
+<p style="color:#a855f7;font-size:13px;margin-top:8px"><strong>📡 The Veil</strong> — Big Tech surveillance, AI, and information warfare.</p>
+<p style="color:#ef4444;font-size:13px;margin-top:8px"><strong>🏛 The Throne</strong> — Political dynasties. The public face of the cabal.</p>
+</div>
+<p style="color:#94a3b8;font-size:13px">Your handler, <strong style="color:#ef4444">The Gardener</strong>, will contact you when it's time to move. Tell no one.</p>
+<p style="color:#666;font-size:11px;margin-top:20px;text-align:center">Intelligence verified. Next drop: OPERATION HONEY QUEEN.</p>
+</div>`
+  },
+  intel2: {
+    subject: '📜 INTEL DROP #2 — Operation Honey Queen',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<div style="font-family:monospace;font-size:11px;color:#ef4444;letter-spacing:3px;margin-bottom:20px">◆ MISSION BRIEFING ◆ OPERATION HONEY QUEEN</div>
+<h1 style="color:#fff;font-size:24px;font-weight:900">The Honeypot Protocol</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">The most effective weapon against the cabal is information. Turn their own intelligence apparatus against them.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:20px;margin:20px 0">
+<p style="color:#fff;font-size:13px;font-weight:700">🎯 Primary Objective</p>
+<p style="color:#94a3b8;font-size:13px;margin-top:6px">Identify cabal assets in the upper echelons of government and finance. Plant false intelligence. Observe their response. Map the network.</p>
+</div>
+<p style="color:#94a3b8;font-size:13px">The trailer drops soon. Stay ready.</p>
+</div>`
+  },
+  referral: {
+    subject: '🤝 Your Recruitment Code — Climb the Ranks',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<h1 style="color:#fff;font-size:24px;font-weight:900">Recruit Assets</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">Every good operative needs a network. Your referral code brings new assets into the fold.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:24px;text-align:center;margin:20px 0">
+<p style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:2px">Your Code</p>
+<p style="font-size:32px;font-weight:900;font-family:monospace;color:#ef4444;letter-spacing:4px;margin:8px 0">{{REFCODE}}</p>
+<a href="{{LINK}}" style="display:inline-block;background:#ef4444;color:#000;padding:10px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;margin-top:8px">Share Your Link</a>
+</div>
+<div style="margin:16px 0;padding:12px;background:rgba(245,158,11,.1);border-left:3px solid #f59e0b;border-radius:4px">
+<p style="color:#f59e0b;font-size:12px"><strong>🏆 PRIZES:</strong> Top 100 → Whistleblower title. Top 10 → Free Epic NFT. #1 → Legendary NFT + Named NPC in-game character based on you.</p>
+</div>
+</div>`
+  },
+  trailer: {
+    subject: '🎬 The Trailer Has Dropped — Watch Now',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<h1 style="color:#ef4444;font-size:28px;font-weight:900">THE WAIT IS OVER</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">The cinematic trailer for Fall of the Cabal is live. Watch. Share. Recruit.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:40px;text-align:center;margin:20px 0">
+<p style="font-size:40px;margin-bottom:8px">🎬</p>
+<p style="color:#ef4444;font-weight:700;font-size:15px">Trailer Premiere</p>
+<a href="https://fallofthecabal.vercel.app/game/" style="display:inline-block;background:#ef4444;color:#000;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;margin-top:12px">▶ Watch the Trailer</a>
+</div>
+<p style="color:#94a3b8;font-size:13px">Founder Token mint opens in 48 hours. Your slot is reserved.</p>
+</div>`
+  },
+  mint: {
+    subject: '🔥 Founder Token Mint is LIVE',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<div style="font-family:monospace;font-size:11px;color:#22c55e;letter-spacing:3px;margin-bottom:20px">◆ MINT ACTIVE ◆ LIMITED WINDOW</div>
+<h1 style="color:#fff;font-size:24px;font-weight:900">Founder Token Mint is Live</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">Your Founder Token NFT is ready to claim (blockchain-tradeable — not available in our store). 1,000 total. Not sold in our store — earned only by waitlist members.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:24px;text-align:center;margin:20px 0">
+<p style="color:#f59e0b;font-weight:700;font-size:15px">⚡ FOUNDER TOKEN BENEFITS</p>
+<p style="color:#94a3b8;font-size:12px;margin-top:8px">Quarterly royalties · In-game voting rights · +25% Intel boost · Named in credits · Exclusive founder-only missions</p>
+</div>
+<p style="color:#ef4444;font-weight:700;font-size:13px;text-align:center">Limited window. Claim within 14 days or forfeit.</p>
+</div>`
+  },
+  launch: {
+    subject: '🚀 The Revolution Begins — Fall of the Cabal',
+    html: `<div style="max-width:600px;margin:0 auto;font-family:Inter,sans-serif;background:#050508;color:#e2e8f0;padding:40px;border:1px solid #1a1a2e">
+<h1 style="color:#ef4444;font-size:28px;font-weight:900">☭ THE REVOLUTION BEGINS</h1>
+<p style="color:#94a3b8;font-size:14px;margin:16px 0">The game is live. Your first mission awaits. Enter the network. Expose the cabal.</p>
+<div style="background:#0a0a0f;border:1px solid #1a1a2e;border-radius:10px;padding:24px;text-align:center;margin:20px 0">
+<a href="https://fallofthecabal.vercel.app/game/" style="display:inline-block;background:#ef4444;color:#000;padding:14px 36px;border-radius:6px;text-decoration:none;font-weight:700;font-size:16px;margin:8px">PLAY NOW</a>
+<p style="color:#888;font-size:12px;margin-top:12px">Connect your XRP wallet to claim your Founder Token NFT.</p>
+</div>
+<p style="color:#94a3b8;font-size:13px;text-align:center">Truth revealed. Mission active. Good luck, Operative.</p>
+</div>`
+  }
+};
+
+function loadTemplate(key) {
+  const t = TEMPLATES[key];
+  if (!t) return;
+  document.getElementById('campSubject').value = t.subject;
+  document.getElementById('campHtml').value = t.html;
+  switchTab('campaign');
+  // Flash the alert
+  const alert = document.getElementById('campStatus');
+  alert.innerHTML = '<span style="color:#22c55e">✅ Template loaded. Customize and dispatch.</span>';
+  setTimeout(() => alert.innerHTML = '', 3000);
+}
+
+// ─── EMAIL ENGINE STATUS ───
+async function checkEmailStatus() {
+  const el = document.getElementById('emailStatus');
+  if (!el) return;
+  try {
+    const r = await fetch(API + '/api/admin/outbox', { headers: { 'Authorization': AUTH } });
+    const data = await r.json();
+    el.innerHTML = '<span style="color:#22c55e">✅ API Connected</span> — <span style="color:#888">' + data.total + ' emails in outbox</span>';
+  } catch(e) {
+    el.innerHTML = '<span style="color:#f59e0b">⚠ Offline or not deployed yet</span>';
+  }
+}
+
+// ─── LOAD OUTBOX ───
+async function loadOutbox() {
+  const el = document.getElementById('outboxList');
+  const countEl = document.getElementById('outboxCount');
+  try {
+    const r = await fetch(API + '/api/admin/outbox', { headers: { 'Authorization': AUTH } });
+    const data = await r.json();
+    if (countEl) countEl.textContent = data.total + ' emails';
+    if (el) {
+      if (data.total === 0) el.innerHTML = '<span style="color:#666">No queued emails.</span>';
+      else el.innerHTML = data.emails.slice(-5).map(e => 
+        '<div style="padding:4px 0;border-bottom:1px solid #111">📧 <strong style="color:#94a3b8">' + e.to + '</strong> — ' + e.subject + ' <span style="color:#555;font-size:10px">' + new Date(e.queuedAt).toLocaleString() + '</span></div>'
+      ).join('') + (data.total > 5 ? '<div style="color:#666;margin-top:4px">...and ' + (data.total - 5) + ' more</div>' : '');
+    }
+  } catch(e) {
+    if (el) el.innerHTML = '<span style="color:#666">Cannot connect to outbox.</span>';
+  }
+}
+
+// ─── CHECK SENDGRID ENV ───
+// Toggle to show if email API key is needed
+
+// ─── INIT ───
+loadLeads();
+loadCampaignHistory();
+checkEmailStatus();
+loadOutbox();
+</script>
+<script src="/js/quantum-cs-v2.js"></script>
+<!-- DISCLAIMER: NFTs involve financial risk -->
+<div class="disclaimer-box">
+  <strong>⚠️ Disclaimer:</strong> Fall of the Cabal is a fictional game. NFTs are digital collectibles with no guaranteed financial value. <strong>We are not responsible for any financial loss</strong>. NFT values can go to zero. This is a game — play for fun, not for financial gain. Past performance does not guarantee future results. Founder Tokens are tradeable on third-party marketplaces; we do not control their price or liquidity. Always consult a professional before purchasing NFTs.
+</div>
+</body>
+</html>
