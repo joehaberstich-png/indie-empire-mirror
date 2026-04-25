@@ -1,0 +1,40 @@
+{
+  "trade_id": 54,
+  "name": "Agricultural & Livestock Auction Specialist",
+  "tier": 11,
+  "category": "Auction",
+  "version": "1.0.0",
+  "grandmaster_build": true,
+  "benchmarked_against": [
+    "None (first mover - unique niche)"
+  ],
+  "languages": 5,
+  "features": "Cattle (beef, dairy, breeding stock, feeder, calf, yearling, heifer, steer, bull, cow-calf pair, bred heifer, stocker, replacement), horses (quarter horse, thoroughbred, Arabian, paint, Appaloosa, miniature, draft, warmblood, pony, mule, donkey), sheep, goats, swine, poultry, exotic animals, alpaca, llama, bison, elk, deer, ostrich, emu, aquaculture, fish, shellfish, bees, livestock equipment, feed, hay, straw, silage, grain, corn, wheat, soybeans, oats, barley, rye, milo, sorghum, canola, sunflower, cotton, tobacco, sugar, rice, fruit, vegetable, nut, vineyard, orchard, crop, farm equipment, tractor, combine, planter, sprayer, harvester, baler, mower, rake, tedder, merger, windrower, swather, forage harvester, silage chopper, feed mixer, grinder mixer, grain drill, air seeder, fertilizer spreader, manure spreader, slurry tanker, irrigation system, pivot, pump, well, water right, fence, corral, pen, chute, scale, squeeze, head gate, branding iron, livestock trailer, stock trailer, gooseneck, flatbed, dump trailer, grain trailer, hopper bottom, belly dump, end dump, side dump, transfer dump, super dump, quad axle, tandem axle, triple axle, spreader trailer, chipper trailer, equipment trailer, tilt trailer, deckover trailer, utility trailer, cargo trailer, concession trailer, food trailer, mobile home trailer, office trailer, storage trailer, container, chassis, container chassis, flat rack, open top, reefer, tanker, dry van, van trailer, step deck, lowboy, RGN, removable gooseneck, extendable trailer, drop deck, stretch trailer, hotshot trailer",
+  "interventions_per_1k": 0,
+  "created": "2026-04-25T05:59:33.537845",
+  "last_benchmark": null,
+  "status": "active",
+  "config": {
+    "heartbeat": {
+      "timeoutSeconds": 1200,
+      "isolatedSession": true,
+      "lightContext": true
+    },
+    "model": {
+      "timeoutSeconds": 1200
+    },
+    "autonomy": {
+      "max_interventions_per_1k": 0,
+      "self_healing": true,
+      "failure_recovery": "60s_auto_rebuild"
+    },
+    "quality": {
+      "min_speed_ratio_vs_benchmark": 2.0,
+      "min_quality_score": 0.95,
+      "min_features_vs_benchmark": 3,
+      "min_languages": 5
+    }
+  },
+  "integration_points": [],
+  "outputs": []
+}
