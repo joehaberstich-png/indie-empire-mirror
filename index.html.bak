@@ -30,47 +30,6 @@
 </style>
 </head>
 <body>
-<!-- ADMIN LOGIN OVERLAY -->
-<style>
-#adminLoginOverlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(5,5,8,.95);backdrop-filter:blur(12px);transition:opacity .6s,visibility .6s}
-#adminLoginOverlay.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.admin-login-box{background:linear-gradient(160deg,#0d0a0a,#1a0f0e);border:1px solid rgba(0,212,255,.12);border-radius:20px;padding:48px 40px;max-width:420px;width:90%;text-align:center;position:relative}
-.admin-login-box::before{content:"";position:absolute;inset:-1px;border-radius:21px;background:linear-gradient(135deg,#00d4ff,#22c55e);opacity:.08;z-index:-1}
-.admin-lock{font-size:48px;margin-bottom:8px;display:block}
-.admin-login-box h2{font-size:22px;font-weight:900;color:#fff;margin-bottom:4px}
-.admin-login-box h2 span{background:linear-gradient(135deg,#00d4ff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.admin-login-box p{color:#555;font-size:11px;margin-bottom:24px}
-.admin-form-group{margin-bottom:14px;text-align:left}
-.admin-form-group label{display:block;font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.admin-form-group input{width:100%;padding:12px 16px;background:#050508;border:1px solid #1a1a1f;border-radius:8px;color:#fff;font-size:14px;outline:none;transition:border-color .2s;box-sizing:border-box}
-.admin-form-group input:focus{border-color:#00d4ff;box-shadow:0 0 0 3px rgba(0,212,255,.08)}
-.admin-login-btn{width:100%;padding:14px;background:linear-gradient(135deg,#00d4ff,#22c55e);color:#050508;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
-.admin-login-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,212,255,.2)}
-.admin-login-error{color:#ff4444;font-size:11px;margin-top:8px;display:none}
-.admin-login-footer{margin-top:20px;color:#333;font-size:9px;letter-spacing:1px}
-.admin-badge{position:fixed;top:12px;right:12px;z-index:9998;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.12);padding:4px 12px;border-radius:100px;font-size:8px;color:#00d4ff;letter-spacing:1px;display:none;backdrop-filter:blur(8px)}
-.admin-badge.show{display:block}
-</style>
-<div id="adminLoginOverlay">
-  <div class="admin-login-box">
-    <div class="admin-lock">🔐</div>
-    <h2><span>Indie Empire</span> Console</h2>
-    <p>Authenticate to manage the mirror</p>
-    <div class="admin-form-group">
-      <label>Username</label>
-      <input type="text" id="adminUser" placeholder="Enter username" autofocus>
-    </div>
-    <div class="admin-form-group">
-      <label>Password</label>
-      <input type="password" id="adminPass" placeholder="Enter password" onkeydown="if(event.key==='Enter')adminLogin()">
-    </div>
-    <button class="admin-login-btn" onclick="adminLogin()">Enter Console &rarr;</button>
-    <div class="admin-login-error" id="adminLoginError">Invalid credentials</div>
-    <div class="admin-login-footer">MIRROR v1.0 &middot; April 2026</div>
-  </div>
-</div>
-<div class="admin-badge" id="adminBadge">👑 Authenticated — admin</div>
-
 
 <!-- FLOATING BUBBLE -->
 <div class="floating-bubble" id="saulBubble">
@@ -88,8 +47,6 @@
       <button onclick="sendQuick('Show rules')">📜 Rules</button>
       <button onclick="sendQuick('Run tests')">🧪 Tests</button>
       <button onclick="sendQuick('Backup portal')">🔐 Portal</button>
-      <button onclick="sendQuick('/promote')">📣 Promote</button>
-      <button onclick="sendQuick('/ops')">🏢 Ops</button>
     </div>
     <div class="chat-input">
       <input type="text" id="chatInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendMessage()">
@@ -174,90 +131,5 @@ function sendQuick(text){
   },300);
 }
 </script>
-
-// === ADMIN AUTH ===
-// Username: admin  |  Password: indie2026
-const ADMIN_USER = 'admin';
-const ADMIN_PASS = 'indie2026';
-
-function adminLogin(){
-  const u = document.getElementById('adminUser').value.trim().toLowerCase();
-  const p = document.getElementById('adminPass').value.trim();
-  const err = document.getElementById('adminLoginError');
-  
-  if(u === ADMIN_USER && p === ADMIN_PASS){
-    document.getElementById('adminLoginOverlay').classList.add('hidden');
-    document.getElementById('adminBadge').classList.add('show');
-    if(err) err.style.display = 'none';
-    // Focus chat
-    setTimeout(() => {
-      const ci = document.getElementById('chatInput');
-      if(ci) ci.focus();
-    }, 500);
-  } else {
-    if(err){
-      err.style.display = 'block';
-      err.textContent = 'Invalid credentials \u2014 try again';
-    }
-    document.getElementById('adminPass').value = '';
-    document.getElementById('adminPass').focus();
-  }
-}
-
-// Command dispatcher
-function handleCommand(text){
-  const t = text.trim().toLowerCase();
-  if(t === '/deploy' || t === 'deploy all' || t === 'deploy everything'){
-    addBotMsg('\u231b Deploying all projects to GitHub Pages...<br>\u2705 Jeannie Nails deployed<br>\u2705 Container Homes deployed<br>\u2705 Quantum Bots Agency deployed<br>\u2705 Fall of the Cabal deployed<br>\u2705 FlyToAustralia deployed<br>\u2705 All projects live!');
-    return true;
-  }
-  if(t === '/backup' || t === 'backup now' || t === 'backup'){
-    addBotMsg('\uD83D\uDCE6 Creating full backup snapshot...<br>\u2705 Git commit created<br>\u2705 Snapshot saved to backups/<br>\u2705 3-location backup complete');
-    return true;
-  }
-  if(t === '/status' || t === 'status'){
-    addBotMsg('\uD83D\uDFE2 MIRROR STATUS: ALL SYSTEMS ONLINE<br>\u2022 1,699 files, 58MB<br>\u2022 10 projects mirrored<br>\u2022 4 daemons running<br>\u2022 Zero exposed secrets<br>\u2022 All HTTP 200');
-    return true;
-  }
-  
-  if(t === '/promote' || t === 'promote all' || t === 'promote'){
-    addBotMsg('\uD83D\uDCE3 CROSS-PLATFORM PROMOTION LAUNCHED\n\nVercel team researching + creating content\nGitHub team selling + distributing\n\nActive campaigns:\n\u2022 Jeannie Nails \u2192 Container Homes cross-sell\n\u2022 QBA widget injected into all project sites\n\u2022 FotC backlinks to travel, deals, health\n\u2022 Container Green Grants \u2192 blog content pipeline\n\nResearch handles Gravity analysis\nMarketing creates stealth content\nSales closes via conversational selling\n\u2705 All departments active from both platforms');
-    return true;
-  }
-  if(t === '/ops' || t === 'operations' || t === '/command'){
-    addBotMsg('\uD83C\uDFE2 Operations Command Center:\nhttps://joehaberstich-png.github.io/indie-empire-mirror/operations.html\n\nView all cross-platform tasks, department assignments, promotion campaigns, and project status in one dashboard.');
-    return true;
-  }
-
-  if(t === 'help' || t === '/help'){
-    addBotMsg('Available commands:<br>/deploy - Deploy all projects<br>/backup - Create snapshot<br>/status - System status<br>Or ask me about projects, rules, tests, portal');
-    return true;
-  }
-  return false;
-}
-
-// Wrap sendMessage to handle commands
-const _origSend = window.sendMessage || function(){};
-window.sendMessage = function(){
-  const input = document.getElementById('chatInput');
-  if(!input) { _origSend(); return; }
-  const text = input.value;
-  if(!text.trim()) return;
-  
-  if(handleCommand(text)){
-    addUserMsg(text);
-    input.value = '';
-    return;
-  }
-  _origSend();
-};
-
-// Also wrap sendQuick for deploy
-const _origQuick = window.sendQuick || function(){};
-window.sendQuick = function(text){
-  if(handleCommand(text)) return;
-  _origQuick(text);
-};
-
 </body>
 </html>

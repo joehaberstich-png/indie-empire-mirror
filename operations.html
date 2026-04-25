@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>UNIFIED OPERATIONS · Indie Empire</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#050508;color:#fff;min-height:100vh}
+.cyber-grid{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,212,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.015) 1px,transparent 1px);background-size:60px 60px}
+.container{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:24px}
+.header{text-align:center;padding:40px 24px 32px;border-bottom:1px solid rgba(0,212,255,.06);margin-bottom:32px}
+.header h1{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:6px}
+.header h1 span{background:linear-gradient(135deg,#00d4ff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header p{color:#555;font-size:11px;letter-spacing:1px}
+.header .badge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.08);padding:4px 12px;border-radius:100px;font-size:8px;color:var(--gold,#c9a84c);letter-spacing:1px}
+
+/* Platform Cards */
+.platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
+.platform-card{padding:20px;border-radius:14px;border:1px solid #1a1a1f}
+.platform-card.vercel{background:linear-gradient(160deg,#0a0a0f,#100b0a);border-color:rgba(0,212,255,.1)}
+.platform-card.github{background:linear-gradient(160deg,#0a0a0f,#0b0a10);border-color:rgba(34,197,94,.1)}
+.platform-card h3{font-size:13px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.platform-card.vercel h3{color:#00d4ff}
+.platform-card.github h3{color:#22c55e}
+.platform-card .url{font-size:9px;color:#555;font-family:monospace;margin-bottom:8px}
+.platform-card .team{font-size:10px;color:#888;line-height:1.7}
+.platform-card .team strong{color:#aaa}
+.arrow-sync{display:flex;align-items:center;justify-content:center;font-size:24px;color:#555;grid-column:1/-1;padding:4px}
+
+/* Department Grid */
+.dept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:32px}
+.dept-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:12px;padding:16px}
+.dept-card h3{font-size:12px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.dept-card .task{font-size:10px;color:#888;line-height:1.6;margin-bottom:6px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.02)}
+.dept-card .task:last-child{border-bottom:none}
+.dept-card .task .dept{display:inline-block;font-size:7px;padding:1px 5px;border-radius:4px;margin-right:4px;text-transform:uppercase;letter-spacing:1px}
+.dept-card .task .dept.vercel{background:rgba(0,212,255,.06);color:#00d4ff}
+.dept-card .task .dept.github{background:rgba(34,197,94,.06);color:#22c55e}
+.dept-card .task .dept.both{background:rgba(201,168,76,.06);color:#c9a84c}
+
+/* Projects Table */
+.projects-section{margin-bottom:32px}
+.projects-section h2{font-size:14px;font-weight:700;color:#00d4ff;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.projects-section h2 .count{font-size:9px;background:rgba(0,212,255,.06);padding:2px 8px;border-radius:100px;color:#c9a84c}
+.project-table{width:100%;border-collapse:collapse;font-size:10px}
+.project-table th{text-align:left;padding:10px 12px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:8px;border-bottom:1px solid #1a1a1f}
+.project-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.03);color:#aaa}
+.project-table td.name{color:#fff;font-weight:600}
+.project-table td .tag{display:inline-block;font-size:7px;padding:1px 6px;border-radius:4px;margin:1px;text-transform:uppercase;letter-spacing:1px}
+.project-table td .tag.vc{background:rgba(0,212,255,.06);color:#00d4ff}
+.project-table td .tag.gh{background:rgba(34,197,94,.06);color:#22c55e}
+.project-table td .tag.both{background:rgba(201,168,76,.06);color:#c9a84c}
+
+/* Metrics Bar */
+.metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:32px}
+.metric{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:10px;padding:14px;text-align:center}
+.metric .num{font-size:24px;font-weight:900;color:#00d4ff}
+.metric .num.gold{color:#c9a84c}
+.metric .num.green{color:#22c55e}
+.metric .label{font-size:8px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+
+.promotion-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;margin-bottom:32px}
+.promo-card{background:#0a0a0f;border:1px solid #1a1a1f;border-radius:12px;padding:16px;border-left:3px solid #c9a84c}
+.promo-card h3{font-size:12px;font-weight:700;color:#c9a84c;margin-bottom:6px}
+.promo-card p{font-size:10px;color:#888;line-height:1.6;margin-bottom:6px}
+.promo-card .team-tags{display:flex;gap:4px;flex-wrap:wrap}
+.promo-card .team-tags span{font-size:7px;padding:2px 8px;border-radius:100px;letter-spacing:1px;text-transform:uppercase}
+.promo-card .team-tags .r{background:rgba(0,212,255,.06);color:#00d4ff}
+.promo-card .team-tags .m{background:rgba(201,168,76,.06);color:#c9a84c}
+.promo-card .team-tags .s{background:rgba(34,197,94,.06);color:#22c55e}
+
+.footer{text-align:center;padding:24px;color:#333;font-size:8px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="cyber-grid"></div>
+<div class="container">
+
+<div class="header">
+  <h1>🏢 <span>Unified Operations</span> Command</h1>
+  <p>Both platforms · All departments · Every project · One command</p>
+  <div class="badge">2 PLATFORMS · 10 PROJECTS · 4 DEPARTMENTS · NO DUPLICATION</div>
+</div>
+
+<!-- Platform Sync -->
+<div class="platform-grid">
+  <div class="platform-card vercel">
+    <h3>🔵 Vercel Platform</h3>
+    <div class="url">Team: Original Production</div>
+    <div class="team">
+      <strong>Engineering</strong> — Deploy, monitor, maintain<br>
+      <strong>Agents</strong> — Content creation, scraping, automation<br>
+      <strong>Focus</strong> — Building new products, daily output<br>
+      <strong>Deploys</strong> — 8 projects live
+    </div>
+  </div>
+  <div class="arrow-sync">⬌ SYNCED ⬌</div>
+  <div class="platform-card github">
+    <h3>🟢 GitHub Pages (Mirror)</h3>
+    <div class="url">Team: Primary Operations</div>
+    <div class="team">
+      <strong>Engineering</strong> — QA, auditing, security checks<br>
+      <strong>Agents</strong> — Research, marketing campaigns, sales<br>
+      <strong>Focus</strong> — Promotion, outreach, data analysis<br>
+      <strong>Deploys</strong> — 10 projects mirrored
+    </div>
+  </div>
+</div>
+
+<!-- Metrics -->
+<div class="metrics">
+  <div class="metric"><div class="num">10</div><div class="label">Projects Active</div></div>
+  <div class="metric"><div class="num gold">2</div><div class="label">Platforms</div></div>
+  <div class="metric"><div class="num green">4</div><div class="label">Departments</div></div>
+  <div class="metric"><div class="num gold">1</div><div class="label">Command Center</div></div>
+</div>
+
+<!-- Department Tasks -->
+<h2 style="font-size:14px;font-weight:700;color:#00d4ff;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase">🧠 Cross-Platform Department Tasks</h2>
+<div class="dept-grid">
+
+  <div class="dept-card">
+    <h3>🔬 Research (Vercel)</h3>
+    <div class="task"><span class="dept both">BOTH</span> Scrape ClickBank Gravity scores (50-200)</div>
+    <div class="task"><span class="dept vercel">VC</span> Analyze competitor ads, find blue ocean niches</div>
+    <div class="task"><span class="dept vercel">VC</span> Weekly "Product Battle Plans" for marketing</div>
+  </div>
+
+  <div class="dept-card">
+    <h3>📢 Marketing (Vercel)</h3>
+    <div class="task"><span class="dept vercel">VC</span> 24/7 content creation (blogs, Pinterest, YouTube)</div>
+    <div class="task"><span class="dept vercel">VC</span> Multi-channel stealth system (anti-spam)</div>
+    <div class="task"><span class="dept both">BOTH</span> SEO optimization for all products</div>
+  </div>
+
+  <div class="dept-card">
+    <h3>💰 Sales (GitHub)</h3>
+    <div class="task"><span class="dept github">GH</span> Conversational selling in niche forums</div>
+    <div class="task"><span class="dept github">GH</span> High-converting bridge page templates</div>
+    <div class="task"><span class="dept both">BOTH</span> Link-cloaking + FTC compliance</div>
+  </div>
+
+  <div class="dept-card">
+    <h3>⚙️ Compliance & Tech (GitHub)</h3>
+    <div class="task"><span class="dept github">GH</span> Proxy management (10K IPs)</div>
+    <div class="task"><span class="dept github">GH</span> FTC disclosure enforcement</div>
+    <div class="task"><span class="dept both">BOTH</span> Daily audit logs, security patches</div>
+  </div>
+
+</div>
+
+<!-- Cross-Promotion Campaigns -->
+<h2 style="font-size:14px;font-weight:700;color:#c9a84c;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase">📣 Active Cross-Promotion Campaigns</h2>
+<div class="promotion-grid">
+
+  <div class="promo-card">
+    <h3>Jeannie Nails → Container Homes</h3>
+    <p>Home salon owners are container home enthusiasts. Cross-promote Jeannie Nails discount to container home buyers, and container home features to nail salon visitors.</p>
+    <div class="team-tags"><span class="r">Research</span><span class="m">Marketing</span><span class="s">Sales</span></div>
+  </div>
+
+  <div class="promo-card">
+    <h3>Quantum Bots → All Projects</h3>
+    <p>Every project site gets QBA chat widget. QBA homepage features case studies from Jeannie Nails, Container Homes, and FotC.</p>
+    <div class="team-tags"><span class="r">Research</span><span class="m">Marketing</span></div>
+  </div>
+
+  <div class="promo-card">
+    <h3>Fall of the Cabal → Backlinks</h3>
+    <p>FotC game blog links to Travel affiliate (FlyToAustralia), Deals (TheDealWizard), and Health (DrugDoctors). Every page builds authority.</p>
+    <div class="team-tags"><span class="m">Marketing</span><span class="s">Sales</span></div>
+  </div>
+
+  <div class="promo-card">
+    <h3>Container Homes → Green Grants</h3>
+    <p>Green incentive page drives traffic to container home sales. Grant research (Vercel) feeds content to blogs (GitHub).</p>
+    <div class="team-tags"><span class="r">Research</span><span class="m">Marketing</span></div>
+  </div>
+
+</div>
+
+<!-- Project Inventory -->
+<h2 style="font-size:14px;font-weight:700;color:#00d4ff;margin-bottom:12px;letter-spacing:1px;text-transform:uppercase">🏗️ Full Project Inventory</h2>
+<table class="project-table">
+  <tr><th>Project</th><th>Department</th><th>Platforms</th><th>Status</th></tr>
+  <tr><td class="name">Jeannie Nails</td><td>Sales + Marketing</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟢 Live</td></tr>
+  <tr><td class="name">Container Homes (ATV)</td><td>Research + Sales</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟢 Live</td></tr>
+  <tr><td class="name">Quantum Bots Agency</td><td>Engineering + Marketing</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟢 Live</td></tr>
+  <tr><td class="name">Fall of the Cabal</td><td>Marketing + Sales</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟢 Live</td></tr>
+  <tr><td class="name">FlyToAustralia</td><td>Marketing + Research</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟡 Stale</td></tr>
+  <tr><td class="name">The Deal Wizard</td><td>Sales + Marketing</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟡 Stale</td></tr>
+  <tr><td class="name">Drug Doctors</td><td>Research + Marketing</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟡 Stale</td></tr>
+  <tr><td class="name">All About MD</td><td>Research + Marketing</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟡 Stale</td></tr>
+  <tr><td class="name">Quanivo AI Agency</td><td>Engineering + Sales</td><td><span class="tag vc">VC</span><span class="tag gh">GH</span></td><td>🟢 Live</td></tr>
+  <tr><td class="name">Small Biz Financing</td><td>Sales + Research</td><td><span class="tag vc">VC</span></td><td>🔴 Paused</td></tr>
+</table>
+
+<div class="footer">
+  UNIFIED OPERATIONS COMMAND · April 2026 · Both platforms synced · No duplicated tasks · Maximized output
+</div>
+
+</div>
+</body>
+</html>
