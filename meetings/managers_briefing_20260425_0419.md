@@ -64,11 +64,20 @@
 
 | Metric | Day 1 | Day 3 | Day 7 |
 |--------|-------|-------|-------|
-| Waitlist signups | 500 | 3,000 | 10,000 |
-| Content pieces | 15 | 40 | 100 |
+| Waitlist signups | 500 | 3,000 | **10,000** |
+| Founder Token claims | 150 | 800 | **1,000 (MAX)** |
+| Content pieces (all mention Founder Token) | 15 | 40 | 100 |
 | Forum conversations | 50 | 200 | 500 |
 | Social impressions | 10K | 100K | 500K |
 | Click-through to waitlist | 100 | 1,500 | 5,000 |
+
+### Founder Token Tracking (Real-Time)
+- **Total supply**: 1,000 (HARD CAP — never increases)
+- **Remaining**: 1,000 − token_claims (live counter on site)
+- **Price**: FREE (soulbound — no cost, no resale)
+- **Eligibility**: Must be in first 1,000 waitlist signups
+- **Status widget**: Auto-updates on bridge page (e.g., "Only 847 left")
+- **FOMO messaging**: Every promotional piece updates the count
 
 ---
 
