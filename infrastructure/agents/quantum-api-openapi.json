@@ -1,0 +1,339 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Quantum Grandmaster Trade API",
+    "version": "3.0.0",
+    "description": "Complete API for all 50 quantum grandmaster trades. Plugin-extensible. Webhook-capable."
+  },
+  "servers": [
+    {
+      "url": "https://quantumbotsagency.vercel.app",
+      "description": "Production (QBA)"
+    },
+    {
+      "url": "https://joehaberstich-png.github.io/indie-empire-mirror",
+      "description": "Mirror (GitHub Pages)"
+    }
+  ],
+  "paths": {
+    "/api/v3/seo-content-writer/process": {
+      "post": {
+        "summary": "Process SEO Content Writer",
+        "operationId": "processT01",
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Input data"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "es",
+                      "de",
+                      "it",
+                      "pt",
+                      "nl",
+                      "ru",
+                      "zh"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal error"
+          }
+        }
+      }
+    },
+    "/api/v3/video-content-creator/process": {
+      "post": {
+        "summary": "Process Video Content Creator",
+        "operationId": "processT02",
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Input data"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "es",
+                      "de",
+                      "it",
+                      "pt",
+                      "nl",
+                      "ru",
+                      "zh"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal error"
+          }
+        }
+      }
+    },
+    "/api/v3/sales-page-copywriter/process": {
+      "post": {
+        "summary": "Process Sales Page Copywriter",
+        "operationId": "processT03",
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Input data"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "es",
+                      "de",
+                      "it",
+                      "pt",
+                      "nl",
+                      "ru",
+                      "zh"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal error"
+          }
+        }
+      }
+    },
+    "/api/v3/social-media-content-engine/process": {
+      "post": {
+        "summary": "Process Social Media Content Engine",
+        "operationId": "processT04",
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Input data"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "es",
+                      "de",
+                      "it",
+                      "pt",
+                      "nl",
+                      "ru",
+                      "zh"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal error"
+          }
+        }
+      }
+    },
+    "/api/v3/email-marketing-engine/process": {
+      "post": {
+        "summary": "Process Email Marketing Engine",
+        "operationId": "processT05",
+        "tags": [
+          "Content"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Input data"
+                  },
+                  "config": {
+                    "type": "object"
+                  },
+                  "language": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "fr",
+                      "es",
+                      "de",
+                      "it",
+                      "pt",
+                      "nl",
+                      "ru",
+                      "zh"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded"
+          },
+          "500": {
+            "description": "Internal error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key"
+      },
+      "HMAC": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Signature"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiKey": []
+    }
+  ]
+}

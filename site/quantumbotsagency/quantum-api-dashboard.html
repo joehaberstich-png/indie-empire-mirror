@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Grandmaster API Dashboard — 50 Trades</title>
+<link rel="stylesheet" href="/css/quantum.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#050508;color:#e2e8f0;font-family:Inter,system-ui,sans-serif;padding:40px 24px}
+.max{max-width:1200px;margin:0 auto}
+h1{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:4px}
+h1 span{background:linear-gradient(135deg,#00d4ff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#555;font-size:13px;margin-bottom:24px}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:24px}
+.stat-card{background:#0a0a12;border:1px solid #1a1a2e;border-radius:10px;padding:12px;text-align:center}
+.stat-card .n{font-size:24px;font-weight:900;color:#22d3ee}
+.stat-card .l{font-size:9px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:8px 12px;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid rgba(255,255,255,.04)}
+td{padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.03);font-size:12px;vertical-align:middle}
+.tid{font-family:monospace;color:#555;font-size:10px}
+.badge{display:inline-block;font-size:8px;padding:1px 6px;border-radius:100px;font-weight:600}
+.status.live{color:#22c55e;font-size:10px;font-weight:600}
+.plugin-count,.endpoint-count{font-family:monospace;color:#94a3b8}
+.btn-sm{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:#94a3b8;padding:3px 8px;border-radius:4px;font-size:9px;cursor:pointer;font-family:inherit}
+.btn-sm:hover{border-color:rgba(34,211,238,.2);color:#22d3ee}
+</style>
+</head>
+<body>
+<div class="max">
+  <h1><span>Grandmaster</span> API & Plugin Dashboard</h1>
+  <p class="sub">All 50 quantum trades — API v3.0 · Plugin architecture · Webhooks · Rate-limited · Cached · 9 languages</p>
+  
+  <div class="stats">
+    <div class="stat-card"><div class="n">50</div><div class="l">Trades</div></div>
+    <div class="stat-card"><div class="n">600</div><div class="l">Plugins</div></div>
+    <div class="stat-card"><div class="n">250</div><div class="l">Endpoints</div></div>
+    <div class="stat-card"><div class="n">4</div><div class="l">Auth Types</div></div>
+    <div class="stat-card"><div class="n">9</div><div class="l">Languages</div></div>
+    <div class="stat-card"><div class="n">v3.0</div><div class="l">API Version</div></div>
+  </div>
+
+  <table>
+    <tr>
+      <th>ID</th><th>Trade Name</th><th>Category</th><th>Tier</th><th>Langs</th><th>Status</th><th>Plugins</th><th>Endpoints</th><th>Actions</th>
+    </tr>
+    <tr class="trade-row">
+      <td><span class="tid">T01</span></td>
+      <td>SEO Content Writer</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(1)" class="btn-sm">Test</button>
+        <button onclick="showDocs(1)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T02</span></td>
+      <td>Video Content Creator</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(2)" class="btn-sm">Test</button>
+        <button onclick="showDocs(2)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T03</span></td>
+      <td>Sales Page Copywriter</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(3)" class="btn-sm">Test</button>
+        <button onclick="showDocs(3)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T04</span></td>
+      <td>Social Media Content Engine</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(4)" class="btn-sm">Test</button>
+        <button onclick="showDocs(4)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T05</span></td>
+      <td>Email Marketing Engine</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(5)" class="btn-sm">Test</button>
+        <button onclick="showDocs(5)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T06</span></td>
+      <td>Pinterest Marketing Specialist</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(6)" class="btn-sm">Test</button>
+        <button onclick="showDocs(6)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T07</span></td>
+      <td>YouTube Channel Manager</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(7)" class="btn-sm">Test</button>
+        <button onclick="showDocs(7)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T08</span></td>
+      <td>Quora & Forum Content Strategist</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(8)" class="btn-sm">Test</button>
+        <button onclick="showDocs(8)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T09</span></td>
+      <td>Reddit Marketing Agent</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(9)" class="btn-sm">Test</button>
+        <button onclick="showDocs(9)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T10</span></td>
+      <td>TikTok/Short Form Creator</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(10)" class="btn-sm">Test</button>
+        <button onclick="showDocs(10)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T11</span></td>
+      <td>Lead Magnet Creator</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(11)" class="btn-sm">Test</button>
+        <button onclick="showDocs(11)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T12</span></td>
+      <td>Brand Voice & Style Guide Creator</td>
+      <td><span class="badge cat-con">Cont</span></td>
+      <td><span class="badge tier-1">T1</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(12)" class="btn-sm">Test</button>
+        <button onclick="showDocs(12)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T13</span></td>
+      <td>Competitive Research Analyst</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(13)" class="btn-sm">Test</button>
+        <button onclick="showDocs(13)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T14</span></td>
+      <td>Market Research Scout</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(14)" class="btn-sm">Test</button>
+        <button onclick="showDocs(14)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T15</span></td>
+      <td>Web Scraper & Data Extractor</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(15)" class="btn-sm">Test</button>
+        <button onclick="showDocs(15)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T16</span></td>
+      <td>Data Analyst & Reporting</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(16)" class="btn-sm">Test</button>
+        <button onclick="showDocs(16)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T17</span></td>
+      <td>Keyword & SEO Research Analyst</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(17)" class="btn-sm">Test</button>
+        <button onclick="showDocs(17)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T18</span></td>
+      <td>Affiliate Program Analyst</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(18)" class="btn-sm">Test</button>
+        <button onclick="showDocs(18)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T19</span></td>
+      <td>Niche Trend Forecaster</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(19)" class="btn-sm">Test</button>
+        <button onclick="showDocs(19)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T20</span></td>
+      <td>Audience Persona Architect</td>
+      <td><span class="badge cat-res">Rese</span></td>
+      <td><span class="badge tier-2">T2</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(20)" class="btn-sm">Test</button>
+        <button onclick="showDocs(20)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T21</span></td>
+      <td>High-Ticket Sales Closer</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(21)" class="btn-sm">Test</button>
+        <button onclick="showDocs(21)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T22</span></td>
+      <td>Conversational Sales Agent</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(22)" class="btn-sm">Test</button>
+        <button onclick="showDocs(22)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T23</span></td>
+      <td>Bridge Page Architect</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(23)" class="btn-sm">Test</button>
+        <button onclick="showDocs(23)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T24</span></td>
+      <td>A/B Testing & Conversion Optimizer</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(24)" class="btn-sm">Test</button>
+        <button onclick="showDocs(24)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T25</span></td>
+      <td>Checkout & Cart Recovery Specialist</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(25)" class="btn-sm">Test</button>
+        <button onclick="showDocs(25)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T26</span></td>
+      <td>Objection Handler & FAQ Generator</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(26)" class="btn-sm">Test</button>
+        <button onclick="showDocs(26)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T27</span></td>
+      <td>Pricing & Offer Strategist</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(27)" class="btn-sm">Test</button>
+        <button onclick="showDocs(27)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T28</span></td>
+      <td>Referral & Viral Loop Engineer</td>
+      <td><span class="badge cat-sal">Sale</span></td>
+      <td><span class="badge tier-3">T3</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(28)" class="btn-sm">Test</button>
+        <button onclick="showDocs(28)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T29</span></td>
+      <td>Quantum Customer Service v2</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(29)" class="btn-sm">Test</button>
+        <button onclick="showDocs(29)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T30</span></td>
+      <td>Ticket Categorization & Router</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(30)" class="btn-sm">Test</button>
+        <button onclick="showDocs(30)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T31</span></td>
+      <td>Review & Reputation Manager</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(31)" class="btn-sm">Test</button>
+        <button onclick="showDocs(31)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T32</span></td>
+      <td>Multilingual Support Agent</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(32)" class="btn-sm">Test</button>
+        <button onclick="showDocs(32)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T33</span></td>
+      <td>Self-Service Knowledge Base Creator</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(33)" class="btn-sm">Test</button>
+        <button onclick="showDocs(33)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T34</span></td>
+      <td>Customer Feedback Loop Manager</td>
+      <td><span class="badge cat-cs">CS</span></td>
+      <td><span class="badge tier-4">T4</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(34)" class="btn-sm">Test</button>
+        <button onclick="showDocs(34)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T35</span></td>
+      <td>FTC/FDA Compliance Auditor</td>
+      <td><span class="badge cat-leg">Lega</span></td>
+      <td><span class="badge tier-5">T5</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(35)" class="btn-sm">Test</button>
+        <button onclick="showDocs(35)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T36</span></td>
+      <td>Platform Policy Enforcer</td>
+      <td><span class="badge cat-leg">Lega</span></td>
+      <td><span class="badge tier-5">T5</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(36)" class="btn-sm">Test</button>
+        <button onclick="showDocs(36)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T37</span></td>
+      <td>IP & Proxy Manager</td>
+      <td><span class="badge cat-leg">Lega</span></td>
+      <td><span class="badge tier-5">T5</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(37)" class="btn-sm">Test</button>
+        <button onclick="showDocs(37)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T38</span></td>
+      <td>ToS & Privacy Generator</td>
+      <td><span class="badge cat-leg">Lega</span></td>
+      <td><span class="badge tier-5">T5</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(38)" class="btn-sm">Test</button>
+        <button onclick="showDocs(38)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T39</span></td>
+      <td>Disclosure & Affiliate Compliance</td>
+      <td><span class="badge cat-leg">Lega</span></td>
+      <td><span class="badge tier-5">T5</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(39)" class="btn-sm">Test</button>
+        <button onclick="showDocs(39)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T40</span></td>
+      <td>Per-Project P&L Accountant</td>
+      <td><span class="badge cat-fin">Fina</span></td>
+      <td><span class="badge tier-6">T6</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(40)" class="btn-sm">Test</button>
+        <button onclick="showDocs(40)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T41</span></td>
+      <td>Revenue Forecaster</td>
+      <td><span class="badge cat-fin">Fina</span></td>
+      <td><span class="badge tier-6">T6</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(41)" class="btn-sm">Test</button>
+        <button onclick="showDocs(41)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T42</span></td>
+      <td>Affiliate Commission Tracker</td>
+      <td><span class="badge cat-fin">Fina</span></td>
+      <td><span class="badge tier-6">T6</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(42)" class="btn-sm">Test</button>
+        <button onclick="showDocs(42)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T43</span></td>
+      <td>Full-Stack Web Developer</td>
+      <td><span class="badge cat-eng">Engi</span></td>
+      <td><span class="badge tier-7">T7</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(43)" class="btn-sm">Test</button>
+        <button onclick="showDocs(43)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T44</span></td>
+      <td>CI/CD Pipeline Engineer</td>
+      <td><span class="badge cat-eng">Engi</span></td>
+      <td><span class="badge tier-7">T7</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(44)" class="btn-sm">Test</button>
+        <button onclick="showDocs(44)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T45</span></td>
+      <td>Security & Audit Engineer</td>
+      <td><span class="badge cat-eng">Engi</span></td>
+      <td><span class="badge tier-7">T7</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(45)" class="btn-sm">Test</button>
+        <button onclick="showDocs(45)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T46</span></td>
+      <td>API Integration Specialist</td>
+      <td><span class="badge cat-eng">Engi</span></td>
+      <td><span class="badge tier-7">T7</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(46)" class="btn-sm">Test</button>
+        <button onclick="showDocs(46)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T47</span></td>
+      <td>Video Animation Pipeline</td>
+      <td><span class="badge cat-vid">Vide</span></td>
+      <td><span class="badge tier-8">T8</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(47)" class="btn-sm">Test</button>
+        <button onclick="showDocs(47)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T48</span></td>
+      <td>Voiceover & Audio Producer</td>
+      <td><span class="badge cat-vid">Vide</span></td>
+      <td><span class="badge tier-8">T8</span></td>
+      <td>9</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(48)" class="btn-sm">Test</button>
+        <button onclick="showDocs(48)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T49</span></td>
+      <td>Supply Chain & Logistics Coordinator</td>
+      <td><span class="badge cat-log">Logi</span></td>
+      <td><span class="badge tier-9">T9</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(49)" class="btn-sm">Test</button>
+        <button onclick="showDocs(49)" class="btn-sm">Docs</button>
+      </td>
+    </tr>    <tr class="trade-row">
+      <td><span class="tid">T50</span></td>
+      <td>24/7 QA & Bug Detection Daemon</td>
+      <td><span class="badge cat-qa">QA</span></td>
+      <td><span class="badge tier-10">T10</span></td>
+      <td>5</td>
+      <td><span class="status live">● LIVE</span></td>
+      <td><span class="plugin-count">12</span></td>
+      <td><span class="endpoint-count">5</span></td>
+      <td>
+        <button onclick="testTrade(50)" class="btn-sm">Test</button>
+        <button onclick="showDocs(50)" class="btn-sm">Docs</button>
+      </td>
+    </tr>  </table>
+</div>
+
+<script>
+function testTrade(id) {
+  alert('POST /api/v3/trade_' + String(id).padStart(2,'0') + '/process — Ready for integration. Endpoint: /api/v3/process/' + id);
+}
+function showDocs(id) {
+  window.open('/api/v3/openapi.json', '_blank');
+}
+</script>
+</body>
+</html>

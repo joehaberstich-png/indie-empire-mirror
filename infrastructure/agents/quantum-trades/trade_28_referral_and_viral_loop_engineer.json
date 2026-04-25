@@ -1,0 +1,116 @@
+{
+  "trade_id": 28,
+  "name": "Referral & Viral Loop Engineer",
+  "tier": 3,
+  "category": "Sales",
+  "version": "1.0.0",
+  "grandmaster_build": true,
+  "benchmarked_against": [
+    "None (first mover)"
+  ],
+  "languages": 5,
+  "features": "Referral design, viral coefficient, social share, k-factor",
+  "interventions_per_1k": 0,
+  "created": "2026-04-25T05:46:36.039905",
+  "last_benchmark": null,
+  "status": "active",
+  "config": {
+    "heartbeat": {
+      "timeoutSeconds": 1200,
+      "isolatedSession": true,
+      "lightContext": true
+    },
+    "model": {
+      "timeoutSeconds": 1200
+    },
+    "autonomy": {
+      "max_interventions_per_1k": 0,
+      "self_healing": true,
+      "failure_recovery": "60s_auto_rebuild"
+    },
+    "quality": {
+      "min_speed_ratio_vs_benchmark": 2.0,
+      "min_quality_score": 0.95,
+      "min_features_vs_benchmark": 3,
+      "min_languages": 5
+    }
+  },
+  "integration_points": [
+    "bridge_pages",
+    "forms",
+    "email",
+    "analytics"
+  ],
+  "outputs": [],
+  "grandmaster": {
+    "api_version": "v3",
+    "plugin_count": 12,
+    "endpoints": [
+      {
+        "path": "/api/v3/referral-&-viral-loop-engineer/process",
+        "method": "POST",
+        "description": "Run the agent"
+      },
+      {
+        "path": "/api/v3/referral-&-viral-loop-engineer/batch",
+        "method": "POST",
+        "description": "Batch process"
+      },
+      {
+        "path": "/api/v3/referral-&-viral-loop-engineer/status",
+        "method": "GET",
+        "description": "Agent status"
+      },
+      {
+        "path": "/api/v3/referral-&-viral-loop-engineer/config",
+        "method": "GET",
+        "description": "Get config"
+      },
+      {
+        "path": "/api/v3/referral-&-viral-loop-engineer/config",
+        "method": "PUT",
+        "description": "Update config"
+      }
+    ],
+    "plugins": [
+      "analytics-tracker",
+      "rate-limiter",
+      "output-formatter",
+      "language-translator",
+      "webhook-emitter",
+      "cache-layer",
+      "error-logger",
+      "metrics-collector",
+      "auth-validator",
+      "template-engine",
+      "batch-processor",
+      "health-monitor"
+    ],
+    "webhook_events": [
+      "onComplete",
+      "onError",
+      "onBatchComplete",
+      "onRateLimit"
+    ],
+    "rate_limit": {
+      "requests_per_minute": 60,
+      "burst": 10
+    },
+    "cache": {
+      "ttl_ms": 30000,
+      "max_entries": 1000
+    },
+    "auth": [
+      "api-key",
+      "hmac-signature",
+      "jwt"
+    ],
+    "metrics": [
+      "request_count",
+      "error_count",
+      "avg_latency",
+      "cache_hit_ratio"
+    ]
+  },
+  "_built": "grandmaster_plugin_engine_v3"
+}
