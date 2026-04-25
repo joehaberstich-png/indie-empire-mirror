@@ -1,7 +1,7 @@
 // Auto-generated checkout from live Stripe products
 // DO NOT EDIT — Regenerate with generate_checkout.py
 
-const STRIPE_PK = "pk_live_51RcX5oE0iuyRsYRxdMQIKfhXHqWXW23XSf0Kfa3LcRpJj4Z7CxZ0iaHmObJiFZWvnucbOYVzsqukTDGzOMUrVZIk00dc6pMNjI";
+const STRIPE_PK = "[REDACTED_STRIPE_PK]";
 
 const PRODUCTS = {
   QBA_BOT_STANDARD_MONTHLY: { price_id: "price_1TPZelE0iuyRsYRxFZtyX0yp", name: "QBA Bot Standard Monthly", amount: 29.0, currency: "USD", interval: "month" },
