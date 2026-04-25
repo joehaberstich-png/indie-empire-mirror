@@ -69,7 +69,10 @@
     </div>
     <button class="admin-login-btn" onclick="adminLogin()">Enter Console &rarr;</button>
     <div class="admin-login-error" id="adminLoginError">Invalid credentials</div>
-    <div class="admin-login-footer">MIRROR v1.0 &middot; April 2026</div>
+    <div class="admin-login-footer" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <button onclick="copyLogin('https://joehaberstich-png.github.io/indie-empire-mirror/')" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:6px;color:#22d3ee;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy URL</button>
+      <button onclick="copyLogin('saul_empire', 'JN@Secured!2026')" style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.15);border-radius:6px;color:#22d3ee;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy Login</button>
+    </div>
   </div>
 </div>
 <div class="admin-badge" id="adminBadge">👑 Authenticated — admin</div>
@@ -182,6 +185,27 @@ function sendQuick(text){
 // Username: saul_empire  |  Password: JN@Secured!2026
 const ADMIN_USER = 'saul_empire';
 const ADMIN_PASS = 'JN@Secured!2026';
+
+function copyLogin(url, pass){
+  let t;
+  if(url && !pass){
+    t = url;
+  } else if(url && pass){
+    t = 'user: saul_empire | pass: ' + pass;
+  } else {
+    t = 'https://joehaberstich-png.github.io/indie-empire-mirror/\nuser: saul_empire | pass: JN@Secured!2026';
+  }
+  navigator.clipboard.writeText(t).then(function(){
+    const btns = document.querySelectorAll('.admin-login-footer button');
+    btns.forEach(function(b){ b.textContent = '✅ Copied!'; });
+    setTimeout(function(){ 
+      btns[0].textContent = '📋 Copy URL';
+      btns[1].textContent = '📋 Copy Login';
+    }, 2000);
+  }).catch(function(){
+    alert('Copy failed. Select manually: ' + t);
+  });
+}
 
 function togglePass(){
   const f = document.getElementById('adminPass');

@@ -142,7 +142,10 @@ input:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 3px rgba(212,
     </div>
     <button class="login-btn" onclick="doLogin()">Access Backup Portal</button>
     <div class="login-error" id="loginError">Invalid credentials</div>
-    <div class="login-footer">BACKUP PORTAL v1.0 · INDEPENDENT SYSTEM</div>
+    <div class="login-footer" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <button onclick="copyCreds('url')" style="background:rgba(212,160,160,.08);border:1px solid rgba(212,160,160,.15);border-radius:6px;color:#d4a0a0;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy URL</button>
+      <button onclick="copyCreds('login')" style="background:rgba(212,160,160,.08);border:1px solid rgba(212,160,160,.15);border-radius:6px;color:#d4a0a0;cursor:pointer;padding:4px 10px;font-size:9px;transition:all .2s">📋 Copy Login</button>
+    </div>
   </div>
 </div>
 
@@ -262,6 +265,25 @@ function showCredentials(){
       <div class="cred-note">${c.note}</div>
     </div>
   `).join('');
+}
+
+function copyCreds(mode){
+  let t;
+  if(mode==='url'){
+    t = 'https://joehaberstich-png.github.io/indie-empire-mirror/backup-portal/';
+  } else {
+    t = 'user: saul_empire | pass: JN@Secured!2026';
+  }
+  navigator.clipboard.writeText(t).then(function(){
+    const btns = document.querySelectorAll('.login-footer button');
+    btns.forEach(function(b){ b.textContent = '✅ Copied!'; });
+    setTimeout(function(){ 
+      btns[0].textContent = '📋 Copy URL';
+      btns[1].textContent = '📋 Copy Login';
+    }, 2000);
+  }).catch(function(){
+    alert('Copy failed. Select manually: ' + t);
+  });
 }
 
 function togglePass(el){
